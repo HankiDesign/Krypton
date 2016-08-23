@@ -466,6 +466,7 @@ namespace ComponentFactory.Krypton.Toolkit
             _textBox.ReadOnlyChanged += new EventHandler(OnTextBoxReadOnlyChanged);
             _textBox.GotFocus += new EventHandler(OnTextBoxGotFocus);
             _textBox.LostFocus += new EventHandler(OnTextBoxLostFocus);
+            _textBox.Click += new EventHandler(OnTextBoxClick);
             _textBox.KeyDown += new KeyEventHandler(OnTextBoxKeyDown);
             _textBox.KeyUp += new KeyEventHandler(OnTextBoxKeyUp);
             _textBox.KeyPress += new KeyPressEventHandler(OnTextBoxKeyPress);
@@ -1939,6 +1940,11 @@ namespace ComponentFactory.Krypton.Toolkit
             UpdateStateAndPalettes();
             PerformNeedPaint(true);
             OnLostFocus(e);
+        }
+
+        private void OnTextBoxClick(object sender, EventArgs e)
+        {
+            OnClick(e);
         }
 
         private void OnTextBoxKeyPress(object sender, KeyPressEventArgs e)
