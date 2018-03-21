@@ -18,10 +18,10 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPaletteRibbonGroupArea : Storage
     {
         #region Instance Fields
-        private PaletteRibbonBackInheritRedirect _stateInherit;
-        private PaletteRibbonBack _stateCommon;
-        private PaletteRibbonBack _stateCheckedNormal;
-        private PaletteRibbonBack _stateContextCheckedTracking;
+        private readonly PaletteRibbonBackInheritRedirect _stateInherit;
+        private readonly PaletteRibbonBack _stateCommon;
+        private readonly PaletteRibbonBack _stateCheckedNormal;
+        private readonly PaletteRibbonBack _stateContextCheckedTracking;
         #endregion
 
         #region Identity

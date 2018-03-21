@@ -19,10 +19,10 @@ namespace ComponentFactory.Krypton.Ribbon
     internal class KeyTipControl : Form
     {
         #region Instance Fields
-        private KryptonRibbon _ribbon;
+        private readonly KryptonRibbon _ribbon;
         private List<ViewDrawRibbonKeyTip> _viewList;
         private string _prefix;
-        private bool _showDisabled;
+        private readonly bool _showDisabled;
         #endregion
 
         #region Identity

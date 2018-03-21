@@ -71,22 +71,22 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region Instance Fields
-        private FormButtonSpecCollection _buttonSpecs;
-        private FormFixedButtonSpecCollection _buttonSpecsFixed;
-        private ButtonSpecFormWindowMin _buttonSpecMin;
-        private ButtonSpecFormWindowMax _buttonSpecMax;
-        private ButtonSpecFormWindowClose _buttonSpecClose;
-        private ButtonSpecManagerDraw _buttonManager;
+        private readonly FormButtonSpecCollection _buttonSpecs;
+        private readonly FormFixedButtonSpecCollection _buttonSpecsFixed;
+        private readonly ButtonSpecFormWindowMin _buttonSpecMin;
+        private readonly ButtonSpecFormWindowMax _buttonSpecMax;
+        private readonly ButtonSpecFormWindowClose _buttonSpecClose;
+        private readonly ButtonSpecManagerDraw _buttonManager;
         private VisualPopupToolTip _visualPopupToolTip;
-        private ToolTipManager _toolTipManager;
-        private ViewDrawForm _drawDocker;
-        private ViewDrawDocker _drawHeading;
-        private ViewDrawContent _drawContent;
-        private ViewDecoratorFixedSize _headingFixedSize;
-        private PaletteFormRedirect _stateCommon;
-        private PaletteForm _stateInactive;
-        private PaletteForm _stateActive;
-        private ViewLayoutNull _layoutNull;
+        private readonly ToolTipManager _toolTipManager;
+        private readonly ViewDrawForm _drawDocker;
+        private readonly ViewDrawDocker _drawHeading;
+        private readonly ViewDrawContent _drawContent;
+        private readonly ViewDecoratorFixedSize _headingFixedSize;
+        private readonly PaletteFormRedirect _stateCommon;
+        private readonly PaletteForm _stateInactive;
+        private readonly PaletteForm _stateActive;
+        private readonly ViewLayoutNull _layoutNull;
         private HeaderStyle _headerStyle;
         private HeaderStyle _headerStylePrev;
         private FormWindowState _regionWindowState;

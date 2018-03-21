@@ -18,7 +18,7 @@ namespace ComponentFactory.Krypton.Toolkit
     public class PaletteBreadCrumbRedirect : PaletteDoubleMetricRedirect
 	{
         #region Instance Fields
-        private PaletteTripleRedirect _paletteCrumb;
+        private readonly PaletteTripleRedirect _paletteCrumb;
         #endregion
 
         #region Identity

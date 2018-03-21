@@ -21,7 +21,7 @@ namespace ComponentFactory.Krypton.Toolkit
     public class ViewDrawCheckBox : ViewLeaf
     {
         #region Instance Fields
-        private IPalette _palette;
+        private readonly IPalette _palette;
         private CheckState _checkState;
         private bool _tracking;
         private bool _pressed;

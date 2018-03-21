@@ -23,9 +23,9 @@ namespace ComponentFactory.Krypton.Docking
     public class DragTargetControlEdge : DragTarget
     {
         #region Instance Fields
-        private VisualOrientation _edge;
+        private readonly VisualOrientation _edge;
         private KryptonDockingControl _controlElement;
-        private bool _outsideEdge;
+        private readonly bool _outsideEdge;
         #endregion
 
         #region Identity

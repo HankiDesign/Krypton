@@ -9,9 +9,9 @@
 // *****************************************************************************
 
 using System.Collections;
-using System.Drawing;
 using System.ComponentModel;
 using System.ComponentModel.Design;
+using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
@@ -48,8 +48,8 @@ namespace ComponentFactory.Krypton.Toolkit
             if (_textBox != null)
             {
                 // Hook into textbox events
-                _textBox.GetViewManager().MouseUpProcessed += new MouseEventHandler(OnTextBoxMouseUp);
-                _textBox.GetViewManager().DoubleClickProcessed += new PointHandler(OnTextBoxDoubleClick);
+                _textBox.GetViewManager().MouseUpProcessed += OnTextBoxMouseUp;
+                _textBox.GetViewManager().DoubleClickProcessed += OnTextBoxDoubleClick;
             }
 
             // Get access to the design services
@@ -58,7 +58,7 @@ namespace ComponentFactory.Krypton.Toolkit
             _selectionService = (ISelectionService)GetService(typeof(ISelectionService));
 
             // We need to know when we are being removed
-            _changeService.ComponentRemoving += new ComponentEventHandler(OnComponentRemoving);
+            _changeService.ComponentRemoving += OnComponentRemoving;
         }
 
         /// <summary>
@@ -66,12 +66,11 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         public override ICollection AssociatedComponents
         {
-            get 
+            get
             {
-                if (_textBox != null)
+	            if (_textBox != null)
                     return _textBox.ButtonSpecs;
-                else
-                    return base.AssociatedComponents;
+	            return base.AssociatedComponents;
             }
         }
 
@@ -120,7 +119,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <returns>true if a click at the specified point is to be handled by the control; otherwise, false.</returns>
         protected override bool GetHitTest(Point point)
         {
-            if (_textBox != null)
+	        if (_textBox != null)
             {
                 // Ask the control if it wants to process the point
                 bool ret = _textBox.DesignerGetHitTest(_textBox.PointToClient(point));
@@ -135,8 +134,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
                 return ret;
             }
-            else
-                return false;
+	        return false;
         }
 
         /// <summary>

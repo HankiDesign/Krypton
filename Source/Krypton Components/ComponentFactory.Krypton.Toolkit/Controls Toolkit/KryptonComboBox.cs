@@ -41,7 +41,7 @@ namespace ComponentFactory.Krypton.Toolkit
         private class InternalPanel : Panel
         {
             #region Instance Fields
-            private KryptonComboBox _kryptonComboBox;
+            private readonly KryptonComboBox _kryptonComboBox;
             #endregion
 
             #region Identity
@@ -102,7 +102,7 @@ namespace ComponentFactory.Krypton.Toolkit
         private class InternalComboBox : ComboBox, IContentValues
         {
             #region Instance Fields
-            private KryptonComboBox _kryptonComboBox;
+            private readonly KryptonComboBox _kryptonComboBox;
             private PaletteTripleToPalette _palette;
             private ViewDrawButton _viewButton;
             private Nullable<bool> _appThemed;
@@ -569,7 +569,7 @@ namespace ComponentFactory.Krypton.Toolkit
         private class SubclassEdit : NativeWindow
         {
             #region Instance Fields
-            private KryptonComboBox _kryptonComboBox;
+            private readonly KryptonComboBox _kryptonComboBox;
             private bool _mouseOver;
             #endregion
 
@@ -764,33 +764,33 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region Static Fields
-        private static int _osMajorVersion;
+        private static readonly int _osMajorVersion;
         #endregion
 
         #region Instance Fields
-        private ToolTipManager _toolTipManager;
+        private readonly ToolTipManager _toolTipManager;
         private VisualPopupToolTip _visualPopupToolTip;
-        private ButtonSpecManagerLayout _buttonManager;
-        private ComboBoxButtonSpecCollection _buttonSpecs;
-        private PaletteComboBoxRedirect _stateCommon;
-        private PaletteComboBoxStates _stateDisabled;
-        private PaletteComboBoxStates _stateNormal;
-        private PaletteComboBoxJustComboStates _stateActive;
-        private PaletteComboBoxJustItemStates _stateTracking;
-        private ViewLayoutDocker _drawDockerInner;
-        private ViewDrawDocker _drawDockerOuter;
-        private ViewLayoutFill _layoutFill;
-        private InternalComboBox _comboBox;
-        private InternalPanel _comboHolder;
+        private readonly ButtonSpecManagerLayout _buttonManager;
+        private readonly ComboBoxButtonSpecCollection _buttonSpecs;
+        private readonly PaletteComboBoxRedirect _stateCommon;
+        private readonly PaletteComboBoxStates _stateDisabled;
+        private readonly PaletteComboBoxStates _stateNormal;
+        private readonly PaletteComboBoxJustComboStates _stateActive;
+        private readonly PaletteComboBoxJustItemStates _stateTracking;
+        private readonly ViewLayoutDocker _drawDockerInner;
+        private readonly ViewDrawDocker _drawDockerOuter;
+        private readonly ViewLayoutFill _layoutFill;
+        private readonly InternalComboBox _comboBox;
+        private readonly InternalPanel _comboHolder;
         private SubclassEdit _subclassEdit;
         private ButtonStyle _dropButtonStyle;
         private PaletteBackStyle _dropBackStyle;
         private InputControlStyle _inputControlStyle;
         private Nullable<bool> _fixedActive;
-        private FixedContentValue _contentValues;
+        private readonly FixedContentValue _contentValues;
         private ButtonStyle _style;
-        private ViewDrawButton _drawButton;
-        private ViewDrawPanel _drawPanel;
+        private readonly ViewDrawButton _drawButton;
+        private readonly ViewDrawPanel _drawPanel;
         private AutoCompleteMode _autoCompleteMode;
         private AutoCompleteSource _autoCompleteSource;
         private Padding _layoutPadding;

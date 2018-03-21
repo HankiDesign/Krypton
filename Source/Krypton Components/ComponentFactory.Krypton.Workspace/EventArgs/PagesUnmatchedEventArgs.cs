@@ -20,8 +20,8 @@ namespace ComponentFactory.Krypton.Workspace
 	public class PagesUnmatchedEventArgs : EventArgs
 	{
 		#region Instance Fields
-        private KryptonWorkspace _workspace;
-        private List<KryptonPage> _unmatched;
+        private readonly KryptonWorkspace _workspace;
+        private readonly List<KryptonPage> _unmatched;
 		#endregion
 
 		#region Identity

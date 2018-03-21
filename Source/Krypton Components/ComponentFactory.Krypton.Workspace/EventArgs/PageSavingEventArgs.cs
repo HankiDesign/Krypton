@@ -19,7 +19,7 @@ namespace ComponentFactory.Krypton.Workspace
 	public class PageSavingEventArgs : XmlSavingEventArgs
 	{
 		#region Instance Fields
-        private KryptonPage _page;
+        private readonly KryptonPage _page;
 		#endregion
 
 		#region Identity

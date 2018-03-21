@@ -19,11 +19,11 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPalettePanels : Storage
     {
         #region Instance Fields
-        private KryptonPalettePanel _panelCommon;
-        private KryptonPalettePanel _panelClient;
-        private KryptonPalettePanel _panelAlternate;
-        private KryptonPalettePanel _panelRibbonInactive;
-        private KryptonPalettePanel _panelCustom1;
+        private readonly KryptonPalettePanel _panelCommon;
+        private readonly KryptonPalettePanel _panelClient;
+        private readonly KryptonPalettePanel _panelAlternate;
+        private readonly KryptonPalettePanel _panelRibbonInactive;
+        private readonly KryptonPalettePanel _panelCustom1;
         #endregion
 
         #region Identity

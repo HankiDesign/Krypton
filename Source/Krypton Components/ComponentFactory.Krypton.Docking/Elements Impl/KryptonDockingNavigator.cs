@@ -27,8 +27,8 @@ namespace ComponentFactory.Krypton.Docking
     public class KryptonDockingNavigator : DockingElementClosedCollection
     {
         #region Instance Fields
-        private string _storeName;
-        private KryptonDockableNavigator _navigator;
+        private readonly string _storeName;
+        private readonly KryptonDockableNavigator _navigator;
         #endregion
 
         #region Identity

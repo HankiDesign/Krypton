@@ -20,7 +20,7 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class KryptonProfessionalRenderer : ToolStripProfessionalRenderer
     {
         #region Instance Fields
-        private KryptonColorTable _kct;
+        private readonly KryptonColorTable _kct;
         #endregion
 
         #region Identity

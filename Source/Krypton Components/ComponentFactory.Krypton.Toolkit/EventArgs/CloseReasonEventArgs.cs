@@ -19,7 +19,7 @@ namespace ComponentFactory.Krypton.Toolkit
 	public class CloseReasonEventArgs : CancelEventArgs
 	{
 		#region Instance Fields
-        private ToolStripDropDownCloseReason _closeReason;
+        private readonly ToolStripDropDownCloseReason _closeReason;
         #endregion
 
 		#region Identity

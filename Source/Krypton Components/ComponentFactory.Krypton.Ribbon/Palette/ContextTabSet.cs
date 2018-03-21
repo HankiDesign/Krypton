@@ -20,9 +20,9 @@ namespace ComponentFactory.Krypton.Ribbon
     internal class ContextTabSet
     {
         #region Instance Fields
-        private ViewDrawRibbonTab _firstTab;
+        private readonly ViewDrawRibbonTab _firstTab;
         private ViewDrawRibbonTab _lastTab;
-        private KryptonRibbonContext _context;
+        private readonly KryptonRibbonContext _context;
         #endregion
 
         #region Identity

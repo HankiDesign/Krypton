@@ -29,18 +29,18 @@ namespace ComponentFactory.Krypton.Toolkit
 
         #region Instance Fields
         private ToolTipManager _toolTipManager;
-        private PaletteRedirect _redirector;
-        private ButtonSpecCollectionBase _variableSpecs;
-        private ButtonSpecCollectionBase _fixedSpecs;
-        private IPaletteMetric[] _viewMetrics;
-        private PaletteMetricInt[] _viewMetricIntOutside;
-        private PaletteMetricInt[] _viewMetricIntInside;
-        private PaletteMetricPadding[] _viewMetricPaddings;
-        private ListSpacers[] _viewSpacers;
-        private ButtonSpecLookup _specLookup;
-        private GetToolStripRenderer _getRenderer;
+        private readonly PaletteRedirect _redirector;
+        private readonly ButtonSpecCollectionBase _variableSpecs;
+        private readonly ButtonSpecCollectionBase _fixedSpecs;
+        private readonly IPaletteMetric[] _viewMetrics;
+        private readonly PaletteMetricInt[] _viewMetricIntOutside;
+        private readonly PaletteMetricInt[] _viewMetricIntInside;
+        private readonly PaletteMetricPadding[] _viewMetricPaddings;
+        private readonly ListSpacers[] _viewSpacers;
+        private readonly ButtonSpecLookup _specLookup;
+        private readonly GetToolStripRenderer _getRenderer;
         private bool _useMnemonic;
-        private Control _control;
+        private readonly Control _control;
         private NeedPaintHandler _needPaint;
         #endregion
 

@@ -23,14 +23,14 @@ namespace ComponentFactory.Krypton.Toolkit
                                   IContentValues
     {
         #region Instance Fields
-        private PaletteRedirect _redirector;
-        private ButtonSpecManagerBase _manager;
-        private ButtonSpec _buttonSpec;
-        private PaletteTripleRedirect _palette;
-        private PaletteRedirect _remapPalette;
-        private ViewDrawButton _viewButton;
-        private ViewLayoutCenter _viewCenter;
-        private EventHandler _finishDelegate;
+        private readonly PaletteRedirect _redirector;
+        private readonly ButtonSpecManagerBase _manager;
+        private readonly ButtonSpec _buttonSpec;
+        private readonly PaletteTripleRedirect _palette;
+        private readonly PaletteRedirect _remapPalette;
+        private readonly ViewDrawButton _viewButton;
+        private readonly ViewLayoutCenter _viewCenter;
+        private readonly EventHandler _finishDelegate;
         private ButtonController _controller;
         #endregion
 

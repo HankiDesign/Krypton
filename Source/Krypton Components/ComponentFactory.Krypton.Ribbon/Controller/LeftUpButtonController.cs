@@ -22,11 +22,11 @@ namespace ComponentFactory.Krypton.Ribbon
                                             IMouseController
 	{
 		#region Instance Fields
-        private KryptonRibbon _ribbon;
+        private readonly KryptonRibbon _ribbon;
         private bool _active;
 		private bool _captured;
         private bool _mouseOver;
-		private ViewBase _target;
+		private readonly ViewBase _target;
 		private NeedPaintHandler _needPaint;
 		#endregion
 

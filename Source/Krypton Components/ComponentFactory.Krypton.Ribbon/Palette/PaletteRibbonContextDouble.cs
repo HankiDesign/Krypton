@@ -22,7 +22,7 @@ namespace ComponentFactory.Krypton.Ribbon
                                               IPaletteRibbonText
     {
         #region Instance Fields
-        private KryptonRibbon _ribbon;
+        private readonly KryptonRibbon _ribbon;
         private KryptonRibbonTab _ribbonTab;
         private PaletteRibbonDoubleInheritOverride _inherit;
         private bool _lightBackground;

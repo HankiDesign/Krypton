@@ -35,8 +35,8 @@ namespace ComponentFactory.Krypton.Toolkit
         private string _content;
         private Image _customIcon;
         private MessageBoxIcon _icon;
-        private KryptonTaskDialogCommandCollection _radioButtons;
-        private KryptonTaskDialogCommandCollection _commandButtons;
+        private readonly KryptonTaskDialogCommandCollection _radioButtons;
+        private readonly KryptonTaskDialogCommandCollection _commandButtons;
         private KryptonTaskDialogCommand _defaultRadioButton;
         private TaskDialogButtons _commonButtons;
         private TaskDialogButtons _defaultButton;

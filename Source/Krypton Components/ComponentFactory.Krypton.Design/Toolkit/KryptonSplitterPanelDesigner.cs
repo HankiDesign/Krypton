@@ -9,10 +9,10 @@
 // *****************************************************************************
 
 using System;
-using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
 using System.ComponentModel.Design;
+using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
@@ -45,7 +45,7 @@ namespace ComponentFactory.Krypton.Toolkit
 			// Hook into changes in selected component
 			IComponentChangeService service = (IComponentChangeService)GetService(typeof(IComponentChangeService));
 			if (service != null)
-				service.ComponentChanged += new ComponentChangedEventHandler(OnComponentChanged);
+				service.ComponentChanged += OnComponentChanged;
 
 			// If inside a Krypton split container then always lock the component from user size/location change
             if (_panel != null)
@@ -78,8 +78,7 @@ namespace ComponentFactory.Krypton.Toolkit
 				// user changing the size or location of the split panel instance
 				if (Control.Parent is KryptonSplitContainer)
 					return (SelectionRules.None | SelectionRules.Locked);
-				else
-					return SelectionRules.None;
+				return SelectionRules.None;
 			}
 		}
 
@@ -117,7 +116,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
                     // Must unhook our event from the service so we can be garbage collected
                     if (service != null)
-                        service.ComponentChanged -= new ComponentChangedEventHandler(OnComponentChanged);
+                        service.ComponentChanged -= OnComponentChanged;
                 }
             }
             finally
@@ -187,8 +186,7 @@ namespace ComponentFactory.Krypton.Toolkit
 					// Then get the attribute associated with the parent of the panel
 					return (InheritanceAttribute)TypeDescriptor.GetAttributes(_panel.Parent)[typeof(InheritanceAttribute)];
 				}
-				else
-					return base.InheritanceAttribute;
+				return base.InheritanceAttribute;
 			}
 		}
 		#endregion

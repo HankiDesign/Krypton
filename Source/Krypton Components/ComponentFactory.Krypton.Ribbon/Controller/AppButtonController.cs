@@ -25,7 +25,7 @@ namespace ComponentFactory.Krypton.Ribbon
                                          IRibbonKeyTipTarget
     {
         #region Instance Fields
-        private KryptonRibbon _ribbon;
+        private readonly KryptonRibbon _ribbon;
         private ViewBase _target1;
         private ViewBase _target2;
         private ViewBase _target3;
@@ -34,7 +34,7 @@ namespace ComponentFactory.Krypton.Ribbon
         private bool _fixedPressed;
         private bool _hasFocus;
         private bool _keyboard;
-        private Timer _updateTimer;
+        private readonly Timer _updateTimer;
         #endregion
 
         #region Events

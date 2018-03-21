@@ -18,8 +18,8 @@ namespace ComponentFactory.Krypton.Docking
 	public class AutoHiddenGroupEventArgs : EventArgs
 	{
 		#region Instance Fields
-        private KryptonAutoHiddenGroup _autoHiddenGroup;
-        private KryptonDockingAutoHiddenGroup _element;
+        private readonly KryptonAutoHiddenGroup _autoHiddenGroup;
+        private readonly KryptonDockingAutoHiddenGroup _element;
 		#endregion
 
 		#region Identity

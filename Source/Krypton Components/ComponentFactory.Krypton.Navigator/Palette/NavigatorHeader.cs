@@ -20,7 +20,7 @@ namespace ComponentFactory.Krypton.Navigator
     public class NavigatorHeader : Storage
     {
         #region Instance Fields
-        private KryptonNavigator _navigator;
+        private readonly KryptonNavigator _navigator;
         private bool _headerVisiblePrimary;
         private bool _headerVisibleSecondary;
         private bool _headerVisibleBar;
@@ -30,8 +30,8 @@ namespace ComponentFactory.Krypton.Navigator
         private VisualOrientation _headerPositionPrimary;
         private VisualOrientation _headerPositionSecondary;
         private VisualOrientation _headerPositionBar;
-        private HeaderGroupMappingPrimary _headerValuesPrimary;
-        private HeaderGroupMappingSecondary _headerValuesSecondary;
+        private readonly HeaderGroupMappingPrimary _headerValuesPrimary;
+        private readonly HeaderGroupMappingSecondary _headerValuesSecondary;
         #endregion
 
         #region Identity

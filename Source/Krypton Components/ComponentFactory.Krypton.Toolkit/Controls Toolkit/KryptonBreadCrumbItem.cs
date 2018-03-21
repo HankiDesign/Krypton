@@ -32,7 +32,7 @@ namespace ComponentFactory.Krypton.Toolkit
         public class BreadCrumbItems : TypedCollection<KryptonBreadCrumbItem>
         {
             #region Instance Fields
-            private KryptonBreadCrumbItem _owner;
+            private readonly KryptonBreadCrumbItem _owner;
             #endregion
 
             #region Identity
@@ -145,7 +145,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
         #region Instance Fields
         private KryptonBreadCrumbItem _parent;
-        private BreadCrumbItems _items;
+        private readonly BreadCrumbItems _items;
         #endregion
 
         #region Identity

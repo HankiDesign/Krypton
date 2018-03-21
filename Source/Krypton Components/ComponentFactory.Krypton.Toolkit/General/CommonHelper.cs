@@ -71,13 +71,13 @@ namespace ComponentFactory.Krypton.Toolkit
         private static PropertyInfo _cachedDesignModePI;
         private static MethodInfo _cachedShortcutMI;
         private static NullContentValues _nullContentValues;
-        private static Point _nullPoint = new Point(Int32.MaxValue, Int32.MaxValue);
-        private static Rectangle _nullRectangle = new Rectangle(Int32.MaxValue, Int32.MaxValue, 0, 0);
-        private static DoubleConverter _dc = new DoubleConverter();
-        private static SizeConverter _sc = new SizeConverter();
-        private static PointConverter _pc = new PointConverter();
-        private static BooleanConverter _bc = new BooleanConverter();
-        private static ColorConverter _cc = new ColorConverter();
+        private static readonly Point _nullPoint = new Point(Int32.MaxValue, Int32.MaxValue);
+        private static readonly Rectangle _nullRectangle = new Rectangle(Int32.MaxValue, Int32.MaxValue, 0, 0);
+        private static readonly DoubleConverter _dc = new DoubleConverter();
+        private static readonly SizeConverter _sc = new SizeConverter();
+        private static readonly PointConverter _pc = new PointConverter();
+        private static readonly BooleanConverter _bc = new BooleanConverter();
+        private static readonly ColorConverter _cc = new ColorConverter();
         private static Form _activeFloatingWindow;
         #endregion
 

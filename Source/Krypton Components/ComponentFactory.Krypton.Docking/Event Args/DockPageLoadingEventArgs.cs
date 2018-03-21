@@ -19,7 +19,7 @@ namespace ComponentFactory.Krypton.Docking
     public class DockPageLoadingEventArgs : DockGlobalLoadingEventArgs
 	{
 		#region Instance Fields
-        private KryptonPage _page;
+        private readonly KryptonPage _page;
 		#endregion
 
 		#region Identity

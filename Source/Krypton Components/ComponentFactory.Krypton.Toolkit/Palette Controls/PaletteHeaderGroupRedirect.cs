@@ -21,10 +21,10 @@ namespace ComponentFactory.Krypton.Toolkit
                                               IPaletteMetric
 	{
 		#region Instance Fields
-        private PaletteRedirect _redirect;
+        private readonly PaletteRedirect _redirect;
         private InheritBool _overlayHeaders;
-		private PaletteHeaderPaddingRedirect _paletteHeaderPrimary;
-		private PaletteHeaderPaddingRedirect _paletteHeaderSecondary;
+		private readonly PaletteHeaderPaddingRedirect _paletteHeaderPrimary;
+		private readonly PaletteHeaderPaddingRedirect _paletteHeaderSecondary;
         #endregion
 
 		#region Identity

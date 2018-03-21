@@ -24,9 +24,9 @@ namespace ComponentFactory.Krypton.Toolkit
 	{
 		#region Instance Fields
         private bool _mouseOver;
-        private ViewDrawMenuItem _menuItem;
+        private readonly ViewDrawMenuItem _menuItem;
 		private NeedPaintHandler _needPaint;
-        private ViewContextMenuManager _viewManager;
+        private readonly ViewContextMenuManager _viewManager;
 		#endregion
 
 		#region Identity

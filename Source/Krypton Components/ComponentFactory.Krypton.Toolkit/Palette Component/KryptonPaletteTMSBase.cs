@@ -18,7 +18,7 @@ namespace ComponentFactory.Krypton.Toolkit
 	public abstract class KryptonPaletteTMSBase : Storage
     {
         #region Instance Fields
-        private KryptonInternalKCT _internalKCT;
+        private readonly KryptonInternalKCT _internalKCT;
         #endregion
         
         #region Identity

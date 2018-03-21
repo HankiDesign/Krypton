@@ -34,7 +34,7 @@ namespace ComponentFactory.Krypton.Toolkit
         private Color _transparent;
         private string _text;
 		private string _extraText;
-        private ButtonImageStates _imageStates;
+        private readonly ButtonImageStates _imageStates;
         private Color _selectedColor;
         private Color _emptyBorderColor;
         private Rectangle _selectedRect;

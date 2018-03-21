@@ -18,7 +18,7 @@ namespace ComponentFactory.Krypton.Navigator
 	public class CtrlTabCancelEventArgs : CancelEventArgs
 	{
 		#region Instance Fields
-        private bool _forward;
+        private readonly bool _forward;
 		#endregion
 
 		#region Identity

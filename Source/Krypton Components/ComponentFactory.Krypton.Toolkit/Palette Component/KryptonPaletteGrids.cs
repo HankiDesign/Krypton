@@ -19,10 +19,10 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPaletteGrids : Storage
     {
         #region Instance Fields
-        private KryptonPaletteGrid _gridCommon;
-        private KryptonPaletteGrid _gridList;
-        private KryptonPaletteGrid _gridSheet;
-        private KryptonPaletteGrid _gridCustom1;
+        private readonly KryptonPaletteGrid _gridCommon;
+        private readonly KryptonPaletteGrid _gridList;
+        private readonly KryptonPaletteGrid _gridSheet;
+        private readonly KryptonPaletteGrid _gridCustom1;
         #endregion
 
         #region Identity

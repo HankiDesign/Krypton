@@ -28,11 +28,11 @@ namespace ComponentFactory.Krypton.Ribbon
         #endregion
 
         #region Instance Fields
-        private KryptonRibbon _ribbon;
+        private readonly KryptonRibbon _ribbon;
         private KryptonRibbonGroupTrackBar _ribbonTrackBar;
         private ViewDrawRibbonGroup _activeGroup;
-        private TrackBarController _controller;
-        private NeedPaintHandler _needPaint;
+        private readonly TrackBarController _controller;
+        private readonly NeedPaintHandler _needPaint;
         private GroupItemSize _currentSize;
         #endregion
 

@@ -38,16 +38,16 @@ namespace ComponentFactory.Krypton.Docking
         #endregion
 
         #region Instance Fields
-        private Control _control;
-        private DockingEdge _edge;
-        private KryptonAutoHiddenPanel _panel;
+        private readonly Control _control;
+        private readonly DockingEdge _edge;
+        private readonly KryptonAutoHiddenPanel _panel;
         private KryptonAutoHiddenGroup _group;
-        private KryptonDockspaceSlide _dockspaceSlide;
-        private KryptonDockspaceSeparator _separator;
-        private EventHandler _checkMakeHidden; 
-        private KryptonPanel _inner;
+        private readonly KryptonDockspaceSlide _dockspaceSlide;
+        private readonly KryptonDockspaceSeparator _separator;
+        private readonly EventHandler _checkMakeHidden; 
+        private readonly KryptonPanel _inner;
         private KryptonPage _page;
-        private Button _dummyTarget;
+        private readonly Button _dummyTarget;
         private DockingAutoHiddenShowState _state;
         private Rectangle _startRect;
         private Rectangle _endRect;

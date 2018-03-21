@@ -33,32 +33,32 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonColorButton : VisualSimpleBase, IButtonControl, IContentValues
 	{
 		#region Instance Fields
-        private ViewDrawButton _drawButton;
+        private readonly ViewDrawButton _drawButton;
         private ButtonStyle _style;
-		private ColorButtonValues _buttonValues;
-		private ButtonController _buttonController;
-        private PaletteRedirectDropDownButton _paletteDropDownButtonImages;
-        private PaletteTripleRedirect _stateCommon;
-        private PaletteTriple _stateDisabled;
-        private PaletteTriple _stateNormal;
-        private PaletteTriple _stateTracking;
-        private PaletteTriple _statePressed;
-		private PaletteTripleRedirect _stateDefault;
-		private PaletteTripleRedirect _stateFocus;
-        private PaletteTripleOverride _overrideFocus;
-		private PaletteTripleOverride _overrideNormal;
-		private PaletteTripleOverride _overrideTracking;
-		private PaletteTripleOverride _overridePressed;
-        private PaletteColorButtonStrings _strings;
+		private readonly ColorButtonValues _buttonValues;
+		private readonly ButtonController _buttonController;
+        private readonly PaletteRedirectDropDownButton _paletteDropDownButtonImages;
+        private readonly PaletteTripleRedirect _stateCommon;
+        private readonly PaletteTriple _stateDisabled;
+        private readonly PaletteTriple _stateNormal;
+        private readonly PaletteTriple _stateTracking;
+        private readonly PaletteTriple _statePressed;
+		private readonly PaletteTripleRedirect _stateDefault;
+		private readonly PaletteTripleRedirect _stateFocus;
+        private readonly PaletteTripleOverride _overrideFocus;
+		private readonly PaletteTripleOverride _overrideNormal;
+		private readonly PaletteTripleOverride _overrideTracking;
+		private readonly PaletteTripleOverride _overridePressed;
+        private readonly PaletteColorButtonStrings _strings;
         private KryptonCommand _command;
-        private DropDownButtonImages _images;
+        private readonly DropDownButtonImages _images;
         private DialogResult _dialogResult;
         private Rectangle _selectedRect;
         private Color _selectedColor;
         private Color _emptyBorderColor;
         private ColorScheme _schemeThemes;
         private ColorScheme _schemeStandard;
-        private List<Color> _recentColors;
+        private readonly List<Color> _recentColors;
         private int _maxRecentColors;
         private Image _wasImage;
         private bool _wasEnabled;
@@ -72,16 +72,22 @@ namespace ComponentFactory.Krypton.Toolkit
 		private bool _useMnemonic;
 
         // Context menu items
-        private KryptonContextMenu _kryptonContextMenu;
-        private KryptonContextMenuSeparator _separatorTheme, _separatorStandard, _separatorRecent;
-        private KryptonContextMenuHeading _headingTheme, _headingStandard, _headingRecent;
-        private KryptonContextMenuColorColumns _colorsTheme, _colorsStandard, _colorsRecent;
-        private KryptonContextMenuSeparator _separatorNoColor;
-        private KryptonContextMenuItems _itemsNoColor;
-        private KryptonContextMenuItem _itemNoColor;
-        private KryptonContextMenuSeparator _separatorMoreColors;
-        private KryptonContextMenuItems _itemsMoreColors;
-        private KryptonContextMenuItem _itemMoreColors;
+        private readonly KryptonContextMenu _kryptonContextMenu;
+        private readonly KryptonContextMenuSeparator _separatorTheme;
+		private readonly KryptonContextMenuSeparator _separatorStandard;
+		private readonly KryptonContextMenuSeparator _separatorRecent;
+		private readonly KryptonContextMenuHeading _headingTheme;
+		private readonly KryptonContextMenuHeading _headingStandard;
+		private readonly KryptonContextMenuHeading _headingRecent;
+		private readonly KryptonContextMenuColorColumns _colorsTheme;
+		private readonly KryptonContextMenuColorColumns _colorsStandard;
+		private readonly KryptonContextMenuColorColumns _colorsRecent;
+		private readonly KryptonContextMenuSeparator _separatorNoColor;
+        private readonly KryptonContextMenuItems _itemsNoColor;
+        private readonly KryptonContextMenuItem _itemNoColor;
+        private readonly KryptonContextMenuSeparator _separatorMoreColors;
+        private readonly KryptonContextMenuItems _itemsMoreColors;
+        private readonly KryptonContextMenuItem _itemMoreColors;
         #endregion
 
         #region Events

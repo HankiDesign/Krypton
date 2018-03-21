@@ -18,7 +18,7 @@ namespace ComponentFactory.Krypton.Toolkit
     public class PaletteListState : PaletteDouble
 	{
 		#region Instance Fields
-        private PaletteTriple _itemTriple;
+        private readonly PaletteTriple _itemTriple;
 		#endregion
 
 		#region Identity

@@ -18,13 +18,13 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPaletteTabButton : Storage
     {
         #region Instance Fields
-        private PaletteTabTripleRedirect _stateFocus;
-        private PaletteTabTripleRedirect _stateCommon;
-        private PaletteTabTriple _stateDisabled;
-        private PaletteTabTriple _stateNormal;
-        private PaletteTabTriple _stateTracking;
-        private PaletteTabTriple _statePressed;
-        private PaletteTabTriple _stateSelected;
+        private readonly PaletteTabTripleRedirect _stateFocus;
+        private readonly PaletteTabTripleRedirect _stateCommon;
+        private readonly PaletteTabTriple _stateDisabled;
+        private readonly PaletteTabTriple _stateNormal;
+        private readonly PaletteTabTriple _stateTracking;
+        private readonly PaletteTabTriple _statePressed;
+        private readonly PaletteTabTriple _stateSelected;
         #endregion
 
         #region Identity

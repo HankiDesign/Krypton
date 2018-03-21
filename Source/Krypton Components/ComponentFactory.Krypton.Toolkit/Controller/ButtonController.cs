@@ -38,7 +38,7 @@ namespace ComponentFactory.Krypton.Toolkit
         private bool _draggingAttempt;
         private bool _preDragOffset;
         private Point _mousePoint;
-        private ViewBase _target;
+        private readonly ViewBase _target;
 		private NeedPaintHandler _needPaint;
         private Timer _repeatTimer;
         private Rectangle _splitRectangle;

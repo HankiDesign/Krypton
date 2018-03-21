@@ -16,7 +16,7 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class LabelStyleConverter : StringLookupConverter
     {
         #region Static Fields
-        private Pair[] _pairs = new Pair[] { new Pair(LabelStyle.NormalControl,     "Normal (Control)"),
+        private readonly Pair[] _pairs = new Pair[] { new Pair(LabelStyle.NormalControl,     "Normal (Control)"),
                                              new Pair(LabelStyle.BoldControl,       "Bold (Control)"),
                                              new Pair(LabelStyle.ItalicControl,     "Italic (Control)"),
                                              new Pair(LabelStyle.TitleControl,      "Title (Control)"),

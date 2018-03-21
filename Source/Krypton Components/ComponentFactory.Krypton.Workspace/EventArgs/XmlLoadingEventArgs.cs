@@ -19,8 +19,8 @@ namespace ComponentFactory.Krypton.Workspace
 	public class XmlLoadingEventArgs : EventArgs
 	{
 		#region Instance Fields
-        private KryptonWorkspace _workspace;
-        private XmlReader _xmlReader;
+        private readonly KryptonWorkspace _workspace;
+        private readonly XmlReader _xmlReader;
 		#endregion
 
 		#region Identity

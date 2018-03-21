@@ -45,10 +45,9 @@ namespace ComponentFactory.Krypton.Toolkit
         {
             get
             {
-                if (_comboBox != null)
+	            if (_comboBox != null)
                     return _comboBox.ButtonSpecs;
-                else
-                    return base.AssociatedComponents;
+	            return base.AssociatedComponents;
             }
         }
         #endregion

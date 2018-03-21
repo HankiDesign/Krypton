@@ -21,9 +21,9 @@ namespace ComponentFactory.Krypton.Toolkit
     public class ViewDrawTP : ViewComposite
     {
         #region Instance Fields
-        private ViewDrawTrackBar _drawTrackBar;
-        private ViewDrawTrackTrack _drawTrack;
-        private ViewDrawTrackPosition _drawPosition;
+        private readonly ViewDrawTrackBar _drawTrackBar;
+        private readonly ViewDrawTrackTrack _drawTrack;
+        private readonly ViewDrawTrackPosition _drawPosition;
         #endregion
 
         #region Identity

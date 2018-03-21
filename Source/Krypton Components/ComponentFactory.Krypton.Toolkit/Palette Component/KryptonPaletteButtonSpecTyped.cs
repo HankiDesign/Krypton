@@ -30,7 +30,7 @@ namespace ComponentFactory.Krypton.Toolkit
         private bool _allowInheritText;
         private bool _allowInheritExtraText;
         private bool _allowInheritToolTipTitle;
-        private CheckButtonImageStates _imageStates;
+        private readonly CheckButtonImageStates _imageStates;
         #endregion
 
         #region Identity

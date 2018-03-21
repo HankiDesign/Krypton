@@ -34,21 +34,21 @@ namespace ComponentFactory.Krypton.Ribbon
     {
         #region Instance Fields
         private KryptonRibbon _ribbon;
-        private KryptonGalleryRangeCollection _dropButtonRanges;
-        private PaletteGalleryRedirect _stateCommon;
-        private PaletteGalleryState _stateNormal;
-        private PaletteGalleryState _stateDisabled;
-        private PaletteGalleryState _stateActive;
-        private PaletteGalleryBackBorder _backBorder;
-        private ViewLayoutRibbonGalleryButtons _buttonsLayout;
-        private ViewDrawRibbonGalleryButton _buttonUp;
-        private ViewDrawRibbonGalleryButton _buttonDown;
-        private ViewDrawRibbonGalleryButton _buttonContext;
-        private ViewLayoutRibbonGalleryItems _drawItems;
+        private readonly KryptonGalleryRangeCollection _dropButtonRanges;
+        private readonly PaletteGalleryRedirect _stateCommon;
+        private readonly PaletteGalleryState _stateNormal;
+        private readonly PaletteGalleryState _stateDisabled;
+        private readonly PaletteGalleryState _stateActive;
+        private readonly PaletteGalleryBackBorder _backBorder;
+        private readonly ViewLayoutRibbonGalleryButtons _buttonsLayout;
+        private readonly ViewDrawRibbonGalleryButton _buttonUp;
+        private readonly ViewDrawRibbonGalleryButton _buttonDown;
+        private readonly ViewDrawRibbonGalleryButton _buttonContext;
+        private readonly ViewLayoutRibbonGalleryItems _drawItems;
         private ImageList _imageList;
-        private GalleryImages _images;
-        private ViewLayoutDocker _layoutDocker;
-        private ViewDrawDocker _drawDocker;
+        private readonly GalleryImages _images;
+        private readonly ViewLayoutDocker _layoutDocker;
+        private readonly ViewDrawDocker _drawDocker;
         private Nullable<bool> _fixedActive;
         private Size _preferredItemSize;
         private bool _inRibbonDesignMode;
@@ -60,7 +60,7 @@ namespace ComponentFactory.Krypton.Ribbon
         private int _trackingIndex;
         private int _cacheTrackingIndex;
         private int _eventTrackingIndex;
-        private Timer _trackingEventTimer;
+        private readonly Timer _trackingEventTimer;
         private KryptonContextMenu _dropMenu;
         private EventHandler _finishDelegate;
         #endregion

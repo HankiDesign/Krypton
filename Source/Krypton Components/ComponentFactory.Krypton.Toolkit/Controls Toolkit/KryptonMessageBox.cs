@@ -29,10 +29,10 @@ namespace ComponentFactory.Krypton.Toolkit
         internal class HelpInfo
         {
             #region Instance Fields
-            private string _helpFilePath;
-            private string _keyword;
-            private HelpNavigator _navigator;
-            private object _param;
+            private readonly string _helpFilePath;
+            private readonly string _keyword;
+            private readonly HelpNavigator _navigator;
+            private readonly object _param;
             #endregion
 
             #region Identity
@@ -175,15 +175,15 @@ namespace ComponentFactory.Krypton.Toolkit
 
         #region Static Fields
         private static readonly int GAP = 10;
-        private static int _osMajorVersion;
+        private static readonly int _osMajorVersion;
         #endregion
 
         #region Instance Fields
-        private string _text;
-        private string _caption;
-        private MessageBoxButtons _buttons;
-        private MessageBoxIcon _icon;
-        private MessageBoxDefaultButton _defaultButton;
+        private readonly string _text;
+        private readonly string _caption;
+        private readonly MessageBoxButtons _buttons;
+        private readonly MessageBoxIcon _icon;
+        private readonly MessageBoxDefaultButton _defaultButton;
         private MessageBoxOptions _options;
         private KryptonPanel _panelMessage;
         private KryptonPanel _panelMessageText;

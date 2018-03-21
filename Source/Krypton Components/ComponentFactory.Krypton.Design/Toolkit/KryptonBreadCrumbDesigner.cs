@@ -10,9 +10,9 @@
 
 using System;
 using System.Collections;
-using System.Drawing;
 using System.ComponentModel;
 using System.ComponentModel.Design;
+using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
@@ -52,8 +52,8 @@ namespace ComponentFactory.Krypton.Toolkit
             if (_breadCrumb != null)
             {
                 // Hook into bread crumb events
-                _breadCrumb.GetViewManager().MouseUpProcessed += new MouseEventHandler(OnBreadCrumbMouseUp);
-                _breadCrumb.GetViewManager().DoubleClickProcessed += new PointHandler(OnBreadCrumbDoubleClick);
+                _breadCrumb.GetViewManager().MouseUpProcessed += OnBreadCrumbMouseUp;
+                _breadCrumb.GetViewManager().DoubleClickProcessed += OnBreadCrumbDoubleClick;
             }
 
             // Get access to the design services
@@ -62,7 +62,7 @@ namespace ComponentFactory.Krypton.Toolkit
             _selectionService = (ISelectionService)GetService(typeof(ISelectionService));
 
             // We need to know when we are being removed
-            _changeService.ComponentRemoving += new ComponentEventHandler(OnComponentRemoving);
+            _changeService.ComponentRemoving += OnComponentRemoving;
         }
 
         /// <summary>
@@ -112,11 +112,11 @@ namespace ComponentFactory.Krypton.Toolkit
             // Unhook from events
             if (_breadCrumb != null)
             {
-                _breadCrumb.GetViewManager().MouseUpProcessed -= new MouseEventHandler(OnBreadCrumbMouseUp);
-                _breadCrumb.GetViewManager().DoubleClickProcessed -= new PointHandler(OnBreadCrumbDoubleClick);
+                _breadCrumb.GetViewManager().MouseUpProcessed -= OnBreadCrumbMouseUp;
+                _breadCrumb.GetViewManager().DoubleClickProcessed -= OnBreadCrumbDoubleClick;
             }
 
-            _changeService.ComponentRemoving -= new ComponentEventHandler(OnComponentRemoving);
+            _changeService.ComponentRemoving -= OnComponentRemoving;
 
             // Must let base class do standard stuff
             base.Dispose(disposing);
@@ -129,7 +129,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <returns>true if a click at the specified point is to be handled by the control; otherwise, false.</returns>
         protected override bool GetHitTest(Point point)
         {
-            if (_breadCrumb != null)
+	        if (_breadCrumb != null)
             {
                 // Ask the control if it wants to process the point
                 bool ret = _breadCrumb.DesignerGetHitTest(_breadCrumb.PointToClient(point));
@@ -144,8 +144,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
                 return ret;
             }
-            else
-                return false;
+	        return false;
         }
 
         /// <summary>

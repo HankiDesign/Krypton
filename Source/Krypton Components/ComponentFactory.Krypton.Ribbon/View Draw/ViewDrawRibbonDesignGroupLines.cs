@@ -27,7 +27,7 @@ namespace ComponentFactory.Krypton.Ribbon
         #endregion
 
         #region Instance Fields
-        private KryptonRibbonGroupLines _ribbonLines;
+        private readonly KryptonRibbonGroupLines _ribbonLines;
         private ContextMenuStrip _cms;
         private GroupItemSize _currentSize;
         #endregion

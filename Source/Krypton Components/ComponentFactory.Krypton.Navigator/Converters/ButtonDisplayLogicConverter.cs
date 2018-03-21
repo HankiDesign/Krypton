@@ -18,7 +18,7 @@ namespace ComponentFactory.Krypton.Navigator
     public class ButtonDisplayLogicConverter : StringLookupConverter
     {
         #region Static Fields
-        private Pair[] _pairs = new Pair[] { new Pair(ButtonDisplayLogic.None,                  "None"),
+        private readonly Pair[] _pairs = new Pair[] { new Pair(ButtonDisplayLogic.None,                  "None"),
                                              new Pair(ButtonDisplayLogic.Context,               "Context"),
                                              new Pair(ButtonDisplayLogic.NextPrevious,          "Next/Previous"),
                                              new Pair(ButtonDisplayLogic.ContextNextPrevious,   "Context & Next/Previous") };

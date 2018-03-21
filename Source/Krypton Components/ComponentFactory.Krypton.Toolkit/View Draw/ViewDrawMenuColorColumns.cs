@@ -20,10 +20,10 @@ namespace ComponentFactory.Krypton.Toolkit
     public class ViewDrawMenuColorColumns : ViewComposite
     {
         #region Instance Fields
-        private IContextMenuProvider _provider;
-        private KryptonContextMenuColorColumns _colorColumns;
-        private ViewLayoutDocker _outerDocker;
-        private ViewLayoutDocker _innerDocker;
+        private readonly IContextMenuProvider _provider;
+        private readonly KryptonContextMenuColorColumns _colorColumns;
+        private readonly ViewLayoutDocker _outerDocker;
+        private readonly ViewLayoutDocker _innerDocker;
         #endregion
 
         #region Identity

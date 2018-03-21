@@ -18,8 +18,8 @@ namespace ComponentFactory.Krypton.Navigator
 	public class TabMovedEventArgs : EventArgs
 	{
 		#region Instance Fields
-        private KryptonPage _page;
-        private int _index;
+        private readonly KryptonPage _page;
+        private readonly int _index;
 		#endregion
 
 		#region Identity

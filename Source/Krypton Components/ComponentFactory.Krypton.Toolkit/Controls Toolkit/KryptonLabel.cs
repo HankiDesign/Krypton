@@ -34,13 +34,13 @@ namespace ComponentFactory.Krypton.Toolkit
 	{
 		#region Instance Fields
 		private LabelStyle _style;
-		private LabelValues _labelValues;
+		private readonly LabelValues _labelValues;
         private VisualOrientation _orientation;
-        private ViewDrawContent _drawContent;
-		private PaletteContentInheritRedirect _paletteCommonRedirect;
-        private PaletteContent _stateCommon;
-        private PaletteContent _stateDisabled;
-		private PaletteContent _stateNormal;
+        private readonly ViewDrawContent _drawContent;
+		private readonly PaletteContentInheritRedirect _paletteCommonRedirect;
+        private readonly PaletteContent _stateCommon;
+        private readonly PaletteContent _stateDisabled;
+		private readonly PaletteContent _stateNormal;
         private KryptonCommand _command;
         private bool _useMnemonic;
         private bool _enabledTarget;

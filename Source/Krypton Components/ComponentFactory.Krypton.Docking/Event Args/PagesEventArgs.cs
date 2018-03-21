@@ -19,7 +19,7 @@ namespace ComponentFactory.Krypton.Docking
 	public class PagesEventArgs : EventArgs
 	{
 		#region Instance Fields
-        private KryptonPageCollection _pages;
+        private readonly KryptonPageCollection _pages;
 		#endregion
 
 		#region Identity

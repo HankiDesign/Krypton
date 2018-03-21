@@ -19,7 +19,7 @@ namespace ComponentFactory.Krypton.Toolkit
     public class PaletteTreeNodeTripleRedirect : Storage                                            
 	{
 		#region Instance Fields
-        private PaletteTripleRedirect _nodeRedirect;
+        private readonly PaletteTripleRedirect _nodeRedirect;
 		#endregion
 
 		#region Identity

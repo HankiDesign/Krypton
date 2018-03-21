@@ -30,8 +30,8 @@ namespace ComponentFactory.Krypton.Toolkit
         private string _extraText;
         private Image _image;
         private Color _imageTransparentColor;
-        private PaletteTripleRedirect _stateNormal;
-        private PaletteRedirectTriple _redirectHeading;
+        private readonly PaletteTripleRedirect _stateNormal;
+        private readonly PaletteRedirectTriple _redirectHeading;
         #endregion
 
         #region Identity

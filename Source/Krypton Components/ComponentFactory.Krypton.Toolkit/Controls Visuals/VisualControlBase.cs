@@ -44,13 +44,13 @@ namespace ComponentFactory.Krypton.Toolkit
         private IPalette _localPalette;
 		private IPalette _palette;
         private IRenderer _renderer;
-		private PaletteRedirect _redirector;
+		private readonly PaletteRedirect _redirector;
 		private PaletteMode _paletteMode;
 		private ViewManager _viewManager;
-        private SimpleCall _refreshCall;
-        private SimpleCall _layoutCall;
-        private NeedPaintHandler _needPaintDelegate;
-        private NeedPaintHandler _needPaintPaletteDelegate;
+        private readonly SimpleCall _refreshCall;
+        private readonly SimpleCall _layoutCall;
+        private readonly NeedPaintHandler _needPaintDelegate;
+        private readonly NeedPaintHandler _needPaintPaletteDelegate;
         private KryptonContextMenu _kryptonContextMenu;
         #endregion
 

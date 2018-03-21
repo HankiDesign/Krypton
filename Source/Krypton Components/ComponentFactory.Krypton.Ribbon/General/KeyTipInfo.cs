@@ -18,12 +18,12 @@ namespace ComponentFactory.Krypton.Ribbon
     internal class KeyTipInfo
     {
         #region Instance Fields
-        private bool _enabled;
+        private readonly bool _enabled;
         private bool _visible;
-        private string _keyString;
-        private Point _screenPt;
-        private Rectangle _clientRect;
-        private IRibbonKeyTipTarget _target;
+        private readonly string _keyString;
+        private readonly Point _screenPt;
+        private readonly Rectangle _clientRect;
+        private readonly IRibbonKeyTipTarget _target;
         #endregion
 
         #region Identity

@@ -44,9 +44,9 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region Instance Fields
-        private DrawDateTimeGlyph _glyph;
-        private KryptonDateTimePicker _dateTimePicker;
-        private ButtonController _controller;
+        private readonly DrawDateTimeGlyph _glyph;
+        private readonly KryptonDateTimePicker _dateTimePicker;
+        private readonly ButtonController _controller;
         #endregion
 
         #region Events

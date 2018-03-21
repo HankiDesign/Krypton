@@ -20,7 +20,7 @@ namespace ComponentFactory.Krypton.Toolkit
 	public class ViewControlHitTestArgs : CancelEventArgs
 	{
 		#region Instance Fields
-        private Point _pt;
+        private readonly Point _pt;
         private IntPtr _result;
         #endregion
 

@@ -19,9 +19,9 @@ namespace ComponentFactory.Krypton.Docking
 	public class FloatspaceCellEventArgs : EventArgs
 	{
 		#region Instance Fields
-        private KryptonFloatspace _floatspace;
-        private KryptonDockingFloatspace _element;
-        private KryptonWorkspaceCell _cell;
+        private readonly KryptonFloatspace _floatspace;
+        private readonly KryptonDockingFloatspace _element;
+        private readonly KryptonWorkspaceCell _cell;
         #endregion
 		
         #region Identity

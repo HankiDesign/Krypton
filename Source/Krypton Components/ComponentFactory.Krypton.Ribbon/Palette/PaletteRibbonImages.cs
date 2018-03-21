@@ -20,10 +20,10 @@ namespace ComponentFactory.Krypton.Ribbon
     public class PaletteRibbonImages : Storage
     {
         #region Instance Fields
-        private PaletteRedirectCheckBox _redirectCheckBox;
-        private PaletteRedirectRadioButton _redirectRadioButton;
-        private CheckBoxImages _imagesCheckBox;
-        private RadioButtonImages _imagesRadioButton;
+        private readonly PaletteRedirectCheckBox _redirectCheckBox;
+        private readonly PaletteRedirectRadioButton _redirectRadioButton;
+        private readonly CheckBoxImages _imagesCheckBox;
+        private readonly RadioButtonImages _imagesRadioButton;
         #endregion
 
         #region Identity

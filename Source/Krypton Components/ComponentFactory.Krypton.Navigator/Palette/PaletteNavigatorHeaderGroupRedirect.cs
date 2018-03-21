@@ -20,8 +20,8 @@ namespace ComponentFactory.Krypton.Navigator
     public class PaletteNavigatorHeaderGroupRedirect : PaletteHeaderGroupRedirect
 	{
 		#region Instance Fields
-		private PaletteHeaderPaddingRedirect _paletteHeaderBar;
-        private PaletteHeaderPaddingRedirect _paletteHeaderOverflow;
+		private readonly PaletteHeaderPaddingRedirect _paletteHeaderBar;
+        private readonly PaletteHeaderPaddingRedirect _paletteHeaderOverflow;
         #endregion
 
 		#region Identity

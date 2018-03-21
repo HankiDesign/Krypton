@@ -16,7 +16,7 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class PaletteButtonOrientationConverter : StringLookupConverter
     {
         #region Static Fields
-        private Pair[] _pairs = new Pair[] { new Pair(PaletteButtonOrientation.Inherit,     "Inherit"),
+        private readonly Pair[] _pairs = new Pair[] { new Pair(PaletteButtonOrientation.Inherit,     "Inherit"),
                                              new Pair(PaletteButtonOrientation.Auto,        "Auto"),
                                              new Pair(PaletteButtonOrientation.FixedTop,    "Fixed Top"),
                                              new Pair(PaletteButtonOrientation.FixedBottom, "Fixed Bottom"),

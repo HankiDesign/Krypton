@@ -16,9 +16,9 @@ namespace ComponentFactory.Krypton.Navigator
     public class PageDragEndData
 	{
 		#region Instance Fields
-        private object _source;
-        private KryptonNavigator _navigator;
-        private KryptonPageCollection _pages;
+        private readonly object _source;
+        private readonly KryptonNavigator _navigator;
+        private readonly KryptonPageCollection _pages;
         #endregion
 
 		#region Identity

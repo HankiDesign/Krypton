@@ -23,9 +23,9 @@ namespace ComponentFactory.Krypton.Ribbon
                                               IContentValues
     {
         #region Instance Fields
-        private KryptonRibbon _ribbon;
+        private readonly KryptonRibbon _ribbon;
         private NeedPaintHandler _needPaint;
-        private DesignTextToContent _contentProvider;
+        private readonly DesignTextToContent _contentProvider;
         #endregion
 
 		#region Identity

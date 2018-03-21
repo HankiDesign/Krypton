@@ -24,7 +24,7 @@ namespace ComponentFactory.Krypton.Workspace
     public class DragTargetWorkspaceEdge : DragTargetWorkspace
     {
         #region Instance Fields
-        private VisualOrientation _edge;
+        private readonly VisualOrientation _edge;
         #endregion
 
         #region Identity

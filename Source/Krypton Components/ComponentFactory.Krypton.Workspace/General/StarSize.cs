@@ -18,8 +18,8 @@ namespace ComponentFactory.Krypton.Workspace
     public class StarSize
     {
         #region Internal Fields
-        private StarNumber _width;
-        private StarNumber _height;
+        private readonly StarNumber _width;
+        private readonly StarNumber _height;
         #endregion
 
         #region Identity

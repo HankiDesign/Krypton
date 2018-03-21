@@ -102,9 +102,9 @@ namespace ComponentFactory.Krypton.Docking
         #endregion
 
         #region Instance Fields
-        private CellToCachedState _lookupCellState;
-        private EventHandler _focusUpdate;
-        private EventHandler _visibleUpdate;
+        private readonly CellToCachedState _lookupCellState;
+        private readonly EventHandler _focusUpdate;
+        private readonly EventHandler _visibleUpdate;
         private bool _awaitingFocusUpdate;
         private bool _awaitingVisibleUpdate;
         private bool _autoHiddenHost;
@@ -112,7 +112,7 @@ namespace ComponentFactory.Krypton.Docking
         private string _closeTooltip;
         private string _pinTooltip;
         private string _dropDownTooltip;
-        private string _storeName;
+        private readonly string _storeName;
         #endregion
 
         #region Events

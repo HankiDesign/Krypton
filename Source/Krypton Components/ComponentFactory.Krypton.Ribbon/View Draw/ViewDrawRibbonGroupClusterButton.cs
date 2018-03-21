@@ -28,9 +28,9 @@ namespace ComponentFactory.Krypton.Ribbon
         #endregion
 
         #region Instance Fields
-        private KryptonRibbon _ribbon;
+        private readonly KryptonRibbon _ribbon;
         private KryptonRibbonGroupClusterButton _ribbonButton;
-        private NeedPaintHandler _needPaint;
+        private readonly NeedPaintHandler _needPaint;
         private PaletteBackInheritForced _backForced;
         private PaletteBorderInheritForced _borderForced;
         private ViewDrawRibbonGroupButtonBackBorder _viewMediumSmall;

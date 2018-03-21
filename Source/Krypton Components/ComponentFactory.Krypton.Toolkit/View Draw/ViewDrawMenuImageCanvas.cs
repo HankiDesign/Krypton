@@ -17,10 +17,10 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class ViewDrawMenuImageCanvas : ViewDrawCanvas, IContextMenuItemColumn
 	{
 		#region Instance Fields
-        private int _columnIndex;
+        private readonly int _columnIndex;
         private Size _lastPreferredSize;
         private int _overridePreferredWidth;
-        private bool _zeroHeight;
+        private readonly bool _zeroHeight;
         #endregion
 
 		#region Identity

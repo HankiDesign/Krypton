@@ -29,9 +29,9 @@ namespace ComponentFactory.Krypton.Toolkit
         #region Instance Fields
         private bool _standardStyle;
         private bool _imageColumn;
-        private KryptonContextMenuItemCollection _items;
-        private PaletteDoubleRedirect _stateNormal;
-        private PaletteRedirectDouble _redirectImageColumn;
+        private readonly KryptonContextMenuItemCollection _items;
+        private readonly PaletteDoubleRedirect _stateNormal;
+        private readonly PaletteRedirectDouble _redirectImageColumn;
         #endregion
 
         #region Identity

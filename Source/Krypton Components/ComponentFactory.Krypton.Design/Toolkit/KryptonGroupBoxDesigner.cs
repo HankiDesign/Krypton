@@ -11,9 +11,9 @@
 using System;
 using System.ComponentModel;
 using System.ComponentModel.Design;
+using System.Diagnostics;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
-using System.Diagnostics;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -73,11 +73,10 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <returns>A ControlDesigner at the specified index.</returns>
         public override ControlDesigner InternalControlDesigner(int internalControlIndex)
         {
-            // Get the control designer for the requested indexed child control
+	        // Get the control designer for the requested indexed child control
             if ((_groupBox != null) && (internalControlIndex == 0))
                 return (ControlDesigner)_designerHost.GetDesigner(_groupBox.Panel);
-            else
-                return null;
+	        return null;
         }
 
         /// <summary>
@@ -86,10 +85,9 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <returns>The number of internal control designers in the ControlDesigner.</returns>
         public override int NumberOfInternalControlDesigners()
         {
-            if (_groupBox != null)
+	        if (_groupBox != null)
                 return 1;
-            else
-                return 0;
+	        return 0;
         }
 
         /// <summary>

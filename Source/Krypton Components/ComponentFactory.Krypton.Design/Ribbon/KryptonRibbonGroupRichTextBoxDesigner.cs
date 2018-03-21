@@ -10,11 +10,12 @@
 
 using System;
 using System.Collections;
-using System.Drawing;
 using System.ComponentModel;
 using System.ComponentModel.Design;
-using System.Windows.Forms;
 using System.Diagnostics;
+using System.Drawing;
+using System.Windows.Forms;
+using ComponentFactory.Krypton.Design.Properties;
 using ComponentFactory.Krypton.Toolkit;
 
 namespace ComponentFactory.Krypton.Ribbon
@@ -45,13 +46,8 @@ namespace ComponentFactory.Krypton.Ribbon
         #endregion
 
         #region Identity
-        /// <summary>
-        /// Initialize a new instance of the KryptonRibbonGroupRichTextBoxDesigner class.
-        /// </summary>
-        public KryptonRibbonGroupRichTextBoxDesigner()
-        {
-        }
-        #endregion
+
+	    #endregion
 
         #region Public
         /// <summary>
@@ -84,14 +80,14 @@ namespace ComponentFactory.Krypton.Ribbon
             _ribbonRichTextBox.RichTextBox.InRibbonDesignMode = true;
 
             // Hook into events
-            _ribbonRichTextBox.DesignTimeContextMenu += new MouseEventHandler(OnContextMenu);
+            _ribbonRichTextBox.DesignTimeContextMenu += OnContextMenu;
 
             // Get access to the services
             _designerHost = (IDesignerHost)GetService(typeof(IDesignerHost));
             _changeService = (IComponentChangeService)GetService(typeof(IComponentChangeService));
 
             // We need to know when we are being removed/changed
-            _changeService.ComponentChanged += new ComponentChangedEventHandler(OnComponentChanged);
+            _changeService.ComponentChanged += OnComponentChanged;
         }
 
         /// <summary>
@@ -137,8 +133,8 @@ namespace ComponentFactory.Krypton.Ribbon
                 if (disposing)
                 {
                     // Unhook from events
-                    _ribbonRichTextBox.DesignTimeContextMenu -= new MouseEventHandler(OnContextMenu);
-                    _changeService.ComponentChanged -= new ComponentChangedEventHandler(OnComponentChanged);
+                    _ribbonRichTextBox.DesignTimeContextMenu -= OnContextMenu;
+                    _changeService.ComponentChanged -= OnComponentChanged;
                 }
             }
             finally
@@ -158,7 +154,7 @@ namespace ComponentFactory.Krypton.Ribbon
 
             // Setup the array of properties we override
             Attribute[] attributes = new Attribute[0];
-            string[] strArray = new string[] { "Visible", "Enabled" };
+            string[] strArray = { "Visible", "Enabled" };
 
             // Adjust our list of properties
             for (int i = 0; i < strArray.Length; i++)
@@ -211,13 +207,13 @@ namespace ComponentFactory.Krypton.Ribbon
             if (_verbs == null)
             {
                 _verbs = new DesignerVerbCollection();
-                _toggleHelpersVerb = new DesignerVerb("Toggle Helpers", new EventHandler(OnToggleHelpers));
-                _moveFirstVerb = new DesignerVerb("Move RichTextBox First", new EventHandler(OnMoveFirst));
-                _movePrevVerb = new DesignerVerb("Move RichTextBox Previous", new EventHandler(OnMovePrevious));
-                _moveNextVerb = new DesignerVerb("Move RichTextBox Next", new EventHandler(OnMoveNext));
-                _moveLastVerb = new DesignerVerb("Move RichTextBox Last", new EventHandler(OnMoveLast));
-                _deleteRichTextBoxVerb = new DesignerVerb("Delete RichTextBox", new EventHandler(OnDeleteTextBox));
-                _verbs.AddRange(new DesignerVerb[] { _toggleHelpersVerb, _moveFirstVerb, _movePrevVerb, 
+                _toggleHelpersVerb = new DesignerVerb("Toggle Helpers", OnToggleHelpers);
+                _moveFirstVerb = new DesignerVerb("Move RichTextBox First", OnMoveFirst);
+                _movePrevVerb = new DesignerVerb("Move RichTextBox Previous", OnMovePrevious);
+                _moveNextVerb = new DesignerVerb("Move RichTextBox Next", OnMoveNext);
+                _moveLastVerb = new DesignerVerb("Move RichTextBox Last", OnMoveLast);
+                _deleteRichTextBoxVerb = new DesignerVerb("Delete RichTextBox", OnDeleteTextBox);
+                _verbs.AddRange(new[] { _toggleHelpersVerb, _moveFirstVerb, _movePrevVerb, 
                                                      _moveNextVerb, _moveLastVerb, _deleteRichTextBoxVerb });
             }
 
@@ -457,13 +453,13 @@ namespace ComponentFactory.Krypton.Ribbon
                 if (_cms == null)
                 {
                     _cms = new ContextMenuStrip();
-                    _toggleHelpersMenu = new ToolStripMenuItem("Design Helpers", null, new EventHandler(OnToggleHelpers));
-                    _visibleMenu = new ToolStripMenuItem("Visible", null, new EventHandler(OnVisible));
-                    _moveFirstMenu = new ToolStripMenuItem("Move RichTextBox First", ComponentFactory.Krypton.Design.Properties.Resources.MoveFirst, new EventHandler(OnMoveFirst));
-                    _movePreviousMenu = new ToolStripMenuItem("Move RichTextBox Previous", ComponentFactory.Krypton.Design.Properties.Resources.MovePrevious, new EventHandler(OnMovePrevious));
-                    _moveNextMenu = new ToolStripMenuItem("Move RichTextBox Next", ComponentFactory.Krypton.Design.Properties.Resources.MoveNext, new EventHandler(OnMoveNext));
-                    _moveLastMenu = new ToolStripMenuItem("Move RichTextBox Last", ComponentFactory.Krypton.Design.Properties.Resources.MoveLast, new EventHandler(OnMoveLast));
-                    _deleteRichTextBoxMenu = new ToolStripMenuItem("Delete RichTextBox", ComponentFactory.Krypton.Design.Properties.Resources.delete2, new EventHandler(OnDeleteTextBox));
+                    _toggleHelpersMenu = new ToolStripMenuItem("Design Helpers", null, OnToggleHelpers);
+                    _visibleMenu = new ToolStripMenuItem("Visible", null, OnVisible);
+                    _moveFirstMenu = new ToolStripMenuItem("Move RichTextBox First", Resources.MoveFirst, OnMoveFirst);
+                    _movePreviousMenu = new ToolStripMenuItem("Move RichTextBox Previous", Resources.MovePrevious, OnMovePrevious);
+                    _moveNextMenu = new ToolStripMenuItem("Move RichTextBox Next", Resources.MoveNext, OnMoveNext);
+                    _moveLastMenu = new ToolStripMenuItem("Move RichTextBox Last", Resources.MoveLast, OnMoveLast);
+                    _deleteRichTextBoxMenu = new ToolStripMenuItem("Delete RichTextBox", Resources.delete2, OnDeleteTextBox);
                     _cms.Items.AddRange(new ToolStripItem[] { _toggleHelpersMenu, new ToolStripSeparator(),
                                                               _visibleMenu, new ToolStripSeparator(),
                                                               _moveFirstMenu, _movePreviousMenu, _moveNextMenu, _moveLastMenu, new ToolStripSeparator(),
@@ -494,22 +490,19 @@ namespace ComponentFactory.Krypton.Ribbon
         {
             get
             {
-                if (_ribbonRichTextBox.RibbonContainer is KryptonRibbonGroupTriple)
+	            if (_ribbonRichTextBox.RibbonContainer is KryptonRibbonGroupTriple)
                 {
                     KryptonRibbonGroupTriple triple = (KryptonRibbonGroupTriple)_ribbonRichTextBox.RibbonContainer;
                     return triple.Items;
                 }
-                else if (_ribbonRichTextBox.RibbonContainer is KryptonRibbonGroupLines)
-                {
-                    KryptonRibbonGroupLines lines = (KryptonRibbonGroupLines)_ribbonRichTextBox.RibbonContainer;
-                    return lines.Items;
-                }
-                else
-                {
-                    // Should never happen!
-                    Debug.Assert(false);
-                    return null;
-                }
+	            if (_ribbonRichTextBox.RibbonContainer is KryptonRibbonGroupLines)
+	            {
+		            KryptonRibbonGroupLines lines = (KryptonRibbonGroupLines)_ribbonRichTextBox.RibbonContainer;
+		            return lines.Items;
+	            }
+	            // Should never happen!
+	            Debug.Assert(false);
+	            return null;
             }
         }
         #endregion

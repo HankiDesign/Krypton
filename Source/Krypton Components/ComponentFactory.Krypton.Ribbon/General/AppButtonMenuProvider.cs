@@ -22,25 +22,25 @@ namespace ComponentFactory.Krypton.Ribbon
     public class AppButtonMenuProvider : IContextMenuProvider
     {
         #region Instance Fields
-        private bool _enabled;
-        private bool _canCloseMenu;
-        private IPalette _palette;
-        private PaletteMode _paletteMode;
-        private PaletteRedirect _redirector;
-        private IContextMenuProvider _parent;
-        private ViewLayoutStack _viewColumns;
-        private NeedPaintHandler _needPaintDelegate;
-        private ViewContextMenuManager _viewManager;
+        private readonly bool _enabled;
+        private readonly bool _canCloseMenu;
+        private readonly IPalette _palette;
+        private readonly PaletteMode _paletteMode;
+        private readonly PaletteRedirect _redirector;
+        private readonly IContextMenuProvider _parent;
+        private readonly ViewLayoutStack _viewColumns;
+        private readonly NeedPaintHandler _needPaintDelegate;
+        private readonly ViewContextMenuManager _viewManager;
         private KryptonContextMenuPositionH _showHorz;
         private KryptonContextMenuPositionV _showVert;
-        private PaletteContextMenuRedirect _stateCommon;
-        private PaletteContextMenuItemState _stateDisabled;
-        private PaletteContextMenuItemState _stateNormal;
-        private PaletteRedirectContextMenu _redirectorImages;
-        private PaletteContextMenuItemStateHighlight _stateHighlight;
-        private PaletteContextMenuItemStateChecked _stateChecked;
+        private readonly PaletteContextMenuRedirect _stateCommon;
+        private readonly PaletteContextMenuItemState _stateDisabled;
+        private readonly PaletteContextMenuItemState _stateNormal;
+        private readonly PaletteRedirectContextMenu _redirectorImages;
+        private readonly PaletteContextMenuItemStateHighlight _stateHighlight;
+        private readonly PaletteContextMenuItemStateChecked _stateChecked;
         private Nullable<ToolStripDropDownCloseReason> _closeReason;
-        private KryptonContextMenuItemCollection _menuCollection;
+        private readonly KryptonContextMenuItemCollection _menuCollection;
         private ViewBase _fixedViewElement;
         #endregion
 

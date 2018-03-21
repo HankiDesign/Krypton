@@ -35,15 +35,15 @@ namespace ComponentFactory.Krypton.Toolkit
         private string _extraText;
         private Image _image;
         private Color _imageTransparentColor;
-        private PaletteContentInheritRedirect _stateCommonRedirect;
-        private PaletteContent _stateCommon;
-        private PaletteContent _stateDisabled;
-        private PaletteContent _stateNormal;
-        private PaletteContent _stateFocus;
-        private PaletteContentInheritOverride _overrideNormal;
-        private PaletteContentInheritOverride _overrideDisabled;
-        private PaletteRedirectRadioButton _stateRadioButtonImages;
-        private RadioButtonImages _images;
+        private readonly PaletteContentInheritRedirect _stateCommonRedirect;
+        private readonly PaletteContent _stateCommon;
+        private readonly PaletteContent _stateDisabled;
+        private readonly PaletteContent _stateNormal;
+        private readonly PaletteContent _stateFocus;
+        private readonly PaletteContentInheritOverride _overrideNormal;
+        private readonly PaletteContentInheritOverride _overrideDisabled;
+        private readonly PaletteRedirectRadioButton _stateRadioButtonImages;
+        private readonly RadioButtonImages _images;
         private LabelStyle _style;
         #endregion
 

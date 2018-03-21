@@ -16,7 +16,7 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class GridStyleConverter : StringLookupConverter
     {
         #region Static Fields
-        private Pair[] _pairs = new Pair[] { new Pair(GridStyle.List,       "List"),
+        private readonly Pair[] _pairs = new Pair[] { new Pair(GridStyle.List,       "List"),
                                              new Pair(GridStyle.Sheet,      "Sheet"),
                                              new Pair(GridStyle.Custom1,    "Custom1") };
         #endregion

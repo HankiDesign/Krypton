@@ -27,8 +27,8 @@ namespace ComponentFactory.Krypton.Ribbon
         #endregion
 
         #region Instance Fields
-        private KryptonRibbon _ribbon;
-        private NeedPaintHandler _needPaint;
+        private readonly KryptonRibbon _ribbon;
+        private readonly NeedPaintHandler _needPaint;
         private QATButtonToView _qatButtonToView;
         private ViewDrawRibbonQATExtraButton _extraButton;
         private bool _overflow;

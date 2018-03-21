@@ -18,7 +18,7 @@ namespace ComponentFactory.Krypton.Toolkit
     public class PaletteMonthCalendarStateRedirect : Storage
     {
         #region Instance Fields
-        private PaletteTripleRedirect _paletteDay;
+        private readonly PaletteTripleRedirect _paletteDay;
         #endregion
 
         #region Identity

@@ -40,7 +40,7 @@ namespace ComponentFactory.Krypton.Ribbon
         private Image _imageLarge;
         private string _keyTip;
         private NeedPaintHandler _viewPaintDelegate;
-        private KryptonGallery _gallery;
+        private readonly KryptonGallery _gallery;
         private KryptonGallery _lastGallery;
         private IKryptonDesignObject _designer;
         private Control _lastParentControl;

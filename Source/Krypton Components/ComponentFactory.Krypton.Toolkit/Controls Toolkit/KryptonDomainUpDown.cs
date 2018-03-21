@@ -37,7 +37,7 @@ namespace ComponentFactory.Krypton.Toolkit
         private class InternalDomainUpDown : DomainUpDown
         {
             #region Instance Fields
-            private KryptonDomainUpDown _kryptonDomainUpDown;
+            private readonly KryptonDomainUpDown _kryptonDomainUpDown;
             private bool _mouseOver;
             #endregion
 
@@ -289,8 +289,8 @@ namespace ComponentFactory.Krypton.Toolkit
         private class SubclassEdit : NativeWindow
         {
             #region Instance Fields
-            private KryptonDomainUpDown _kryptonDomainUpDown;
-            private InternalDomainUpDown _internalDomainUpDown;
+            private readonly KryptonDomainUpDown _kryptonDomainUpDown;
+            private readonly InternalDomainUpDown _internalDomainUpDown;
             private bool _mouseOver;
             private Point _mousePoint;
             #endregion
@@ -849,18 +849,18 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region Instance Fields
-        private ToolTipManager _toolTipManager;
+        private readonly ToolTipManager _toolTipManager;
         private VisualPopupToolTip _visualPopupToolTip;
-        private ButtonSpecManagerLayout _buttonManager;
-        private DomainUpDownButtonSpecCollection _buttonSpecs;
-        private PaletteInputControlTripleRedirect _stateCommon;
-        private PaletteInputControlTripleStates _stateDisabled;
-        private PaletteInputControlTripleStates _stateNormal;
-        private PaletteInputControlTripleStates _stateActive;
-        private ViewLayoutDocker _drawDockerInner;
-        private ViewDrawDocker _drawDockerOuter;
-        private ViewLayoutFill _layoutFill;
-        private InternalDomainUpDown _domainUpDown;
+        private readonly ButtonSpecManagerLayout _buttonManager;
+        private readonly DomainUpDownButtonSpecCollection _buttonSpecs;
+        private readonly PaletteInputControlTripleRedirect _stateCommon;
+        private readonly PaletteInputControlTripleStates _stateDisabled;
+        private readonly PaletteInputControlTripleStates _stateNormal;
+        private readonly PaletteInputControlTripleStates _stateActive;
+        private readonly ViewLayoutDocker _drawDockerInner;
+        private readonly ViewDrawDocker _drawDockerOuter;
+        private readonly ViewLayoutFill _layoutFill;
+        private readonly InternalDomainUpDown _domainUpDown;
         private InputControlStyle _inputControlStyle;
         private ButtonStyle _upDownButtonStyle;
         private SubclassEdit _subclassEdit;

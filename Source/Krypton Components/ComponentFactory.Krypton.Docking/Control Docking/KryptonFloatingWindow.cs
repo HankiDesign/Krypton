@@ -32,7 +32,7 @@ namespace ComponentFactory.Krypton.Docking
         #endregion
 
         #region Instance Fields
-        private KryptonFloatspace _floatspace;
+        private readonly KryptonFloatspace _floatspace;
         private IFloatingMessages _floatingMessages;
         #endregion
 

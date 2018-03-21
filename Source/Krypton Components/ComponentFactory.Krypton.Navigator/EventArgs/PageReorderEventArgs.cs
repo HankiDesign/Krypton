@@ -18,9 +18,9 @@ namespace ComponentFactory.Krypton.Navigator
     public class PageReorderEventArgs : CancelEventArgs
 	{
 		#region Instance Fields
-        private KryptonPage _pageMoving;
-        private KryptonPage _pageTarget;
-        private bool _movingBefore;
+        private readonly KryptonPage _pageMoving;
+        private readonly KryptonPage _pageTarget;
+        private readonly bool _movingBefore;
         #endregion
 
 		#region Identity

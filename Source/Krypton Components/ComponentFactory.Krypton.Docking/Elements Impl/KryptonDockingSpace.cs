@@ -30,7 +30,7 @@ namespace ComponentFactory.Krypton.Docking
         #region Instance Fields
         private KryptonStorePage _ignoreStorePage;
         private KryptonSpace _space;
-        private string _storeName;
+        private readonly string _storeName;
         private Size _loadSize;
         private int _order;
         #endregion

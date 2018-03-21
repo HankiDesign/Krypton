@@ -31,13 +31,13 @@ namespace ComponentFactory.Krypton.Ribbon
         #region Static Fields
         private static readonly int TAB_MINWIDTH = 32;
         private static readonly int TAB_EXCESS = 14;
-        private static ContextTabSetCollection _contextTabSets;
+        private static readonly ContextTabSetCollection _contextTabSets;
         #endregion
 
         #region Instance Fields
-        private KryptonRibbon _ribbon;
-        private ViewDrawRibbonTabList _tabCache;
-        private ViewDrawRibbonTabSepList _tabSepCache;
+        private readonly KryptonRibbon _ribbon;
+        private readonly ViewDrawRibbonTabList _tabCache;
+        private readonly ViewDrawRibbonTabSepList _tabSepCache;
         private ViewDrawRibbonDesignTab _viewAddTab;
         private ViewLayoutRibbonTabsSpare _tabsSpare;
         private NeedPaintHandler _needPaint;

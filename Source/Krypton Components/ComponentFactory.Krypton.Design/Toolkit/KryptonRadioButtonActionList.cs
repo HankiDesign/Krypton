@@ -8,16 +8,16 @@
 //  Version 4.4.0.0 	www.ComponentFactory.com
 // *****************************************************************************
 
-using System.Drawing;
 using System.ComponentModel.Design;
+using System.Drawing;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
     internal class KryptonRadioButtonActionList : DesignerActionList
     {
         #region Instance Fields
-        private KryptonRadioButton _radioButton;
-        private IComponentChangeService _service;
+        private readonly KryptonRadioButton _radioButton;
+        private readonly IComponentChangeService _service;
         #endregion
 
         #region Identity

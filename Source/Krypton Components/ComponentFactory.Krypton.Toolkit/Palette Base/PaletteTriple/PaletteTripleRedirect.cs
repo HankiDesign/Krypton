@@ -20,12 +20,12 @@ namespace ComponentFactory.Krypton.Toolkit
 										 IPaletteTriple
 	{
 		#region Instance Fields
-		private PaletteBack _back;
-		private PaletteBorder _border;
-		private PaletteContent _content;
-		private PaletteBackInheritRedirect _backInherit;
-		private PaletteBorderInheritRedirect _borderInherit;
-		private PaletteContentInheritRedirect _contentInherit;
+		private readonly PaletteBack _back;
+		private readonly PaletteBorder _border;
+		private readonly PaletteContent _content;
+		private readonly PaletteBackInheritRedirect _backInherit;
+		private readonly PaletteBorderInheritRedirect _borderInherit;
+		private readonly PaletteContentInheritRedirect _contentInherit;
 		#endregion
 
 		#region Identity

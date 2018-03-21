@@ -19,14 +19,14 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPaletteControls : Storage
     {
         #region Instance Fields
-        private KryptonPaletteControl _controlCommon;
-        private KryptonPaletteControl _controlClient;
-        private KryptonPaletteControl _controlAlternate;
-        private KryptonPaletteControl _controlGroupBox;
-        private KryptonPaletteControl _controlToolTip;
-        private KryptonPaletteControl _controlRibbon;
-        private KryptonPaletteControl _controlRibbonAppMenu;
-        private KryptonPaletteControl _controlCustom1;
+        private readonly KryptonPaletteControl _controlCommon;
+        private readonly KryptonPaletteControl _controlClient;
+        private readonly KryptonPaletteControl _controlAlternate;
+        private readonly KryptonPaletteControl _controlGroupBox;
+        private readonly KryptonPaletteControl _controlToolTip;
+        private readonly KryptonPaletteControl _controlRibbon;
+        private readonly KryptonPaletteControl _controlRibbonAppMenu;
+        private readonly KryptonPaletteControl _controlCustom1;
         #endregion
 
         #region Identity

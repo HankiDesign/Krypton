@@ -18,12 +18,12 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class ViewDrawMenuCheckButton : ViewComposite
     {
         #region Instance Fields
-        private IContextMenuProvider _provider;
-        private KryptonContextMenuCheckButton _checkButton;
-        private FixedContentValue _contentValues;
-        private ViewDrawButton _drawButton;
-        private ViewLayoutDocker _outerDocker;
-        private ViewLayoutDocker _innerDocker;
+        private readonly IContextMenuProvider _provider;
+        private readonly KryptonContextMenuCheckButton _checkButton;
+        private readonly FixedContentValue _contentValues;
+        private readonly ViewDrawButton _drawButton;
+        private readonly ViewLayoutDocker _outerDocker;
+        private readonly ViewLayoutDocker _innerDocker;
         private KryptonCommand _cachedCommand;
         private bool _itemEnabled;
         #endregion

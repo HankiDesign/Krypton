@@ -16,7 +16,7 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class ButtonStyleConverter : StringLookupConverter
     {
         #region Static Fields
-        private Pair[] _pairs = new Pair[] { new Pair(ButtonStyle.Standalone,           "Standalone"),
+        private readonly Pair[] _pairs = new Pair[] { new Pair(ButtonStyle.Standalone,           "Standalone"),
                                              new Pair(ButtonStyle.Alternate,            "Alternate"),
                                              new Pair(ButtonStyle.LowProfile,           "Low Profile"),
                                              new Pair(ButtonStyle.ButtonSpec,           "ButtonSpec"),

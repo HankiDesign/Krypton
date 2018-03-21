@@ -48,16 +48,16 @@ namespace ComponentFactory.Krypton.Ribbon
         #endregion
 
         #region Instance Fields
-        private KryptonRibbon _ribbon;
+        private readonly KryptonRibbon _ribbon;
         private Image _appButtonImage;
         private Image _appButtonToolTipImage;
         private string _appButtonToolTipTitle;
         private string _appButtonToolTipBody;
         private Color _appButtonToolTipImageTransparentColor;
-        private KryptonContextMenuItems _appButtonMenuItems;
-        private KryptonRibbonRecentDocCollection _appButtonRecentDocs;
+        private readonly KryptonContextMenuItems _appButtonMenuItems;
+        private readonly KryptonRibbonRecentDocCollection _appButtonRecentDocs;
         private LabelStyle _appButtonToolTipStyle;
-        private AppMenuButtonSpecCollection _appButtonSpecs;
+        private readonly AppMenuButtonSpecCollection _appButtonSpecs;
         private Size _appButtonMinRecentSize;
         private Size _appButtonMaxRecentSize;
         private bool _appButtonShowRecentDocs;

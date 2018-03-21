@@ -43,7 +43,7 @@ namespace ComponentFactory.Krypton.Ribbon
         #endregion
 
         #region Static Fields
-        private static HandleRef NullHandleRef = new HandleRef(null, IntPtr.Zero);
+        private static readonly HandleRef NullHandleRef = new HandleRef(null, IntPtr.Zero);
         private static readonly int BUTTON_TAB_GAP_2007 = 5;
         private static readonly int BUTTON_TAB_GAP_2010 = 0;
         private static readonly int FAR_TAB_GAP = 1;
@@ -51,8 +51,8 @@ namespace ComponentFactory.Krypton.Ribbon
         #endregion
 
         #region Instance Fields
-        private KryptonRibbon _ribbon;
-        private NeedPaintHandler _needPaintDelegate;
+        private readonly KryptonRibbon _ribbon;
+        private readonly NeedPaintHandler _needPaintDelegate;
         private ViewLayoutRibbonTabs _layoutRibbonTabs;
         private ViewLayoutRibbonScrollPort _tabsViewport;
         private ViewLayoutRibbonAppButton _layoutAppButton;
@@ -60,10 +60,10 @@ namespace ComponentFactory.Krypton.Ribbon
         private ViewLayoutSeparator _layoutAppButtonSep;
         private ViewLayoutRibbonSeparator _leftSeparator;
         private ViewLayoutRibbonSeparator _rightSeparator;
-        private ViewDrawRibbonCaptionArea _captionArea;
-        private ViewLayoutRibbonContextTitles _layoutContexts;
-        private AppButtonController _appButtonController;
-        private AppTabController _appTabController;
+        private readonly ViewDrawRibbonCaptionArea _captionArea;
+        private readonly ViewLayoutRibbonContextTitles _layoutContexts;
+        private readonly AppButtonController _appButtonController;
+        private readonly AppTabController _appTabController;
         private VisualPopupToolTip _visualPopupToolTip;
         private VisualPopupAppMenu _appMenu;
         private ToolTipManager _toolTipManager;

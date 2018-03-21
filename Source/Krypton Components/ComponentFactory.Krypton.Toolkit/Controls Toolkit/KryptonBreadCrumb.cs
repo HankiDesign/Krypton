@@ -55,19 +55,19 @@ namespace ComponentFactory.Krypton.Toolkit
         private bool _initialized;
         private bool _allowButtonSpecToolTips;
         private bool _dropDownNavigaton;
-        private ViewDrawDocker _drawDocker;
-        private PaletteBreadCrumbRedirect _stateCommon;
-        private PaletteBreadCrumbDoubleState _stateDisabled;
-        private PaletteBreadCrumbDoubleState _stateNormal;
-        private PaletteBreadCrumbState _stateTracking;
-        private PaletteBreadCrumbState _statePressed;
-        private BreadCrumbButtonSpecCollection _buttonSpecs;
-        private ButtonSpecManagerDraw _buttonManager;
+        private readonly ViewDrawDocker _drawDocker;
+        private readonly PaletteBreadCrumbRedirect _stateCommon;
+        private readonly PaletteBreadCrumbDoubleState _stateDisabled;
+        private readonly PaletteBreadCrumbDoubleState _stateNormal;
+        private readonly PaletteBreadCrumbState _stateTracking;
+        private readonly PaletteBreadCrumbState _statePressed;
+        private readonly BreadCrumbButtonSpecCollection _buttonSpecs;
+        private readonly ButtonSpecManagerDraw _buttonManager;
         private VisualPopupToolTip _visualPopupToolTip;
-        private ToolTipManager _toolTipManager;
-        private KryptonBreadCrumbItem _rootItem;
+        private readonly ToolTipManager _toolTipManager;
+        private readonly KryptonBreadCrumbItem _rootItem;
         private KryptonBreadCrumbItem _selectedItem;
-        private ViewLayoutCrumbs _layoutCrumbs;
+        private readonly ViewLayoutCrumbs _layoutCrumbs;
         private ButtonStyle _buttonStyle;
         #endregion
 

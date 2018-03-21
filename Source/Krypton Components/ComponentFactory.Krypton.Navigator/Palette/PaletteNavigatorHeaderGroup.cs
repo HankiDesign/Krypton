@@ -20,8 +20,8 @@ namespace ComponentFactory.Krypton.Navigator
     public class PaletteNavigatorHeaderGroup : PaletteHeaderGroup
 	{
 		#region Instance Fields
-        private PaletteTripleMetric _paletteHeaderBar;
-        private PaletteTripleMetric _paletteHeaderOverflow;
+        private readonly PaletteTripleMetric _paletteHeaderBar;
+        private readonly PaletteTripleMetric _paletteHeaderOverflow;
         #endregion
 
 		#region Identity

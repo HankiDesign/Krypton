@@ -36,19 +36,19 @@ namespace ComponentFactory.Krypton.Toolkit
         private LabelStyle _captionStyle;
 		private VisualOrientation _captionEdge;
         private ButtonOrientation _captionOrientation;
-		private CaptionValues _captionValues;
-        private ViewDrawGroupBoxDocker _drawDocker;
-        private ViewDrawContent _drawContent;
-        private ViewLayoutFill _layoutFill;
-        private KryptonGroupPanel _panel;
-        private PaletteGroupBoxRedirect _stateCommon;
-        private PaletteGroupBox _stateDisabled;
-        private PaletteGroupBox _stateNormal;
+		private readonly CaptionValues _captionValues;
+        private readonly ViewDrawGroupBoxDocker _drawDocker;
+        private readonly ViewDrawContent _drawContent;
+        private readonly ViewLayoutFill _layoutFill;
+        private readonly KryptonGroupPanel _panel;
+        private readonly PaletteGroupBoxRedirect _stateCommon;
+        private readonly PaletteGroupBox _stateDisabled;
+        private readonly PaletteGroupBox _stateNormal;
         private ScreenObscurer _obscurer;
-        private EventHandler _removeObscurer;
+        private readonly EventHandler _removeObscurer;
         private bool _forcedLayout;
         private bool _captionVisible;
-        private bool _ignoreLayout;
+        private readonly bool _ignoreLayout;
         private bool _layingOut;
         #endregion
 

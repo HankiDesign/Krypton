@@ -9,9 +9,9 @@
 // *****************************************************************************
 
 using System.Collections;
-using System.Drawing;
 using System.ComponentModel;
 using System.ComponentModel.Design;
+using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
@@ -48,8 +48,8 @@ namespace ComponentFactory.Krypton.Toolkit
             if (_comboBox != null)
             {
                 // Hook into combobox events
-                _comboBox.GetViewManager().MouseUpProcessed += new MouseEventHandler(OnComboBoxMouseUp);
-                _comboBox.GetViewManager().DoubleClickProcessed += new PointHandler(OnComboBoxDoubleClick);
+                _comboBox.GetViewManager().MouseUpProcessed += OnComboBoxMouseUp;
+                _comboBox.GetViewManager().DoubleClickProcessed += OnComboBoxDoubleClick;
             }
 
             // Get access to the design services
@@ -58,7 +58,7 @@ namespace ComponentFactory.Krypton.Toolkit
             _selectionService = (ISelectionService)GetService(typeof(ISelectionService));
 
             // We need to know when we are being removed
-            _changeService.ComponentRemoving += new ComponentEventHandler(OnComponentRemoving);
+            _changeService.ComponentRemoving += OnComponentRemoving;
         }
 
         /// <summary>
@@ -66,12 +66,11 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         public override ICollection AssociatedComponents
         {
-            get 
+            get
             {
-                if (_comboBox != null)
+	            if (_comboBox != null)
                     return _comboBox.ButtonSpecs;
-                else
-                    return base.AssociatedComponents;
+	            return base.AssociatedComponents;
             }
         }
 
@@ -113,7 +112,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <returns>true if a click at the specified point is to be handled by the control; otherwise, false.</returns>
         protected override bool GetHitTest(Point point)
         {
-            if (_comboBox != null)
+	        if (_comboBox != null)
             {
                 // Ask the control if it wants to process the point
                 bool ret = _comboBox.DesignerGetHitTest(_comboBox.PointToClient(point));
@@ -128,8 +127,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
                 return ret;
             }
-            else
-                return false;
+	        return false;
         }
 
         /// <summary>

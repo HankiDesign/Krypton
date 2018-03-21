@@ -22,8 +22,8 @@ namespace ComponentFactory.Krypton.Ribbon
                                                IContentValues
 	{
 		#region Instance Fields
-        private KryptonGallery _gallery;
-        private GalleryItemController _controller;
+        private readonly KryptonGallery _gallery;
+        private readonly GalleryItemController _controller;
         private ImageList _imageList;
         private Image _image;
         private int _imageIndex;

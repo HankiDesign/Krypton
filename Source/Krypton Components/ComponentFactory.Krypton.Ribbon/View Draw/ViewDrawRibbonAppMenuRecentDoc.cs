@@ -22,10 +22,10 @@ namespace ComponentFactory.Krypton.Ribbon
     internal class ViewDrawRibbonAppMenuRecentDec : ViewDrawCanvas
 	{
         #region Instance Fields
-        private int _maxWidth;
-        private string _shortcutText;
-        private IContextMenuProvider _provider;
-        private KryptonRibbonRecentDoc _recentDoc;
+        private readonly int _maxWidth;
+        private readonly string _shortcutText;
+        private readonly IContextMenuProvider _provider;
+        private readonly KryptonRibbonRecentDoc _recentDoc;
         #endregion
 
         #region Identity

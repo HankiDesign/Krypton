@@ -20,7 +20,7 @@ namespace ComponentFactory.Krypton.Workspace
     public class KryptonWorkspaceCollection : TypedRestrictCollection<Component>
     {
         #region Instance Fields
-        private KryptonWorkspaceSequence _sequence;
+        private readonly KryptonWorkspaceSequence _sequence;
         #endregion
 
         #region Static Fields

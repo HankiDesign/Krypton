@@ -34,9 +34,9 @@ namespace ComponentFactory.Krypton.Toolkit
             private FormatFragmentList _fragments;
             private String _inputDigits;
             private DateTime _dt;
-            private KryptonDateTimePicker _dateTimePicker;
-            private NeedPaintHandler _needPaint;
-            private ViewDrawDateTimeText _timeText;
+            private readonly KryptonDateTimePicker _dateTimePicker;
+            private readonly NeedPaintHandler _needPaint;
+            private readonly ViewDrawDateTimeText _timeText;
             #endregion
 
             #region Identity
@@ -783,8 +783,8 @@ namespace ComponentFactory.Krypton.Toolkit
         private class FormatFragment
         {
             #region Instance Fields
-            private string _fragment;
-            private string _fragFormat;
+            private readonly string _fragment;
+            private readonly string _fragFormat;
             private string _output;
             private int _totalWidth;
             #endregion
@@ -933,7 +933,7 @@ namespace ComponentFactory.Krypton.Toolkit
         private class FormatFragmentChar : FormatFragment
         {
             #region Instance Fields
-            private string _fragFormat;
+            private readonly string _fragFormat;
             #endregion
 
             #region Identity
@@ -1341,9 +1341,9 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region Instance Fields
-        private KryptonDateTimePicker _dateTimePicker;
-        private FormatHandler _formatHandler;
-        private NeedPaintHandler _needPaint;
+        private readonly KryptonDateTimePicker _dateTimePicker;
+        private readonly FormatHandler _formatHandler;
+        private readonly NeedPaintHandler _needPaint;
         #endregion
 
         #region Identity

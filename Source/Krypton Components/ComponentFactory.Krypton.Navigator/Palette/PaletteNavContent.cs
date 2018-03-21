@@ -61,9 +61,9 @@ namespace ComponentFactory.Krypton.Navigator
 
         #region Instance Fields
         private InternalStorage _storage;
-		private PaletteContentImage _image;
-		private PaletteNavContentText _shortText;
-		private PaletteNavContentText _longText;
+		private readonly PaletteContentImage _image;
+		private readonly PaletteNavContentText _shortText;
+		private readonly PaletteNavContentText _longText;
         private IPaletteContent _inherit;
         #endregion
 

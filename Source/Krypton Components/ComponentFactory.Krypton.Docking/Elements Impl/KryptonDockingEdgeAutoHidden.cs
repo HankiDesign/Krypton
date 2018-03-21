@@ -31,10 +31,10 @@ namespace ComponentFactory.Krypton.Docking
         #endregion
 
         #region Instance Fields
-        private Control _control;
-        private DockingEdge _edge;
-        private KryptonAutoHiddenPanel _panel;
-        private KryptonAutoHiddenSlidePanel _slidePanel;
+        private readonly Control _control;
+        private readonly DockingEdge _edge;
+        private readonly KryptonAutoHiddenPanel _panel;
+        private readonly KryptonAutoHiddenSlidePanel _slidePanel;
         private bool _panelEventFired;
         #endregion
 

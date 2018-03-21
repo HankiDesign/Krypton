@@ -19,8 +19,8 @@ namespace ComponentFactory.Krypton.Toolkit
 	public class ImageSelectEventArgs : EventArgs
 	{
 		#region Instance Fields
-        private ImageList _imageList;
-        private int _imageIndex;
+        private readonly ImageList _imageList;
+        private readonly int _imageIndex;
 		#endregion
 
 		#region Identity

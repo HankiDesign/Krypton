@@ -18,7 +18,7 @@ namespace ComponentFactory.Krypton.Toolkit
 	public class PaletteContextMenuItemStateChecked : Storage
 	{
 		#region Instance Fields
-        private PaletteTripleJustImage _paletteItemImage;
+        private readonly PaletteTripleJustImage _paletteItemImage;
         #endregion
 
 		#region Identity

@@ -35,10 +35,10 @@ namespace ComponentFactory.Krypton.Workspace
         #region Instance Fields
         private IWorkspaceItem _parent;
         private KryptonWorkspace _workspace;
-        private KryptonWorkspaceCollection _children;
+        private readonly KryptonWorkspaceCollection _children;
         private Orientation _orientation;
         private bool _setVisible;
-        private StarSize _starSize;
+        private readonly StarSize _starSize;
         private Size _actualSize;
         private string _uniqueName;
         #endregion

@@ -31,18 +31,18 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region Instance Fields
-        private IContextMenuProvider _provider;
-        private IKryptonMonthCalendar _calendar;
-        private ViewDrawDocker _drawHeader;
-        private PaletteBorderInheritForced _borderForced;
-        private MonthCalendarButtonSpecCollection _buttonSpecs;
-        private ButtonSpecManagerDraw _buttonManager;
+        private readonly IContextMenuProvider _provider;
+        private readonly IKryptonMonthCalendar _calendar;
+        private readonly ViewDrawDocker _drawHeader;
+        private readonly PaletteBorderInheritForced _borderForced;
+        private readonly MonthCalendarButtonSpecCollection _buttonSpecs;
+        private readonly ButtonSpecManagerDraw _buttonManager;
         private VisualPopupToolTip _visualPopupToolTip;
-        private ViewDrawToday _drawToday;
-        private ButtonSpecRemapByContentView _remapPalette;
-        private ViewDrawEmptyContent _emptyContent;
-        private PaletteTripleRedirect _palette;
-        private ToolTipManager _toolTipManager;
+        private readonly ViewDrawToday _drawToday;
+        private readonly ButtonSpecRemapByContentView _remapPalette;
+        private readonly ViewDrawEmptyContent _emptyContent;
+        private readonly PaletteTripleRedirect _palette;
+        private readonly ToolTipManager _toolTipManager;
         private CultureInfo _lastCultureInfo;
         private DateTime _displayMonth;
         private DayOfWeek _displayDayOfWeek;
@@ -57,8 +57,8 @@ namespace ComponentFactory.Krypton.Toolkit
         private DateTime? _oldFocusDay;
         private DateTime? _trackingDay;
         private DateTime? _anchorDay;
-        private NeedPaintHandler _needPaintDelegate;
-        private PaletteRedirect _redirector;
+        private readonly NeedPaintHandler _needPaintDelegate;
+        private readonly PaletteRedirect _redirector;
         private bool _showWeekNumbers;
         private bool _showTodayCircle;
         private bool _showToday;

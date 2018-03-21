@@ -33,14 +33,14 @@ namespace ComponentFactory.Krypton.Toolkit
     {
         #region Instance Fields
         private SeparatorStyle _style;
-        private ViewDrawDocker _drawDocker;
-        private ViewDrawSeparator _drawSeparator;
-        private SeparatorController _separatorController;
-        private PaletteSplitContainerRedirect _stateCommon;
-        private PaletteSplitContainer _stateDisabled;
-        private PaletteSplitContainer _stateNormal;
-        private PaletteSeparatorPadding _stateTracking;
-        private PaletteSeparatorPadding _statePressed;
+        private readonly ViewDrawDocker _drawDocker;
+        private readonly ViewDrawSeparator _drawSeparator;
+        private readonly SeparatorController _separatorController;
+        private readonly PaletteSplitContainerRedirect _stateCommon;
+        private readonly PaletteSplitContainer _stateDisabled;
+        private readonly PaletteSplitContainer _stateNormal;
+        private readonly PaletteSeparatorPadding _stateTracking;
+        private readonly PaletteSeparatorPadding _statePressed;
         private Orientation _orientation;
         private Timer _redrawTimer;
         private Point _designLastPt;

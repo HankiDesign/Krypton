@@ -19,8 +19,8 @@ namespace ComponentFactory.Krypton.Toolkit
 	public class NeedLayoutEventArgs : EventArgs
 	{
 		#region Instance Fields
-		private bool _needLayout;
-        private Rectangle _invalidRect;
+		private readonly bool _needLayout;
+        private readonly Rectangle _invalidRect;
 		#endregion
 
 		#region Identity

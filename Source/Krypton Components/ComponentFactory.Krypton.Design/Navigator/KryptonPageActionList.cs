@@ -8,16 +8,16 @@
 //  Version 4.4.0.0 	www.ComponentFactory.com
 // *****************************************************************************
 
-using System.Drawing;
 using System.ComponentModel.Design;
+using System.Drawing;
 
 namespace ComponentFactory.Krypton.Navigator
 {
     internal class KryptonPageActionList : DesignerActionList
     {
         #region Instance Fields
-        private KryptonPage _page;
-        private IComponentChangeService _serviceComponentChange;
+        private readonly KryptonPage _page;
+        private readonly IComponentChangeService _serviceComponentChange;
         private DesignerActionItemCollection _actions;
         #endregion
 

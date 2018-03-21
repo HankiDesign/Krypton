@@ -19,26 +19,26 @@ namespace ComponentFactory.Krypton.Toolkit
 	internal class ViewDrawMenuItem : ViewDrawCanvas
     {
         #region Static Fields
-        private static Image _empty16x16;
+        private static readonly Image _empty16x16;
         #endregion
 
         #region Instance Fields
-        private IContextMenuProvider _provider;
-        private KryptonContextMenuItem _menuItem;
-        private ViewDrawMenuImageCanvas _imageCanvas;
-        private ViewDrawMenuSeparator _splitSeparator;
-        private ViewDrawContent _imageContent;
-        private ViewDrawMenuItemContent _textContent;
-        private FixedContentValue _fixedImage;
+        private readonly IContextMenuProvider _provider;
+        private readonly KryptonContextMenuItem _menuItem;
+        private readonly ViewDrawMenuImageCanvas _imageCanvas;
+        private readonly ViewDrawMenuSeparator _splitSeparator;
+        private readonly ViewDrawContent _imageContent;
+        private readonly ViewDrawMenuItemContent _textContent;
+        private readonly FixedContentValue _fixedImage;
         private VisualContextMenu _contextMenu;
-        private ViewDrawMenuItemContent _shortcutContent;
-        private ViewDrawMenuItemContent _subMenuContent;
-        private FixedContentValue _fixedTextExtraText;
+        private readonly ViewDrawMenuItemContent _shortcutContent;
+        private readonly ViewDrawMenuItemContent _subMenuContent;
+        private readonly FixedContentValue _fixedTextExtraText;
         private KryptonCommand _cachedCommand;
-        private bool _imageColumn;
+        private readonly bool _imageColumn;
         private bool _standardStyle;
         private bool _itemEnabled;
-        private bool _hasSubMenu;
+        private readonly bool _hasSubMenu;
         #endregion
 
         #region Identity

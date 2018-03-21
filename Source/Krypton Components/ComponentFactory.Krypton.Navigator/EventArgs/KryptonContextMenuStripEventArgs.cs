@@ -18,7 +18,7 @@ namespace ComponentFactory.Krypton.Navigator
     public class KryptonContextMenuEventArgs : KryptonPageEventArgs
 	{
 		#region Instance Fields
-        private KryptonContextMenu _contextMenu;
+        private readonly KryptonContextMenu _contextMenu;
 		#endregion
 
 		#region Identity

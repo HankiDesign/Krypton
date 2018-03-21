@@ -19,9 +19,9 @@ namespace ComponentFactory.Krypton.Docking
 	public class DockableWorkspaceCellEventArgs : EventArgs
 	{
 		#region Instance Fields
-        private KryptonDockableWorkspace _workspace;
-        private KryptonDockingWorkspace _element;
-        private KryptonWorkspaceCell _cell;
+        private readonly KryptonDockableWorkspace _workspace;
+        private readonly KryptonDockingWorkspace _element;
+        private readonly KryptonWorkspaceCell _cell;
         #endregion
 		
         #region Identity

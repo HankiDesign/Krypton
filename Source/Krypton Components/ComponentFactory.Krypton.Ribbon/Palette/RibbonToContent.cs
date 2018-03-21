@@ -18,7 +18,7 @@ namespace ComponentFactory.Krypton.Ribbon
     internal class RibbonToContent : IPaletteContent
     {
         #region Instance Fields
-        private PaletteRibbonGeneral _ribbonGeneral;
+        private readonly PaletteRibbonGeneral _ribbonGeneral;
         #endregion
 
         #region Identity

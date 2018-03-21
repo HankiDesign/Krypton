@@ -20,10 +20,10 @@ namespace ComponentFactory.Krypton.Navigator
 	public class PageDragCancelEventArgs : CancelEventArgs
 	{
 		#region Instance Fields
-        private Point _screenPoint;
-        private Point _elementOffset;
-        private Control _c;
-        private KryptonPageCollection _pages;
+        private readonly Point _screenPoint;
+        private readonly Point _elementOffset;
+        private readonly Control _c;
+        private readonly KryptonPageCollection _pages;
         #endregion
 
 		#region Identity

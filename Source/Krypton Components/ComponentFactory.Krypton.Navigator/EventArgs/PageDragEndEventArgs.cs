@@ -18,8 +18,8 @@ namespace ComponentFactory.Krypton.Navigator
 	public class PageDragEndEventArgs : EventArgs
 	{
 		#region Instance Fields
-        private bool _dropped;
-        private KryptonPageCollection _pages;
+        private readonly bool _dropped;
+        private readonly KryptonPageCollection _pages;
 		#endregion
 
 		#region Identity

@@ -8,9 +8,9 @@
 //  Version 4.4.0.0 	www.ComponentFactory.com
 // *****************************************************************************
 
+using System.ComponentModel.Design;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.ComponentModel.Design;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 

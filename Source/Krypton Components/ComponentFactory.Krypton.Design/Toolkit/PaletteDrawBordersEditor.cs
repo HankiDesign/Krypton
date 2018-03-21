@@ -9,8 +9,8 @@
 // *****************************************************************************
 
 using System;
-using System.Drawing.Design;
 using System.ComponentModel;
+using System.Drawing.Design;
 using System.Windows.Forms.Design;
 
 namespace ComponentFactory.Krypton.Toolkit
@@ -24,11 +24,10 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <returns>UITypeEditorEditStyle value.</returns>
         public override UITypeEditorEditStyle GetEditStyle(ITypeDescriptorContext context)
         {
-            // We show a drop down for editing the PaletteDrawBorders value.
+	        // We show a drop down for editing the PaletteDrawBorders value.
             if ((context != null) && (context.Instance != null))
                 return UITypeEditorEditStyle.DropDown;
-            else
-                return base.GetEditStyle(context);
+	        return base.GetEditStyle(context);
         }
 
         /// <summary>

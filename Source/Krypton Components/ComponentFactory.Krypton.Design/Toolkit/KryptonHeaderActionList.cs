@@ -8,16 +8,16 @@
 //  Version 4.4.0.0 	www.ComponentFactory.com
 // *****************************************************************************
 
-using System.Drawing;
 using System.ComponentModel.Design;
+using System.Drawing;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
     internal class KryptonHeaderActionList : DesignerActionList
     {
         #region Instance Fields
-        private KryptonHeader _header;
-        private IComponentChangeService _service;
+        private readonly KryptonHeader _header;
+        private readonly IComponentChangeService _service;
         #endregion
 
         #region Identity

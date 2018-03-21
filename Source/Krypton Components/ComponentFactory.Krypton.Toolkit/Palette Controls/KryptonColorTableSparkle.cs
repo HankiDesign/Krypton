@@ -30,9 +30,9 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region Instance Fields
-        private Color[] _colors;
-        private Color[] _sparkleColors;
-        private InheritBool _roundedEdges;
+        private readonly Color[] _colors;
+        private readonly Color[] _sparkleColors;
+        private readonly InheritBool _roundedEdges;
         #endregion
 
         #region Identity

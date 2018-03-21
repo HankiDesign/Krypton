@@ -18,7 +18,7 @@ namespace ComponentFactory.Krypton.Toolkit
 	public class PaletteSplitContainerRedirect : PaletteDoubleRedirect
 	{
 		#region Instance Fields
-        private PaletteSeparatorPaddingRedirect _separator;
+        private readonly PaletteSeparatorPaddingRedirect _separator;
 		#endregion
 
 		#region Identity

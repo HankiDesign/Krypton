@@ -18,7 +18,7 @@ namespace ComponentFactory.Krypton.Toolkit
 	public class DateTimePickerDropArgs : CancelEventArgs
 	{
 		#region Instance Fields
-        private KryptonContextMenu _kcm;
+        private readonly KryptonContextMenu _kcm;
         private KryptonContextMenuPositionH _positionH;
         private KryptonContextMenuPositionV _positionV;
         #endregion

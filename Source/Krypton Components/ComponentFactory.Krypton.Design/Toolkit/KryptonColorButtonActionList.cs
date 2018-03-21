@@ -8,16 +8,16 @@
 //  Version 4.4.0.0 	www.ComponentFactory.com
 // *****************************************************************************
 
-using System.Drawing;
 using System.ComponentModel.Design;
+using System.Drawing;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
     internal class KryptonColorButtonActionList : DesignerActionList
     {
         #region Instance Fields
-        private KryptonColorButton _colorButton;
-        private IComponentChangeService _service;
+        private readonly KryptonColorButton _colorButton;
+        private readonly IComponentChangeService _service;
         #endregion
 
         #region Identity

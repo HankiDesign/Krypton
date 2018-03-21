@@ -20,19 +20,19 @@ namespace ComponentFactory.Krypton.Navigator
     public class PaletteNavigatorRedirect : PaletteDoubleMetricRedirect
 	{
         #region Instance Fields
-        private PalettePageRedirect _palettePageRedirect;
-        private PaletteNavigatorHeaderGroupRedirect _paletteHeaderGroupRedirect;
-        private PaletteTripleRedirect _paletteCheckButton;
-        private PaletteTripleRedirect _paletteOverflowButton;
-        private PaletteTripleRedirect _paletteMiniButton;
-        private PaletteTabTripleRedirect _paletteTab;
-        private PaletteBarRedirect _paletteBarRedirect;
-        private PaletteBorderInheritRedirect _paletteBorderEdgeInheritRedirect;
-        private PaletteBorderEdgeRedirect _paletteBorderEdgeRedirect;
-        private PaletteSeparatorPaddingRedirect _paletteSeparator;
-        private PaletteRibbonTabContentRedirect _paletteRibbonTab;
-        private PaletteRibbonGeneralNavRedirect _paletteRibbonGeneral;
-        private PaletteMetrics _paletteMetrics;
+        private readonly PalettePageRedirect _palettePageRedirect;
+        private readonly PaletteNavigatorHeaderGroupRedirect _paletteHeaderGroupRedirect;
+        private readonly PaletteTripleRedirect _paletteCheckButton;
+        private readonly PaletteTripleRedirect _paletteOverflowButton;
+        private readonly PaletteTripleRedirect _paletteMiniButton;
+        private readonly PaletteTabTripleRedirect _paletteTab;
+        private readonly PaletteBarRedirect _paletteBarRedirect;
+        private readonly PaletteBorderInheritRedirect _paletteBorderEdgeInheritRedirect;
+        private readonly PaletteBorderEdgeRedirect _paletteBorderEdgeRedirect;
+        private readonly PaletteSeparatorPaddingRedirect _paletteSeparator;
+        private readonly PaletteRibbonTabContentRedirect _paletteRibbonTab;
+        private readonly PaletteRibbonGeneralNavRedirect _paletteRibbonGeneral;
+        private readonly PaletteMetrics _paletteMetrics;
         #endregion
 
 		#region Identity

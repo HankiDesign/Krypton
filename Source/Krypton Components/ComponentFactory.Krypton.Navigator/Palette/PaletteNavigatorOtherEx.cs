@@ -19,7 +19,7 @@ namespace ComponentFactory.Krypton.Navigator
     public class PaletteNavigatorOtherEx : PaletteNavigatorOther
     {
         #region Instance Fields
-        private PaletteSeparatorPadding _paletteSeparator;
+        private readonly PaletteSeparatorPadding _paletteSeparator;
         #endregion
 
         #region Identity

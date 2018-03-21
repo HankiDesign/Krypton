@@ -16,7 +16,7 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class TabBorderStyleConverter : StringLookupConverter
     {
         #region Static Fields
-        private Pair[] _pairs = new Pair[] { new Pair(TabBorderStyle.OneNote,               "OneNote"),
+        private readonly Pair[] _pairs = new Pair[] { new Pair(TabBorderStyle.OneNote,               "OneNote"),
                                              new Pair(TabBorderStyle.SquareEqualSmall,      "Square Equal Small"),
                                              new Pair(TabBorderStyle.SquareEqualMedium,     "Square Equal Medium"),
                                              new Pair(TabBorderStyle.SquareEqualLarge,      "Square Equal Large"),

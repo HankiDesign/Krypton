@@ -10,12 +10,12 @@
 
 using System;
 using System.Collections;
-using System.Drawing;
 using System.ComponentModel;
 using System.ComponentModel.Design;
+using System.Diagnostics;
+using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
-using System.Diagnostics;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -39,11 +39,11 @@ namespace ComponentFactory.Krypton.Toolkit
             if (_headerGroup != null)
             {
                 // Unhook from events
-                _headerGroup.GetViewManager().MouseUpProcessed -= new MouseEventHandler(OnHeaderGroupMouseUp);
-                _headerGroup.GetViewManager().DoubleClickProcessed -= new PointHandler(OnHeaderGroupDoubleClick);
+                _headerGroup.GetViewManager().MouseUpProcessed -= OnHeaderGroupMouseUp;
+                _headerGroup.GetViewManager().DoubleClickProcessed -= OnHeaderGroupDoubleClick;
             }
 
-            _changeService.ComponentRemoving -= new ComponentEventHandler(OnComponentRemoving);
+            _changeService.ComponentRemoving -= OnComponentRemoving;
 
             // Must let base class do standard stuff
             base.Dispose(disposing);
@@ -71,8 +71,8 @@ namespace ComponentFactory.Krypton.Toolkit
             if (_headerGroup != null)
             {
                 // Hook into header event
-                _headerGroup.GetViewManager().MouseUpProcessed += new MouseEventHandler(OnHeaderGroupMouseUp);
-                _headerGroup.GetViewManager().DoubleClickProcessed += new PointHandler(OnHeaderGroupDoubleClick);
+                _headerGroup.GetViewManager().MouseUpProcessed += OnHeaderGroupMouseUp;
+                _headerGroup.GetViewManager().DoubleClickProcessed += OnHeaderGroupDoubleClick;
             }
 
             // The resizing handles around the control need to change depending on the
@@ -86,7 +86,7 @@ namespace ComponentFactory.Krypton.Toolkit
             _selectionService = (ISelectionService)GetService(typeof(ISelectionService));
 
             // We need to know when we are being removed
-            _changeService.ComponentRemoving += new ComponentEventHandler(OnComponentRemoving);
+            _changeService.ComponentRemoving += OnComponentRemoving;
 
             // Let the internal panel in the container be designable
             if (_headerGroup != null)
@@ -106,16 +106,13 @@ namespace ComponentFactory.Krypton.Toolkit
                 // If no button specs then nothing more to do
                 if ((_headerGroup == null) || (_headerGroup.ButtonSpecs.Count == 0))
                     return baseComponents;
-                else
-                {
-                    // Create a new collection for both values
-                    ArrayList compound = new ArrayList(baseComponents);
+	            // Create a new collection for both values
+	            ArrayList compound = new ArrayList(baseComponents);
 
-                    // Add all the button specs to the end
-                    compound.AddRange(_headerGroup.ButtonSpecs);
+	            // Add all the button specs to the end
+	            compound.AddRange(_headerGroup.ButtonSpecs);
 
-                    return compound;
-                }
+	            return compound;
             }
         }
 
@@ -137,11 +134,10 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <returns>A ControlDesigner at the specified index.</returns>
         public override ControlDesigner InternalControlDesigner(int internalControlIndex)
         {
-            // Get the control designer for the requested indexed child control
+	        // Get the control designer for the requested indexed child control
             if ((_headerGroup != null) && (internalControlIndex == 0))
                 return (ControlDesigner)_designerHost.GetDesigner(_headerGroup.Panel);
-            else
-                return null;
+	        return null;
         }
 
         /// <summary>
@@ -150,10 +146,9 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <returns>The number of internal control designers in the ControlDesigner.</returns>
         public override int NumberOfInternalControlDesigners()
         {
-            if (_headerGroup != null)
+	        if (_headerGroup != null)
                 return 1;
-            else
-                return 0;
+	        return 0;
         }
 
         /// <summary>
@@ -182,7 +177,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <returns>true if a click at the specified point is to be handled by the control; otherwise, false.</returns>
         protected override bool GetHitTest(Point point)
         {
-            if (_headerGroup != null)
+	        if (_headerGroup != null)
             {
                 // Ask the control if it wants to process the point
                 bool ret = _headerGroup.DesignerGetHitTest(_headerGroup.PointToClient(point));
@@ -197,8 +192,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
                 return ret;
             }
-            else
-                return false;
+	        return false;
         }
 
         /// <summary>

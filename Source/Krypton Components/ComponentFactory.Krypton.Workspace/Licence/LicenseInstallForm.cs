@@ -26,7 +26,7 @@ namespace ComponentFactory.Krypton.Workspace
         private KryptonLabel _keyLabel;
         private KryptonTextBox _keyText;
         private EncryptedLicense _license;
-        private System.ComponentModel.Container components = null;
+        private readonly System.ComponentModel.Container components = null;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanelTop;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel labelTopHeader;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanelBottom;
@@ -507,9 +507,9 @@ namespace ComponentFactory.Krypton.Workspace
     {
         #region Member Variables
 
-        private string _key;
-        private UInt16 _serialNo;
-        private string _productInfo;
+        private readonly string _key;
+        private readonly UInt16 _serialNo;
+        private readonly string _productInfo;
 
         #endregion
 
@@ -691,8 +691,8 @@ namespace ComponentFactory.Krypton.Workspace
         private static byte[] _designSignature;
         private static byte[] _runtimeSignature;
 
-        private static byte[] _desKey = new byte[] { 0x92, 0x15, 0x38, 0xA1, 0x12, 0xED, 0xB3, 0xC2 };
-        private static byte[] _desIV = new byte[] { 0xAD, 0x3F, 0xC6, 0x11, 0x47, 0x90, 0xDD, 0xA1 };
+        private static readonly byte[] _desKey = new byte[] { 0x92, 0x15, 0x38, 0xA1, 0x12, 0xED, 0xB3, 0xC2 };
+        private static readonly byte[] _desIV = new byte[] { 0xAD, 0x3F, 0xC6, 0x11, 0x47, 0x90, 0xDD, 0xA1 };
 
         private const int keyLength = 7;
 
@@ -1417,17 +1417,17 @@ namespace ComponentFactory.Krypton.Workspace
     {
         #region Member Variables
 
-        private byte[] _productData;
+        private readonly byte[] _productData;
         private int _usageCount = 0;
         private DateTime _firstUseDate = DateTime.MinValue;
         private DateTime _lastUseDate = DateTime.MinValue;
         private bool _invalid = false;
 
-        private RegistryKey _rootKey;
+        private readonly RegistryKey _rootKey;
         private RegistryKey _baseKey;
-        private string _usageKeyName;
-        private string _firstUseKeyName;
-        private string _lastUseKeyName;
+        private readonly string _usageKeyName;
+        private readonly string _firstUseKeyName;
+        private readonly string _lastUseKeyName;
 
         // Sub field names for saving data.  Designed to
         // blend in with their surroundings
@@ -1442,8 +1442,8 @@ namespace ComponentFactory.Krypton.Workspace
 
         // parameters for encrypting evaluation data
         //
-        private static byte[] _desKey = new byte[] { 0x12, 0x75, 0xA8, 0xF1, 0x32, 0xED, 0x13, 0xF2 };
-        private static byte[] _desIV = new byte[] { 0xA3, 0xEF, 0xD6, 0x21, 0x37, 0x80, 0xCC, 0xB1 };
+        private static readonly byte[] _desKey = new byte[] { 0x12, 0x75, 0xA8, 0xF1, 0x32, 0xED, 0x13, 0xF2 };
+        private static readonly byte[] _desIV = new byte[] { 0xA3, 0xEF, 0xD6, 0x21, 0x37, 0x80, 0xCC, 0xB1 };
 
 
         #endregion

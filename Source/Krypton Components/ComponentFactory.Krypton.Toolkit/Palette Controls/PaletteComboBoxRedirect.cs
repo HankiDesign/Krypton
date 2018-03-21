@@ -19,9 +19,9 @@ namespace ComponentFactory.Krypton.Toolkit
 	public class PaletteComboBoxRedirect : Storage
 	{
 		#region Instance Fields
-        private PaletteDoubleRedirect _dropBackRedirect;
-        private PaletteTripleRedirect _itemRedirect;
-        private PaletteInputControlTripleRedirect _comboBoxRedirect;
+        private readonly PaletteDoubleRedirect _dropBackRedirect;
+        private readonly PaletteTripleRedirect _itemRedirect;
+        private readonly PaletteInputControlTripleRedirect _comboBoxRedirect;
 		#endregion
 
 		#region Identity

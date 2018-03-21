@@ -34,22 +34,22 @@ namespace ComponentFactory.Krypton.Toolkit
 	{
 		#region Instance Fields
 		private LabelStyle _style;
-		private LabelValues _labelValues;
+		private readonly LabelValues _labelValues;
         private VisualOrientation _orientation;
-        private CheckBoxController _controller;
-        private ViewLayoutDocker _layoutDocker;
-        private ViewLayoutCenter _layoutCenter;
-        private ViewDrawCheckBox _drawCheckBox;
-        private ViewDrawContent _drawContent;
-		private PaletteContentInheritRedirect _paletteCommonRedirect;
-        private PaletteRedirectCheckBox _paletteCheckBoxImages;
-        private PaletteContent _stateCommon;
-        private PaletteContent _stateDisabled;
-		private PaletteContent _stateNormal;
-        private PaletteContent _stateFocus;
-        private PaletteContentInheritOverride _overrideNormal;
+        private readonly CheckBoxController _controller;
+        private readonly ViewLayoutDocker _layoutDocker;
+        private readonly ViewLayoutCenter _layoutCenter;
+        private readonly ViewDrawCheckBox _drawCheckBox;
+        private readonly ViewDrawContent _drawContent;
+		private readonly PaletteContentInheritRedirect _paletteCommonRedirect;
+        private readonly PaletteRedirectCheckBox _paletteCheckBoxImages;
+        private readonly PaletteContent _stateCommon;
+        private readonly PaletteContent _stateDisabled;
+		private readonly PaletteContent _stateNormal;
+        private readonly PaletteContent _stateFocus;
+        private readonly PaletteContentInheritOverride _overrideNormal;
         private KryptonCommand _command;
-        private CheckBoxImages _images;
+        private readonly CheckBoxImages _images;
         private VisualOrientation _checkPosition;
         private CheckState _checkState;
         private CheckState _wasCheckState;

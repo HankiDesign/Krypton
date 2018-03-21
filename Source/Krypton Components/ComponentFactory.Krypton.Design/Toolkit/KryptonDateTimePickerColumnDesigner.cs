@@ -45,10 +45,9 @@ namespace ComponentFactory.Krypton.Toolkit
         {
             get
             {
-                if (_dateTimePicker != null)
+	            if (_dateTimePicker != null)
                     return _dateTimePicker.ButtonSpecs;
-                else
-                    return base.AssociatedComponents;
+	            return base.AssociatedComponents;
             }
         }
         #endregion

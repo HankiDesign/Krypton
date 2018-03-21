@@ -38,7 +38,7 @@ namespace ComponentFactory.Krypton.Toolkit
         private int _trackingIndex;
         private int _cacheTrackingIndex;
         private int _eventTrackingIndex;
-        private Timer _trackingEventTimer;
+        private readonly Timer _trackingEventTimer;
         #endregion
 
         #region Events

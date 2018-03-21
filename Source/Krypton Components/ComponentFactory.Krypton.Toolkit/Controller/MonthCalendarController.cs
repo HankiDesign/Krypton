@@ -26,10 +26,10 @@ namespace ComponentFactory.Krypton.Toolkit
                                            IContextMenuTarget
     {
         #region Instance Fields
-        private KryptonContextMenuMonthCalendar _monthCalendar;
-        private ViewContextMenuManager _viewManager;
-        private ViewLayoutMonths _months;
-        private NeedPaintHandler _needPaint;
+        private readonly KryptonContextMenuMonthCalendar _monthCalendar;
+        private readonly ViewContextMenuManager _viewManager;
+        private readonly ViewLayoutMonths _months;
+        private readonly NeedPaintHandler _needPaint;
         private DateTime _selectionStart;
         private bool _mouseOver;
         private bool _captured;

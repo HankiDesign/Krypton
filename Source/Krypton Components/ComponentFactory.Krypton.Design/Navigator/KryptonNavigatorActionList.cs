@@ -749,9 +749,9 @@ namespace ComponentFactory.Krypton.Navigator
             _headerSecondaryText = (headerSecondaryVisible ? "Hide secondary header" : "Show secondary header");
 
             // Create the two verbs for toggling the header visibility
-            _headerBarVisible = new DesignerVerb(_headerBarText, new EventHandler(OnVisibleClick));
-            _headerPrimaryVisible = new DesignerVerb(_headerPrimaryText, new EventHandler(OnVisibleClick));
-            _headerSecondaryVisible = new DesignerVerb(_headerSecondaryText, new EventHandler(OnVisibleClick));
+            _headerBarVisible = new DesignerVerb(_headerBarText, OnVisibleClick);
+            _headerPrimaryVisible = new DesignerVerb(_headerPrimaryText, OnVisibleClick);
+            _headerSecondaryVisible = new DesignerVerb(_headerSecondaryText, OnVisibleClick);
 
             actions.Add(new DesignerActionHeaderItem("Header"));
 

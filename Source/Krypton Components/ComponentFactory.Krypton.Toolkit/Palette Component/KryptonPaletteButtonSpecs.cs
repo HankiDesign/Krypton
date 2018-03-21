@@ -20,30 +20,30 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPaletteButtonSpecs : Storage
     {
         #region Instance Fields
-        private KryptonPaletteButtonSpecTyped _common;
-        private KryptonPaletteButtonSpecTyped _close;
-        private KryptonPaletteButtonSpecTyped _context;
-        private KryptonPaletteButtonSpecTyped _next;
-        private KryptonPaletteButtonSpecTyped _previous;
-        private KryptonPaletteButtonSpecTyped _generic;
-        private KryptonPaletteButtonSpecTyped _arrowLeft;
-        private KryptonPaletteButtonSpecTyped _arrowRight;
-        private KryptonPaletteButtonSpecTyped _arrowUp;
-        private KryptonPaletteButtonSpecTyped _arrowDown;
-        private KryptonPaletteButtonSpecTyped _dropDown;
-        private KryptonPaletteButtonSpecTyped _pinVertical;
-        private KryptonPaletteButtonSpecTyped _pinHorizontal;
-        private KryptonPaletteButtonSpecTyped _formClose;
-        private KryptonPaletteButtonSpecTyped _formMax;
-        private KryptonPaletteButtonSpecTyped _formMin;
-        private KryptonPaletteButtonSpecTyped _formRestore;
-        private KryptonPaletteButtonSpecTyped _pendantClose;
-        private KryptonPaletteButtonSpecTyped _pendantMin;
-        private KryptonPaletteButtonSpecTyped _pendantRestore;
-        private KryptonPaletteButtonSpecTyped _workspaceMaximize;
-        private KryptonPaletteButtonSpecTyped _workspaceRestore;
-        private KryptonPaletteButtonSpecTyped _ribbonMinimize;
-        private KryptonPaletteButtonSpecTyped _ribbonExpand;
+        private readonly KryptonPaletteButtonSpecTyped _common;
+        private readonly KryptonPaletteButtonSpecTyped _close;
+        private readonly KryptonPaletteButtonSpecTyped _context;
+        private readonly KryptonPaletteButtonSpecTyped _next;
+        private readonly KryptonPaletteButtonSpecTyped _previous;
+        private readonly KryptonPaletteButtonSpecTyped _generic;
+        private readonly KryptonPaletteButtonSpecTyped _arrowLeft;
+        private readonly KryptonPaletteButtonSpecTyped _arrowRight;
+        private readonly KryptonPaletteButtonSpecTyped _arrowUp;
+        private readonly KryptonPaletteButtonSpecTyped _arrowDown;
+        private readonly KryptonPaletteButtonSpecTyped _dropDown;
+        private readonly KryptonPaletteButtonSpecTyped _pinVertical;
+        private readonly KryptonPaletteButtonSpecTyped _pinHorizontal;
+        private readonly KryptonPaletteButtonSpecTyped _formClose;
+        private readonly KryptonPaletteButtonSpecTyped _formMax;
+        private readonly KryptonPaletteButtonSpecTyped _formMin;
+        private readonly KryptonPaletteButtonSpecTyped _formRestore;
+        private readonly KryptonPaletteButtonSpecTyped _pendantClose;
+        private readonly KryptonPaletteButtonSpecTyped _pendantMin;
+        private readonly KryptonPaletteButtonSpecTyped _pendantRestore;
+        private readonly KryptonPaletteButtonSpecTyped _workspaceMaximize;
+        private readonly KryptonPaletteButtonSpecTyped _workspaceRestore;
+        private readonly KryptonPaletteButtonSpecTyped _ribbonMinimize;
+        private readonly KryptonPaletteButtonSpecTyped _ribbonExpand;
         #endregion
 
         #region Events

@@ -21,24 +21,24 @@ namespace ComponentFactory.Krypton.Toolkit
     public class ContextMenuProvider : IContextMenuProvider
     {
         #region Instance Fields
-        private bool _enabled;
-        private ViewLayoutStack _viewColumns;
-        private ViewContextMenuManager _viewManager;
-        private PaletteContextMenuRedirect _stateCommon;
-        private PaletteContextMenuItemState _stateDisabled;
-        private PaletteContextMenuItemState _stateNormal;
-        private PaletteContextMenuItemStateHighlight _stateHighlight;
-        private PaletteContextMenuItemStateChecked _stateChecked;
-        private PaletteRedirectContextMenu _redirectorImages;
-        private IPalette _palette;
-        private PaletteMode _paletteMode;
-        private PaletteRedirect _redirector;
-        private NeedPaintHandler _needPaintDelegate;
-        private IContextMenuProvider _parent;
+        private readonly bool _enabled;
+        private readonly ViewLayoutStack _viewColumns;
+        private readonly ViewContextMenuManager _viewManager;
+        private readonly PaletteContextMenuRedirect _stateCommon;
+        private readonly PaletteContextMenuItemState _stateDisabled;
+        private readonly PaletteContextMenuItemState _stateNormal;
+        private readonly PaletteContextMenuItemStateHighlight _stateHighlight;
+        private readonly PaletteContextMenuItemStateChecked _stateChecked;
+        private readonly PaletteRedirectContextMenu _redirectorImages;
+        private readonly IPalette _palette;
+        private readonly PaletteMode _paletteMode;
+        private readonly PaletteRedirect _redirector;
+        private readonly NeedPaintHandler _needPaintDelegate;
+        private readonly IContextMenuProvider _parent;
         private Nullable<ToolStripDropDownCloseReason> _closeReason;
         private KryptonContextMenuPositionH _showHorz;
         private KryptonContextMenuPositionV _showVert;
-        private bool _canCloseMenu;
+        private readonly bool _canCloseMenu;
         #endregion
 
         #region Events

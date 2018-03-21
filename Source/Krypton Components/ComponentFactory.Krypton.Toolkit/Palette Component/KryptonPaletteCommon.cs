@@ -19,9 +19,9 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPaletteCommon : Storage
     {
         #region Instance Fields
-        private PaletteTripleRedirect _stateCommon;
-        private PaletteTriple _stateDisabled;
-        private PaletteTriple _stateOthers;
+        private readonly PaletteTripleRedirect _stateCommon;
+        private readonly PaletteTriple _stateDisabled;
+        private readonly PaletteTriple _stateOthers;
         #endregion
 
         #region Identity

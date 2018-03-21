@@ -50,7 +50,7 @@ namespace ComponentFactory.Krypton.Workspace
             _changeService = (IComponentChangeService)GetService(typeof(IComponentChangeService));
 
             // We need to know when we are being removed/changed
-            _changeService.ComponentRemoving += new ComponentEventHandler(OnComponentRemoving);
+            _changeService.ComponentRemoving += OnComponentRemoving;
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace ComponentFactory.Krypton.Workspace
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            _changeService.ComponentRemoving -= new ComponentEventHandler(OnComponentRemoving);
+            _changeService.ComponentRemoving -= OnComponentRemoving;
 
             // Ensure base class is always disposed
             base.Dispose(disposing);
@@ -154,7 +154,7 @@ namespace ComponentFactory.Krypton.Workspace
                 // We need to remove all children from the workspace
                 for (int i = _workspace.Root.Children.Count - 1; i >= 0; i--)
                 {
-                    Component comp = _workspace.Root.Children[i] as Component;
+                    Component comp = _workspace.Root.Children[i];
 
                     // If the component is a control...
                     if (comp is Control)

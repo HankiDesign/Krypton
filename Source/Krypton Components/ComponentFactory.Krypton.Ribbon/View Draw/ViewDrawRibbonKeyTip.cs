@@ -20,8 +20,8 @@ namespace ComponentFactory.Krypton.Ribbon
                                           IContentValues
     {
         #region Instance Fields
-        private KeyTipInfo _keyTipInfo;
-        private ViewDrawContent _drawContent;
+        private readonly KeyTipInfo _keyTipInfo;
+        private readonly ViewDrawContent _drawContent;
         #endregion
 
         #region Identity

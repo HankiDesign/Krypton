@@ -26,14 +26,14 @@ namespace ComponentFactory.Krypton.Ribbon
         #endregion
 
         #region Instance Fields
-        private ViewDrawRibbonGalleryButton _buttonUp;
-        private ViewDrawRibbonGalleryButton _buttonDown;
-        private ViewDrawRibbonGalleryButton _buttonContext;
-        private NeedPaintHandler _needPaint;
-        private PaletteTripleToPalette _triple;
-        private KryptonGallery _gallery;
+        private readonly ViewDrawRibbonGalleryButton _buttonUp;
+        private readonly ViewDrawRibbonGalleryButton _buttonDown;
+        private readonly ViewDrawRibbonGalleryButton _buttonContext;
+        private readonly NeedPaintHandler _needPaint;
+        private readonly PaletteTripleToPalette _triple;
+        private readonly KryptonGallery _gallery;
         private ButtonStyle _style;
-        private Timer _scrollTimer;
+        private readonly Timer _scrollTimer;
         private Size _itemSize;
         private int _lineItems;
         private int _displayLines;

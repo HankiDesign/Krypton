@@ -9,9 +9,9 @@
 // *****************************************************************************
 
 using System.Collections;
-using System.Drawing;
 using System.ComponentModel;
 using System.ComponentModel.Design;
+using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
@@ -40,13 +40,13 @@ namespace ComponentFactory.Krypton.Toolkit
                 ViewManager vm = _header.GetViewManager();
                 if (vm != null)
                 {
-                    vm.MouseUpProcessed -= new MouseEventHandler(OnHeaderMouseUp);
-                    vm.DoubleClickProcessed -= new PointHandler(OnHeaderDoubleClick);
+                    vm.MouseUpProcessed -= OnHeaderMouseUp;
+                    vm.DoubleClickProcessed -= OnHeaderDoubleClick;
                 }
             }
 
             if (_changeService != null)
-                _changeService.ComponentRemoving -= new ComponentEventHandler(OnComponentRemoving);
+                _changeService.ComponentRemoving -= OnComponentRemoving;
 
             // Must let base class do standard stuff
             base.Dispose(disposing);
@@ -74,8 +74,8 @@ namespace ComponentFactory.Krypton.Toolkit
             if (_header != null)
             {
                 // Hook into header event
-                _header.GetViewManager().MouseUpProcessed += new MouseEventHandler(OnHeaderMouseUp);
-                _header.GetViewManager().DoubleClickProcessed += new PointHandler(OnHeaderDoubleClick);
+                _header.GetViewManager().MouseUpProcessed += OnHeaderMouseUp;
+                _header.GetViewManager().DoubleClickProcessed += OnHeaderDoubleClick;
             }
 
             // Get access to the design services
@@ -84,7 +84,7 @@ namespace ComponentFactory.Krypton.Toolkit
             _selectionService = (ISelectionService)GetService(typeof(ISelectionService));
 
             // We need to know when we are being removed
-            _changeService.ComponentRemoving += new ComponentEventHandler(OnComponentRemoving);
+            _changeService.ComponentRemoving += OnComponentRemoving;
         }
 
         /// <summary>
@@ -92,12 +92,11 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         public override ICollection AssociatedComponents 
         {
-            get 
+            get
             {
-                if (_header != null)
+	            if (_header != null)
                     return _header.ButtonSpecs;
-                else
-                    return base.AssociatedComponents;
+	            return base.AssociatedComponents;
             }
         }
 
@@ -127,7 +126,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <returns>true if a click at the specified point is to be handled by the control; otherwise, false.</returns>
         protected override bool GetHitTest(Point point)
         {
-            if (_header != null)
+	        if (_header != null)
             {
                 // Ask the control if it wants to process the point
                 bool ret = _header.DesignerGetHitTest(_header.PointToClient(point));
@@ -142,8 +141,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
                 return ret;
             }
-            else
-                return false;
+	        return false;
         }
 
         /// <summary>

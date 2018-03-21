@@ -22,7 +22,7 @@ namespace ComponentFactory.Krypton.Toolkit
 	{
 		#region Instance Fields
         private IPaletteMetric _inherit;
-        private PaletteTripleMetric _paletteHeader;
+        private readonly PaletteTripleMetric _paletteHeader;
         #endregion
 
 		#region Identity

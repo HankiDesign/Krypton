@@ -18,9 +18,9 @@ namespace ComponentFactory.Krypton.Toolkit
     public class PaletteMonthCalendarDoubleState : PaletteDouble
     {
         #region Instance Fields
-        private PaletteTriple _paletteHeader;
-        private PaletteTriple _paletteDay;
-        private PaletteTriple _paletteDayOfWeek;
+        private readonly PaletteTriple _paletteHeader;
+        private readonly PaletteTriple _paletteDay;
+        private readonly PaletteTriple _paletteDayOfWeek;
         #endregion
 
         #region Identity

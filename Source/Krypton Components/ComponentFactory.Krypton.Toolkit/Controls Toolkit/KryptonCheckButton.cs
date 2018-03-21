@@ -30,13 +30,13 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonCheckButton : KryptonButton
 	{
 		#region Instance Fields
-        private PaletteTriple _stateCheckedNormal;
-        private PaletteTriple _stateCheckedTracking;
-        private PaletteTriple _stateCheckedPressed;
-        private PaletteTripleOverride _overrideCheckedFocus;
-        private PaletteTripleOverride _overrideCheckedNormal;
-        private PaletteTripleOverride _overrideCheckedTracking;
-        private PaletteTripleOverride _overrideCheckedPressed;
+        private readonly PaletteTriple _stateCheckedNormal;
+        private readonly PaletteTriple _stateCheckedTracking;
+        private readonly PaletteTriple _stateCheckedPressed;
+        private readonly PaletteTripleOverride _overrideCheckedFocus;
+        private readonly PaletteTripleOverride _overrideCheckedNormal;
+        private readonly PaletteTripleOverride _overrideCheckedTracking;
+        private readonly PaletteTripleOverride _overrideCheckedPressed;
         private CheckButtonValues _checkedValues;
         private bool _wasChecked;
         #endregion

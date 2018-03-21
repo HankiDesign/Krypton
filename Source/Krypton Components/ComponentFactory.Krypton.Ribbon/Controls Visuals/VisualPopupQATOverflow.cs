@@ -20,9 +20,9 @@ namespace ComponentFactory.Krypton.Ribbon
     internal class VisualPopupQATOverflow : VisualPopup
     {
         #region Instance Fields
-        private KryptonRibbon _ribbon;
-        private ViewDrawRibbonQATOverflow _viewQAT;
-        private ViewLayoutRibbonQATContents _viewQATContents;
+        private readonly KryptonRibbon _ribbon;
+        private readonly ViewDrawRibbonQATOverflow _viewQAT;
+        private readonly ViewLayoutRibbonQATContents _viewQATContents;
         #endregion
 
         #region Identity

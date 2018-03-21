@@ -26,9 +26,9 @@ namespace ComponentFactory.Krypton.Toolkit
         private Control _alignControl;
 		private Graphics _graphics;
 		private Control _topControl;
-		private IRenderer _renderer;
+		private readonly IRenderer _renderer;
         private bool _disposeGraphics;
-        private bool _disposeManager;
+        private readonly bool _disposeManager;
 		#endregion
 
 		#region Identity

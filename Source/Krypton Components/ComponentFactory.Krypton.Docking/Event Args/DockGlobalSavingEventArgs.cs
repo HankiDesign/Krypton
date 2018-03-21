@@ -19,8 +19,8 @@ namespace ComponentFactory.Krypton.Docking
 	public class DockGlobalSavingEventArgs : EventArgs
 	{
 		#region Instance Fields
-        private KryptonDockingManager _manager;
-        private XmlWriter _xmlWriter;
+        private readonly KryptonDockingManager _manager;
+        private readonly XmlWriter _xmlWriter;
 		#endregion
 
 		#region Identity

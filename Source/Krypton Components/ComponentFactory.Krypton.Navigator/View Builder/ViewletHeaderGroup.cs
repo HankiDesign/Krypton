@@ -22,15 +22,15 @@ namespace ComponentFactory.Krypton.Navigator
     internal class ViewletHeaderGroup
     {
         #region Instance Fields
-        private KryptonNavigator _navigator;
-        private PaletteRedirect _redirector;
+        private readonly KryptonNavigator _navigator;
+        private readonly PaletteRedirect _redirector;
         private ViewDrawDocker _viewGroup;
         private ViewDrawDocker _viewHeadingPrimary;
         private ViewDrawContent _viewContentPrimary;
         private ViewDrawDocker _viewHeadingSecondary;
         private ViewDrawContent _viewContentSecondary;
         private ButtonSpecManagerDraw _buttonManager;
-        private NeedPaintHandler _needPaintDelegate;
+        private readonly NeedPaintHandler _needPaintDelegate;
         #endregion
 
         #region Identity

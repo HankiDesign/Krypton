@@ -9,10 +9,10 @@
 // *****************************************************************************
 
 using System;
+using System.ComponentModel;
 using System.Drawing.Design;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
-using System.ComponentModel;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -25,10 +25,9 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <returns>A UITypeEditorEditStyle enumeration value that indicates the style of editor.</returns>
         public override UITypeEditorEditStyle GetEditStyle(ITypeDescriptorContext context)
         {
-            if ((context != null) && (context.Instance != null))
+	        if ((context != null) && (context.Instance != null))
                 return UITypeEditorEditStyle.Modal;
-            else
-                return base.GetEditStyle(context);
+	        return base.GetEditStyle(context);
         }
 
         /// <summary>

@@ -56,27 +56,27 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
         
         #region Instance Fields
-        private ViewDrawDocker _drawDockerOuter;
-        private ViewLayoutDocker _drawDockerInner;
-        private ViewLayoutStretch _dropStretch;
-        private ViewLayoutFit _upDownFit;
-        private PaletteTripleToPalette _paletteDropDown;
-        private PaletteTripleToPalette _paletteUpDown;
-        private ViewDrawDateTimeButton _buttonDropDown;
-        private ViewDrawDateTimeButton _buttonUp;
-        private ViewDrawDateTimeButton _buttonDown;
-        private ViewDrawDateTimeText _drawText;
-        private ViewDrawCheckBox _drawCheckBox;
-        private ViewLayoutCenter _layoutCheckBox;
-        private CheckBoxImages _checkBoxImages;
-        private PaletteInputControlTripleRedirect _stateCommon;
-        private PaletteInputControlTripleStates _stateDisabled;
-        private PaletteInputControlTripleStates _stateNormal;
-        private PaletteInputControlTripleStates _stateActive;
-        private DateTimePickerButtonSpecCollection _buttonSpecs;
-        private ButtonSpecManagerDraw _buttonManager;
+        private readonly ViewDrawDocker _drawDockerOuter;
+        private readonly ViewLayoutDocker _drawDockerInner;
+        private readonly ViewLayoutStretch _dropStretch;
+        private readonly ViewLayoutFit _upDownFit;
+        private readonly PaletteTripleToPalette _paletteDropDown;
+        private readonly PaletteTripleToPalette _paletteUpDown;
+        private readonly ViewDrawDateTimeButton _buttonDropDown;
+        private readonly ViewDrawDateTimeButton _buttonUp;
+        private readonly ViewDrawDateTimeButton _buttonDown;
+        private readonly ViewDrawDateTimeText _drawText;
+        private readonly ViewDrawCheckBox _drawCheckBox;
+        private readonly ViewLayoutCenter _layoutCheckBox;
+        private readonly CheckBoxImages _checkBoxImages;
+        private readonly PaletteInputControlTripleRedirect _stateCommon;
+        private readonly PaletteInputControlTripleStates _stateDisabled;
+        private readonly PaletteInputControlTripleStates _stateNormal;
+        private readonly PaletteInputControlTripleStates _stateActive;
+        private readonly DateTimePickerButtonSpecCollection _buttonSpecs;
+        private readonly ButtonSpecManagerDraw _buttonManager;
         private VisualPopupToolTip _visualPopupToolTip;
-        private ToolTipManager _toolTipManager;
+        private readonly ToolTipManager _toolTipManager;
         private KryptonContextMenuMonthCalendar _kmc;
         private InputControlStyle _inputControlStyle;
         private ButtonStyle _upDownButtonStyle;
@@ -92,9 +92,9 @@ namespace ComponentFactory.Krypton.Toolkit
         private DateTime _dateTime;
         private DateTime _todayDate;
         private Size _dimensions;
-        private DateTimeList _annualDates;
-        private DateTimeList _monthlyDates;
-        private DateTimeList _dates;
+        private readonly DateTimeList _annualDates;
+        private readonly DateTimeList _monthlyDates;
+        private readonly DateTimeList _dates;
         private string _customFormat;
         private string _todayFormat;
         private string _today;
@@ -110,7 +110,7 @@ namespace ComponentFactory.Krypton.Toolkit
         private bool _showTodayCircle;
         private bool _showToday;
         private bool _mouseOver;
-        private bool _dropped;
+        private readonly bool _dropped;
         private bool _alwaysActive;
         private bool _userSetDateTime;
         private bool _dropDownMonthChanged;
@@ -2531,7 +2531,7 @@ namespace ComponentFactory.Krypton.Toolkit
     public class DTPContextMenu : KryptonContextMenu
     {
         #region Instance Fields
-        private Rectangle _dropScreenRect;
+        private readonly Rectangle _dropScreenRect;
         #endregion
 
         #region Identity

@@ -34,7 +34,7 @@ namespace ComponentFactory.Krypton.Ribbon
         private string _contextName;
         private bool _visible;
         private KryptonRibbon _ribbon;
-        private KryptonRibbonGroupCollection _ribbonGroups;
+        private readonly KryptonRibbonGroupCollection _ribbonGroups;
         private ViewBase _tabView;
         #endregion
 

@@ -18,9 +18,9 @@ namespace ComponentFactory.Krypton.Toolkit
     public class PaletteMonthCalendarRedirect : PaletteDoubleMetricRedirect
 	{
         #region Instance Fields
-        private PaletteTripleRedirect _paletteHeader;
-        private PaletteTripleRedirect _paletteDayOfWeek;
-        private PaletteTripleRedirect _paletteDay;
+        private readonly PaletteTripleRedirect _paletteHeader;
+        private readonly PaletteTripleRedirect _paletteDayOfWeek;
+        private readonly PaletteTripleRedirect _paletteDay;
         #endregion
 
         #region Identity

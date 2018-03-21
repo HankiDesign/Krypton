@@ -85,26 +85,26 @@ namespace ComponentFactory.Krypton.Workspace
 
         #region Instance Fields
         // Internal fields
-        private ViewDrawPanel _drawPanel;
+        private readonly ViewDrawPanel _drawPanel;
         private SeparatorStyle _separatorStyle;
-        private WorkspaceItemToSeparator _workspaceToSeparator;
-        private CellPageNotify _cellPageNotify;
+        private readonly WorkspaceItemToSeparator _workspaceToSeparator;
+        private readonly CellPageNotify _cellPageNotify;
         private DragManager _dragManager;
         private KryptonPage[] _dragPages;
-        private NeedPaintHandler _separatorNeedPaint;
+        private readonly NeedPaintHandler _separatorNeedPaint;
         private int _suspendWorkspace;
         private int _suspendActivePageChangedEvent;
         private int _cacheCellCount;
         private int _cacheCellVisibleCount;
 
         // Exposed fields
-        private KryptonWorkspaceSequence _root;
-        private PaletteSplitContainerRedirect _stateCommon;
-        private PaletteSplitContainer _stateDisabled;
-        private PaletteSplitContainer _stateNormal;
-        private PaletteSeparatorPadding _stateTracking;
-        private PaletteSeparatorPadding _statePressed;
-        private WorkspaceMenus _paletteMenus;
+        private readonly KryptonWorkspaceSequence _root;
+        private readonly PaletteSplitContainerRedirect _stateCommon;
+        private readonly PaletteSplitContainer _stateDisabled;
+        private readonly PaletteSplitContainer _stateNormal;
+        private readonly PaletteSeparatorPadding _stateTracking;
+        private readonly PaletteSeparatorPadding _statePressed;
+        private readonly WorkspaceMenus _paletteMenus;
         private CompactFlags _compactFlags;
         private IDragPageNotify _dragPageNotify;
         private KryptonWorkspaceCell _maximizedCell;

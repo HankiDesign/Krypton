@@ -18,7 +18,7 @@ namespace ComponentFactory.Krypton.Docking
 	public class UniqueNamesEventArgs : EventArgs
 	{
 		#region Instance Fields
-        private string[] _uniqueNames;
+        private readonly string[] _uniqueNames;
 		#endregion
 
 		#region Identity

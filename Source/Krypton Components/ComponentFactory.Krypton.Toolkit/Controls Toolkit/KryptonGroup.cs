@@ -32,12 +32,12 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonGroup : VisualControlContainment
 	{
 		#region Instance Fields
-		private ViewDrawDocker _drawDocker;
-        private PaletteDoubleRedirect _stateCommon;
-        private PaletteDouble _stateDisabled;
-		private PaletteDouble _stateNormal;
-        private ViewLayoutFill _layoutFill;
-        private KryptonGroupPanel _panel;
+		private readonly ViewDrawDocker _drawDocker;
+        private readonly PaletteDoubleRedirect _stateCommon;
+        private readonly PaletteDouble _stateDisabled;
+		private readonly PaletteDouble _stateNormal;
+        private readonly ViewLayoutFill _layoutFill;
+        private readonly KryptonGroupPanel _panel;
         private bool _forcedLayout;
         private bool _layingOut;
         #endregion

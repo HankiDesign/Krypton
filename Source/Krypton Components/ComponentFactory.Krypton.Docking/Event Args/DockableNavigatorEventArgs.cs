@@ -18,8 +18,8 @@ namespace ComponentFactory.Krypton.Docking
 	public class DockableNavigatorEventArgs : EventArgs
 	{
 		#region Instance Fields
-        private KryptonDockableNavigator _navigator;
-        private KryptonDockingNavigator _element;
+        private readonly KryptonDockableNavigator _navigator;
+        private readonly KryptonDockingNavigator _element;
 		#endregion
 
 		#region Identity

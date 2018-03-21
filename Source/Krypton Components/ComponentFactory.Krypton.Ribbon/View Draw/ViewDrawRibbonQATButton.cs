@@ -28,10 +28,10 @@ namespace ComponentFactory.Krypton.Ribbon
         #endregion
 
         #region Instance Fields
-        private KryptonRibbon _ribbon;
-        private IQuickAccessToolbarButton _qatButton;
-        private QATButtonToContent _contentProvider;
-        private ViewDrawContent _drawContent;
+        private readonly KryptonRibbon _ribbon;
+        private readonly IQuickAccessToolbarButton _qatButton;
+        private readonly QATButtonToContent _contentProvider;
+        private readonly ViewDrawContent _drawContent;
         private IDisposable _mementoBack;
         #endregion
 

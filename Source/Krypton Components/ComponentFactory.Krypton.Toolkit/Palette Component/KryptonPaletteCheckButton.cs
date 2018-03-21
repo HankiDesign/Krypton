@@ -18,16 +18,16 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPaletteCheckButton : Storage
     {
         #region Instance Fields
-        private PaletteTripleRedirect _stateDefault;
-        private PaletteTripleRedirect _stateFocus;
-        private PaletteTripleRedirect _stateCommon;
-        private PaletteTriple _stateDisabled;
-        private PaletteTriple _stateNormal;
-        private PaletteTriple _stateTracking;
-        private PaletteTriple _statePressed;
-        private PaletteTriple _stateCheckedNormal;
-        private PaletteTriple _stateCheckedTracking;
-        private PaletteTriple _stateCheckedPressed;
+        private readonly PaletteTripleRedirect _stateDefault;
+        private readonly PaletteTripleRedirect _stateFocus;
+        private readonly PaletteTripleRedirect _stateCommon;
+        private readonly PaletteTriple _stateDisabled;
+        private readonly PaletteTriple _stateNormal;
+        private readonly PaletteTriple _stateTracking;
+        private readonly PaletteTriple _statePressed;
+        private readonly PaletteTriple _stateCheckedNormal;
+        private readonly PaletteTriple _stateCheckedTracking;
+        private readonly PaletteTriple _stateCheckedPressed;
         #endregion
 
         #region Identity

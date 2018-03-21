@@ -43,7 +43,7 @@ namespace ComponentFactory.Krypton.Toolkit
         private VisualControl _rootControl;
         private VisualPopup _rootPopup;
         private ViewLayoutControl _viewLayout;
-        private NeedPaintHandler _needPaintDelegate;
+        private readonly NeedPaintHandler _needPaintDelegate;
         private bool _transparentBackground;
         private bool _inDesignMode;
         #endregion

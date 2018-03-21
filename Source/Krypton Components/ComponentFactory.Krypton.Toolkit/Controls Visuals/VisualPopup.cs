@@ -32,10 +32,10 @@ namespace ComponentFactory.Krypton.Toolkit
         private bool _layoutDirty;
         private bool _refresh;
         private bool _refreshAll;
-        private SimpleCall _refreshCall;
+        private readonly SimpleCall _refreshCall;
         private ViewManager _viewManager;
         private IRenderer _renderer;
-        private NeedPaintHandler _needPaintDelegate;
+        private readonly NeedPaintHandler _needPaintDelegate;
         private EventHandler _dismissedDelegate;
         private VisualPopupShadow _shadow;
         #endregion

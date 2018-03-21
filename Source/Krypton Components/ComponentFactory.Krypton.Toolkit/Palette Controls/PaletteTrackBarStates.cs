@@ -19,9 +19,9 @@ namespace ComponentFactory.Krypton.Toolkit
 	public class PaletteTrackBarStates : Storage
 	{
 		#region Instance Fields
-        private PaletteElementColor _tickState;
-        private PaletteElementColor _trackState;
-        private PaletteElementColor _positionState;
+        private readonly PaletteElementColor _tickState;
+        private readonly PaletteElementColor _trackState;
+        private readonly PaletteElementColor _positionState;
         #endregion
 
 		#region Identity

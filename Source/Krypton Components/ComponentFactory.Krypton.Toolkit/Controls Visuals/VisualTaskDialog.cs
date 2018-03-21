@@ -85,23 +85,23 @@ namespace ComponentFactory.Krypton.Toolkit
 
         #region Instance Fields
         private KryptonTaskDialog _taskDialog;
-        private string _windowTitle;
-        private string _mainInstruction;
-        private string _content;
-        private MessageBoxIcon _mainIcon;
-        private Image _customMainIcon;
-        private KryptonTaskDialogCommandCollection _radioButtons;
-        private KryptonTaskDialogCommandCollection _commandButtons;
+        private readonly string _windowTitle;
+        private readonly string _mainInstruction;
+        private readonly string _content;
+        private readonly MessageBoxIcon _mainIcon;
+        private readonly Image _customMainIcon;
+        private readonly KryptonTaskDialogCommandCollection _radioButtons;
+        private readonly KryptonTaskDialogCommandCollection _commandButtons;
         private KryptonTaskDialogCommand _defaultRadioButton;
-        private TaskDialogButtons _commonButtons;
-        private TaskDialogButtons _defaultButton;
-        private MessageBoxIcon _footerIcon;
-        private Image _customFooterIcon;
-        private string _footerText;
-        private string _footerHyperlink;
-        private string _checkboxText;
+        private readonly TaskDialogButtons _commonButtons;
+        private readonly TaskDialogButtons _defaultButton;
+        private readonly MessageBoxIcon _footerIcon;
+        private readonly Image _customFooterIcon;
+        private readonly string _footerText;
+        private readonly string _footerHyperlink;
+        private readonly string _checkboxText;
         private bool _checkboxState;
-        private bool _allowDialogClose;
+        private readonly bool _allowDialogClose;
 
         // User Interface
         private KryptonPanel _panelMain;

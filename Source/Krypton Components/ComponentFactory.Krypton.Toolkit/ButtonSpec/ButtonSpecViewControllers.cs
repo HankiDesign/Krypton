@@ -18,9 +18,9 @@ namespace ComponentFactory.Krypton.Toolkit
     public class ButtonSpecViewControllers
     {
         #region Instance Fields
-        private IMouseController _mouseController;
-        private ISourceController _sourceController;
-        private IKeyController _keyController;
+        private readonly IMouseController _mouseController;
+        private readonly ISourceController _sourceController;
+        private readonly IKeyController _keyController;
         #endregion
 
         #region Identity

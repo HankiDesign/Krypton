@@ -33,7 +33,7 @@ namespace ComponentFactory.Krypton.Toolkit
     {
         #region Static Fields
         private static readonly int DEFAULT_COMPOSITION_HEIGHT = 30;
-        private static bool _themedApp;
+        private static readonly bool _themedApp;
         #endregion
 
         #region Instance Fields
@@ -56,10 +56,10 @@ namespace ComponentFactory.Krypton.Toolkit
         private IPalette _palette;
         private IRenderer _renderer;
         private PaletteMode _paletteMode;
-        private PaletteRedirect _redirector;
-        private NeedPaintHandler _needPaintDelegate;
+        private readonly PaletteRedirect _redirector;
+        private readonly NeedPaintHandler _needPaintDelegate;
         private ViewManager _viewManager;
-        private IntPtr _screenDC;
+        private readonly IntPtr _screenDC;
         #endregion
 
         #region Events

@@ -18,7 +18,7 @@ namespace ComponentFactory.Krypton.Toolkit
     public class GlobalId
     {
         #region Instance Fields
-        private int _id;
+        private readonly int _id;
         #endregion
 
         #region Identity

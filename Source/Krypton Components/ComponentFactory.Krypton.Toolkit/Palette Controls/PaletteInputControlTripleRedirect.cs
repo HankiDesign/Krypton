@@ -22,13 +22,13 @@ namespace ComponentFactory.Krypton.Toolkit
                                                      IPaletteMetric
 	{
 		#region Instance Fields
-		private PaletteInputControlBackStates _back;
-		private PaletteBorder _border;
-		private PaletteInputControlContentStates _content;
-		private PaletteBackInheritRedirect _backInherit;
-		private PaletteBorderInheritRedirect _borderInherit;
-		private PaletteContentInheritRedirect _contentInherit;
-        private PaletteMetricRedirect _metricRedirect;
+		private readonly PaletteInputControlBackStates _back;
+		private readonly PaletteBorder _border;
+		private readonly PaletteInputControlContentStates _content;
+		private readonly PaletteBackInheritRedirect _backInherit;
+		private readonly PaletteBorderInheritRedirect _borderInherit;
+		private readonly PaletteContentInheritRedirect _contentInherit;
+        private readonly PaletteMetricRedirect _metricRedirect;
 		#endregion
 
 		#region Identity

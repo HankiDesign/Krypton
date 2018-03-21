@@ -19,16 +19,16 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPaletteTabButtons : Storage
     {
         #region Instance Fields
-        private KryptonPaletteTabButton _tabCommon;
-        private KryptonPaletteTabButton _tabHighProfile;
-        private KryptonPaletteTabButton _tabStandardProfile;
-        private KryptonPaletteTabButton _tabLowProfile;
-        private KryptonPaletteTabButton _tabDock;
-        private KryptonPaletteTabButton _tabDockAutoHidden;
-        private KryptonPaletteTabButton _tabOneNote;
-        private KryptonPaletteTabButton _tabCustom1;
-        private KryptonPaletteTabButton _tabCustom2;
-        private KryptonPaletteTabButton _tabCustom3;
+        private readonly KryptonPaletteTabButton _tabCommon;
+        private readonly KryptonPaletteTabButton _tabHighProfile;
+        private readonly KryptonPaletteTabButton _tabStandardProfile;
+        private readonly KryptonPaletteTabButton _tabLowProfile;
+        private readonly KryptonPaletteTabButton _tabDock;
+        private readonly KryptonPaletteTabButton _tabDockAutoHidden;
+        private readonly KryptonPaletteTabButton _tabOneNote;
+        private readonly KryptonPaletteTabButton _tabCustom1;
+        private readonly KryptonPaletteTabButton _tabCustom2;
+        private readonly KryptonPaletteTabButton _tabCustom3;
         #endregion
 
         #region Identity

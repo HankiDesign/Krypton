@@ -31,16 +31,16 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonTrackBar : VisualSimpleBase
 	{
 		#region Instance Fields
-        private ViewDrawTrackBar _drawTrackBar;
-        private PaletteTrackBarRedirect _stateCommon;
-        private PaletteTrackBarRedirect _stateFocus;
-        private PaletteTrackBarStates _stateDisabled;
-        private PaletteTrackBarStates _stateNormal;
-        private PaletteTrackBarPositionStates _stateTracking;
-        private PaletteTrackBarPositionStates _statePressed;
-        private PaletteTrackBarStatesOverride _overrideNormal;
-        private PaletteTrackBarPositionStatesOverride _overrideTracking;
-        private PaletteTrackBarPositionStatesOverride _overridePressed;
+        private readonly ViewDrawTrackBar _drawTrackBar;
+        private readonly PaletteTrackBarRedirect _stateCommon;
+        private readonly PaletteTrackBarRedirect _stateFocus;
+        private readonly PaletteTrackBarStates _stateDisabled;
+        private readonly PaletteTrackBarStates _stateNormal;
+        private readonly PaletteTrackBarPositionStates _stateTracking;
+        private readonly PaletteTrackBarPositionStates _statePressed;
+        private readonly PaletteTrackBarStatesOverride _overrideNormal;
+        private readonly PaletteTrackBarPositionStatesOverride _overrideTracking;
+        private readonly PaletteTrackBarPositionStatesOverride _overridePressed;
         private bool _autoSize;
         private bool _inRibbonDesignMode;
         private int _requestedDim;

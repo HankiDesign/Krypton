@@ -19,7 +19,7 @@ namespace ComponentFactory.Krypton.Toolkit
 	public class ButtonDragOffsetEventArgs : EventArgs
 	{
 		#region Instance Fields
-        private Point _offset;
+        private readonly Point _offset;
 		#endregion
 
 		#region Identity

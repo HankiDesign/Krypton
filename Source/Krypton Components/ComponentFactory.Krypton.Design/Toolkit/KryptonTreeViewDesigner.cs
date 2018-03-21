@@ -55,13 +55,8 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class NoneExcludedImageIndexConverter : ImageIndexConverter
     {
         #region Identity
-        /// <summary>
-        /// Initialize a new instance of the NoneExcludedImageIndexConverter class.
-        /// </summary>
-        public NoneExcludedImageIndexConverter()
-        {
-        }
-        #endregion
+
+	    #endregion
 
         // Properties
         /// <summary>

@@ -16,7 +16,7 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class TabStyleConverter : StringLookupConverter
     {
         #region Static Fields
-        private Pair[] _pairs = new Pair[] { new Pair(TabStyle.HighProfile,     "High Profile"),
+        private readonly Pair[] _pairs = new Pair[] { new Pair(TabStyle.HighProfile,     "High Profile"),
                                              new Pair(TabStyle.StandardProfile, "Standard Profile"),
                                              new Pair(TabStyle.LowProfile,      "Low Profile"),
                                              new Pair(TabStyle.OneNote,         "OneNote"),

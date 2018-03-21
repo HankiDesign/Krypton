@@ -37,10 +37,10 @@ namespace ComponentFactory.Krypton.Docking
         #endregion
 
         #region Instance Fields
-        private Control _control;
-        private DockingEdge _edge;
-        private SeparatorToDockspace _lookupSeparator;
-        private DockspaceToSeparator _lookupDockspace;
+        private readonly Control _control;
+        private readonly DockingEdge _edge;
+        private readonly SeparatorToDockspace _lookupSeparator;
+        private readonly DockspaceToSeparator _lookupDockspace;
         private bool _update;
         #endregion
 

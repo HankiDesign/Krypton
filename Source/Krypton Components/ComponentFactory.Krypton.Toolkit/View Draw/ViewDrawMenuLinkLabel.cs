@@ -18,12 +18,12 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class ViewDrawMenuLinkLabel : ViewComposite
     {
         #region Instance Fields
-        private IContextMenuProvider _provider;
-        private KryptonContextMenuLinkLabel _linkLabel;
-        private FixedContentValue _contentValues;
-        private ViewDrawContent _drawContent;
-        private ViewLayoutDocker _outerDocker;
-        private ViewLayoutDocker _innerDocker;
+        private readonly IContextMenuProvider _provider;
+        private readonly KryptonContextMenuLinkLabel _linkLabel;
+        private readonly FixedContentValue _contentValues;
+        private readonly ViewDrawContent _drawContent;
+        private readonly ViewLayoutDocker _outerDocker;
+        private readonly ViewLayoutDocker _innerDocker;
         private KryptonCommand _cachedCommand;
         private bool _itemEnabled;
         #endregion

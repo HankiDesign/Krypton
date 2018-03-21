@@ -20,8 +20,8 @@ namespace ComponentFactory.Krypton.Toolkit
     public class ToolTipManager
     {
         #region Instance Fields
-        private Timer _startTimer;
-        private Timer _stopTimer;
+        private readonly Timer _startTimer;
+        private readonly Timer _stopTimer;
         private ViewBase _startTarget;
         private ViewBase _currentTarget;
         private bool _showingToolTips;

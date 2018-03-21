@@ -20,7 +20,7 @@ namespace ComponentFactory.Krypton.Workspace
 	{
 		#region Instance Fields
         private KryptonPage _page;
-        private string _uniqueName;
+        private readonly string _uniqueName;
 		#endregion
 
 		#region Identity

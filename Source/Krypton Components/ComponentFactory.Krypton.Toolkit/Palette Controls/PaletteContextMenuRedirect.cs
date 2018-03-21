@@ -19,20 +19,20 @@ namespace ComponentFactory.Krypton.Toolkit
 	public class PaletteContextMenuRedirect : Storage
 	{
 		#region Instance Fields
-        private PaletteDoubleRedirect _paletteControlInner;
-        private PaletteDoubleRedirect _paletteControlOuter;
-        private PaletteTripleRedirect _paletteHeading;
-        private PaletteDoubleMetricRedirect _paletteItemHighlight;
-        private PaletteTripleJustImageRedirect _paletteItemImage;
-        private PaletteDoubleRedirect _paletteItemImageColumn;
-        private PaletteContentInheritRedirect _paletteItemShortcutTextRedirect;
-        private PaletteContentJustShortText _paletteItemShortcutText;
-        private PaletteDoubleRedirect _paletteItemSplit;
-        private PaletteContentInheritRedirect _paletteItemTextAlternateRedirect;
-        private PaletteContentJustText _paletteItemTextAlternate;
-        private PaletteContentInheritRedirect _paletteItemTextStandardRedirect;
-        private PaletteContentJustText _paletteItemTextStandard;
-        private PaletteDoubleRedirect _paletteSeparator;
+        private readonly PaletteDoubleRedirect _paletteControlInner;
+        private readonly PaletteDoubleRedirect _paletteControlOuter;
+        private readonly PaletteTripleRedirect _paletteHeading;
+        private readonly PaletteDoubleMetricRedirect _paletteItemHighlight;
+        private readonly PaletteTripleJustImageRedirect _paletteItemImage;
+        private readonly PaletteDoubleRedirect _paletteItemImageColumn;
+        private readonly PaletteContentInheritRedirect _paletteItemShortcutTextRedirect;
+        private readonly PaletteContentJustShortText _paletteItemShortcutText;
+        private readonly PaletteDoubleRedirect _paletteItemSplit;
+        private readonly PaletteContentInheritRedirect _paletteItemTextAlternateRedirect;
+        private readonly PaletteContentJustText _paletteItemTextAlternate;
+        private readonly PaletteContentInheritRedirect _paletteItemTextStandardRedirect;
+        private readonly PaletteContentJustText _paletteItemTextStandard;
+        private readonly PaletteDoubleRedirect _paletteSeparator;
         #endregion
 
 		#region Identity

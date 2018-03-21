@@ -19,7 +19,7 @@ namespace ComponentFactory.Krypton.Toolkit
 	public class PaletteComboBoxJustComboStates : Storage
 	{
 		#region Instance Fields
-        private PaletteInputControlTripleStates _comboBoxState;
+        private readonly PaletteInputControlTripleStates _comboBoxState;
 		#endregion
 
 		#region Identity

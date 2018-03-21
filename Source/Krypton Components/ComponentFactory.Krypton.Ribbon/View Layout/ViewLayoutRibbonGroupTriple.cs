@@ -30,15 +30,15 @@ namespace ComponentFactory.Krypton.Ribbon
         #endregion
 
         #region Instance Fields
-        private KryptonRibbon _ribbon;
-        private KryptonRibbonGroupTriple _ribbonTriple;
+        private readonly KryptonRibbon _ribbon;
+        private readonly KryptonRibbonGroupTriple _ribbonTriple;
         private ViewDrawRibbonDesignGroupTriple _viewAddItem;
-        private NeedPaintHandler _needPaint;
+        private readonly NeedPaintHandler _needPaint;
         private GroupItemSize _currentSize;
         private ItemToView _itemToView;
-        private ViewToSize _smallCache;
-        private ViewToSize _mediumCache;
-        private ViewToSize _largeCache;
+        private readonly ViewToSize _smallCache;
+        private readonly ViewToSize _mediumCache;
+        private readonly ViewToSize _largeCache;
         private int _smallWidest;
         private int _mediumWidest;
         #endregion

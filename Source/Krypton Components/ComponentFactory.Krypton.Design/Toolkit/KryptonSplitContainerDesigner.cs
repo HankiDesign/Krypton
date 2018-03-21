@@ -11,10 +11,10 @@
 using System;
 using System.ComponentModel;
 using System.ComponentModel.Design;
+using System.Diagnostics;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 using System.Windows.Forms.Design.Behavior;
-using System.Diagnostics;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -111,11 +111,11 @@ namespace ComponentFactory.Krypton.Toolkit
         {
             if (_splitContainer != null)
             {
-                // Get the control designer for the requested indexed child control
+	            // Get the control designer for the requested indexed child control
                 if (internalControlIndex == 0)
                     return (ControlDesigner)_designerHost.GetDesigner(_splitContainer.Panel1);
-                else if (internalControlIndex == 1)
-                    return (ControlDesigner)_designerHost.GetDesigner(_splitContainer.Panel2);
+	            if (internalControlIndex == 1)
+		            return (ControlDesigner)_designerHost.GetDesigner(_splitContainer.Panel2);
             }
 
             return null;
@@ -127,10 +127,9 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <returns>The number of internal control designers in the ControlDesigner.</returns>
         public override int NumberOfInternalControlDesigners()
         {
-            if (_splitContainer != null)
+	        if (_splitContainer != null)
                 return 2;
-            else
-                return 0;
+	        return 0;
         }
 
         /// <summary>

@@ -10,11 +10,12 @@
 
 using System;
 using System.Collections;
-using System.Drawing;
 using System.ComponentModel;
 using System.ComponentModel.Design;
-using System.Windows.Forms;
 using System.Diagnostics;
+using System.Drawing;
+using System.Windows.Forms;
+using ComponentFactory.Krypton.Design.Properties;
 using ComponentFactory.Krypton.Toolkit;
 
 namespace ComponentFactory.Krypton.Ribbon
@@ -54,13 +55,8 @@ namespace ComponentFactory.Krypton.Ribbon
         #endregion
 
         #region Identity
-        /// <summary>
-        /// Initialize a new instance of the KryptonRibbonGroupGalleryDesigner class.
-        /// </summary>
-        public KryptonRibbonGroupGalleryDesigner()
-        {
-        }
-        #endregion
+
+	    #endregion
 
         #region Public
         /// <summary>
@@ -93,14 +89,14 @@ namespace ComponentFactory.Krypton.Ribbon
             _ribbonGallery.Gallery.InRibbonDesignMode = true;
 
             // Hook into events
-            _ribbonGallery.DesignTimeContextMenu += new MouseEventHandler(OnContextMenu);
+            _ribbonGallery.DesignTimeContextMenu += OnContextMenu;
 
             // Get access to the services
             _designerHost = (IDesignerHost)GetService(typeof(IDesignerHost));
             _changeService = (IComponentChangeService)GetService(typeof(IComponentChangeService));
 
             // We need to know when we are being removed/changed
-            _changeService.ComponentChanged += new ComponentChangedEventHandler(OnComponentChanged);
+            _changeService.ComponentChanged += OnComponentChanged;
         }
 
         /// <summary>
@@ -146,8 +142,8 @@ namespace ComponentFactory.Krypton.Ribbon
                 if (disposing)
                 {
                     // Unhook from events
-                    _ribbonGallery.DesignTimeContextMenu -= new MouseEventHandler(OnContextMenu);
-                    _changeService.ComponentChanged -= new ComponentChangedEventHandler(OnComponentChanged);
+                    _ribbonGallery.DesignTimeContextMenu -= OnContextMenu;
+                    _changeService.ComponentChanged -= OnComponentChanged;
                 }
             }
             finally
@@ -167,7 +163,7 @@ namespace ComponentFactory.Krypton.Ribbon
 
             // Setup the array of properties we override
             Attribute[] attributes = new Attribute[0];
-            string[] strArray = new string[] { "Visible", "Enabled" };
+            string[] strArray = { "Visible", "Enabled" };
 
             // Adjust our list of properties
             for (int i = 0; i < strArray.Length; i++)
@@ -220,13 +216,13 @@ namespace ComponentFactory.Krypton.Ribbon
             if (_verbs == null)
             {
                 _verbs = new DesignerVerbCollection();
-                _toggleHelpersVerb = new DesignerVerb("Toggle Helpers", new EventHandler(OnToggleHelpers));
-                _moveFirstVerb = new DesignerVerb("Move Gallery First", new EventHandler(OnMoveFirst));
-                _movePrevVerb = new DesignerVerb("Move Gallery Previous", new EventHandler(OnMovePrevious));
-                _moveNextVerb = new DesignerVerb("Move Gallery Next", new EventHandler(OnMoveNext));
-                _moveLastVerb = new DesignerVerb("Move Gallery Last", new EventHandler(OnMoveLast));
-                _deleteGalleryVerb = new DesignerVerb("Delete Gallery", new EventHandler(OnDeleteGallery));
-                _verbs.AddRange(new DesignerVerb[] { _toggleHelpersVerb, _moveFirstVerb, _movePrevVerb, 
+                _toggleHelpersVerb = new DesignerVerb("Toggle Helpers", OnToggleHelpers);
+                _moveFirstVerb = new DesignerVerb("Move Gallery First", OnMoveFirst);
+                _movePrevVerb = new DesignerVerb("Move Gallery Previous", OnMovePrevious);
+                _moveNextVerb = new DesignerVerb("Move Gallery Next", OnMoveNext);
+                _moveLastVerb = new DesignerVerb("Move Gallery Last", OnMoveLast);
+                _deleteGalleryVerb = new DesignerVerb("Delete Gallery", OnDeleteGallery);
+                _verbs.AddRange(new[] { _toggleHelpersVerb, _moveFirstVerb, _movePrevVerb, 
                                                      _moveNextVerb, _moveLastVerb, _deleteGalleryVerb });
             }
 
@@ -521,24 +517,24 @@ namespace ComponentFactory.Krypton.Ribbon
                 if (_cms == null)
                 {
                     _cms = new ContextMenuStrip();
-                    _toggleHelpersMenu = new ToolStripMenuItem("Design Helpers", null, new EventHandler(OnToggleHelpers));
-                    _visibleMenu = new ToolStripMenuItem("Visible", null, new EventHandler(OnVisible));
-                    _enabledMenu = new ToolStripMenuItem("Enabled", null, new EventHandler(OnEnabled));
-                    _maximumLMenu = new ToolStripMenuItem("Large", null, new EventHandler(OnMaxLarge));
-                    _maximumMMenu = new ToolStripMenuItem("Medium", null, new EventHandler(OnMaxMedium));
-                    _maximumSMenu = new ToolStripMenuItem("Small", null, new EventHandler(OnMaxSmall));
+                    _toggleHelpersMenu = new ToolStripMenuItem("Design Helpers", null, OnToggleHelpers);
+                    _visibleMenu = new ToolStripMenuItem("Visible", null, OnVisible);
+                    _enabledMenu = new ToolStripMenuItem("Enabled", null, OnEnabled);
+                    _maximumLMenu = new ToolStripMenuItem("Large", null, OnMaxLarge);
+                    _maximumMMenu = new ToolStripMenuItem("Medium", null, OnMaxMedium);
+                    _maximumSMenu = new ToolStripMenuItem("Small", null, OnMaxSmall);
                     _maximumSizeMenu = new ToolStripMenuItem("Maximum Size");
                     _maximumSizeMenu.DropDownItems.AddRange(new ToolStripItem[] { _maximumLMenu, _maximumMMenu, _maximumSMenu });
-                    _minimumLMenu = new ToolStripMenuItem("Large", null, new EventHandler(OnMinLarge));
-                    _minimumMMenu = new ToolStripMenuItem("Medium", null, new EventHandler(OnMinMedium));
-                    _minimumSMenu = new ToolStripMenuItem("Small", null, new EventHandler(OnMinSmall));
+                    _minimumLMenu = new ToolStripMenuItem("Large", null, OnMinLarge);
+                    _minimumMMenu = new ToolStripMenuItem("Medium", null, OnMinMedium);
+                    _minimumSMenu = new ToolStripMenuItem("Small", null, OnMinSmall);
                     _minimumSizeMenu = new ToolStripMenuItem("Minimum Size");
                     _minimumSizeMenu.DropDownItems.AddRange(new ToolStripItem[] { _minimumLMenu, _minimumMMenu, _minimumSMenu });
-                    _moveFirstMenu = new ToolStripMenuItem("Move Gallery First", ComponentFactory.Krypton.Design.Properties.Resources.MoveFirst, new EventHandler(OnMoveFirst));
-                    _movePreviousMenu = new ToolStripMenuItem("Move Gallery Previous", ComponentFactory.Krypton.Design.Properties.Resources.MovePrevious, new EventHandler(OnMovePrevious));
-                    _moveNextMenu = new ToolStripMenuItem("Move Gallery Next", ComponentFactory.Krypton.Design.Properties.Resources.MoveNext, new EventHandler(OnMoveNext));
-                    _moveLastMenu = new ToolStripMenuItem("Move Gallery Last", ComponentFactory.Krypton.Design.Properties.Resources.MoveLast, new EventHandler(OnMoveLast));
-                    _deleteGalleryMenu = new ToolStripMenuItem("Delete Gallery", ComponentFactory.Krypton.Design.Properties.Resources.delete2, new EventHandler(OnDeleteGallery));
+                    _moveFirstMenu = new ToolStripMenuItem("Move Gallery First", Resources.MoveFirst, OnMoveFirst);
+                    _movePreviousMenu = new ToolStripMenuItem("Move Gallery Previous", Resources.MovePrevious, OnMovePrevious);
+                    _moveNextMenu = new ToolStripMenuItem("Move Gallery Next", Resources.MoveNext, OnMoveNext);
+                    _moveLastMenu = new ToolStripMenuItem("Move Gallery Last", Resources.MoveLast, OnMoveLast);
+                    _deleteGalleryMenu = new ToolStripMenuItem("Delete Gallery", Resources.delete2, OnDeleteGallery);
                     _cms.Items.AddRange(new ToolStripItem[] { _toggleHelpersMenu, new ToolStripSeparator(),
                                                               _visibleMenu, _enabledMenu, _maximumSizeMenu, _minimumSizeMenu, new ToolStripSeparator(),
                                                               _moveFirstMenu, _movePreviousMenu, _moveNextMenu, _moveLastMenu, new ToolStripSeparator(),

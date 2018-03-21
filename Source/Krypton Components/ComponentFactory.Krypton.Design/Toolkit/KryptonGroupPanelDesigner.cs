@@ -72,8 +72,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 if ((Control.Parent is KryptonGroup) || 
                     (Control.Parent is KryptonHeaderGroup))
 					return (SelectionRules.None | SelectionRules.Locked);
-				else
-					return SelectionRules.None;
+				return SelectionRules.None;
 			}
 		}
 
@@ -87,7 +86,7 @@ namespace ComponentFactory.Krypton.Toolkit
 				ArrayList snapLines = null;
 
                 // Let the base class generate snap lines
-				base.AddPaddingSnapLines(ref snapLines);
+				AddPaddingSnapLines(ref snapLines);
 
 				return snapLines;
 			}
@@ -189,8 +188,7 @@ namespace ComponentFactory.Krypton.Toolkit
 					// Then get the attribute associated with the parent of the panel
 					return (InheritanceAttribute)TypeDescriptor.GetAttributes(_panel.Parent)[typeof(InheritanceAttribute)];
 				}
-				else
-					return base.InheritanceAttribute;
+				return base.InheritanceAttribute;
 			}
 		}
 		#endregion

@@ -18,12 +18,12 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPaletteRibbonGroupNormalTitle : Storage
     {
         #region Instance Fields
-        private PaletteRibbonDoubleInheritRedirect _stateInherit;
-        private PaletteRibbonDouble _stateCommon;
-        private PaletteRibbonDouble _stateNormal;
-        private PaletteRibbonDouble _stateTracking;
-        private PaletteRibbonDouble _stateContextNormal;
-        private PaletteRibbonDouble _stateContextTracking;
+        private readonly PaletteRibbonDoubleInheritRedirect _stateInherit;
+        private readonly PaletteRibbonDouble _stateCommon;
+        private readonly PaletteRibbonDouble _stateNormal;
+        private readonly PaletteRibbonDouble _stateTracking;
+        private readonly PaletteRibbonDouble _stateContextNormal;
+        private readonly PaletteRibbonDouble _stateContextTracking;
         #endregion
 
         #region Identity

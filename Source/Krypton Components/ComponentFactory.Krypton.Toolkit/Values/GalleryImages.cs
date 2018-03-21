@@ -18,9 +18,9 @@ namespace ComponentFactory.Krypton.Toolkit
     public class GalleryImages : Storage
     {
         #region Instance Fields
-        private GalleryButtonImages _up;
-        private GalleryButtonImages _down;
-        private GalleryButtonImages _dropDown;
+        private readonly GalleryButtonImages _up;
+        private readonly GalleryButtonImages _down;
+        private readonly GalleryButtonImages _dropDown;
         #endregion
 
         #region Identity

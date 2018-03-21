@@ -16,7 +16,7 @@ namespace ComponentFactory.Krypton.Toolkit
     public class PaletteLayoutEventArgs : NeedLayoutEventArgs
 	{
 		#region Instance Fields
-        private bool _needColorTable;
+        private readonly bool _needColorTable;
 		#endregion
 
 		#region Identity

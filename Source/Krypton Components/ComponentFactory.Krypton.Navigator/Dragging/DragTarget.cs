@@ -43,11 +43,11 @@ namespace ComponentFactory.Krypton.Navigator
     public abstract class DragTarget : IDisposable
     {
         #region Instance Fields
-        private Rectangle _screenRect;
-        private Rectangle _hotRect;
-        private Rectangle _drawRect;
-        private DragTargetHint _hint;
-        private KryptonPageFlags _allowFlags;
+        private readonly Rectangle _screenRect;
+        private readonly Rectangle _hotRect;
+        private readonly Rectangle _drawRect;
+        private readonly DragTargetHint _hint;
+        private readonly KryptonPageFlags _allowFlags;
         private bool _disposed;
         #endregion
 

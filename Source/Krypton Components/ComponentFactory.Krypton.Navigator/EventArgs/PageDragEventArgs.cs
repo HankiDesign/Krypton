@@ -19,8 +19,8 @@ namespace ComponentFactory.Krypton.Navigator
 	public class PageDragEventArgs : EventArgs
 	{
 		#region Instance Fields
-        private Point _screenPoint;
-        private KryptonPageCollection _pages;
+        private readonly Point _screenPoint;
+        private readonly KryptonPageCollection _pages;
 		#endregion
 
 		#region Identity

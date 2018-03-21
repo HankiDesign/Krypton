@@ -25,8 +25,8 @@ namespace ComponentFactory.Krypton.Ribbon
         public class RibbonViewControl : ViewControl
         {
             #region Instance Fields
-            private KryptonRibbon _ribbon;
-            private Button _hiddenFocusTarget;
+            private readonly KryptonRibbon _ribbon;
+            private readonly Button _hiddenFocusTarget;
             #endregion
 
             #region Identity
@@ -110,22 +110,22 @@ namespace ComponentFactory.Krypton.Ribbon
         #endregion
 
         #region Static Fields
-        private static int SCROLL_GAP = 8;
+        private static readonly int SCROLL_GAP = 8;
         #endregion
 
         #region Instance Fields
-        private KryptonRibbon _ribbon;
-        private NeedPaintHandler _needPaintDelegate;
+        private readonly KryptonRibbon _ribbon;
+        private readonly NeedPaintHandler _needPaintDelegate;
         private Orientation _orientation;
-        private ViewBase _viewFiller;
-        private ViewLayoutControl _viewControl;
-        private ViewLayoutRibbonScroller _nearScroller;
-        private ViewLayoutRibbonScroller _farScroller;
-        private ViewLayoutRibbonTabs _ribbonTabs;
-        private RibbonViewControl _viewControlContent;
+        private readonly ViewBase _viewFiller;
+        private readonly ViewLayoutControl _viewControl;
+        private readonly ViewLayoutRibbonScroller _nearScroller;
+        private readonly ViewLayoutRibbonScroller _farScroller;
+        private readonly ViewLayoutRibbonTabs _ribbonTabs;
+        private readonly RibbonViewControl _viewControlContent;
         private Rectangle _viewClipRect;
         private int _scrollOffset;
-        private int _scrollSpeed;
+        private readonly int _scrollSpeed;
         #endregion
 
         #region Events

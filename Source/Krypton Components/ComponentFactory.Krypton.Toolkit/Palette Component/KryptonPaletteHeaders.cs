@@ -19,15 +19,15 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPaletteHeaders : Storage
     {
         #region Instance Fields
-        private KryptonPaletteHeader _headerCommon;
-        private KryptonPaletteHeader _headerPrimary;
-        private KryptonPaletteHeader _headerSecondary;
-        private KryptonPaletteHeader _headerDockInactive;
-        private KryptonPaletteHeader _headerDockActive;
-        private KryptonPaletteHeader _headerCalendar;
-        private KryptonPaletteHeader _headerForm;
-        private KryptonPaletteHeader _headerCustom1;
-        private KryptonPaletteHeader _headerCustom2;
+        private readonly KryptonPaletteHeader _headerCommon;
+        private readonly KryptonPaletteHeader _headerPrimary;
+        private readonly KryptonPaletteHeader _headerSecondary;
+        private readonly KryptonPaletteHeader _headerDockInactive;
+        private readonly KryptonPaletteHeader _headerDockActive;
+        private readonly KryptonPaletteHeader _headerCalendar;
+        private readonly KryptonPaletteHeader _headerForm;
+        private readonly KryptonPaletteHeader _headerCustom1;
+        private readonly KryptonPaletteHeader _headerCustom2;
         #endregion
 
         #region Identity

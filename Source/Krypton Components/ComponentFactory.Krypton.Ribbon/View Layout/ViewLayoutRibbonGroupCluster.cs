@@ -32,18 +32,18 @@ namespace ComponentFactory.Krypton.Ribbon
         #endregion
 
         #region Instance Fields
-        private KryptonRibbon _ribbon;
-        private KryptonRibbonGroupCluster _ribbonCluster;
+        private readonly KryptonRibbon _ribbon;
+        private readonly KryptonRibbonGroupCluster _ribbonCluster;
         private ViewDrawRibbonDesignCluster _viewAddItem;
-        private ViewDrawRibbonGroupClusterSeparator _startSep;
-        private ViewDrawRibbonGroupClusterSeparator _endSep;
-        private PaletteBorderEdge _paletteBorderEdge;
+        private readonly ViewDrawRibbonGroupClusterSeparator _startSep;
+        private readonly ViewDrawRibbonGroupClusterSeparator _endSep;
+        private readonly PaletteBorderEdge _paletteBorderEdge;
         private PaletteRibbonShape _lastShape;
-        private NeedPaintHandler _needPaint;
+        private readonly NeedPaintHandler _needPaint;
         private ItemToView _itemToView;
         private ViewToEdge _viewToEdge;
-        private ViewToSize _viewToSizeMedium;
-        private ViewToSize _viewToSizeSmall;
+        private readonly ViewToSize _viewToSizeMedium;
+        private readonly ViewToSize _viewToSizeSmall;
         private GroupItemSize _currentSize;
         private bool _startSepVisible;
         private bool _endSepVisible;

@@ -26,8 +26,8 @@ namespace ComponentFactory.Krypton.Toolkit
     {
         #region Instance Fields
         private bool _horizontal;
-        private PaletteDoubleRedirect _stateNormal;
-        private PaletteRedirectDouble _redirectSeparator;
+        private readonly PaletteDoubleRedirect _stateNormal;
+        private readonly PaletteRedirectDouble _redirectSeparator;
         #endregion
 
         #region Identity

@@ -27,14 +27,14 @@ namespace ComponentFactory.Krypton.Navigator
         #endregion
 
         #region Instance Fields
-        private KryptonNavigator _navigator;
+        private readonly KryptonNavigator _navigator;
         private ButtonStyle _checkButtonStyle;
         private ButtonStyle _overflowButtonStyle;
         private PaletteBorderStyle _borderEdgeStyle;
         private ButtonOrientation _itemOrientation;
         private Orientation _orientation;
-        private NavigatorOutlookFull _full;
-        private NavigatorOutlookMini _mini;
+        private readonly NavigatorOutlookFull _full;
+        private readonly NavigatorOutlookMini _mini;
         private InheritBool _headerSecondaryVisible;
         private string _textMoreButtons;
         private string _textFewerButtons;

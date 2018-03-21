@@ -18,10 +18,10 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPalettePanel : Storage
     {
         #region Instance Fields
-        private PaletteBackInheritRedirect _stateInherit;
-        private PaletteBack _stateCommon;
-        private PaletteBack _stateNormal;
-        private PaletteBack _stateDisabled;
+        private readonly PaletteBackInheritRedirect _stateInherit;
+        private readonly PaletteBack _stateCommon;
+        private readonly PaletteBack _stateNormal;
+        private readonly PaletteBack _stateDisabled;
         #endregion
 
         #region Identity

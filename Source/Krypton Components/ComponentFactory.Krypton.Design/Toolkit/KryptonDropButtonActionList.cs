@@ -8,16 +8,16 @@
 //  Version 4.4.0.0 	www.ComponentFactory.com
 // *****************************************************************************
 
-using System.Drawing;
 using System.ComponentModel.Design;
+using System.Drawing;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
     internal class KryptonDropButtonActionList : DesignerActionList
     {
         #region Instance Fields
-        private KryptonDropButton _dropButton;
-        private IComponentChangeService _service;
+        private readonly KryptonDropButton _dropButton;
+        private readonly IComponentChangeService _service;
         #endregion
 
         #region Identity

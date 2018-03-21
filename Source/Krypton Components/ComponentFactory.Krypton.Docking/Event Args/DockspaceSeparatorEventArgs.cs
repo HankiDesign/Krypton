@@ -19,8 +19,8 @@ namespace ComponentFactory.Krypton.Docking
 	public class DockspaceSeparatorEventArgs : EventArgs
 	{
 		#region Instance Fields
-        private KryptonSeparator _separator;
-        private KryptonDockingDockspace _element;
+        private readonly KryptonSeparator _separator;
+        private readonly KryptonDockingDockspace _element;
 		#endregion
 
 		#region Identity

@@ -40,7 +40,7 @@ namespace ComponentFactory.Krypton.Navigator
     {
         #region Static Fields
         private readonly static int WM_KEYUP = 0x0101;
-        private static MethodInfo _containerSelect;
+        private static readonly MethodInfo _containerSelect;
         #endregion
 
         #region Instance Fields

@@ -37,16 +37,16 @@ namespace ComponentFactory.Krypton.Toolkit
         private Image _image;
         private Color _imageTransparentColor;
         private CheckState _checkState;
-        private PaletteContentInheritRedirect _stateCommonRedirect;
-        private PaletteContent _stateCommon;
-        private PaletteContent _stateDisabled;
-        private PaletteContent _stateNormal;
-        private PaletteContent _stateFocus;
-        private PaletteContentInheritOverride _overrideNormal;
-        private PaletteContentInheritOverride _overrideDisabled;
-        private PaletteRedirectCheckBox _stateCheckBoxImages;
+        private readonly PaletteContentInheritRedirect _stateCommonRedirect;
+        private readonly PaletteContent _stateCommon;
+        private readonly PaletteContent _stateDisabled;
+        private readonly PaletteContent _stateNormal;
+        private readonly PaletteContent _stateFocus;
+        private readonly PaletteContentInheritOverride _overrideNormal;
+        private readonly PaletteContentInheritOverride _overrideDisabled;
+        private readonly PaletteRedirectCheckBox _stateCheckBoxImages;
         private KryptonCommand _command;
-        private CheckBoxImages _images;
+        private readonly CheckBoxImages _images;
         private LabelStyle _style;
         #endregion
 

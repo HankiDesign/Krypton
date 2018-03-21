@@ -18,8 +18,8 @@ namespace ComponentFactory.Krypton.Workspace
 	public class ActiveCellChangedEventArgs : EventArgs
 	{
 		#region Instance Fields
-        private KryptonWorkspaceCell _oldCell;
-        private KryptonWorkspaceCell _newCell;
+        private readonly KryptonWorkspaceCell _oldCell;
+        private readonly KryptonWorkspaceCell _newCell;
 		#endregion
 
 		#region Identity

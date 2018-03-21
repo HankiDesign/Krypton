@@ -32,13 +32,13 @@ namespace ComponentFactory.Krypton.Toolkit
 	{
 		#region Instance Fields
         private Orientation _orientation;
-        private PaletteBorderInheritRedirect _borderRedirect;
-        private PaletteBorderEdgeRedirect _stateCommon;
-        private PaletteBorderEdge _stateDisabled;
-        private PaletteBorderEdge _stateNormal;
+        private readonly PaletteBorderInheritRedirect _borderRedirect;
+        private readonly PaletteBorderEdgeRedirect _stateCommon;
+        private readonly PaletteBorderEdge _stateDisabled;
+        private readonly PaletteBorderEdge _stateNormal;
         private PaletteBorderEdge _stateCurrent;
         private PaletteState _state;
-        private ViewDrawPanel _drawPanel;
+        private readonly ViewDrawPanel _drawPanel;
         #endregion
 
 		#region Identity

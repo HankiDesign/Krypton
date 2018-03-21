@@ -28,11 +28,11 @@ namespace ComponentFactory.Krypton.Ribbon
         #endregion
 
         #region Instance Fields
-        private KryptonRibbon _ribbon;
+        private readonly KryptonRibbon _ribbon;
         private KryptonRibbonGroupDateTimePicker _ribbonDateTimePicker;
         private ViewDrawRibbonGroup _activeGroup;
-        private DateTimePickerController _controller;
-        private NeedPaintHandler _needPaint;
+        private readonly DateTimePickerController _controller;
+        private readonly NeedPaintHandler _needPaint;
         private GroupItemSize _currentSize;
         #endregion
 

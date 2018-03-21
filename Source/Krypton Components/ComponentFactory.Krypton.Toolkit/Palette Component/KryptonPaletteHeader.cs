@@ -18,9 +18,9 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPaletteHeader : Storage
     {
         #region Instance Fields
-        private PaletteHeaderRedirect _stateCommon;
-        private PaletteTripleMetric _stateDisabled;
-        private PaletteTripleMetric _stateNormal;
+        private readonly PaletteHeaderRedirect _stateCommon;
+        private readonly PaletteTripleMetric _stateDisabled;
+        private readonly PaletteTripleMetric _stateNormal;
         #endregion
 
         #region Identity

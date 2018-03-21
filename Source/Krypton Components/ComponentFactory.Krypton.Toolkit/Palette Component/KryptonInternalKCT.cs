@@ -19,7 +19,7 @@ namespace ComponentFactory.Krypton.Toolkit
         #region Instance Fields
         private KryptonColorTable _baseKCT;
         private InheritBool _useRoundedEdges;
-        private Color[] _colors;
+        private readonly Color[] _colors;
         private Font _menuFont;
         private Font _toolFont;
         private Font _statusFont;

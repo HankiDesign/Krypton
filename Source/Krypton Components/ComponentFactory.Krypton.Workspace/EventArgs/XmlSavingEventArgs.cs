@@ -19,8 +19,8 @@ namespace ComponentFactory.Krypton.Workspace
 	public class XmlSavingEventArgs : EventArgs
 	{
 		#region Instance Fields
-        private KryptonWorkspace _workspace;
-        private XmlWriter _xmlWriter;
+        private readonly KryptonWorkspace _workspace;
+        private readonly XmlWriter _xmlWriter;
 		#endregion
 
 		#region Identity

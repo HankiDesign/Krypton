@@ -22,8 +22,8 @@ namespace ComponentFactory.Krypton.Toolkit
 	{
 		#region Instance Fields
         private IPaletteMetric _inherit;
-        private PaletteTripleMetric _paletteHeaderPrimary;
-        private PaletteTripleMetric _paletteHeaderSecondary;
+        private readonly PaletteTripleMetric _paletteHeaderPrimary;
+        private readonly PaletteTripleMetric _paletteHeaderSecondary;
         #endregion
 
 		#region Identity

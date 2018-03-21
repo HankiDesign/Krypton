@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace ComponentFactory.Krypton.Toolkit
 {
     partial class PaletteDrawBordersSelector
@@ -5,7 +8,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <summary> 
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary> 
         /// Clean up any resources being used.
@@ -115,11 +118,11 @@ namespace ComponentFactory.Krypton.Toolkit
 
         #endregion
 
-        private System.Windows.Forms.CheckBox checkBoxInherit;
-        private System.Windows.Forms.CheckBox checkBoxTop;
-        private System.Windows.Forms.CheckBox checkBoxBottom;
-        private System.Windows.Forms.CheckBox checkBoxLeft;
-        private System.Windows.Forms.CheckBox checkBoxRight;
-        private System.Windows.Forms.Label label1;
+        private CheckBox checkBoxInherit;
+        private CheckBox checkBoxTop;
+        private CheckBox checkBoxBottom;
+        private CheckBox checkBoxLeft;
+        private CheckBox checkBoxRight;
+        private Label label1;
     }
 }

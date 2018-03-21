@@ -40,7 +40,7 @@ namespace ComponentFactory.Krypton.Toolkit
         public class KryptonCheckButtonCollection : CollectionBase
         {
             #region Instance Fields
-            private KryptonCheckSet _owner;
+            private readonly KryptonCheckSet _owner;
             #endregion
 
             #region Identity
@@ -207,7 +207,7 @@ namespace ComponentFactory.Krypton.Toolkit
         private bool _ignoreEvents;
         private bool _allowUncheck;
         private KryptonCheckButton _checkedButton;
-        private KryptonCheckButtonCollection _checkButtons;
+        private readonly KryptonCheckButtonCollection _checkButtons;
         #endregion
 
         #region Events

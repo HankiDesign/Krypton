@@ -19,11 +19,11 @@ namespace ComponentFactory.Krypton.Navigator
     public class PaletteNavigatorOther : Storage
     {
         #region Instance Fields
-        private PaletteTriple _paletteCheckButton;
-        private PaletteTriple _paletteOverflowButton;
-        private PaletteTriple _paletteMiniButton;
-        private PaletteTabTriple _paletteTab;
-        private PaletteRibbonTabContent _paletteRibbonTab;
+        private readonly PaletteTriple _paletteCheckButton;
+        private readonly PaletteTriple _paletteOverflowButton;
+        private readonly PaletteTriple _paletteMiniButton;
+        private readonly PaletteTabTriple _paletteTab;
+        private readonly PaletteRibbonTabContent _paletteRibbonTab;
         #endregion
 
         #region Identity

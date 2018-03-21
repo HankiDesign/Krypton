@@ -29,7 +29,7 @@ namespace ComponentFactory.Krypton.Ribbon
 		/// <returns>An array of data types that this collection can contain.</returns>
 		protected override Type[] CreateNewItemTypes()
 		{
-            return new Type[] { typeof(KryptonRibbonGroupLines),
+            return new[] { typeof(KryptonRibbonGroupLines),
                                 typeof(KryptonRibbonGroupTriple),
                                 typeof(KryptonRibbonGroupSeparator) };
 		}

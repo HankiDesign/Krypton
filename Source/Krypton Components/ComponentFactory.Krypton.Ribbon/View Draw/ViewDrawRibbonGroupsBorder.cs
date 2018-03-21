@@ -28,11 +28,11 @@ namespace ComponentFactory.Krypton.Ribbon
         #endregion
 
         #region Instance Fields
-        private KryptonRibbon _ribbon;
-        private NeedPaintHandler _needPaintDelegate;
+        private readonly KryptonRibbon _ribbon;
+        private readonly NeedPaintHandler _needPaintDelegate;
         private IPaletteRibbonBack _inherit;
         private IDisposable _memento;
-        private bool _borderOutside;
+        private readonly bool _borderOutside;
         #endregion
 
         #region Identity

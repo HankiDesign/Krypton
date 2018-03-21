@@ -29,7 +29,7 @@ namespace ComponentFactory.Krypton.Ribbon
     public class KryptonRibbonGroupCluster : KryptonRibbonGroupContainer
     {
         #region Instance Fields
-        private KryptonRibbonGroupClusterCollection _ribbonClusterItems;
+        private readonly KryptonRibbonGroupClusterCollection _ribbonClusterItems;
         private GroupItemSize _itemSizeMax;
         private GroupItemSize _itemSizeMin;
         private GroupItemSize _itemSizeCurrent;

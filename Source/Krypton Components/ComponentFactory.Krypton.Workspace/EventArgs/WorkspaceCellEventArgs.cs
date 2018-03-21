@@ -18,7 +18,7 @@ namespace ComponentFactory.Krypton.Workspace
 	public class WorkspaceCellEventArgs : EventArgs
 	{
 		#region Instance Fields
-        private KryptonWorkspaceCell _cell;
+        private readonly KryptonWorkspaceCell _cell;
 		#endregion
 
 		#region Identity

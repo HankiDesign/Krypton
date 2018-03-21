@@ -18,10 +18,10 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPaletteRibbonQATMinibar : Storage
     {
         #region Instance Fields
-        private PaletteRibbonBackInheritRedirect _stateInherit;
-        private PaletteRibbonBack _stateCommon;
-        private PaletteRibbonBack _stateActive;
-        private PaletteRibbonBack _stateInactive;
+        private readonly PaletteRibbonBackInheritRedirect _stateInherit;
+        private readonly PaletteRibbonBack _stateCommon;
+        private readonly PaletteRibbonBack _stateActive;
+        private readonly PaletteRibbonBack _stateInactive;
         #endregion
 
         #region Identity

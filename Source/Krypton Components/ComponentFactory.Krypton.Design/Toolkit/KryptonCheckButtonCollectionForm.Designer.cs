@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace ComponentFactory.Krypton.Toolkit
 {
     internal partial class KryptonCheckButtonCollectionForm
@@ -5,7 +8,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -104,9 +107,9 @@ namespace ComponentFactory.Krypton.Toolkit
 
         #endregion
 
-        private System.Windows.Forms.CheckedListBox checkedListBox;
-        private System.Windows.Forms.Button buttonOK;
-        private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.Label label;
+        private CheckedListBox checkedListBox;
+        private Button buttonOK;
+        private Button buttonCancel;
+        private Label label;
     }
 }

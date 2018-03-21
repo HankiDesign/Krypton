@@ -16,7 +16,7 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class PaletteTextTrimConverter : StringLookupConverter
     {
         #region Static Fields
-        private Pair[] _pairs = new Pair[] { new Pair(PaletteTextTrim.Inherit,              "Inherit"),
+        private readonly Pair[] _pairs = new Pair[] { new Pair(PaletteTextTrim.Inherit,              "Inherit"),
                                              new Pair(PaletteTextTrim.Hide,                 "Hide"),
                                              new Pair(PaletteTextTrim.Character,            "Character"),
                                              new Pair(PaletteTextTrim.Word,                 "Word"),

@@ -19,8 +19,8 @@ namespace ComponentFactory.Krypton.Docking
 	public class DockGlobalLoadingEventArgs : EventArgs
 	{
 		#region Instance Fields
-        private KryptonDockingManager _manager;
-        private XmlReader _xmlReader;
+        private readonly KryptonDockingManager _manager;
+        private readonly XmlReader _xmlReader;
 		#endregion
 
 		#region Identity

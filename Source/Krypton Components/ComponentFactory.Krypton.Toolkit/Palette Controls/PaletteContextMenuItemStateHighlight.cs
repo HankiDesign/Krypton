@@ -18,8 +18,8 @@ namespace ComponentFactory.Krypton.Toolkit
     public class PaletteContextMenuItemStateHighlight : Storage
 	{
 		#region Instance Fields
-        private PaletteDoubleMetric _paletteItemHighlight;
-        private PaletteDouble _paletteItemSplit;
+        private readonly PaletteDoubleMetric _paletteItemHighlight;
+        private readonly PaletteDouble _paletteItemSplit;
         #endregion
 
 		#region Identity

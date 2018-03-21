@@ -20,20 +20,20 @@ namespace ComponentFactory.Krypton.Ribbon
     internal class VisualPopupAppMenu : VisualPopup
     {
         #region Instance Fields
-        private KryptonRibbon _ribbon;
+        private readonly KryptonRibbon _ribbon;
         private IPalette _palette;
         private IPaletteBack _drawOutsideBack;
         private IPaletteBorder _drawOutsideBorder;
-        private AppButtonMenuProvider _provider;
+        private readonly AppButtonMenuProvider _provider;
         private ViewDrawRibbonAppMenu _drawOutsideDocker;
         private ViewDrawRibbonAppMenuOuter _drawOutsideBacking;
         private ViewDrawRibbonAppMenuInner _drawInnerBacking;
         private ViewDrawRibbonAppButton _appButtonBottom;
-        private ViewLayoutStack _viewColumns;
+        private readonly ViewLayoutStack _viewColumns;
         private ViewLayoutDocker _viewButtonSpecDocker;
-        private PaletteRedirect _redirector;
+        private readonly PaletteRedirect _redirector;
         private ButtonSpecManagerLayout _buttonManager;
-        private Rectangle _rectAppButtonBottomHalf;
+        private readonly Rectangle _rectAppButtonBottomHalf;
         private Rectangle _rectAppButtonTopHalf;
         #endregion
 

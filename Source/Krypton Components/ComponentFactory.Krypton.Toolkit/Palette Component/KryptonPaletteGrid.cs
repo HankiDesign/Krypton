@@ -18,12 +18,12 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPaletteGrid : Storage
     {
         #region Instance Fields
-        private PaletteDataGridViewRedirect _stateCommon;
-        private PaletteDataGridViewAll _stateDisabled;
-        private PaletteDataGridViewAll _stateNormal;
-        private PaletteDataGridViewHeaders _stateTracking;
-        private PaletteDataGridViewHeaders _statePressed;
-        private PaletteDataGridViewCells _stateSelected;
+        private readonly PaletteDataGridViewRedirect _stateCommon;
+        private readonly PaletteDataGridViewAll _stateDisabled;
+        private readonly PaletteDataGridViewAll _stateNormal;
+        private readonly PaletteDataGridViewHeaders _stateTracking;
+        private readonly PaletteDataGridViewHeaders _statePressed;
+        private readonly PaletteDataGridViewCells _stateSelected;
         #endregion
 
         #region Identity

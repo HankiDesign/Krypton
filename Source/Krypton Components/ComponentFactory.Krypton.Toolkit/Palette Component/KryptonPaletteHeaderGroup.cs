@@ -19,7 +19,7 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPaletteHeaderGroup : Storage
     {
         #region Instance Fields
-        private KryptonPaletteHeaderGroupState _stateCommon;
+        private readonly KryptonPaletteHeaderGroupState _stateCommon;
         #endregion
 
         #region Identity

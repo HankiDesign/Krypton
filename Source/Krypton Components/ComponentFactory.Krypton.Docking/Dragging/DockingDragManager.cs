@@ -24,11 +24,11 @@ namespace ComponentFactory.Krypton.Docking
                                       IMessageFilter
     {
         #region Instance Fields
-        private KryptonDockingManager _manager;
+        private readonly KryptonDockingManager _manager;
         private KryptonFloatingWindow _window;
         private Point _offset;
         private Point _screenPt;
-        private Timer _moveTimer;
+        private readonly Timer _moveTimer;
         private bool _addedFilter;
         private bool _monitorMouse;
         #endregion

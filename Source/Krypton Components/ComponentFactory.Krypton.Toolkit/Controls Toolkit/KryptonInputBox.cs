@@ -29,9 +29,9 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region Instance Fields
-        private string _prompt;
-        private string _caption;
-        private string _defaultResponse;
+        private readonly string _prompt;
+        private readonly string _caption;
+        private readonly string _defaultResponse;
         private KryptonPanel _panelMessage;
         private KryptonWrapLabel _labelPrompt;
         private KryptonTextBox _textBoxResponse;

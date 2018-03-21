@@ -19,11 +19,11 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPaletteSeparators : Storage
     {
         #region Instance Fields
-        private KryptonPaletteSeparator _separatorCommon;
-        private KryptonPaletteSeparator _separatorLowProfile;
-        private KryptonPaletteSeparator _separatorHighProfile;
-        private KryptonPaletteSeparator _separatorHighInternalProfile;
-        private KryptonPaletteSeparator _separatorCustom1;
+        private readonly KryptonPaletteSeparator _separatorCommon;
+        private readonly KryptonPaletteSeparator _separatorLowProfile;
+        private readonly KryptonPaletteSeparator _separatorHighProfile;
+        private readonly KryptonPaletteSeparator _separatorHighInternalProfile;
+        private readonly KryptonPaletteSeparator _separatorCustom1;
         #endregion
 
         #region Identity

@@ -22,10 +22,10 @@ namespace ComponentFactory.Krypton.Toolkit
                                                  IContentValues
 	{
 		#region Instance Fields
-        private KryptonContextMenuImageSelect _imageSelect;
-        private ViewLayoutMenuItemSelect _layout;
-        private MenuImageSelectController _controller;
-        private NeedPaintHandler _needPaint;
+        private readonly KryptonContextMenuImageSelect _imageSelect;
+        private readonly ViewLayoutMenuItemSelect _layout;
+        private readonly MenuImageSelectController _controller;
+        private readonly NeedPaintHandler _needPaint;
         private ImageList _imageList;
         private int _imageIndex;
         #endregion

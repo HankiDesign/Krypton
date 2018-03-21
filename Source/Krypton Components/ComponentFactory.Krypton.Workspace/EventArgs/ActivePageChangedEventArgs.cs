@@ -19,8 +19,8 @@ namespace ComponentFactory.Krypton.Workspace
 	public class ActivePageChangedEventArgs : EventArgs
 	{
 		#region Instance Fields
-        private KryptonPage _oldPage;
-        private KryptonPage _newPage;
+        private readonly KryptonPage _oldPage;
+        private readonly KryptonPage _newPage;
 		#endregion
 
 		#region Identity

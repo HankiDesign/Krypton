@@ -45,10 +45,9 @@ namespace ComponentFactory.Krypton.Toolkit
         {
             get
             {
-                if (_domainUpDown != null)
+	            if (_domainUpDown != null)
                     return _domainUpDown.ButtonSpecs;
-                else
-                    return base.AssociatedComponents;
+	            return base.AssociatedComponents;
             }
         }
         #endregion

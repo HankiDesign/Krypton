@@ -10,9 +10,9 @@
 
 using System;
 using System.Collections;
-using System.Drawing;
 using System.ComponentModel;
 using System.ComponentModel.Design;
+using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
@@ -52,8 +52,8 @@ namespace ComponentFactory.Krypton.Toolkit
             if (_monthCalendar != null)
             {
                 // Hook into header event
-                _monthCalendar.GetViewManager().MouseUpProcessed += new MouseEventHandler(OnCalendarMouseUp);
-                _monthCalendar.GetViewManager().DoubleClickProcessed += new PointHandler(OnCalendarDoubleClick);
+                _monthCalendar.GetViewManager().MouseUpProcessed += OnCalendarMouseUp;
+                _monthCalendar.GetViewManager().DoubleClickProcessed += OnCalendarDoubleClick;
             }
 
             // Acquire service interfaces
@@ -62,7 +62,7 @@ namespace ComponentFactory.Krypton.Toolkit
             _selectionService = (ISelectionService)GetService(typeof(ISelectionService));
 
             // We need to know when we are being removed
-            _changeService.ComponentRemoving += new ComponentEventHandler(OnComponentRemoving);
+            _changeService.ComponentRemoving += OnComponentRemoving;
 
         }
 
@@ -79,16 +79,13 @@ namespace ComponentFactory.Krypton.Toolkit
                 // If no button specs then nothing more to do
                 if ((_monthCalendar == null) || (_monthCalendar.ButtonSpecs.Count == 0))
                     return baseComponents;
-                else
-                {
-                    // Create a new collection for both values
-                    ArrayList compound = new ArrayList(baseComponents);
+	            // Create a new collection for both values
+	            ArrayList compound = new ArrayList(baseComponents);
 
-                    // Add all the button specs to the end
-                    compound.AddRange(_monthCalendar.ButtonSpecs);
+	            // Add all the button specs to the end
+	            compound.AddRange(_monthCalendar.ButtonSpecs);
 
-                    return compound;
-                }
+	            return compound;
             }
         }
 
@@ -132,11 +129,11 @@ namespace ComponentFactory.Krypton.Toolkit
             if (_monthCalendar != null)
             {
                 // Unhook from events
-                _monthCalendar.GetViewManager().MouseUpProcessed -= new MouseEventHandler(OnCalendarMouseUp);
-                _monthCalendar.GetViewManager().DoubleClickProcessed -= new PointHandler(OnCalendarDoubleClick);
+                _monthCalendar.GetViewManager().MouseUpProcessed -= OnCalendarMouseUp;
+                _monthCalendar.GetViewManager().DoubleClickProcessed -= OnCalendarDoubleClick;
             }
 
-            _changeService.ComponentRemoving -= new ComponentEventHandler(OnComponentRemoving);
+            _changeService.ComponentRemoving -= OnComponentRemoving;
 
             // Must let base class do standard stuff
             base.Dispose(disposing);
@@ -149,7 +146,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <returns>true if a click at the specified point is to be handled by the control; otherwise, false.</returns>
         protected override bool GetHitTest(Point point)
         {
-            if (_monthCalendar != null)
+	        if (_monthCalendar != null)
             {
                 // Ask the control if it wants to process the point
                 bool ret = _monthCalendar.DesignerGetHitTest(_monthCalendar.PointToClient(point));
@@ -164,8 +161,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
                 return ret;
             }
-            else
-                return false;
+	        return false;
         }
 
         /// <summary>

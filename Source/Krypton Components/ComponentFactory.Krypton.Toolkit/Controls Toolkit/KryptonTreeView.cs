@@ -44,10 +44,10 @@ namespace ComponentFactory.Krypton.Toolkit
             #endregion
 
             #region Instance Fields
-            private ViewManager _viewManager;
-            private ViewDrawPanel _drawPanel;
-            private KryptonTreeView _kryptonTreeView;
-            private IntPtr _screenDC;
+            private readonly ViewManager _viewManager;
+            private readonly ViewDrawPanel _drawPanel;
+            private readonly KryptonTreeView _kryptonTreeView;
+            private readonly IntPtr _screenDC;
             private bool _mouseOver;
             #endregion
 
@@ -310,44 +310,44 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region Instance Fields
-        private PaletteTreeStateRedirect _stateCommon;
-        private PaletteTreeState _stateDisabled;
-        private PaletteTreeState _stateNormal;
-        private PaletteDouble _stateActive;
-        private PaletteTreeNodeTriple _stateTracking;
-        private PaletteTreeNodeTriple _statePressed;
-        private PaletteTreeNodeTriple _stateCheckedNormal;
-        private PaletteTreeNodeTriple _stateCheckedTracking;
-        private PaletteTreeNodeTriple _stateCheckedPressed;
-        private PaletteTreeNodeTripleRedirect _stateFocus;
-        private PaletteTripleOverride _overrideNormal;
-        private PaletteTripleOverride _overrideTracking;
-        private PaletteTripleOverride _overridePressed;
-        private PaletteTripleOverride _overrideCheckedNormal;
-        private PaletteTripleOverride _overrideCheckedTracking;
-        private PaletteTripleOverride _overrideCheckedPressed;
-        private PaletteNodeOverride _overrideNormalNode;
-        private PaletteRedirectTreeView _redirectImages;
-        private TreeViewImages _plusMinusImages;
-        private CheckBoxImages _checkBoxImages;
-        private ViewLayoutDocker _drawDockerInner;
-        private ViewDrawDocker _drawDockerOuter;
-        private ViewLayoutFill _layoutFill;
-        private ViewDrawButton _drawButton;
-        private ViewDrawCheckBox _drawCheckBox;
-        private ViewLayoutCenter _layoutCheckBox;
-        private ViewLayoutDocker _layoutDocker;
-        private ViewLayoutStack _layoutImageStack;
-        private ViewLayoutCenter _layoutImageCenter;
-        private ViewLayoutCenter _layoutImageCenterState;
-        private ViewLayoutSeparator _layoutImage;
-        private ViewLayoutSeparator _layoutImageState;
-        private ViewLayoutSeparator _layoutImageAfter;
-        private InternalTreeView _treeView;
-        private FixedContentValue _contentValues;
+        private readonly PaletteTreeStateRedirect _stateCommon;
+        private readonly PaletteTreeState _stateDisabled;
+        private readonly PaletteTreeState _stateNormal;
+        private readonly PaletteDouble _stateActive;
+        private readonly PaletteTreeNodeTriple _stateTracking;
+        private readonly PaletteTreeNodeTriple _statePressed;
+        private readonly PaletteTreeNodeTriple _stateCheckedNormal;
+        private readonly PaletteTreeNodeTriple _stateCheckedTracking;
+        private readonly PaletteTreeNodeTriple _stateCheckedPressed;
+        private readonly PaletteTreeNodeTripleRedirect _stateFocus;
+        private readonly PaletteTripleOverride _overrideNormal;
+        private readonly PaletteTripleOverride _overrideTracking;
+        private readonly PaletteTripleOverride _overridePressed;
+        private readonly PaletteTripleOverride _overrideCheckedNormal;
+        private readonly PaletteTripleOverride _overrideCheckedTracking;
+        private readonly PaletteTripleOverride _overrideCheckedPressed;
+        private readonly PaletteNodeOverride _overrideNormalNode;
+        private readonly PaletteRedirectTreeView _redirectImages;
+        private readonly TreeViewImages _plusMinusImages;
+        private readonly CheckBoxImages _checkBoxImages;
+        private readonly ViewLayoutDocker _drawDockerInner;
+        private readonly ViewDrawDocker _drawDockerOuter;
+        private readonly ViewLayoutFill _layoutFill;
+        private readonly ViewDrawButton _drawButton;
+        private readonly ViewDrawCheckBox _drawCheckBox;
+        private readonly ViewLayoutCenter _layoutCheckBox;
+        private readonly ViewLayoutDocker _layoutDocker;
+        private readonly ViewLayoutStack _layoutImageStack;
+        private readonly ViewLayoutCenter _layoutImageCenter;
+        private readonly ViewLayoutCenter _layoutImageCenterState;
+        private readonly ViewLayoutSeparator _layoutImage;
+        private readonly ViewLayoutSeparator _layoutImageState;
+        private readonly ViewLayoutSeparator _layoutImageAfter;
+        private readonly InternalTreeView _treeView;
+        private readonly FixedContentValue _contentValues;
         private Nullable<bool> _fixedActive;
         private ButtonStyle _style;
-        private IntPtr _screenDC;
+        private readonly IntPtr _screenDC;
         private bool _itemHeightDefault;
         private bool _mouseOver;
         private bool _alwaysActive;

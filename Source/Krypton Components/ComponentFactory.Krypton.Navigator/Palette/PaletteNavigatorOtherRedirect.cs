@@ -19,11 +19,11 @@ namespace ComponentFactory.Krypton.Navigator
     public class PaletteNavigatorOtherRedirect : Storage
     {
         #region Instance Fields
-        private PaletteTripleRedirect _paletteCheckButton;
-        private PaletteTripleRedirect _paletteOverflowButton;
-        private PaletteTripleRedirect _paletteMiniButton;
-        private PaletteTabTripleRedirect _paletteTab;
-        private PaletteRibbonTabContentRedirect _paletteRibbonTab;
+        private readonly PaletteTripleRedirect _paletteCheckButton;
+        private readonly PaletteTripleRedirect _paletteOverflowButton;
+        private readonly PaletteTripleRedirect _paletteMiniButton;
+        private readonly PaletteTabTripleRedirect _paletteTab;
+        private readonly PaletteRibbonTabContentRedirect _paletteRibbonTab;
         #endregion
 
         #region Identity

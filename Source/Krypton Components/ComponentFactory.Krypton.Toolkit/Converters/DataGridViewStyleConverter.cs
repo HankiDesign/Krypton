@@ -16,7 +16,7 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class DataGridViewStyleConverter : StringLookupConverter
     {
         #region Static Fields
-        private Pair[] _pairs = new Pair[] { new Pair(DataGridViewStyle.List,       "List"),
+        private readonly Pair[] _pairs = new Pair[] { new Pair(DataGridViewStyle.List,       "List"),
                                              new Pair(DataGridViewStyle.Sheet,      "Sheet"),
                                              new Pair(DataGridViewStyle.Custom1,    "Custom1"),
                                              new Pair(DataGridViewStyle.Mixed,      "Mixed")};

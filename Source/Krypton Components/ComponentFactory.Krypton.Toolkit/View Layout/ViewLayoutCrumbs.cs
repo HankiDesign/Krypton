@@ -28,11 +28,11 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region Instance Fields
-        private KryptonBreadCrumb _kryptonBreadCrumb;
-        private NeedPaintHandler _needPaintDelegate;
+        private readonly KryptonBreadCrumb _kryptonBreadCrumb;
+        private readonly NeedPaintHandler _needPaintDelegate;
         private ButtonController _pressedButtonController;
-        private CrumbToButton _crumbToButton;
-        private ButtonToCrumb _buttonToCrumb;
+        private readonly CrumbToButton _crumbToButton;
+        private readonly ButtonToCrumb _buttonToCrumb;
         private MenuItemToCrumb _menuItemToCrumb;
         private ViewDrawButton _overflowButton;
         private bool _showingContextMenu;

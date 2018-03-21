@@ -28,9 +28,9 @@ namespace ComponentFactory.Krypton.Ribbon
         #endregion
 
         #region Instance Fields
-        private KryptonRibbon _ribbon;
-        private ViewDrawRibbonGroupsBorderSynch _viewGroups;
-        private PaletteBackInheritRedirect _backInherit;
+        private readonly KryptonRibbon _ribbon;
+        private readonly ViewDrawRibbonGroupsBorderSynch _viewGroups;
+        private readonly PaletteBackInheritRedirect _backInherit;
         #endregion
 
         #region Identity

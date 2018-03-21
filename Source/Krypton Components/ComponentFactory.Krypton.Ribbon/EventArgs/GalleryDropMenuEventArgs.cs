@@ -19,7 +19,7 @@ namespace ComponentFactory.Krypton.Ribbon
 	public class GalleryDropMenuEventArgs : CancelEventArgs
 	{
 		#region Instance Fields
-        private KryptonContextMenu _contextMenu;
+        private readonly KryptonContextMenu _contextMenu;
 		#endregion
 
 		#region Identity

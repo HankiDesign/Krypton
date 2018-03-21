@@ -36,22 +36,22 @@ namespace ComponentFactory.Krypton.Toolkit
         private Image _image;
         private Color _imageTransparentColor;
         private ButtonStyle _style;
-        private PaletteTripleRedirect _stateCommon;
-        private PaletteTripleRedirect _stateFocus;
-        private PaletteTriple _stateDisabled;
-        private PaletteTriple _stateNormal;
-        private PaletteTriple _stateTracking;
-        private PaletteTriple _statePressed;
-        private PaletteTriple _stateCheckedNormal;
-        private PaletteTriple _stateCheckedTracking;
-        private PaletteTriple _stateCheckedPressed;
-        private PaletteTripleOverride _overrideCheckedNormal;
-        private PaletteTripleOverride _overrideCheckedTracking;
-        private PaletteTripleOverride _overrideCheckedPressed;
-        private PaletteTripleOverride _overrideNormal;
-        private PaletteTripleOverride _overrideTracking;
-        private PaletteTripleOverride _overridePressed;
-        private PaletteTripleOverride _overrideDisabled;
+        private readonly PaletteTripleRedirect _stateCommon;
+        private readonly PaletteTripleRedirect _stateFocus;
+        private readonly PaletteTriple _stateDisabled;
+        private readonly PaletteTriple _stateNormal;
+        private readonly PaletteTriple _stateTracking;
+        private readonly PaletteTriple _statePressed;
+        private readonly PaletteTriple _stateCheckedNormal;
+        private readonly PaletteTriple _stateCheckedTracking;
+        private readonly PaletteTriple _stateCheckedPressed;
+        private readonly PaletteTripleOverride _overrideCheckedNormal;
+        private readonly PaletteTripleOverride _overrideCheckedTracking;
+        private readonly PaletteTripleOverride _overrideCheckedPressed;
+        private readonly PaletteTripleOverride _overrideNormal;
+        private readonly PaletteTripleOverride _overrideTracking;
+        private readonly PaletteTripleOverride _overridePressed;
+        private readonly PaletteTripleOverride _overrideDisabled;
         private KryptonCommand _command;
         #endregion
 

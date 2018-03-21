@@ -28,9 +28,9 @@ namespace ComponentFactory.Krypton.Docking
     public class KryptonDockingFloatingWindow : DockingElementClosedCollection
     {
         #region Instance Fields
-        private KryptonFloatingWindow _window;
-        private KryptonDockingFloatspace _floatspace;
-        private ObscureControl _obscure;
+        private readonly KryptonFloatingWindow _window;
+        private readonly KryptonDockingFloatspace _floatspace;
+        private readonly ObscureControl _obscure;
         private int _updateCount;
         #endregion
 

@@ -21,7 +21,7 @@ namespace ComponentFactory.Krypton.Docking
                                            IContentValues
     {
         #region Instance Fields
-        private KryptonPage _page;
+        private readonly KryptonPage _page;
         private VisualOrientation _orientation;
         #endregion
 

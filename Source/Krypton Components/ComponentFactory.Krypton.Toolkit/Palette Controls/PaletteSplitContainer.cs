@@ -18,7 +18,7 @@ namespace ComponentFactory.Krypton.Toolkit
 	public class PaletteSplitContainer : PaletteDouble
 	{
 		#region Instance Fields
-        private PaletteSeparatorPadding _separator;
+        private readonly PaletteSeparatorPadding _separator;
 		#endregion
 
 		#region Identity

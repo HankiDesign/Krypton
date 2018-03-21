@@ -18,7 +18,7 @@ namespace ComponentFactory.Krypton.Navigator
     public class PopupPagePositionConverter : StringLookupConverter
     {
         #region Static Fields
-        private Pair[] _pairs = new Pair[] { new Pair(PopupPagePosition.ModeAppropriate,    "Mode Appropriate"),
+        private readonly Pair[] _pairs = new Pair[] { new Pair(PopupPagePosition.ModeAppropriate,    "Mode Appropriate"),
                                              new Pair(PopupPagePosition.AboveFar,           "Above Element - Far Aligned"),
                                              new Pair(PopupPagePosition.AboveMatch,         "Above Element - Element Width"),
                                              new Pair(PopupPagePosition.AboveNear,          "Above Element - Near Aligned"),

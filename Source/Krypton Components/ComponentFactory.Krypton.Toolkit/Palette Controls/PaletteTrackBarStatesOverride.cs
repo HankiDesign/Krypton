@@ -20,10 +20,10 @@ namespace ComponentFactory.Krypton.Toolkit
     public class PaletteTrackBarStatesOverride : GlobalId
 	{
 		#region Instance Fields
-        private PaletteBack _back;
-        private PaletteElementColorInheritOverride _overrideTickState;
-        private PaletteElementColorInheritOverride _overrideTrackState;
-        private PaletteElementColorInheritOverride _overridePositionState;
+        private readonly PaletteBack _back;
+        private readonly PaletteElementColorInheritOverride _overrideTickState;
+        private readonly PaletteElementColorInheritOverride _overrideTrackState;
+        private readonly PaletteElementColorInheritOverride _overridePositionState;
         #endregion
 
 		#region Identity

@@ -36,7 +36,7 @@ namespace ComponentFactory.Krypton.Toolkit
         private class InternalNumericUpDown : NumericUpDown
         {
             #region Instance Fields
-            private KryptonNumericUpDown _kryptonNumericUpDown;
+            private readonly KryptonNumericUpDown _kryptonNumericUpDown;
             private bool _mouseOver;
             #endregion
 
@@ -187,8 +187,8 @@ namespace ComponentFactory.Krypton.Toolkit
         private class SubclassEdit : NativeWindow
         {
             #region Instance Fields
-            private KryptonNumericUpDown _kryptonNumericUpDown;
-            private InternalNumericUpDown _internalNumericUpDown;
+            private readonly KryptonNumericUpDown _kryptonNumericUpDown;
+            private readonly InternalNumericUpDown _internalNumericUpDown;
             private bool _mouseOver;
             private Point _mousePoint;
             #endregion
@@ -750,18 +750,18 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region Instance Fields
-        private ToolTipManager _toolTipManager;
+        private readonly ToolTipManager _toolTipManager;
         private VisualPopupToolTip _visualPopupToolTip;
-        private ButtonSpecManagerLayout _buttonManager;
-        private NumericUpDownButtonSpecCollection _buttonSpecs;
-        private PaletteInputControlTripleRedirect _stateCommon;
-        private PaletteInputControlTripleStates _stateDisabled;
-        private PaletteInputControlTripleStates _stateNormal;
-        private PaletteInputControlTripleStates _stateActive;
-        private ViewLayoutDocker _drawDockerInner;
-        private ViewDrawDocker _drawDockerOuter;
-        private ViewLayoutFill _layoutFill;
-        private InternalNumericUpDown _numericUpDown;
+        private readonly ButtonSpecManagerLayout _buttonManager;
+        private readonly NumericUpDownButtonSpecCollection _buttonSpecs;
+        private readonly PaletteInputControlTripleRedirect _stateCommon;
+        private readonly PaletteInputControlTripleStates _stateDisabled;
+        private readonly PaletteInputControlTripleStates _stateNormal;
+        private readonly PaletteInputControlTripleStates _stateActive;
+        private readonly ViewLayoutDocker _drawDockerInner;
+        private readonly ViewDrawDocker _drawDockerOuter;
+        private readonly ViewLayoutFill _layoutFill;
+        private readonly InternalNumericUpDown _numericUpDown;
         private InputControlStyle _inputControlStyle;
         private ButtonStyle _upDownButtonStyle;
         private SubclassEdit _subclassEdit;

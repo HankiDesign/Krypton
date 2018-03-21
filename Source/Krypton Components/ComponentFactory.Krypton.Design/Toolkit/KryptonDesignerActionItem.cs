@@ -20,8 +20,8 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonDesignerActionItem : DesignerActionMethodItem
     {
         #region Instance Fields
-        private DesignerVerb _verb;
-        private string _category;
+        private readonly DesignerVerb _verb;
+        private readonly string _category;
         #endregion
 
         #region Identity

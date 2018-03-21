@@ -17,15 +17,15 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class ViewDrawMenuRadioButton: ViewComposite
     {
         #region Instance Fields
-        private IContextMenuProvider _provider;
-        private KryptonContextMenuRadioButton _radioButton;
-        private FixedContentValue _contentValues;
-        private ViewDrawContent _drawContent;
-        private ViewDrawRadioButton _drawRadioButton;
-        private ViewLayoutCenter _layoutCenter;
-        private ViewLayoutDocker _outerDocker;
-        private ViewLayoutDocker _innerDocker;
-        private bool _itemEnabled;
+        private readonly IContextMenuProvider _provider;
+        private readonly KryptonContextMenuRadioButton _radioButton;
+        private readonly FixedContentValue _contentValues;
+        private readonly ViewDrawContent _drawContent;
+        private readonly ViewDrawRadioButton _drawRadioButton;
+        private readonly ViewLayoutCenter _layoutCenter;
+        private readonly ViewLayoutDocker _outerDocker;
+        private readonly ViewLayoutDocker _innerDocker;
+        private readonly bool _itemEnabled;
         #endregion
 
         #region Identity

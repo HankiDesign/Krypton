@@ -67,19 +67,25 @@ namespace ComponentFactory.Krypton.Ribbon
         private ColorScheme _schemeThemes;
         private ColorScheme _schemeStandard;
         private int _maxRecentColors;
-        private List<Color> _recentColors;
+        private readonly List<Color> _recentColors;
         
         // Context menu items
-        private KryptonContextMenu _kryptonContextMenu;
-        private KryptonContextMenuSeparator _separatorTheme, _separatorStandard, _separatorRecent;
-        private KryptonContextMenuHeading _headingTheme, _headingStandard, _headingRecent;
-        private KryptonContextMenuColorColumns _colorsTheme, _colorsStandard, _colorsRecent;
-        private KryptonContextMenuSeparator _separatorNoColor;
-        private KryptonContextMenuItems _itemsNoColor;
-        private KryptonContextMenuItem _itemNoColor;
-        private KryptonContextMenuSeparator _separatorMoreColors;
-        private KryptonContextMenuItems _itemsMoreColors;
-        private KryptonContextMenuItem _itemMoreColors;
+        private readonly KryptonContextMenu _kryptonContextMenu;
+        private readonly KryptonContextMenuSeparator _separatorTheme;
+	    private readonly KryptonContextMenuSeparator _separatorStandard;
+	    private readonly KryptonContextMenuSeparator _separatorRecent;
+	    private readonly KryptonContextMenuHeading _headingTheme;
+	    private readonly KryptonContextMenuHeading _headingStandard;
+	    private readonly KryptonContextMenuHeading _headingRecent;
+	    private readonly KryptonContextMenuColorColumns _colorsTheme;
+	    private readonly KryptonContextMenuColorColumns _colorsStandard;
+	    private readonly KryptonContextMenuColorColumns _colorsRecent;
+	    private readonly KryptonContextMenuSeparator _separatorNoColor;
+        private readonly KryptonContextMenuItems _itemsNoColor;
+        private readonly KryptonContextMenuItem _itemNoColor;
+        private readonly KryptonContextMenuSeparator _separatorMoreColors;
+        private readonly KryptonContextMenuItems _itemsMoreColors;
+        private readonly KryptonContextMenuItem _itemMoreColors;
         #endregion
 
         #region Events

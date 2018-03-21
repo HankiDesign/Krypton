@@ -32,23 +32,23 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonDropButton : VisualSimpleBase, IButtonControl, IContentValues
 	{
 		#region Instance Fields
-        private ViewDrawButton _drawButton;
+        private readonly ViewDrawButton _drawButton;
         private ButtonStyle _style;
-		private ButtonValues _buttonValues;
-		private ButtonController _buttonController;
-        private PaletteRedirectDropDownButton _paletteDropDownButtonImages;
-        private PaletteTripleRedirect _stateCommon;
-        private PaletteTriple _stateDisabled;
-        private PaletteTriple _stateNormal;
-        private PaletteTriple _stateTracking;
-        private PaletteTriple _statePressed;
-		private PaletteTripleRedirect _stateDefault;
-		private PaletteTripleRedirect _stateFocus;
-        private PaletteTripleOverride _overrideFocus;
-		private PaletteTripleOverride _overrideNormal;
-		private PaletteTripleOverride _overrideTracking;
-		private PaletteTripleOverride _overridePressed;
-        private DropDownButtonImages _images;
+		private readonly ButtonValues _buttonValues;
+		private readonly ButtonController _buttonController;
+        private readonly PaletteRedirectDropDownButton _paletteDropDownButtonImages;
+        private readonly PaletteTripleRedirect _stateCommon;
+        private readonly PaletteTriple _stateDisabled;
+        private readonly PaletteTriple _stateNormal;
+        private readonly PaletteTriple _stateTracking;
+        private readonly PaletteTriple _statePressed;
+		private readonly PaletteTripleRedirect _stateDefault;
+		private readonly PaletteTripleRedirect _stateFocus;
+        private readonly PaletteTripleOverride _overrideFocus;
+		private readonly PaletteTripleOverride _overrideNormal;
+		private readonly PaletteTripleOverride _overrideTracking;
+		private readonly PaletteTripleOverride _overridePressed;
+        private readonly DropDownButtonImages _images;
         private DialogResult _dialogResult;
         private KryptonCommand _command;
         private bool _isDefault;

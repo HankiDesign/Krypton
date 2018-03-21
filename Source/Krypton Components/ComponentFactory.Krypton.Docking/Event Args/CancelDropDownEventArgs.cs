@@ -20,8 +20,8 @@ namespace ComponentFactory.Krypton.Docking
     public class CancelDropDownEventArgs : CancelEventArgs
 	{
 		#region Instance Fields
-        private KryptonContextMenu _contextMenu;
-        private KryptonPage _page;
+        private readonly KryptonContextMenu _contextMenu;
+        private readonly KryptonPage _page;
 		#endregion
 
 		#region Identity

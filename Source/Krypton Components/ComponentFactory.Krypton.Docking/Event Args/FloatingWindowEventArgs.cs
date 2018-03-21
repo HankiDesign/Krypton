@@ -18,8 +18,8 @@ namespace ComponentFactory.Krypton.Docking
 	public class FloatingWindowEventArgs : EventArgs
 	{
 		#region Instance Fields
-        private KryptonFloatingWindow _floatingWindow;
-        private KryptonDockingFloatingWindow _element;
+        private readonly KryptonFloatingWindow _floatingWindow;
+        private readonly KryptonDockingFloatingWindow _element;
 		#endregion
 
 		#region Identity

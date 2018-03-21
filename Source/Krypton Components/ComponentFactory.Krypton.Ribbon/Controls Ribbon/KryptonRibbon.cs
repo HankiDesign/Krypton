@@ -60,7 +60,7 @@ namespace ComponentFactory.Krypton.Ribbon
 
         #region Static Fields
         private static readonly Size _keyTipInflateSize = new Size(8, 30);
-        private static MethodInfo _containerSelect;
+        private static readonly MethodInfo _containerSelect;
         #endregion
 
         #region Instance Fields

@@ -40,13 +40,13 @@ namespace ComponentFactory.Krypton.Toolkit
         private IPalette _localPalette;
         private IPalette _palette;
         private PaletteMode _paletteMode;
-        private PaletteRedirect _redirector;
+        private readonly PaletteRedirect _redirector;
         private IRenderer _renderer;
         private LabelStyle _labelStyle;
         private PaletteContentStyle _labelContentStyle;
-        private PaletteWrapLabel _stateCommon;
-        private PaletteWrapLabel _stateNormal;
-        private PaletteWrapLabel _stateDisabled;
+        private readonly PaletteWrapLabel _stateCommon;
+        private readonly PaletteWrapLabel _stateNormal;
+        private readonly PaletteWrapLabel _stateDisabled;
         private KryptonContextMenu _kryptonContextMenu;
         private bool _globalEvents;
         #endregion

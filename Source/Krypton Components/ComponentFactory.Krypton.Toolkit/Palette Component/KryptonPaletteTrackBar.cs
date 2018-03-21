@@ -18,12 +18,12 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPaletteTrackBar : Storage
     {
         #region Instance Fields
-        private PaletteTrackBarRedirect _stateCommon;
-        private PaletteTrackBarRedirect _stateFocus;
-        private PaletteTrackBarStates _stateDisabled;
-        private PaletteTrackBarStates _stateNormal;
-        private PaletteTrackBarPositionStates _stateTracking;
-        private PaletteTrackBarPositionStates _statePressed;
+        private readonly PaletteTrackBarRedirect _stateCommon;
+        private readonly PaletteTrackBarRedirect _stateFocus;
+        private readonly PaletteTrackBarStates _stateDisabled;
+        private readonly PaletteTrackBarStates _stateNormal;
+        private readonly PaletteTrackBarPositionStates _stateTracking;
+        private readonly PaletteTrackBarPositionStates _statePressed;
         #endregion
 
         #region Identity

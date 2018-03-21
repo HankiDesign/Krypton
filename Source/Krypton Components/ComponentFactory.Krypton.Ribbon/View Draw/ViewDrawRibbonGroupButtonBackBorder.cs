@@ -27,16 +27,16 @@ namespace ComponentFactory.Krypton.Ribbon
         #endregion
 
         #region Instance Fields
-        private KryptonRibbon _ribbon;
-        private KryptonRibbonGroupItem _groupItem;
-        private GroupButtonController _controller;
-        private EventHandler _finishDelegate;
+        private readonly KryptonRibbon _ribbon;
+        private readonly KryptonRibbonGroupItem _groupItem;
+        private readonly GroupButtonController _controller;
+        private readonly EventHandler _finishDelegate;
         private IDisposable _mementoBack;
-        private IPaletteBack _paletteBack;
-        private PaletteBackInheritForced _paletteBackDraw;
-        private PaletteBackLightenColors _paletteBackLight;
-        private IPaletteBorder _paletteBorder;
-        private PaletteBorderInheritForced _paletteBorderAll;
+        private readonly IPaletteBack _paletteBack;
+        private readonly PaletteBackInheritForced _paletteBackDraw;
+        private readonly PaletteBackLightenColors _paletteBackLight;
+        private readonly IPaletteBorder _paletteBorder;
+        private readonly PaletteBorderInheritForced _paletteBorderAll;
         private bool _splitVertical;
         private bool _constantBorder;
         private bool _drawNonTrackingAreas;

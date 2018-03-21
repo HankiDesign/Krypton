@@ -30,7 +30,7 @@ namespace ComponentFactory.Krypton.Ribbon
     public class KryptonRibbonGroupLines : KryptonRibbonGroupContainer
     {
         #region Instance Fields
-        private KryptonRibbonGroupLinesCollection _ribbonLineItems;
+        private readonly KryptonRibbonGroupLinesCollection _ribbonLineItems;
         private GroupItemSize _itemSizeMax;
         private GroupItemSize _itemSizeMin;
         private GroupItemSize _itemSizeCurrent;

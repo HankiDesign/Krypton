@@ -22,7 +22,7 @@ namespace ComponentFactory.Krypton.Docking
     public class KryptonStorePage : KryptonPage
     {
         #region Instance Fields
-        private string _storeName;
+        private readonly string _storeName;
         #endregion
 
         #region Identity

@@ -42,12 +42,12 @@ namespace ComponentFactory.Krypton.Toolkit
         private Color _imageTransparentColor;
         private CheckState _checkState;
         private Keys _shortcutKeys;
-        private KryptonContextMenuCollection _items;
-        private PaletteContextMenuItemStateRedirect _stateRedirect;
-        private PaletteContextMenuItemState _stateNormal;
-        private PaletteContextMenuItemState _stateDisabled;
-        private PaletteContextMenuItemStateHighlight _stateHighlight;
-        private PaletteContextMenuItemStateChecked _stateChecked;
+        private readonly KryptonContextMenuCollection _items;
+        private readonly PaletteContextMenuItemStateRedirect _stateRedirect;
+        private readonly PaletteContextMenuItemState _stateNormal;
+        private readonly PaletteContextMenuItemState _stateDisabled;
+        private readonly PaletteContextMenuItemStateHighlight _stateHighlight;
+        private readonly PaletteContextMenuItemStateChecked _stateChecked;
         private KryptonCommand _command;
         #endregion
 

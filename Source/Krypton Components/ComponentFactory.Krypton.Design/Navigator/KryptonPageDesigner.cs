@@ -10,10 +10,10 @@
 
 using System;
 using System.Collections;
-using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.ComponentModel;
 using System.ComponentModel.Design;
+using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 using ComponentFactory.Krypton.Toolkit;
@@ -50,14 +50,14 @@ namespace ComponentFactory.Krypton.Navigator
             _page = (KryptonPage)component;
 
             // Hook into page events
-            _page.FlagsChanged += new KryptonPageFlagsEventHandler(OnPageFlagsChanged);
+            _page.FlagsChanged += OnPageFlagsChanged;
 
             // Acquire service interfaces
             _selectionService = (ISelectionService)GetService(typeof(ISelectionService));
             _changeService = (IComponentChangeService)GetService(typeof(IComponentChangeService));
 
             // We need to know when we are being removed
-            _changeService.ComponentRemoving += new ComponentEventHandler(OnComponentRemoving);
+            _changeService.ComponentRemoving += OnComponentRemoving;
 
             // Lock the component from user size/location change
             PropertyDescriptor descriptor = TypeDescriptor.GetProperties(component)["Locked"];
@@ -72,11 +72,10 @@ namespace ComponentFactory.Krypton.Navigator
         /// <returns>true if the control managed by the specified designer can parent the control managed by this designer; otherwise, false.</returns>
         public override bool CanBeParentedTo(IDesigner parentDesigner)
         {
-            // Can only place a KrytonPage in the KryptonNavigator
+	        // Can only place a KrytonPage in the KryptonNavigator
             if (parentDesigner != null)
                 return (parentDesigner.Component is KryptonNavigator);
-            else
-                return false;
+	        return false;
         }
 
         /// <summary>
@@ -86,10 +85,9 @@ namespace ComponentFactory.Krypton.Navigator
         {
             get
             {
-                if (_page != null)
+	            if (_page != null)
                     return _page.ButtonSpecs;
-                else
-                    return base.AssociatedComponents;
+	            return base.AssociatedComponents;
             }
         }
 
@@ -121,8 +119,8 @@ namespace ComponentFactory.Krypton.Navigator
                 if (_verbs == null)
                 {
                     // Cache verb instances so enabled state can be updated in future
-                    _verbEditFlags = new DesignerVerb("Edit Flags", new EventHandler(OnEditFlags));
-                    _verbs = new DesignerVerbCollection(new DesignerVerb[] { _verbEditFlags });
+                    _verbEditFlags = new DesignerVerb("Edit Flags", OnEditFlags);
+                    _verbs = new DesignerVerbCollection(new[] { _verbEditFlags });
                 }
 
                 return _verbs;
@@ -134,13 +132,12 @@ namespace ComponentFactory.Krypton.Navigator
         /// </summary>
         public override SelectionRules SelectionRules
         {
-            get 
-            { 
-                // If inside a navigator then prevent resizing of the page
+            get
+            {
+	            // If inside a navigator then prevent resizing of the page
                 if (ParentNavigator != null)
                     return (SelectionRules.None | SelectionRules.Locked);
-                else
-                    return SelectionRules.None;
+	            return SelectionRules.None;
             }
         }
 
@@ -149,13 +146,12 @@ namespace ComponentFactory.Krypton.Navigator
         /// </summary>
         public bool CanPaint
         {
-            get 
+            get
             {
-                // Only draw the glyph for the selected page
+	            // Only draw the glyph for the selected page
                 if (ParentNavigator != null)
                     return (ParentNavigator.SelectedPage == _page);
-                else
-                    return false;
+	            return false;
             }
         }
 
@@ -183,7 +179,7 @@ namespace ComponentFactory.Krypton.Navigator
                 if (disposing)
                 {
                     // Remove event hooks
-                    _page.FlagsChanged -= new KryptonPageFlagsEventHandler(OnPageFlagsChanged);
+                    _page.FlagsChanged -= OnPageFlagsChanged;
                 }
             }
             finally

@@ -38,10 +38,10 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region Instance Fields
-        private PaletteTrackBarStates _stateDisabled;
-        private PaletteTrackBarStatesOverride _stateNormal;
-        private PaletteTrackBarPositionStatesOverride _stateTracking;
-        private PaletteTrackBarPositionStatesOverride _statePressed;
+        private readonly PaletteTrackBarStates _stateDisabled;
+        private readonly PaletteTrackBarStatesOverride _stateNormal;
+        private readonly PaletteTrackBarPositionStatesOverride _stateTracking;
+        private readonly PaletteTrackBarPositionStatesOverride _statePressed;
         private Padding _padding;
         private Orientation _orientation;
         private TickStyle _tickStyle;
@@ -52,13 +52,13 @@ namespace ComponentFactory.Krypton.Toolkit
         private int _smallChange;
         private int _largeChange;
         private bool _volumeControl;
-        private ViewLayoutDocker _layoutTop;
-        private ViewDrawTP _trackPosition;
-        private ViewDrawTrackTicks _ticksTop;
-        private ViewDrawTrackTicks _ticksBottom;
+        private readonly ViewLayoutDocker _layoutTop;
+        private readonly ViewDrawTP _trackPosition;
+        private readonly ViewDrawTrackTicks _ticksTop;
+        private readonly ViewDrawTrackTicks _ticksBottom;
         private RightToLeft _rightToLeft;
         private PaletteTrackBarSize _trackBarSize;
-        private NeedPaintHandler _needPaint;
+        private readonly NeedPaintHandler _needPaint;
         #endregion
 
         #region Events

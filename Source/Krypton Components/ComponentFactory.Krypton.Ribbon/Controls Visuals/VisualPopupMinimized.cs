@@ -24,8 +24,8 @@ namespace ComponentFactory.Krypton.Ribbon
         #endregion
 
         #region Instance Fields
-        private KryptonRibbon _ribbon;
-        private ViewDrawRibbonCaptionArea _captionArea;
+        private readonly KryptonRibbon _ribbon;
+        private readonly ViewDrawRibbonCaptionArea _captionArea;
         #endregion
 
         #region Identity

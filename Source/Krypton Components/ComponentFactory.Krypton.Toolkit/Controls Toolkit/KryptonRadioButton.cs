@@ -34,21 +34,21 @@ namespace ComponentFactory.Krypton.Toolkit
 	{
 		#region Instance Fields
 		private LabelStyle _style;
-		private LabelValues _labelValues;
+		private readonly LabelValues _labelValues;
         private VisualOrientation _orientation;
-        private RadioButtonController _controller;
-        private ViewLayoutDocker _layoutDocker;
-        private ViewLayoutCenter _layoutCenter;
-        private ViewDrawRadioButton _drawRadioButton;
-        private ViewDrawContent _drawContent;
-		private PaletteContentInheritRedirect _paletteCommonRedirect;
-        private PaletteRedirectRadioButton _paletteRadioButtonImages;
-        private PaletteContent _stateCommon;
-        private PaletteContent _stateDisabled;
-		private PaletteContent _stateNormal;
-        private PaletteContent _stateFocus;
-        private PaletteContentInheritOverride _overrideNormal;
-        private RadioButtonImages _images;
+        private readonly RadioButtonController _controller;
+        private readonly ViewLayoutDocker _layoutDocker;
+        private readonly ViewLayoutCenter _layoutCenter;
+        private readonly ViewDrawRadioButton _drawRadioButton;
+        private readonly ViewDrawContent _drawContent;
+		private readonly PaletteContentInheritRedirect _paletteCommonRedirect;
+        private readonly PaletteRedirectRadioButton _paletteRadioButtonImages;
+        private readonly PaletteContent _stateCommon;
+        private readonly PaletteContent _stateDisabled;
+		private readonly PaletteContent _stateNormal;
+        private readonly PaletteContent _stateFocus;
+        private readonly PaletteContentInheritOverride _overrideNormal;
+        private readonly RadioButtonImages _images;
         private VisualOrientation _checkPosition;
         private bool _checked;
         private bool _useMnemonic;

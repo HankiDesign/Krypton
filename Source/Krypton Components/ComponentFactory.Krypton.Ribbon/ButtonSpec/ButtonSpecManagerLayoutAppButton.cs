@@ -19,7 +19,7 @@ namespace ComponentFactory.Krypton.Ribbon
     public class ButtonSpecManagerLayoutAppButton : ButtonSpecManagerLayout
     {
         #region Instance Fields
-        private ViewContextMenuManager _viewManager;
+        private readonly ViewContextMenuManager _viewManager;
         #endregion
 
         #region Identity

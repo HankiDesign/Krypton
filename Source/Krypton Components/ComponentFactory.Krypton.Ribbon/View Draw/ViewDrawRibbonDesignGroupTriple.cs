@@ -30,7 +30,7 @@ namespace ComponentFactory.Krypton.Ribbon
         #endregion
 
         #region Instance Fields
-        private KryptonRibbonGroupTriple _ribbonTriple;
+        private readonly KryptonRibbonGroupTriple _ribbonTriple;
         private ContextMenuStrip _cms;
         private GroupItemSize _currentSize;
         #endregion

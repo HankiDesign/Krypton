@@ -20,7 +20,7 @@ namespace ComponentFactory.Krypton.Toolkit
 	{
 		#region Instance Fields
         private Point _offset;
-        private Control _c;
+        private readonly Control _c;
 		#endregion
 
 		#region Identity

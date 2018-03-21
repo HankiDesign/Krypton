@@ -20,7 +20,7 @@ namespace ComponentFactory.Krypton.Navigator
     internal class ViewLayoutOutlookFull : ViewLayoutScrollViewport
     {
         #region Instance Fields
-        private ViewBuilderOutlookBase _viewBuilder; 
+        private readonly ViewBuilderOutlookBase _viewBuilder; 
         #endregion
 
         #region Identity

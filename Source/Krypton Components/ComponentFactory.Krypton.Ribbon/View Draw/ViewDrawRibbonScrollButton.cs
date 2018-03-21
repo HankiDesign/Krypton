@@ -22,7 +22,7 @@ namespace ComponentFactory.Krypton.Ribbon
     internal class ViewDrawRibbonScrollButton : ViewLeaf
     {
         #region Instance Fields
-        private KryptonRibbon _ribbon;
+        private readonly KryptonRibbon _ribbon;
         private VisualOrientation _orientation;
         private IDisposable _mementoBack;
         #endregion

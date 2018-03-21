@@ -9,11 +9,11 @@
 // *****************************************************************************
 
 using System;
-using System.Security;
-using System.Resources;
 using System.Reflection;
+using System.Resources;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Security;
 
 [assembly: AssemblyVersion("4.4.0.0")]
 [assembly: AssemblyFileVersion("4.4.0.0")]
@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 [assembly: StringFreezing]
 [assembly: ComVisible(true)]
 [assembly: CLSCompliant(true)]
-[assembly: AllowPartiallyTrustedCallers()]
+[assembly: AllowPartiallyTrustedCallers]
 [assembly: Dependency("System", LoadHint.Always)]
 [assembly: Dependency("System.Design", LoadHint.Sometimes)]
 [assembly: Dependency("System.Drawing", LoadHint.Always)]

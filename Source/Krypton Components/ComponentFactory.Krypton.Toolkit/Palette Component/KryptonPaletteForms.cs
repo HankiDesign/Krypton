@@ -19,9 +19,9 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPaletteForms : Storage
     {
         #region Instance Fields
-        private KryptonPaletteForm _formCommon;
-        private KryptonPaletteForm _formMain;
-        private KryptonPaletteForm _formCustom1;
+        private readonly KryptonPaletteForm _formCommon;
+        private readonly KryptonPaletteForm _formMain;
+        private readonly KryptonPaletteForm _formCustom1;
         #endregion
 
         #region Identity

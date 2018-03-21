@@ -24,8 +24,8 @@ namespace ComponentFactory.Krypton.Toolkit
 	public class TypedCollectionEventArgs<T> : EventArgs where T : class
 	{
 		#region Instance Fields
-		private T _item;
-		private int _index;
+		private readonly T _item;
+		private readonly int _index;
 		#endregion
 
 		#region Identity

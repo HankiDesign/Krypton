@@ -16,7 +16,7 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class PaletteButtonSpecStyleConverter : StringLookupConverter
     {
         #region Static Fields
-        private Pair[] _pairs = new Pair[] { new Pair(PaletteButtonSpecStyle.Close,             "Close"),
+        private readonly Pair[] _pairs = new Pair[] { new Pair(PaletteButtonSpecStyle.Close,             "Close"),
                                              new Pair(PaletteButtonSpecStyle.Context,           "Context"),
                                              new Pair(PaletteButtonSpecStyle.Next,              "Next"),
                                              new Pair(PaletteButtonSpecStyle.Previous,          "Previous"),

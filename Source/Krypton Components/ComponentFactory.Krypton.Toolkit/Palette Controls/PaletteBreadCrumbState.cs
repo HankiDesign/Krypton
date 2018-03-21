@@ -18,7 +18,7 @@ namespace ComponentFactory.Krypton.Toolkit
     public class PaletteBreadCrumbState : Storage
     {
         #region Instance Fields
-        private PaletteTriple _paletteCrumb;
+        private readonly PaletteTriple _paletteCrumb;
         #endregion
 
         #region Identity

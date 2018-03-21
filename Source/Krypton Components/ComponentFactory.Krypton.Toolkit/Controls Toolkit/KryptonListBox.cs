@@ -37,10 +37,10 @@ namespace ComponentFactory.Krypton.Toolkit
         private class InternalListBox : ListBox
         {
             #region Instance Fields
-            private ViewManager _viewManager;
-            private ViewDrawPanel _drawPanel;
-            private KryptonListBox _kryptonListBox;
-            private IntPtr _screenDC;
+            private readonly ViewManager _viewManager;
+            private readonly ViewDrawPanel _drawPanel;
+            private readonly KryptonListBox _kryptonListBox;
+            private readonly IntPtr _screenDC;
             private bool _mouseOver;
             private int _mouseIndex;
             #endregion
@@ -347,31 +347,31 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region Instance Fields
-        private PaletteListStateRedirect _stateCommon;
-        private PaletteListState _stateDisabled;
-        private PaletteListState _stateNormal;
-        private PaletteDouble _stateActive;
-        private PaletteListItemTriple _stateTracking;
-        private PaletteListItemTriple _statePressed;
-        private PaletteListItemTriple _stateCheckedNormal;
-        private PaletteListItemTriple _stateCheckedTracking;
-        private PaletteListItemTriple _stateCheckedPressed;
-        private PaletteListItemTripleRedirect _stateFocus;
-        private PaletteTripleOverride _overrideNormal;
-        private PaletteTripleOverride _overrideTracking;
-        private PaletteTripleOverride _overridePressed;
-        private PaletteTripleOverride _overrideCheckedNormal;
-        private PaletteTripleOverride _overrideCheckedTracking;
-        private PaletteTripleOverride _overrideCheckedPressed;
-        private ViewLayoutDocker _drawDockerInner;
-        private ViewDrawDocker _drawDockerOuter;
-        private ViewLayoutFill _layoutFill;
-        private ViewDrawButton _drawButton;
-        private InternalListBox _listBox;
-        private FixedContentValue _contentValues;
+        private readonly PaletteListStateRedirect _stateCommon;
+        private readonly PaletteListState _stateDisabled;
+        private readonly PaletteListState _stateNormal;
+        private readonly PaletteDouble _stateActive;
+        private readonly PaletteListItemTriple _stateTracking;
+        private readonly PaletteListItemTriple _statePressed;
+        private readonly PaletteListItemTriple _stateCheckedNormal;
+        private readonly PaletteListItemTriple _stateCheckedTracking;
+        private readonly PaletteListItemTriple _stateCheckedPressed;
+        private readonly PaletteListItemTripleRedirect _stateFocus;
+        private readonly PaletteTripleOverride _overrideNormal;
+        private readonly PaletteTripleOverride _overrideTracking;
+        private readonly PaletteTripleOverride _overridePressed;
+        private readonly PaletteTripleOverride _overrideCheckedNormal;
+        private readonly PaletteTripleOverride _overrideCheckedTracking;
+        private readonly PaletteTripleOverride _overrideCheckedPressed;
+        private readonly ViewLayoutDocker _drawDockerInner;
+        private readonly ViewDrawDocker _drawDockerOuter;
+        private readonly ViewLayoutFill _layoutFill;
+        private readonly ViewDrawButton _drawButton;
+        private readonly InternalListBox _listBox;
+        private readonly FixedContentValue _contentValues;
         private Nullable<bool> _fixedActive;
         private ButtonStyle _style;
-        private IntPtr _screenDC;
+        private readonly IntPtr _screenDC;
         private int[] _lastSelectedColl;
         private int _lastSelectedIndex;
         private bool _mouseOver;

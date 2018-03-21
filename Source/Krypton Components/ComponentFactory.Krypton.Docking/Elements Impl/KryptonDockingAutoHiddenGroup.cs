@@ -27,8 +27,8 @@ namespace ComponentFactory.Krypton.Docking
     public class KryptonDockingAutoHiddenGroup : DockingElementClosedCollection
     {
         #region Instance Fields
-        private DockingEdge _edge;
-        private KryptonAutoHiddenGroup _autoHiddenGroup;
+        private readonly DockingEdge _edge;
+        private readonly KryptonAutoHiddenGroup _autoHiddenGroup;
         private int _cacheCellVisibleCount;
         #endregion
 

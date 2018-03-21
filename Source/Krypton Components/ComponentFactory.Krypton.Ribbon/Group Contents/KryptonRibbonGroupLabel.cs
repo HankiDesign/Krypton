@@ -41,10 +41,10 @@ namespace ComponentFactory.Krypton.Ribbon
         private LabelStyle _toolTipStyle;
         private GroupItemSize _itemSizeCurrent;
         private KryptonCommand _command;
-        private NeedPaintHandler _needPaintDelegate;
+        private readonly NeedPaintHandler _needPaintDelegate;
         private NeedPaintHandler _viewPaintDelegate;
-        private PaletteRibbonText _stateNormal;
-        private PaletteRibbonText _stateDisabled;
+        private readonly PaletteRibbonText _stateNormal;
+        private readonly PaletteRibbonText _stateDisabled;
         private ViewBase _labelView;
         #endregion
 

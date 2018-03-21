@@ -19,22 +19,22 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPaletteLabels : Storage
     {
         #region Instance Fields
-        private KryptonPaletteLabel _labelCommon;
-        private KryptonPaletteLabel _labelNormalControl;
-        private KryptonPaletteLabel _labelBoldControl;
-        private KryptonPaletteLabel _labelItalicControl;
-        private KryptonPaletteLabel _labelTitleControl;
-        private KryptonPaletteLabel _labelNormalPanel;
-        private KryptonPaletteLabel _labelBoldPanel;
-        private KryptonPaletteLabel _labelItalicPanel;
-        private KryptonPaletteLabel _labelTitlePanel;
-        private KryptonPaletteLabel _labelCaptionPanel;
-        private KryptonPaletteLabel _labelToolTip;
-        private KryptonPaletteLabel _labelSuperTip;
-        private KryptonPaletteLabel _labelKeyTip;
-        private KryptonPaletteLabel _labelCustom1;
-        private KryptonPaletteLabel _labelCustom2;
-        private KryptonPaletteLabel _labelCustom3;
+        private readonly KryptonPaletteLabel _labelCommon;
+        private readonly KryptonPaletteLabel _labelNormalControl;
+        private readonly KryptonPaletteLabel _labelBoldControl;
+        private readonly KryptonPaletteLabel _labelItalicControl;
+        private readonly KryptonPaletteLabel _labelTitleControl;
+        private readonly KryptonPaletteLabel _labelNormalPanel;
+        private readonly KryptonPaletteLabel _labelBoldPanel;
+        private readonly KryptonPaletteLabel _labelItalicPanel;
+        private readonly KryptonPaletteLabel _labelTitlePanel;
+        private readonly KryptonPaletteLabel _labelCaptionPanel;
+        private readonly KryptonPaletteLabel _labelToolTip;
+        private readonly KryptonPaletteLabel _labelSuperTip;
+        private readonly KryptonPaletteLabel _labelKeyTip;
+        private readonly KryptonPaletteLabel _labelCustom1;
+        private readonly KryptonPaletteLabel _labelCustom2;
+        private readonly KryptonPaletteLabel _labelCustom3;
         #endregion
 
         #region Identity

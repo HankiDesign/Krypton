@@ -42,8 +42,8 @@ namespace ComponentFactory.Krypton.Ribbon
         #endregion
 
         #region Instance Fields
-        private KryptonRibbon _ribbon;
-        private KryptonRibbonGroup _ribbonGroup;
+        private readonly KryptonRibbon _ribbon;
+        private readonly KryptonRibbonGroup _ribbonGroup;
         private VisualPopupGroup _popupGroup;
         private ViewLayoutDocker _layoutCollapsedMain;
         private ViewDrawRibbonGroupText _viewCollapsedText1;
@@ -60,7 +60,7 @@ namespace ComponentFactory.Krypton.Ribbon
         private ViewDrawRibbonGroupTitle _viewNormalTitle;
         private PaletteRibbonContextBack _paletteContextBack;
         private PaletteRibbonShape _lastRibbonShape;
-        private NeedPaintHandler _needPaint;
+        private readonly NeedPaintHandler _needPaint;
         private IDisposable _mementoRibbonBack1;
         private IDisposable _mementoRibbonBack2;
         private IDisposable _mementoStandardBack;

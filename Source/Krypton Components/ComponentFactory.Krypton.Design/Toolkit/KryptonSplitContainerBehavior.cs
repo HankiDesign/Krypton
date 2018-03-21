@@ -8,8 +8,8 @@
 //  Version 4.4.0.0 	www.ComponentFactory.com
 // *****************************************************************************
 
-using System.Drawing;
 using System.ComponentModel.Design;
+using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.Design.Behavior;
 
@@ -18,7 +18,7 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class KryptonSplitContainerBehavior : Behavior
     {
         #region Instance Fields
-        private KryptonSplitContainer _splitContainer;
+        private readonly KryptonSplitContainer _splitContainer;
         #endregion
 
         #region Identity

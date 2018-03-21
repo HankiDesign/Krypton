@@ -25,31 +25,31 @@ namespace ComponentFactory.Krypton.Ribbon
                                        IContentValues
     {
         #region Static Fields
-        private static string _empty = "<Empty>";
-        private static Padding _preferredBorder2007 = new Padding(12, 3, 12, 1);
-        private static Padding _preferredBorder2010 = new Padding(8, 4, 8, 3);
-        private static Padding _layoutBorder2007 = new Padding(4, 3, 4, 1);
-        private static Padding _layoutBorder2010 = new Padding(1, 4, 0, 3);
-        private static Blend _contextBlend2007;
-        private static Blend _contextBlend2010;
+        private static readonly string _empty = "<Empty>";
+        private static readonly Padding _preferredBorder2007 = new Padding(12, 3, 12, 1);
+        private static readonly Padding _preferredBorder2010 = new Padding(8, 4, 8, 3);
+        private static readonly Padding _layoutBorder2007 = new Padding(4, 3, 4, 1);
+        private static readonly Padding _layoutBorder2010 = new Padding(1, 4, 0, 3);
+        private static readonly Blend _contextBlend2007;
+        private static readonly Blend _contextBlend2010;
         #endregion
 
         #region Instance Fields
-        private KryptonRibbon _ribbon;
+        private readonly KryptonRibbon _ribbon;
         private KryptonRibbonTab _ribbonTab;
-        private ViewLayoutRibbonTabs _layoutTabs;
-        private PaletteRibbonGeneral _paletteGeneral;
-        private PaletteRibbonDoubleInheritOverride _overrideStateNormal;
-        private PaletteRibbonDoubleInheritOverride _overrideStateTracking;
-        private PaletteRibbonDoubleInheritOverride _overrideStateCheckedNormal;
-        private PaletteRibbonDoubleInheritOverride _overrideStateCheckedTracking;
-        private PaletteRibbonDoubleInheritOverride _overrideStateContextTracking;
-        private PaletteRibbonDoubleInheritOverride _overrideStateContextCheckedNormal;
-        private PaletteRibbonDoubleInheritOverride _overrideStateContextCheckedTracking;
+        private readonly ViewLayoutRibbonTabs _layoutTabs;
+        private readonly PaletteRibbonGeneral _paletteGeneral;
+        private readonly PaletteRibbonDoubleInheritOverride _overrideStateNormal;
+        private readonly PaletteRibbonDoubleInheritOverride _overrideStateTracking;
+        private readonly PaletteRibbonDoubleInheritOverride _overrideStateCheckedNormal;
+        private readonly PaletteRibbonDoubleInheritOverride _overrideStateCheckedTracking;
+        private readonly PaletteRibbonDoubleInheritOverride _overrideStateContextTracking;
+        private readonly PaletteRibbonDoubleInheritOverride _overrideStateContextCheckedNormal;
+        private readonly PaletteRibbonDoubleInheritOverride _overrideStateContextCheckedTracking;
         private PaletteRibbonDoubleInheritOverride _overrideCurrent;
-        private PaletteRibbonContextDouble _paletteContextCurrent;
-        private RibbonTabToContent _contentProvider;
-        private NeedPaintHandler _needPaint;
+        private readonly PaletteRibbonContextDouble _paletteContextCurrent;
+        private readonly RibbonTabToContent _contentProvider;
+        private readonly NeedPaintHandler _needPaint;
         private IDisposable[] _mementos;
         private bool _checked;
         private Size _preferredSize;

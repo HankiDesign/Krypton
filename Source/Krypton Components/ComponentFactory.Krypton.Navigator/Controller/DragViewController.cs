@@ -32,7 +32,7 @@ namespace ComponentFactory.Krypton.Navigator
         private bool _draggingAttempt;
         private DateTime _lastClick;
         private Point _mousePoint;
-        private ViewBase _target;
+        private readonly ViewBase _target;
         private Rectangle _dragRect;
         #endregion
 

@@ -26,7 +26,7 @@ namespace ComponentFactory.Krypton.Docking
     public class KryptonDockingFloating : DockingElementClosedCollection
     {
         #region Instance Fields
-        private Form _ownerForm;
+        private readonly Form _ownerForm;
         #endregion
 
         #region Identity

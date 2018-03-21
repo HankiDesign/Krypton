@@ -20,7 +20,7 @@ namespace ComponentFactory.Krypton.Workspace
     public class CellDragCancelEventArgs : PageDragCancelEventArgs
 	{
 		#region Instance Fields
-        private KryptonWorkspaceCell _cell;
+        private readonly KryptonWorkspaceCell _cell;
         #endregion
 
 		#region Identity

@@ -20,8 +20,8 @@ namespace ComponentFactory.Krypton.Docking
 	public class ContextPageEventArgs : CancelEventArgs
 	{
 		#region Instance Fields
-        private KryptonPage _page;
-        private KryptonContextMenu _contextMenu;
+        private readonly KryptonPage _page;
+        private readonly KryptonContextMenu _contextMenu;
 		#endregion
 
 		#region Identity

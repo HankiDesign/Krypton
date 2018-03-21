@@ -35,7 +35,7 @@ namespace ComponentFactory.Krypton.Toolkit
         // Initialize the global state
         private static bool _globalApplyToolstrips = true;
         private static bool _globalAllowFormChrome = true;
-        private static GlobalStrings _globalStrings = new GlobalStrings();
+        private static readonly GlobalStrings _globalStrings = new GlobalStrings();
 
         // Initialize the default modes
         private static PaletteModeManager _globalPaletteMode = PaletteModeManager.Office2010Blue;

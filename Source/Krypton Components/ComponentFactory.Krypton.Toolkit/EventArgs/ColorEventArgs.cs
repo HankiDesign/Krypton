@@ -19,7 +19,7 @@ namespace ComponentFactory.Krypton.Toolkit
 	public class ColorEventArgs : EventArgs
 	{
 		#region Instance Fields
-        private Color _color;
+        private readonly Color _color;
 		#endregion
 
 		#region Identity

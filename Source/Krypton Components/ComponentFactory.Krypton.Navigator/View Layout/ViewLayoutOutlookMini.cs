@@ -19,7 +19,7 @@ namespace ComponentFactory.Krypton.Navigator
     internal class ViewLayoutOutlookMini : ViewLayoutDocker
     {
         #region Instance Fields
-        private ViewBuilderOutlookBase _viewBuilder; 
+        private readonly ViewBuilderOutlookBase _viewBuilder; 
         #endregion
 
         #region Identity

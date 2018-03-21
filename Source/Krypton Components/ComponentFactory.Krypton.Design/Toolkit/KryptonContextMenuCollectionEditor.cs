@@ -9,12 +9,13 @@
 // *****************************************************************************
 
 using System;
-using System.Drawing;
-using System.Windows.Forms;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Design;
-using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
+using System.Windows.Forms;
+using ComponentFactory.Krypton.Design.Properties;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -27,13 +28,13 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <summary>
         /// Form used for editing the KryptonContextMenuCollection.
         /// </summary>
-        protected partial class KryptonContextMenuCollectionForm : CollectionEditor.CollectionForm
+        protected class KryptonContextMenuCollectionForm : CollectionForm
         {
             #region Types
             /// <summary>
             /// Simple class to reduce the length of declaractions!
             /// </summary>
-            protected class DictItemBase : Dictionary<KryptonContextMenuItemBase, KryptonContextMenuItemBase> { };
+            protected class DictItemBase : Dictionary<KryptonContextMenuItemBase, KryptonContextMenuItemBase> { }
 
             /// <summary>
             /// Tree node that is attached to a context menu item.
@@ -41,8 +42,8 @@ namespace ComponentFactory.Krypton.Toolkit
             protected class MenuTreeNode : TreeNode
             {
                 #region Instance Fields
-                private KryptonContextMenuItemBase _item;
-                private object _propertyObject;
+                private readonly KryptonContextMenuItemBase _item;
+                private readonly object _propertyObject;
                 #endregion
 
                 #region Identity
@@ -62,7 +63,7 @@ namespace ComponentFactory.Krypton.Toolkit
                     Text = _item.ToString();
 
                     // Hook into property changes
-                    _item.PropertyChanged += new PropertyChangedEventHandler(OnPropertyChanged);
+                    _item.PropertyChanged += OnPropertyChanged;
                 }
                 #endregion
 
@@ -89,28 +90,28 @@ namespace ComponentFactory.Krypton.Toolkit
                 {
                     if (_item is KryptonContextMenuCheckBox)
                         return 6;
-                    else if (_item is KryptonContextMenuCheckButton)
-                        return 7;
-                    else if (_item is KryptonContextMenuColorColumns)
-                        return 0;
-                    else if (_item is KryptonContextMenuHeading)
-                        return 1;
-                    else if (_item is KryptonContextMenuItem)
-                        return 2;
-                    else if (_item is KryptonContextMenuItems)
-                        return 3;
-                    else if (_item is KryptonContextMenuLinkLabel)
-                        return 8;
-                    else if (_item is KryptonContextMenuRadioButton)
-                        return 5;
-                    else if (_item is KryptonContextMenuSeparator)
-                        return 4;
-                    else if (_item is KryptonContextMenuImageSelect)
-                        return 13;
-                    else if (_item is KryptonContextMenuMonthCalendar)
-                        return 14;
+	                if (_item is KryptonContextMenuCheckButton)
+		                return 7;
+	                if (_item is KryptonContextMenuColorColumns)
+		                return 0;
+	                if (_item is KryptonContextMenuHeading)
+		                return 1;
+	                if (_item is KryptonContextMenuItem)
+		                return 2;
+	                if (_item is KryptonContextMenuItems)
+		                return 3;
+	                if (_item is KryptonContextMenuLinkLabel)
+		                return 8;
+	                if (_item is KryptonContextMenuRadioButton)
+		                return 5;
+	                if (_item is KryptonContextMenuSeparator)
+		                return 4;
+	                if (_item is KryptonContextMenuImageSelect)
+		                return 13;
+	                if (_item is KryptonContextMenuMonthCalendar)
+		                return 14;
 
-                    Debug.Assert(false);
+	                Debug.Assert(false);
                     return -1;
                 }
 
@@ -128,8 +129,8 @@ namespace ComponentFactory.Krypton.Toolkit
             protected class PropertyGridSite : ISite, IServiceProvider
             {
                 #region Instance Fields
-                private IComponent _component;
-                private IServiceProvider _serviceProvider;
+                private readonly IComponent _component;
+                private readonly IServiceProvider _serviceProvider;
                 private bool _inGetService;
                 #endregion
 
@@ -210,27 +211,27 @@ namespace ComponentFactory.Krypton.Toolkit
             #region Instance Fields
             private DictItemBase _beforeItems;
             private KryptonContextMenuCollectionEditor _editor;
-            private Button buttonOK;
-            private TreeView treeView;
-            private Label label1;
-            private Label label2;
-            private ImageList imageList;
-            private Button buttonDelete;
-            private Button buttonMoveUp;
-            private Button buttonMoveDown;
-            private Button buttonAddCheckBox;
-            private Button buttonAddCheckButton;
-            private Button buttonAddRadioButton;
-            private Button buttonAddLinkLabel;
-            private Button buttonAddSeparator;
-            private Button buttonAddItem;
-            private Button buttonAddItems;
-            private Button buttonAddHeading;
-            private Button buttonAddMonthCalendar;
-            private Button buttonAddColorColumns;
-            private Button buttonAddImageSelect;
-            private PropertyGrid propertyGrid1;
-            private IContainer components = null;
+            private readonly Button buttonOK;
+            private readonly TreeView treeView;
+            private readonly Label label1;
+            private readonly Label label2;
+            private readonly ImageList imageList;
+            private readonly Button buttonDelete;
+            private readonly Button buttonMoveUp;
+            private readonly Button buttonMoveDown;
+            private readonly Button buttonAddCheckBox;
+            private readonly Button buttonAddCheckButton;
+            private readonly Button buttonAddRadioButton;
+            private readonly Button buttonAddLinkLabel;
+            private readonly Button buttonAddSeparator;
+            private readonly Button buttonAddItem;
+            private readonly Button buttonAddItems;
+            private readonly Button buttonAddHeading;
+            private readonly Button buttonAddMonthCalendar;
+            private readonly Button buttonAddColorColumns;
+            private readonly Button buttonAddImageSelect;
+            private readonly PropertyGrid propertyGrid1;
+            private readonly IContainer components;
             #endregion
 
             #region Identity
@@ -242,362 +243,362 @@ namespace ComponentFactory.Krypton.Toolkit
             {
                 _editor = editor;
 
-                this.components = new System.ComponentModel.Container();
-                this.buttonOK = new System.Windows.Forms.Button();
-                this.treeView = new System.Windows.Forms.TreeView();
-                this.imageList = new System.Windows.Forms.ImageList(this.components);
-                this.label1 = new System.Windows.Forms.Label();
-                this.buttonDelete = new System.Windows.Forms.Button();
-                this.buttonMoveUp = new System.Windows.Forms.Button();
-                this.buttonMoveDown = new System.Windows.Forms.Button();
-                this.buttonAddCheckBox = new System.Windows.Forms.Button();
-                this.buttonAddCheckButton = new System.Windows.Forms.Button();
-                this.buttonAddRadioButton = new System.Windows.Forms.Button();
-                this.buttonAddLinkLabel = new System.Windows.Forms.Button();
-                this.buttonAddSeparator = new System.Windows.Forms.Button();
-                this.buttonAddItem = new System.Windows.Forms.Button();
-                this.buttonAddItems = new System.Windows.Forms.Button();
-                this.buttonAddHeading = new System.Windows.Forms.Button();
-                this.buttonAddMonthCalendar = new System.Windows.Forms.Button();
-                this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
-                this.label2 = new System.Windows.Forms.Label();
-                this.buttonAddColorColumns = new System.Windows.Forms.Button();
-                this.buttonAddImageSelect = new System.Windows.Forms.Button();
-                this.SuspendLayout();
+                components = new Container();
+                buttonOK = new Button();
+                treeView = new TreeView();
+                imageList = new ImageList(components);
+                label1 = new Label();
+                buttonDelete = new Button();
+                buttonMoveUp = new Button();
+                buttonMoveDown = new Button();
+                buttonAddCheckBox = new Button();
+                buttonAddCheckButton = new Button();
+                buttonAddRadioButton = new Button();
+                buttonAddLinkLabel = new Button();
+                buttonAddSeparator = new Button();
+                buttonAddItem = new Button();
+                buttonAddItems = new Button();
+                buttonAddHeading = new Button();
+                buttonAddMonthCalendar = new Button();
+                propertyGrid1 = new PropertyGrid();
+                label2 = new Label();
+                buttonAddColorColumns = new Button();
+                buttonAddImageSelect = new Button();
+                SuspendLayout();
                 // 
                 // buttonOK
                 // 
-                this.buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-                this.buttonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-                this.buttonOK.Location = new System.Drawing.Point(630, 504);
-                this.buttonOK.Name = "buttonOK";
-                this.buttonOK.Size = new System.Drawing.Size(75, 23);
-                this.buttonOK.TabIndex = 16;
-                this.buttonOK.Text = "OK";
-                this.buttonOK.UseVisualStyleBackColor = true;
-                this.buttonOK.Click += new EventHandler(buttonOK_Click);   
+                buttonOK.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+                buttonOK.DialogResult = DialogResult.OK;
+                buttonOK.Location = new Point(630, 504);
+                buttonOK.Name = "buttonOK";
+                buttonOK.Size = new Size(75, 23);
+                buttonOK.TabIndex = 16;
+                buttonOK.Text = "OK";
+                buttonOK.UseVisualStyleBackColor = true;
+                buttonOK.Click += buttonOK_Click;   
                 // 
                 // treeView
                 // 
-                this.treeView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                            | System.Windows.Forms.AnchorStyles.Left)
-                            | System.Windows.Forms.AnchorStyles.Right)));
-                this.treeView.HideSelection = false;
-                this.treeView.ImageIndex = 0;
-                this.treeView.ImageList = this.imageList;
-                this.treeView.Location = new System.Drawing.Point(16, 29);
-                this.treeView.Name = "treeView";
-                this.treeView.SelectedImageIndex = 0;
-                this.treeView.Size = new System.Drawing.Size(251, 466);
-                this.treeView.TabIndex = 0;
-                this.treeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.SelectionChanged);
+                treeView.Anchor = ((AnchorStyles.Top | AnchorStyles.Bottom)
+                                   | AnchorStyles.Left)
+                                  | AnchorStyles.Right;
+                treeView.HideSelection = false;
+                treeView.ImageIndex = 0;
+                treeView.ImageList = imageList;
+                treeView.Location = new Point(16, 29);
+                treeView.Name = "treeView";
+                treeView.SelectedImageIndex = 0;
+                treeView.Size = new Size(251, 466);
+                treeView.TabIndex = 0;
+                treeView.AfterSelect += SelectionChanged;
                 // 
                 // imageList
                 // 
-                this.imageList.TransparentColor = System.Drawing.Color.Magenta;
-                this.imageList.Images.AddRange(new Image[]{
-                    ComponentFactory.Krypton.Design.Properties.Resources.KryptonContextMenuColorColumns,
-                    ComponentFactory.Krypton.Design.Properties.Resources.KryptonContextMenuHeading,
-                    ComponentFactory.Krypton.Design.Properties.Resources.KryptonContextMenuItem,
-                    ComponentFactory.Krypton.Design.Properties.Resources.KryptonContextMenuItems,
-                    ComponentFactory.Krypton.Design.Properties.Resources.KryptonContextMenuSeparator,
-                    ComponentFactory.Krypton.Design.Properties.Resources.KryptonRadioButton,
-                    ComponentFactory.Krypton.Design.Properties.Resources.KryptonCheckBox,
-                    ComponentFactory.Krypton.Design.Properties.Resources.KryptonCheckButton,
-                    ComponentFactory.Krypton.Design.Properties.Resources.KryptonLinkLabel,
-                    ComponentFactory.Krypton.Design.Properties.Resources.delete2,
-                    ComponentFactory.Krypton.Design.Properties.Resources.arrow_up_blue,
-                    ComponentFactory.Krypton.Design.Properties.Resources.arrow_down_blue,
-                    ComponentFactory.Krypton.Design.Properties.Resources.KryptonContextMenuColorColumns,
-                    ComponentFactory.Krypton.Design.Properties.Resources.KryptonContextMenuImageSelect,
-                    ComponentFactory.Krypton.Design.Properties.Resources.KryptonMonthCalendar});
-                this.imageList.Images.SetKeyName(0, "KryptonContextMenuColorColumns.bmp");
-                this.imageList.Images.SetKeyName(1, "KryptonContextMenuHeading.bmp");
-                this.imageList.Images.SetKeyName(2, "KryptonContextMenuItem.bmp");
-                this.imageList.Images.SetKeyName(3, "KryptonContextMenuItems.bmp");
-                this.imageList.Images.SetKeyName(4, "KryptonContextMenuSeparator.bmp");
-                this.imageList.Images.SetKeyName(5, "KryptonRadioButton.bmp");
-                this.imageList.Images.SetKeyName(6, "KryptonCheckBox.bmp");
-                this.imageList.Images.SetKeyName(7, "KryptonCheckButton.bmp");
-                this.imageList.Images.SetKeyName(8, "KryptonLinkLabel.bmp");
-                this.imageList.Images.SetKeyName(9, "delete2.png");
-                this.imageList.Images.SetKeyName(10, "arrow_up_blue.png");
-                this.imageList.Images.SetKeyName(11, "arrow_down_blue.png");
-                this.imageList.Images.SetKeyName(12, "KryptonContextMenuColorColumns.bmp");
-                this.imageList.Images.SetKeyName(13, "KryptonContextMenuImageSelect.bmp");
+                imageList.TransparentColor = Color.Magenta;
+                imageList.Images.AddRange(new Image[]{
+                    Resources.KryptonContextMenuColorColumns,
+                    Resources.KryptonContextMenuHeading,
+                    Resources.KryptonContextMenuItem,
+                    Resources.KryptonContextMenuItems,
+                    Resources.KryptonContextMenuSeparator,
+                    Resources.KryptonRadioButton,
+                    Resources.KryptonCheckBox,
+                    Resources.KryptonCheckButton,
+                    Resources.KryptonLinkLabel,
+                    Resources.delete2,
+                    Resources.arrow_up_blue,
+                    Resources.arrow_down_blue,
+                    Resources.KryptonContextMenuColorColumns,
+                    Resources.KryptonContextMenuImageSelect,
+                    Resources.KryptonMonthCalendar});
+                imageList.Images.SetKeyName(0, "KryptonContextMenuColorColumns.bmp");
+                imageList.Images.SetKeyName(1, "KryptonContextMenuHeading.bmp");
+                imageList.Images.SetKeyName(2, "KryptonContextMenuItem.bmp");
+                imageList.Images.SetKeyName(3, "KryptonContextMenuItems.bmp");
+                imageList.Images.SetKeyName(4, "KryptonContextMenuSeparator.bmp");
+                imageList.Images.SetKeyName(5, "KryptonRadioButton.bmp");
+                imageList.Images.SetKeyName(6, "KryptonCheckBox.bmp");
+                imageList.Images.SetKeyName(7, "KryptonCheckButton.bmp");
+                imageList.Images.SetKeyName(8, "KryptonLinkLabel.bmp");
+                imageList.Images.SetKeyName(9, "delete2.png");
+                imageList.Images.SetKeyName(10, "arrow_up_blue.png");
+                imageList.Images.SetKeyName(11, "arrow_down_blue.png");
+                imageList.Images.SetKeyName(12, "KryptonContextMenuColorColumns.bmp");
+                imageList.Images.SetKeyName(13, "KryptonContextMenuImageSelect.bmp");
                 // 
                 // label1
                 // 
-                this.label1.AutoSize = true;
-                this.label1.Location = new System.Drawing.Point(13, 11);
-                this.label1.Name = "label1";
-                this.label1.Size = new System.Drawing.Size(75, 13);
-                this.label1.TabIndex = 7;
-                this.label1.Text = "Item Hierarchy";
+                label1.AutoSize = true;
+                label1.Location = new Point(13, 11);
+                label1.Name = "label1";
+                label1.Size = new Size(75, 13);
+                label1.TabIndex = 7;
+                label1.Text = "Item Hierarchy";
                 // 
                 // buttonDelete
                 // 
-                this.buttonDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.buttonDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                this.buttonDelete.ImageIndex = 9;
-                this.buttonDelete.ImageList = this.imageList;
-                this.buttonDelete.Location = new System.Drawing.Point(282, 467);
-                this.buttonDelete.Name = "buttonDelete";
-                this.buttonDelete.Size = new System.Drawing.Size(144, 28);
-                this.buttonDelete.TabIndex = 14;
-                this.buttonDelete.Text = "Delete";
-                this.buttonDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-                this.buttonDelete.UseVisualStyleBackColor = true;
-                this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+                buttonDelete.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                buttonDelete.ImageAlign = ContentAlignment.MiddleLeft;
+                buttonDelete.ImageIndex = 9;
+                buttonDelete.ImageList = imageList;
+                buttonDelete.Location = new Point(282, 467);
+                buttonDelete.Name = "buttonDelete";
+                buttonDelete.Size = new Size(144, 28);
+                buttonDelete.TabIndex = 14;
+                buttonDelete.Text = "Delete";
+                buttonDelete.TextImageRelation = TextImageRelation.ImageBeforeText;
+                buttonDelete.UseVisualStyleBackColor = true;
+                buttonDelete.Click += buttonDelete_Click;
                 // 
                 // buttonMoveUp
                 // 
-                this.buttonMoveUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.buttonMoveUp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                this.buttonMoveUp.ImageIndex = 10;
-                this.buttonMoveUp.ImageList = this.imageList;
-                this.buttonMoveUp.Location = new System.Drawing.Point(282, 29);
-                this.buttonMoveUp.Name = "buttonMoveUp";
-                this.buttonMoveUp.Size = new System.Drawing.Size(144, 28);
-                this.buttonMoveUp.TabIndex = 1;
-                this.buttonMoveUp.Text = "Move Up";
-                this.buttonMoveUp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-                this.buttonMoveUp.UseVisualStyleBackColor = true;
-                this.buttonMoveUp.Click += new System.EventHandler(this.buttonMoveUp_Click);
+                buttonMoveUp.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                buttonMoveUp.ImageAlign = ContentAlignment.MiddleLeft;
+                buttonMoveUp.ImageIndex = 10;
+                buttonMoveUp.ImageList = imageList;
+                buttonMoveUp.Location = new Point(282, 29);
+                buttonMoveUp.Name = "buttonMoveUp";
+                buttonMoveUp.Size = new Size(144, 28);
+                buttonMoveUp.TabIndex = 1;
+                buttonMoveUp.Text = "Move Up";
+                buttonMoveUp.TextImageRelation = TextImageRelation.ImageBeforeText;
+                buttonMoveUp.UseVisualStyleBackColor = true;
+                buttonMoveUp.Click += buttonMoveUp_Click;
                 // 
                 // buttonMoveDown
                 // 
-                this.buttonMoveDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.buttonMoveDown.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                this.buttonMoveDown.ImageIndex = 11;
-                this.buttonMoveDown.ImageList = this.imageList;
-                this.buttonMoveDown.Location = new System.Drawing.Point(282, 60);
-                this.buttonMoveDown.Name = "buttonMoveDown";
-                this.buttonMoveDown.Size = new System.Drawing.Size(144, 28);
-                this.buttonMoveDown.TabIndex = 2;
-                this.buttonMoveDown.Text = "Move Down";
-                this.buttonMoveDown.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-                this.buttonMoveDown.UseVisualStyleBackColor = true;
-                this.buttonMoveDown.Click += new System.EventHandler(this.buttonMoveDown_Click);
+                buttonMoveDown.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                buttonMoveDown.ImageAlign = ContentAlignment.MiddleLeft;
+                buttonMoveDown.ImageIndex = 11;
+                buttonMoveDown.ImageList = imageList;
+                buttonMoveDown.Location = new Point(282, 60);
+                buttonMoveDown.Name = "buttonMoveDown";
+                buttonMoveDown.Size = new Size(144, 28);
+                buttonMoveDown.TabIndex = 2;
+                buttonMoveDown.Text = "Move Down";
+                buttonMoveDown.TextImageRelation = TextImageRelation.ImageBeforeText;
+                buttonMoveDown.UseVisualStyleBackColor = true;
+                buttonMoveDown.Click += buttonMoveDown_Click;
                 // 
                 // buttonAddCheckBox
                 // 
-                this.buttonAddCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.buttonAddCheckBox.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                this.buttonAddCheckBox.ImageIndex = 6;
-                this.buttonAddCheckBox.ImageList = this.imageList;
-                this.buttonAddCheckBox.Location = new System.Drawing.Point(282, 231);
-                this.buttonAddCheckBox.Name = "buttonAddCheckBox";
-                this.buttonAddCheckBox.Size = new System.Drawing.Size(144, 28);
-                this.buttonAddCheckBox.TabIndex = 7;
-                this.buttonAddCheckBox.Text = "Add CheckBox";
-                this.buttonAddCheckBox.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-                this.buttonAddCheckBox.UseVisualStyleBackColor = true;
-                this.buttonAddCheckBox.Click += new System.EventHandler(this.buttonAddCheckBox_Click);
+                buttonAddCheckBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                buttonAddCheckBox.ImageAlign = ContentAlignment.MiddleLeft;
+                buttonAddCheckBox.ImageIndex = 6;
+                buttonAddCheckBox.ImageList = imageList;
+                buttonAddCheckBox.Location = new Point(282, 231);
+                buttonAddCheckBox.Name = "buttonAddCheckBox";
+                buttonAddCheckBox.Size = new Size(144, 28);
+                buttonAddCheckBox.TabIndex = 7;
+                buttonAddCheckBox.Text = "Add CheckBox";
+                buttonAddCheckBox.TextImageRelation = TextImageRelation.ImageBeforeText;
+                buttonAddCheckBox.UseVisualStyleBackColor = true;
+                buttonAddCheckBox.Click += buttonAddCheckBox_Click;
                 // 
                 // buttonAddCheckButton
                 // 
-                this.buttonAddCheckButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.buttonAddCheckButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                this.buttonAddCheckButton.ImageIndex = 7;
-                this.buttonAddCheckButton.ImageList = this.imageList;
-                this.buttonAddCheckButton.Location = new System.Drawing.Point(282, 263);
-                this.buttonAddCheckButton.Name = "buttonAddCheckButton";
-                this.buttonAddCheckButton.Size = new System.Drawing.Size(144, 28);
-                this.buttonAddCheckButton.TabIndex = 8;
-                this.buttonAddCheckButton.Text = "Add CheckButton";
-                this.buttonAddCheckButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-                this.buttonAddCheckButton.UseVisualStyleBackColor = true;
-                this.buttonAddCheckButton.Click += new System.EventHandler(this.buttonAddCheckButton_Click);
+                buttonAddCheckButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                buttonAddCheckButton.ImageAlign = ContentAlignment.MiddleLeft;
+                buttonAddCheckButton.ImageIndex = 7;
+                buttonAddCheckButton.ImageList = imageList;
+                buttonAddCheckButton.Location = new Point(282, 263);
+                buttonAddCheckButton.Name = "buttonAddCheckButton";
+                buttonAddCheckButton.Size = new Size(144, 28);
+                buttonAddCheckButton.TabIndex = 8;
+                buttonAddCheckButton.Text = "Add CheckButton";
+                buttonAddCheckButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+                buttonAddCheckButton.UseVisualStyleBackColor = true;
+                buttonAddCheckButton.Click += buttonAddCheckButton_Click;
                 // 
                 // buttonAddRadioButton
                 // 
-                this.buttonAddRadioButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.buttonAddRadioButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                this.buttonAddRadioButton.ImageIndex = 5;
-                this.buttonAddRadioButton.ImageList = this.imageList;
-                this.buttonAddRadioButton.Location = new System.Drawing.Point(282, 295);
-                this.buttonAddRadioButton.Name = "buttonAddRadioButton";
-                this.buttonAddRadioButton.Size = new System.Drawing.Size(144, 28);
-                this.buttonAddRadioButton.TabIndex = 9;
-                this.buttonAddRadioButton.Text = "Add RadioButton";
-                this.buttonAddRadioButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-                this.buttonAddRadioButton.UseVisualStyleBackColor = true;
-                this.buttonAddRadioButton.Click += new System.EventHandler(this.buttonAddRadioButton_Click);
+                buttonAddRadioButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                buttonAddRadioButton.ImageAlign = ContentAlignment.MiddleLeft;
+                buttonAddRadioButton.ImageIndex = 5;
+                buttonAddRadioButton.ImageList = imageList;
+                buttonAddRadioButton.Location = new Point(282, 295);
+                buttonAddRadioButton.Name = "buttonAddRadioButton";
+                buttonAddRadioButton.Size = new Size(144, 28);
+                buttonAddRadioButton.TabIndex = 9;
+                buttonAddRadioButton.Text = "Add RadioButton";
+                buttonAddRadioButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+                buttonAddRadioButton.UseVisualStyleBackColor = true;
+                buttonAddRadioButton.Click += buttonAddRadioButton_Click;
                 // 
                 // buttonAddLinkLabel
                 // 
-                this.buttonAddLinkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.buttonAddLinkLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                this.buttonAddLinkLabel.ImageIndex = 8;
-                this.buttonAddLinkLabel.ImageList = this.imageList;
-                this.buttonAddLinkLabel.Location = new System.Drawing.Point(282, 327);
-                this.buttonAddLinkLabel.Name = "buttonAddLinkLabel";
-                this.buttonAddLinkLabel.Size = new System.Drawing.Size(144, 28);
-                this.buttonAddLinkLabel.TabIndex = 10;
-                this.buttonAddLinkLabel.Text = "Add LinkLabel";
-                this.buttonAddLinkLabel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-                this.buttonAddLinkLabel.UseVisualStyleBackColor = true;
-                this.buttonAddLinkLabel.Click += new System.EventHandler(this.buttonAddLinkLabel_Click);
+                buttonAddLinkLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                buttonAddLinkLabel.ImageAlign = ContentAlignment.MiddleLeft;
+                buttonAddLinkLabel.ImageIndex = 8;
+                buttonAddLinkLabel.ImageList = imageList;
+                buttonAddLinkLabel.Location = new Point(282, 327);
+                buttonAddLinkLabel.Name = "buttonAddLinkLabel";
+                buttonAddLinkLabel.Size = new Size(144, 28);
+                buttonAddLinkLabel.TabIndex = 10;
+                buttonAddLinkLabel.Text = "Add LinkLabel";
+                buttonAddLinkLabel.TextImageRelation = TextImageRelation.ImageBeforeText;
+                buttonAddLinkLabel.UseVisualStyleBackColor = true;
+                buttonAddLinkLabel.Click += buttonAddLinkLabel_Click;
                 // 
                 // buttonAddSeparator
                 // 
-                this.buttonAddSeparator.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.buttonAddSeparator.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                this.buttonAddSeparator.ImageIndex = 4;
-                this.buttonAddSeparator.ImageList = this.imageList;
-                this.buttonAddSeparator.Location = new System.Drawing.Point(282, 199);
-                this.buttonAddSeparator.Name = "buttonAddSeparator";
-                this.buttonAddSeparator.Size = new System.Drawing.Size(144, 28);
-                this.buttonAddSeparator.TabIndex = 6;
-                this.buttonAddSeparator.Text = "Add Separator";
-                this.buttonAddSeparator.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-                this.buttonAddSeparator.UseVisualStyleBackColor = true;
-                this.buttonAddSeparator.Click += new System.EventHandler(this.buttonAddSeparator_Click);
+                buttonAddSeparator.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                buttonAddSeparator.ImageAlign = ContentAlignment.MiddleLeft;
+                buttonAddSeparator.ImageIndex = 4;
+                buttonAddSeparator.ImageList = imageList;
+                buttonAddSeparator.Location = new Point(282, 199);
+                buttonAddSeparator.Name = "buttonAddSeparator";
+                buttonAddSeparator.Size = new Size(144, 28);
+                buttonAddSeparator.TabIndex = 6;
+                buttonAddSeparator.Text = "Add Separator";
+                buttonAddSeparator.TextImageRelation = TextImageRelation.ImageBeforeText;
+                buttonAddSeparator.UseVisualStyleBackColor = true;
+                buttonAddSeparator.Click += buttonAddSeparator_Click;
                 // 
                 // buttonAddItem
                 // 
-                this.buttonAddItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.buttonAddItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                this.buttonAddItem.ImageIndex = 2;
-                this.buttonAddItem.ImageList = this.imageList;
-                this.buttonAddItem.Location = new System.Drawing.Point(282, 103);
-                this.buttonAddItem.Name = "buttonAddItem";
-                this.buttonAddItem.Size = new System.Drawing.Size(144, 28);
-                this.buttonAddItem.TabIndex = 3;
-                this.buttonAddItem.Text = "Add Item";
-                this.buttonAddItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-                this.buttonAddItem.UseVisualStyleBackColor = true;
-                this.buttonAddItem.Click += new System.EventHandler(this.buttonAddItem_Click);
+                buttonAddItem.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                buttonAddItem.ImageAlign = ContentAlignment.MiddleLeft;
+                buttonAddItem.ImageIndex = 2;
+                buttonAddItem.ImageList = imageList;
+                buttonAddItem.Location = new Point(282, 103);
+                buttonAddItem.Name = "buttonAddItem";
+                buttonAddItem.Size = new Size(144, 28);
+                buttonAddItem.TabIndex = 3;
+                buttonAddItem.Text = "Add Item";
+                buttonAddItem.TextImageRelation = TextImageRelation.ImageBeforeText;
+                buttonAddItem.UseVisualStyleBackColor = true;
+                buttonAddItem.Click += buttonAddItem_Click;
                 // 
                 // buttonAddItems
                 // 
-                this.buttonAddItems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.buttonAddItems.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                this.buttonAddItems.ImageIndex = 3;
-                this.buttonAddItems.ImageList = this.imageList;
-                this.buttonAddItems.Location = new System.Drawing.Point(282, 135);
-                this.buttonAddItems.Name = "buttonAddItems";
-                this.buttonAddItems.Size = new System.Drawing.Size(144, 28);
-                this.buttonAddItems.TabIndex = 4;
-                this.buttonAddItems.Text = "Add Items";
-                this.buttonAddItems.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-                this.buttonAddItems.UseVisualStyleBackColor = true;
-                this.buttonAddItems.Click += new System.EventHandler(this.buttonAddItems_Click);
+                buttonAddItems.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                buttonAddItems.ImageAlign = ContentAlignment.MiddleLeft;
+                buttonAddItems.ImageIndex = 3;
+                buttonAddItems.ImageList = imageList;
+                buttonAddItems.Location = new Point(282, 135);
+                buttonAddItems.Name = "buttonAddItems";
+                buttonAddItems.Size = new Size(144, 28);
+                buttonAddItems.TabIndex = 4;
+                buttonAddItems.Text = "Add Items";
+                buttonAddItems.TextImageRelation = TextImageRelation.ImageBeforeText;
+                buttonAddItems.UseVisualStyleBackColor = true;
+                buttonAddItems.Click += buttonAddItems_Click;
                 // 
                 // buttonAddHeading
                 // 
-                this.buttonAddHeading.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.buttonAddHeading.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                this.buttonAddHeading.ImageIndex = 1;
-                this.buttonAddHeading.ImageList = this.imageList;
-                this.buttonAddHeading.Location = new System.Drawing.Point(282, 167);
-                this.buttonAddHeading.Name = "buttonAddHeading";
-                this.buttonAddHeading.Size = new System.Drawing.Size(144, 28);
-                this.buttonAddHeading.TabIndex = 5;
-                this.buttonAddHeading.Text = "Add Heading";
-                this.buttonAddHeading.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-                this.buttonAddHeading.UseVisualStyleBackColor = true;
-                this.buttonAddHeading.Click += new System.EventHandler(this.buttonAddHeading_Click);
+                buttonAddHeading.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                buttonAddHeading.ImageAlign = ContentAlignment.MiddleLeft;
+                buttonAddHeading.ImageIndex = 1;
+                buttonAddHeading.ImageList = imageList;
+                buttonAddHeading.Location = new Point(282, 167);
+                buttonAddHeading.Name = "buttonAddHeading";
+                buttonAddHeading.Size = new Size(144, 28);
+                buttonAddHeading.TabIndex = 5;
+                buttonAddHeading.Text = "Add Heading";
+                buttonAddHeading.TextImageRelation = TextImageRelation.ImageBeforeText;
+                buttonAddHeading.UseVisualStyleBackColor = true;
+                buttonAddHeading.Click += buttonAddHeading_Click;
                 // 
                 // buttonAddMonthCalendar
                 // 
-                this.buttonAddMonthCalendar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.buttonAddMonthCalendar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                this.buttonAddMonthCalendar.ImageIndex = 14;
-                this.buttonAddMonthCalendar.ImageList = this.imageList;
-                this.buttonAddMonthCalendar.Location = new System.Drawing.Point(282, 423);
-                this.buttonAddMonthCalendar.Name = "buttonAddMonthCalendar";
-                this.buttonAddMonthCalendar.Size = new System.Drawing.Size(144, 28);
-                this.buttonAddMonthCalendar.TabIndex = 13;
-                this.buttonAddMonthCalendar.Text = "Add Month Calendar";
-                this.buttonAddMonthCalendar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-                this.buttonAddMonthCalendar.UseVisualStyleBackColor = true;
-                this.buttonAddMonthCalendar.Click += new System.EventHandler(this.buttonAddMonthCalendar_Click);
+                buttonAddMonthCalendar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                buttonAddMonthCalendar.ImageAlign = ContentAlignment.MiddleLeft;
+                buttonAddMonthCalendar.ImageIndex = 14;
+                buttonAddMonthCalendar.ImageList = imageList;
+                buttonAddMonthCalendar.Location = new Point(282, 423);
+                buttonAddMonthCalendar.Name = "buttonAddMonthCalendar";
+                buttonAddMonthCalendar.Size = new Size(144, 28);
+                buttonAddMonthCalendar.TabIndex = 13;
+                buttonAddMonthCalendar.Text = "Add Month Calendar";
+                buttonAddMonthCalendar.TextImageRelation = TextImageRelation.ImageBeforeText;
+                buttonAddMonthCalendar.UseVisualStyleBackColor = true;
+                buttonAddMonthCalendar.Click += buttonAddMonthCalendar_Click;
                 // 
                 // propertyGrid1
                 // 
-                this.propertyGrid1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                            | System.Windows.Forms.AnchorStyles.Right)));
-                this.propertyGrid1.HelpVisible = false;
-                this.propertyGrid1.Location = new System.Drawing.Point(439, 29);
-                this.propertyGrid1.Name = "propertyGrid1";
-                this.propertyGrid1.Size = new System.Drawing.Size(266, 466);
-                this.propertyGrid1.TabIndex = 15;
-                this.propertyGrid1.ToolbarVisible = false;
+                propertyGrid1.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom)
+                                       | AnchorStyles.Right;
+                propertyGrid1.HelpVisible = false;
+                propertyGrid1.Location = new Point(439, 29);
+                propertyGrid1.Name = "propertyGrid1";
+                propertyGrid1.Size = new Size(266, 466);
+                propertyGrid1.TabIndex = 15;
+                propertyGrid1.ToolbarVisible = false;
                 // 
                 // label2
                 // 
-                this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.label2.AutoSize = true;
-                this.label2.Location = new System.Drawing.Point(436, 11);
-                this.label2.Name = "label2";
-                this.label2.Size = new System.Drawing.Size(77, 13);
-                this.label2.TabIndex = 16;
-                this.label2.Text = "Item Properties";
+                label2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                label2.AutoSize = true;
+                label2.Location = new Point(436, 11);
+                label2.Name = "label2";
+                label2.Size = new Size(77, 13);
+                label2.TabIndex = 16;
+                label2.Text = "Item Properties";
                 // 
                 // buttonAddColorColumns
                 // 
-                this.buttonAddColorColumns.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.buttonAddColorColumns.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                this.buttonAddColorColumns.ImageIndex = 12;
-                this.buttonAddColorColumns.ImageList = this.imageList;
-                this.buttonAddColorColumns.Location = new System.Drawing.Point(282, 359);
-                this.buttonAddColorColumns.Name = "buttonAddColorColumns";
-                this.buttonAddColorColumns.Size = new System.Drawing.Size(144, 28);
-                this.buttonAddColorColumns.TabIndex = 11;
-                this.buttonAddColorColumns.Text = "Add ColorColumns";
-                this.buttonAddColorColumns.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-                this.buttonAddColorColumns.UseVisualStyleBackColor = true;
-                this.buttonAddColorColumns.Click += new System.EventHandler(this.buttonAddColorColumns_Click);
+                buttonAddColorColumns.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                buttonAddColorColumns.ImageAlign = ContentAlignment.MiddleLeft;
+                buttonAddColorColumns.ImageIndex = 12;
+                buttonAddColorColumns.ImageList = imageList;
+                buttonAddColorColumns.Location = new Point(282, 359);
+                buttonAddColorColumns.Name = "buttonAddColorColumns";
+                buttonAddColorColumns.Size = new Size(144, 28);
+                buttonAddColorColumns.TabIndex = 11;
+                buttonAddColorColumns.Text = "Add ColorColumns";
+                buttonAddColorColumns.TextImageRelation = TextImageRelation.ImageBeforeText;
+                buttonAddColorColumns.UseVisualStyleBackColor = true;
+                buttonAddColorColumns.Click += buttonAddColorColumns_Click;
                 // 
                 // buttonAddImageSelect
                 // 
-                this.buttonAddImageSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.buttonAddImageSelect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                this.buttonAddImageSelect.ImageIndex = 13;
-                this.buttonAddImageSelect.ImageList = this.imageList;
-                this.buttonAddImageSelect.Location = new System.Drawing.Point(282, 391);
-                this.buttonAddImageSelect.Name = "buttonAddImageSelect";
-                this.buttonAddImageSelect.Size = new System.Drawing.Size(144, 28);
-                this.buttonAddImageSelect.TabIndex = 12;
-                this.buttonAddImageSelect.Text = "Add ImageSelect";
-                this.buttonAddImageSelect.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-                this.buttonAddImageSelect.UseVisualStyleBackColor = true;
-                this.buttonAddImageSelect.Click += new System.EventHandler(this.buttonAddImageSelect_Click);
+                buttonAddImageSelect.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                buttonAddImageSelect.ImageAlign = ContentAlignment.MiddleLeft;
+                buttonAddImageSelect.ImageIndex = 13;
+                buttonAddImageSelect.ImageList = imageList;
+                buttonAddImageSelect.Location = new Point(282, 391);
+                buttonAddImageSelect.Name = "buttonAddImageSelect";
+                buttonAddImageSelect.Size = new Size(144, 28);
+                buttonAddImageSelect.TabIndex = 12;
+                buttonAddImageSelect.Text = "Add ImageSelect";
+                buttonAddImageSelect.TextImageRelation = TextImageRelation.ImageBeforeText;
+                buttonAddImageSelect.UseVisualStyleBackColor = true;
+                buttonAddImageSelect.Click += buttonAddImageSelect_Click;
                 // 
                 // KryptonContextMenuEditorForm
                 // 
-                this.AcceptButton = this.buttonOK;
-                this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-                this.ClientSize = new System.Drawing.Size(717, 557);
-                this.ControlBox = false;
-                this.Controls.Add(this.buttonAddColorColumns);
-                this.Controls.Add(this.buttonAddImageSelect);
-                this.Controls.Add(this.label2);
-                this.Controls.Add(this.propertyGrid1);
-                this.Controls.Add(this.buttonAddMonthCalendar);
-                this.Controls.Add(this.buttonAddHeading);
-                this.Controls.Add(this.buttonAddItems);
-                this.Controls.Add(this.buttonAddItem);
-                this.Controls.Add(this.buttonAddSeparator);
-                this.Controls.Add(this.buttonAddLinkLabel);
-                this.Controls.Add(this.buttonAddRadioButton);
-                this.Controls.Add(this.buttonAddCheckButton);
-                this.Controls.Add(this.buttonAddCheckBox);
-                this.Controls.Add(this.buttonMoveDown);
-                this.Controls.Add(this.buttonMoveUp);
-                this.Controls.Add(this.buttonDelete);
-                this.Controls.Add(this.label1);
-                this.Controls.Add(this.treeView);
-                this.Controls.Add(this.buttonOK);
-                this.MinimumSize = new System.Drawing.Size(733, 593);
-                this.Name = "KryptonContextMenuEditorForm";
-                this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-                this.Text = "KryptonContextMenu Items Editor";
-                this.Load += new System.EventHandler(this.KryptonContextMenuEditorForm_Load);
-                this.ResumeLayout(false);
-                this.PerformLayout();
+                AcceptButton = buttonOK;
+                AutoScaleMode = AutoScaleMode.None;
+                ClientSize = new Size(717, 557);
+                ControlBox = false;
+                Controls.Add(buttonAddColorColumns);
+                Controls.Add(buttonAddImageSelect);
+                Controls.Add(label2);
+                Controls.Add(propertyGrid1);
+                Controls.Add(buttonAddMonthCalendar);
+                Controls.Add(buttonAddHeading);
+                Controls.Add(buttonAddItems);
+                Controls.Add(buttonAddItem);
+                Controls.Add(buttonAddSeparator);
+                Controls.Add(buttonAddLinkLabel);
+                Controls.Add(buttonAddRadioButton);
+                Controls.Add(buttonAddCheckButton);
+                Controls.Add(buttonAddCheckBox);
+                Controls.Add(buttonMoveDown);
+                Controls.Add(buttonMoveUp);
+                Controls.Add(buttonDelete);
+                Controls.Add(label1);
+                Controls.Add(treeView);
+                Controls.Add(buttonOK);
+                MinimumSize = new Size(733, 593);
+                Name = "KryptonContextMenuEditorForm";
+                StartPosition = FormStartPosition.CenterScreen;
+                Text = "KryptonContextMenu Items Editor";
+                Load += KryptonContextMenuEditorForm_Load;
+                ResumeLayout(false);
+                PerformLayout();
             }
             #endregion
 
@@ -1072,11 +1073,8 @@ namespace ComponentFactory.Krypton.Toolkit
                 // If it has no parent the it must be inside a collection
                 if (parent == null)
                     return true;
-                else
-                {
-                    // If inside an items then not inside a collection
-                    return !(parent is KryptonContextMenuItems);
-                }
+	            // If inside an items then not inside a collection
+	            return !(parent is KryptonContextMenuItems);
             }
 
             private DictItemBase CreateItemsDictionary(object[] items)
@@ -1120,7 +1118,7 @@ namespace ComponentFactory.Krypton.Toolkit
                     if (!before.ContainsKey(item))
                     {
                         if (context.Container != null)
-                            context.Container.Add(item as IComponent);
+                            context.Container.Add(item);
                     }
 
                 // Delete all old components (in the 'before' but not the 'after'
@@ -1130,7 +1128,7 @@ namespace ComponentFactory.Krypton.Toolkit
                         DestroyInstance(item);
 
                         if (context.Container != null)
-                            context.Container.Remove(item as IComponent);
+                            context.Container.Remove(item);
                     }
 
                 IComponentChangeService changeService = (IComponentChangeService)GetService(typeof(IComponentChangeService));
@@ -1175,7 +1173,7 @@ namespace ComponentFactory.Krypton.Toolkit
 		/// <returns>An array of data types that this collection can contain.</returns>
 		protected override Type[] CreateNewItemTypes()
 		{
-            return new Type[] { typeof(KryptonContextMenuItems),
+            return new[] { typeof(KryptonContextMenuItems),
                                 typeof(KryptonContextMenuSeparator),
                                 typeof(KryptonContextMenuHeading),
                                 typeof(KryptonContextMenuLinkLabel),

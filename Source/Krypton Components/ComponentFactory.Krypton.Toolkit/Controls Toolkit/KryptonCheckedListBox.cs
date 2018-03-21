@@ -42,8 +42,8 @@ namespace ComponentFactory.Krypton.Toolkit
         public class CheckedIndexCollection : IList
         {
             #region Instance Fields
-            private KryptonCheckedListBox _owner;
-            private InternalCheckedListBox _internalListBox;
+            private readonly KryptonCheckedListBox _owner;
+            private readonly InternalCheckedListBox _internalListBox;
             #endregion
 
             #region Identity
@@ -219,7 +219,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
             #region Instance Fields
             private KryptonCheckedListBox _owner;
-            private InternalCheckedListBox _internalListBox;
+            private readonly InternalCheckedListBox _internalListBox;
             #endregion
 
             #region Identity
@@ -444,7 +444,7 @@ namespace ComponentFactory.Krypton.Toolkit
         public class ObjectCollection : ListBox.ObjectCollection
         {
             #region Instance Fields
-            private KryptonCheckedListBox _owner;
+            private readonly KryptonCheckedListBox _owner;
             #endregion
 
             #region Identity
@@ -497,16 +497,16 @@ namespace ComponentFactory.Krypton.Toolkit
             private static MethodInfo _miGetState;
             private static MethodInfo _miSetState;
             private static MethodInfo _miGetEnumerator;
-            private static uint LBC_GETCHECKSTATE;
-            private static uint LBC_SETCHECKSTATE;
+            private static readonly uint LBC_GETCHECKSTATE;
+            private static readonly uint LBC_SETCHECKSTATE;
             #endregion
 
             #region Instance Fields
             private object _innerArray;
-            private ViewManager _viewManager;
-            private ViewDrawPanel _drawPanel;
-            private KryptonCheckedListBox _kryptonCheckedListBox;
-            private IntPtr _screenDC;
+            private readonly ViewManager _viewManager;
+            private readonly ViewDrawPanel _drawPanel;
+            private readonly KryptonCheckedListBox _kryptonCheckedListBox;
+            private readonly IntPtr _screenDC;
             private bool _mouseOver;
             private bool _killNextSelect;
             private int _mouseIndex;
@@ -1037,38 +1037,38 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region Instance Fields
-        private CheckedItemCollection _checkedItems;
-        private CheckedIndexCollection _checkedIndices;
-        private PaletteListStateRedirect _stateCommon;
-        private PaletteListState _stateDisabled;
-        private PaletteListState _stateNormal;
-        private PaletteDouble _stateActive;
-        private PaletteListItemTriple _stateTracking;
-        private PaletteListItemTriple _statePressed;
-        private PaletteListItemTriple _stateCheckedNormal;
-        private PaletteListItemTriple _stateCheckedTracking;
-        private PaletteListItemTriple _stateCheckedPressed;
-        private PaletteListItemTripleRedirect _stateFocus;
-        private PaletteTripleOverride _overrideNormal;
-        private PaletteTripleOverride _overrideTracking;
-        private PaletteTripleOverride _overridePressed;
-        private PaletteTripleOverride _overrideCheckedNormal;
-        private PaletteTripleOverride _overrideCheckedTracking;
-        private PaletteTripleOverride _overrideCheckedPressed;
-        private PaletteRedirectCheckBox _paletteCheckBoxImages;
-        private ViewLayoutDocker _drawDockerInner;
-        private ViewDrawDocker _drawDockerOuter;
-        private ViewLayoutDocker _layoutDocker;
-        private ViewLayoutCenter _layoutCenter;
-        private ViewDrawCheckBox _drawCheckBox;
-        private ViewLayoutFill _layoutFill;
-        private ViewDrawButton _drawButton;
-        private InternalCheckedListBox _listBox;
-        private FixedContentValue _contentValues;
-        private CheckBoxImages _images;
+        private readonly CheckedItemCollection _checkedItems;
+        private readonly CheckedIndexCollection _checkedIndices;
+        private readonly PaletteListStateRedirect _stateCommon;
+        private readonly PaletteListState _stateDisabled;
+        private readonly PaletteListState _stateNormal;
+        private readonly PaletteDouble _stateActive;
+        private readonly PaletteListItemTriple _stateTracking;
+        private readonly PaletteListItemTriple _statePressed;
+        private readonly PaletteListItemTriple _stateCheckedNormal;
+        private readonly PaletteListItemTriple _stateCheckedTracking;
+        private readonly PaletteListItemTriple _stateCheckedPressed;
+        private readonly PaletteListItemTripleRedirect _stateFocus;
+        private readonly PaletteTripleOverride _overrideNormal;
+        private readonly PaletteTripleOverride _overrideTracking;
+        private readonly PaletteTripleOverride _overridePressed;
+        private readonly PaletteTripleOverride _overrideCheckedNormal;
+        private readonly PaletteTripleOverride _overrideCheckedTracking;
+        private readonly PaletteTripleOverride _overrideCheckedPressed;
+        private readonly PaletteRedirectCheckBox _paletteCheckBoxImages;
+        private readonly ViewLayoutDocker _drawDockerInner;
+        private readonly ViewDrawDocker _drawDockerOuter;
+        private readonly ViewLayoutDocker _layoutDocker;
+        private readonly ViewLayoutCenter _layoutCenter;
+        private readonly ViewDrawCheckBox _drawCheckBox;
+        private readonly ViewLayoutFill _layoutFill;
+        private readonly ViewDrawButton _drawButton;
+        private readonly InternalCheckedListBox _listBox;
+        private readonly FixedContentValue _contentValues;
+        private readonly CheckBoxImages _images;
         private Nullable<bool> _fixedActive;
         private ButtonStyle _style;
-        private IntPtr _screenDC;
+        private readonly IntPtr _screenDC;
         private int _lastSelectedIndex;
         private bool _checkOnClick;
         private bool _mouseOver;

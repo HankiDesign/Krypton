@@ -16,7 +16,7 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class PaletteBackStyleConverter : StringLookupConverter
     {
         #region Static Fields
-        private Pair[] _pairs = new Pair[] { new Pair(PaletteBackStyle.ButtonStandalone,            "Button - Standalone"),
+        private readonly Pair[] _pairs = new Pair[] { new Pair(PaletteBackStyle.ButtonStandalone,            "Button - Standalone"),
                                              new Pair(PaletteBackStyle.ButtonAlternate,             "Button - Alternate"),
                                              new Pair(PaletteBackStyle.ButtonLowProfile,            "Button - Low Profile"),
                                              new Pair(PaletteBackStyle.ButtonButtonSpec,            "Button - ButtonSpec"),

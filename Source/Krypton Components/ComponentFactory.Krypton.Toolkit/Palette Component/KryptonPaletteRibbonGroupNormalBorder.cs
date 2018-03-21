@@ -18,12 +18,12 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPaletteRibbonGroupNormalBorder : Storage
     {
         #region Instance Fields
-        private PaletteRibbonBackInheritRedirect _stateInherit;
-        private PaletteRibbonBack _stateCommon;
-        private PaletteRibbonBack _stateNormal;
-        private PaletteRibbonBack _stateTracking;
-        private PaletteRibbonBack _stateContextNormal;
-        private PaletteRibbonBack _stateContextTracking;
+        private readonly PaletteRibbonBackInheritRedirect _stateInherit;
+        private readonly PaletteRibbonBack _stateCommon;
+        private readonly PaletteRibbonBack _stateNormal;
+        private readonly PaletteRibbonBack _stateTracking;
+        private readonly PaletteRibbonBack _stateContextNormal;
+        private readonly PaletteRibbonBack _stateContextTracking;
         #endregion
 
         #region Identity

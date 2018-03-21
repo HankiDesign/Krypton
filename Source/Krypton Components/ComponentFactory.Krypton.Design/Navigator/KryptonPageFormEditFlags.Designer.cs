@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace ComponentFactory.Krypton.Navigator
 {
     partial class KryptonPageFormEditFlags
@@ -5,7 +8,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -211,18 +214,18 @@ namespace ComponentFactory.Krypton.Navigator
 
         #endregion
 
-        private System.Windows.Forms.Button buttonOK;
-        private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.CheckBox checkBoxPageInOverflowBarForOutlookMode;
-        private System.Windows.Forms.CheckBox checkBoxAllowPageDrag;
-        private System.Windows.Forms.CheckBox checkBoxDockingAllowClose;
-        private System.Windows.Forms.CheckBox checkBoxDockingAllowAutoHidden;
-        private System.Windows.Forms.CheckBox checkBoxDockingAllowDocked;
-        private System.Windows.Forms.CheckBox checkBoxDockingAllowFloating;
-        private System.Windows.Forms.CheckBox checkBoxDockingAllowWorkspace;
-        private System.Windows.Forms.CheckBox checkBoxDockingAllowNavigator;
-        private System.Windows.Forms.CheckBox checkBoxDockingAllowDropDown;
-        private System.Windows.Forms.CheckBox checkBoxAllowPageReorder;
-        private System.Windows.Forms.CheckBox checkBoxAllowConfigSave;
+        private Button buttonOK;
+        private Button buttonCancel;
+        private CheckBox checkBoxPageInOverflowBarForOutlookMode;
+        private CheckBox checkBoxAllowPageDrag;
+        private CheckBox checkBoxDockingAllowClose;
+        private CheckBox checkBoxDockingAllowAutoHidden;
+        private CheckBox checkBoxDockingAllowDocked;
+        private CheckBox checkBoxDockingAllowFloating;
+        private CheckBox checkBoxDockingAllowWorkspace;
+        private CheckBox checkBoxDockingAllowNavigator;
+        private CheckBox checkBoxDockingAllowDropDown;
+        private CheckBox checkBoxAllowPageReorder;
+        private CheckBox checkBoxAllowConfigSave;
     }
 }

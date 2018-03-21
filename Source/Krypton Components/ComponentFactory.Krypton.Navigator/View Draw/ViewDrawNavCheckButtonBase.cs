@@ -24,7 +24,7 @@ namespace ComponentFactory.Krypton.Navigator
                                                          IContentValues
 	{
 		#region Instance Fields
-        private KryptonNavigator _navigator;
+        private readonly KryptonNavigator _navigator;
         private KryptonPage _page;
         private NeedPaintHandler _needPaint;
         private ButtonSpecNavManagerLayoutBar _buttonManager;

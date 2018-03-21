@@ -18,11 +18,11 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPaletteSeparator : Storage
     {
         #region Instance Fields
-        private PaletteSeparatorPaddingRedirect _stateCommon;
-        private PaletteSeparatorPadding _stateDisabled;
-        private PaletteSeparatorPadding _stateNormal;
-        private PaletteSeparatorPadding _stateTracking;
-        private PaletteSeparatorPadding _statePressed;
+        private readonly PaletteSeparatorPaddingRedirect _stateCommon;
+        private readonly PaletteSeparatorPadding _stateDisabled;
+        private readonly PaletteSeparatorPadding _stateNormal;
+        private readonly PaletteSeparatorPadding _stateTracking;
+        private readonly PaletteSeparatorPadding _statePressed;
         #endregion
 
         #region Identity

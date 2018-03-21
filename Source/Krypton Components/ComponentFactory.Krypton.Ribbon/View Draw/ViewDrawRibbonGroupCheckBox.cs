@@ -30,22 +30,22 @@ namespace ComponentFactory.Krypton.Ribbon
         #endregion
 
         #region Instance Fields
-        private KryptonRibbon _ribbon;
+        private readonly KryptonRibbon _ribbon;
         private KryptonRibbonGroupCheckBox _ribbonCheckBox;
         private ViewLayoutRibbonCheckBox _viewLarge;
         private ViewDrawRibbonGroupCheckBoxImage _viewLargeImage;
         private ViewDrawRibbonGroupCheckBoxText _viewLargeText1;
         private ViewDrawRibbonGroupCheckBoxText _viewLargeText2;
         private GroupCheckBoxController _viewLargeController;
-        private EventHandler _finishDelegateLarge;
+        private readonly EventHandler _finishDelegateLarge;
         private ViewLayoutRibbonCheckBox _viewMediumSmall;
         private ViewLayoutRibbonRowCenter _viewMediumSmallCenter;
         private ViewDrawRibbonGroupCheckBoxImage _viewMediumSmallImage;
         private ViewDrawRibbonGroupCheckBoxText _viewMediumSmallText1;
         private ViewDrawRibbonGroupCheckBoxText _viewMediumSmallText2;
         private GroupCheckBoxController _viewMediumSmallController;
-        private EventHandler _finishDelegateMediumSmall;
-        private NeedPaintHandler _needPaint;
+        private readonly EventHandler _finishDelegateMediumSmall;
+        private readonly NeedPaintHandler _needPaint;
         private GroupItemSize _currentSize;
         #endregion
 

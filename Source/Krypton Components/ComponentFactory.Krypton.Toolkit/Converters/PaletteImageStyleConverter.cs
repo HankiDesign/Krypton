@@ -16,7 +16,7 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class PaletteImageStyleConverter : StringLookupConverter
     {
         #region Static Fields
-        private Pair[] _pairs = new Pair[] { new Pair(PaletteImageStyle.Inherit,        "Inherit"),
+        private readonly Pair[] _pairs = new Pair[] { new Pair(PaletteImageStyle.Inherit,        "Inherit"),
                                              new Pair(PaletteImageStyle.Stretch,        "Stretch"),
                                              new Pair(PaletteImageStyle.Tile,           "Tile"),
                                              new Pair(PaletteImageStyle.TileFlipX,      "TileFlip - X"),

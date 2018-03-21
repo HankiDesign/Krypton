@@ -19,8 +19,8 @@ namespace ComponentFactory.Krypton.Docking
 	public class ScreenAndOffsetEventArgs : EventArgs
 	{
 		#region Instance Fields
-        private Point _screenPoint;
-        private Point _elementOffset;
+        private readonly Point _screenPoint;
+        private readonly Point _elementOffset;
 		#endregion
 
 		#region Identity

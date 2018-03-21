@@ -18,7 +18,7 @@ namespace ComponentFactory.Krypton.Toolkit
 	public class DateTimePickerCloseArgs : EventArgs
 	{
 		#region Instance Fields
-        private KryptonContextMenu _kcm;
+        private readonly KryptonContextMenu _kcm;
         #endregion
 
 		#region Identity

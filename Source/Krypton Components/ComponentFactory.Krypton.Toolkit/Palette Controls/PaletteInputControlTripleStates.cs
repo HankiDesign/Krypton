@@ -20,9 +20,9 @@ namespace ComponentFactory.Krypton.Toolkit
 								                   IPaletteTriple
 	{
 		#region Instance Fields
-		private PaletteBorder _border;
-		private PaletteInputControlBackStates _back;
-		private PaletteInputControlContentStates _content;
+		private readonly PaletteBorder _border;
+		private readonly PaletteInputControlBackStates _back;
+		private readonly PaletteInputControlContentStates _content;
 		#endregion
 
 		#region Identity

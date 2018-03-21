@@ -12,8 +12,8 @@ using System;
 using System.Collections;
 using System.ComponentModel;
 using System.ComponentModel.Design;
-using System.Windows.Forms;
 using System.Diagnostics;
+using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 
 namespace ComponentFactory.Krypton.Workspace
@@ -26,13 +26,8 @@ namespace ComponentFactory.Krypton.Workspace
         #endregion
 
         #region Identity
-        /// <summary>
-        /// Initialize a new instance of the KryptonWorkspaceSequenceDesigner class.
-		/// </summary>
-        public KryptonWorkspaceSequenceDesigner()
-        {
-        }            
-		#endregion
+
+	    #endregion
 
         #region Public
         /// <summary>
@@ -56,7 +51,7 @@ namespace ComponentFactory.Krypton.Workspace
             _changeService = (IComponentChangeService)GetService(typeof(IComponentChangeService));
 
             // We need to know when we are being removed/changed
-            _changeService.ComponentRemoving += new ComponentEventHandler(OnComponentRemoving);
+            _changeService.ComponentRemoving += OnComponentRemoving;
         }
 
         /// <summary>
@@ -88,7 +83,7 @@ namespace ComponentFactory.Krypton.Workspace
             {
                 if (disposing)
                 {
-                    _changeService.ComponentRemoving -= new ComponentEventHandler(OnComponentRemoving);
+                    _changeService.ComponentRemoving -= OnComponentRemoving;
                 }
             }
             finally
@@ -124,7 +119,7 @@ namespace ComponentFactory.Krypton.Workspace
                 // We need to remove all children from the sequence
                 for (int j = _sequence.Children.Count - 1; j >= 0; j--)
                 {
-                    Component comp = _sequence.Children[j] as Component;
+                    Component comp = _sequence.Children[j];
 
                     // If the component is a control...
                     if ((comp is Control) && (workspace != null))

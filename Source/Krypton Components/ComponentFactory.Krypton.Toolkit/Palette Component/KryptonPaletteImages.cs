@@ -19,12 +19,12 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPaletteImages : Storage
     {
         #region Instance Fields
-        private KryptonPaletteImagesCheckBox _imagesCheckBox;
-        private KryptonPaletteImagesContextMenu _imagesContextMenu;
-        private KryptonPaletteImagesDropDownButton _imagesDropDownButton;
-        private KryptonPaletteImagesGalleryButtons _imagesGalleryButtons;
-        private KryptonPaletteImagesRadioButton _imagesRadioButton;
-        private KryptonPaletteImagesTreeView _imagesTreeView;
+        private readonly KryptonPaletteImagesCheckBox _imagesCheckBox;
+        private readonly KryptonPaletteImagesContextMenu _imagesContextMenu;
+        private readonly KryptonPaletteImagesDropDownButton _imagesDropDownButton;
+        private readonly KryptonPaletteImagesGalleryButtons _imagesGalleryButtons;
+        private readonly KryptonPaletteImagesRadioButton _imagesRadioButton;
+        private readonly KryptonPaletteImagesTreeView _imagesTreeView;
         #endregion
 
         #region Identity

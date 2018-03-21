@@ -20,7 +20,7 @@ namespace ComponentFactory.Krypton.Toolkit
 	public class ButtonDragRectangleEventArgs : EventArgs
 	{
 		#region Instance Fields
-        private Point _point;
+        private readonly Point _point;
         private Rectangle _dragRect;
         private bool _preDragOffset;
 		#endregion

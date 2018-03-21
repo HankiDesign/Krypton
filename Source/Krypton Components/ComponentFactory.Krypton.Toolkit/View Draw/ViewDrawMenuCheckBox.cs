@@ -19,14 +19,14 @@ namespace ComponentFactory.Krypton.Toolkit
     internal class ViewDrawMenuCheckBox : ViewComposite
     {
         #region Instance Fields
-        private IContextMenuProvider _provider;
-        private KryptonContextMenuCheckBox _checkBox;
-        private FixedContentValue _contentValues;
-        private ViewDrawContent _drawContent;
-        private ViewDrawCheckBox _drawCheckBox;
-        private ViewLayoutCenter _layoutCenter;
-        private ViewLayoutDocker _outerDocker;
-        private ViewLayoutDocker _innerDocker;
+        private readonly IContextMenuProvider _provider;
+        private readonly KryptonContextMenuCheckBox _checkBox;
+        private readonly FixedContentValue _contentValues;
+        private readonly ViewDrawContent _drawContent;
+        private readonly ViewDrawCheckBox _drawCheckBox;
+        private readonly ViewLayoutCenter _layoutCenter;
+        private readonly ViewLayoutDocker _outerDocker;
+        private readonly ViewLayoutDocker _innerDocker;
         private KryptonCommand _cachedCommand;
         private bool _itemEnabled;
         #endregion

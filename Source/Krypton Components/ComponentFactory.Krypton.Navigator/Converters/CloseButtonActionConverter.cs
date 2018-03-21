@@ -18,7 +18,7 @@ namespace ComponentFactory.Krypton.Navigator
     public class CloseButtonActionConverter : StringLookupConverter
     {
         #region Static Fields
-        private Pair[] _pairs = new Pair[] { new Pair(CloseButtonAction.None,                   "None (Do nothing)"),
+        private readonly Pair[] _pairs = new Pair[] { new Pair(CloseButtonAction.None,                   "None (Do nothing)"),
                                              new Pair(CloseButtonAction.RemovePage,             "RemovePage"),
                                              new Pair(CloseButtonAction.RemovePageAndDispose,   "RemovePage & Dispose"),
                                              new Pair(CloseButtonAction.HidePage,               "Hide Page") };

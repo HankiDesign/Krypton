@@ -22,12 +22,12 @@ namespace ComponentFactory.Krypton.Toolkit
     public class VisualContextMenu : VisualPopup
     {
         #region Instance Fields
-        private KryptonContextMenu _contextMenu;
+        private readonly KryptonContextMenu _contextMenu;
         private IPalette _palette;
-        private ContextMenuProvider _provider;
+        private readonly ContextMenuProvider _provider;
         private ViewDrawDocker _drawDocker;
-        private ViewLayoutStack _viewColumns;
-        private PaletteRedirect _redirector;
+        private readonly ViewLayoutStack _viewColumns;
+        private readonly PaletteRedirect _redirector;
         #endregion
 
         #region Identity

@@ -19,8 +19,8 @@ namespace ComponentFactory.Krypton.Toolkit
 	public class PaletteGroupBoxRedirect : PaletteDoubleRedirect
 	{
 		#region Instance Fields
-        private PaletteContent _content;
-        private PaletteContentInheritRedirect _contentInherit;
+        private readonly PaletteContent _content;
+        private readonly PaletteContentInheritRedirect _contentInherit;
         #endregion
 
 		#region Identity

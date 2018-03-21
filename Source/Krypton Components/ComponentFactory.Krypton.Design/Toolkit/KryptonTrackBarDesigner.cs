@@ -30,7 +30,7 @@ namespace ComponentFactory.Krypton.Toolkit
         {
             // Let base class do standard stuff
             base.Initialize(component);
-            base.AutoResizeHandles = true;
+            AutoResizeHandles = true;
 
             // Cast to correct type
             _trackBar = component as KryptonTrackBar;
@@ -43,15 +43,11 @@ namespace ComponentFactory.Krypton.Toolkit
         {
             get
             {
-                if (!_trackBar.AutoSize)
+	            if (!_trackBar.AutoSize)
                     return SelectionRules.AllSizeable | SelectionRules.Moveable;
-                else
-                {
-                    if (_trackBar.Orientation == Orientation.Horizontal)
-                        return SelectionRules.RightSizeable | SelectionRules.LeftSizeable | SelectionRules.Moveable;
-                    else
-                        return SelectionRules.TopSizeable | SelectionRules.BottomSizeable | SelectionRules.Moveable;
-                }
+	            if (_trackBar.Orientation == Orientation.Horizontal)
+		            return SelectionRules.RightSizeable | SelectionRules.LeftSizeable | SelectionRules.Moveable;
+	            return SelectionRules.TopSizeable | SelectionRules.BottomSizeable | SelectionRules.Moveable;
             }
         }
 

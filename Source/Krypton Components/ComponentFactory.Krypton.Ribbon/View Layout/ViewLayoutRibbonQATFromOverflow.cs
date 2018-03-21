@@ -21,8 +21,8 @@ namespace ComponentFactory.Krypton.Ribbon
     internal class ViewLayoutRibbonQATFromOverflow : ViewLayoutRibbonQATContents
     {
         #region Instance Fields
-        private Control _parentControl;
-        private ViewLayoutRibbonQATContents _contents;
+        private readonly Control _parentControl;
+        private readonly ViewLayoutRibbonQATContents _contents;
         #endregion
 
         #region Identity

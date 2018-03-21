@@ -20,8 +20,8 @@ namespace ComponentFactory.Krypton.Toolkit
 	public class ToolTipEventArgs : EventArgs
 	{
 		#region Instance Fields
-		private ViewBase _target;
-		private Point _screenPt;
+		private readonly ViewBase _target;
+		private readonly Point _screenPt;
 		#endregion
 
 		#region Identity

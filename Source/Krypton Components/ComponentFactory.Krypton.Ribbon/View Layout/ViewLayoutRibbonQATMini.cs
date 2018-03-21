@@ -26,11 +26,11 @@ namespace ComponentFactory.Krypton.Ribbon
         #endregion
 
         #region Instance Fields
-        private KryptonRibbon _ribbon;
-        private ViewDrawRibbonQATBorder _border;
-        private ViewLayoutRibbonQATFromRibbon _borderContents;
-        private ViewDrawRibbonQATExtraButtonMini _extraButton;
-        private ViewLayoutSeparator _extraSeparator;
+        private readonly KryptonRibbon _ribbon;
+        private readonly ViewDrawRibbonQATBorder _border;
+        private readonly ViewLayoutRibbonQATFromRibbon _borderContents;
+        private readonly ViewDrawRibbonQATExtraButtonMini _extraButton;
+        private readonly ViewLayoutSeparator _extraSeparator;
         #endregion
 
         #region Identity

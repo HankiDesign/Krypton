@@ -42,7 +42,7 @@ namespace ComponentFactory.Krypton.Toolkit
             _changeService = (IComponentChangeService)GetService(typeof(IComponentChangeService));
 
             // We need to know when we are being removed
-            _changeService.ComponentRemoving += new ComponentEventHandler(OnComponentRemoving);
+            _changeService.ComponentRemoving += OnComponentRemoving;
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 if (disposing)
                 {
                     // Unhook from events
-                    _changeService.ComponentRemoving -= new ComponentEventHandler(OnComponentRemoving);
+                    _changeService.ComponentRemoving -= OnComponentRemoving;
                 }
             }
             finally
@@ -114,7 +114,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 // We need to remove all items from the context menu
                 for (int j = _contextMenu.Items.Count - 1; j >= 0; j--)
                 {
-                    Component item = _contextMenu.Items[j] as Component;
+                    Component item = _contextMenu.Items[j];
                     _contextMenu.Items.Remove(item);
                     host.DestroyComponent(item);
                 }

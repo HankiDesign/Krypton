@@ -29,7 +29,7 @@ namespace ComponentFactory.Krypton.Ribbon
     public class KryptonRibbonGroupTriple : KryptonRibbonGroupContainer
     {
         #region Instance Fields
-        private KryptonRibbonGroupTripleCollection _ribbonTripleItems;
+        private readonly KryptonRibbonGroupTripleCollection _ribbonTripleItems;
         private GroupItemSize _itemSizeMax;
         private GroupItemSize _itemSizeMin;
         private GroupItemSize _itemSizeCurrent;

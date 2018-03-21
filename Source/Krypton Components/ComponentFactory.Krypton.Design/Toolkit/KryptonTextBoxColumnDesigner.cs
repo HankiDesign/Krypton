@@ -45,10 +45,9 @@ namespace ComponentFactory.Krypton.Toolkit
         {
             get
             {
-                if (_textBox != null)
+	            if (_textBox != null)
                     return _textBox.ButtonSpecs;
-                else
-                    return base.AssociatedComponents;
+	            return base.AssociatedComponents;
             }
         }
         #endregion

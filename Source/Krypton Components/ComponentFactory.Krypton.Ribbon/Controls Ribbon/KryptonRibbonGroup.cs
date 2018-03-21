@@ -49,7 +49,7 @@ namespace ComponentFactory.Krypton.Ribbon
         private int _maximumWidth;
         private KryptonRibbon _ribbon;
         private KryptonRibbonTab _ribbonTab;
-        private KryptonRibbonGroupContainerCollection _ribbonGroupItems;
+        private readonly KryptonRibbonGroupContainerCollection _ribbonGroupItems;
         private ViewBase _groupView;
         #endregion
 

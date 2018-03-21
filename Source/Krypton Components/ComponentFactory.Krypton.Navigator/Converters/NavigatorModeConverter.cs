@@ -18,7 +18,7 @@ namespace ComponentFactory.Krypton.Navigator
     public class NavigatorModeConverter : StringLookupConverter
     {
         #region Static Fields
-        private Pair[] _pairs = new Pair[] { new Pair(NavigatorMode.BarTabGroup,                    "Bar - Tab - Group"),
+        private readonly Pair[] _pairs = new Pair[] { new Pair(NavigatorMode.BarTabGroup,                    "Bar - Tab - Group"),
                                              new Pair(NavigatorMode.BarTabOnly,                     "Bar - Tab - Only"),
                                              new Pair(NavigatorMode.BarRibbonTabGroup,              "Bar - RibbonTab - Group"),
                                              new Pair(NavigatorMode.BarRibbonTabOnly,               "Bar - RibbonTab - Only"),

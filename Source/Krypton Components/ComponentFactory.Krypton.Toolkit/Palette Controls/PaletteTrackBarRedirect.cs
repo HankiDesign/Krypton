@@ -19,10 +19,10 @@ namespace ComponentFactory.Krypton.Toolkit
 	public class PaletteTrackBarRedirect : Storage
 	{
 		#region Instance Fields
-        private PaletteDoubleRedirect _backRedirect;
-        private PaletteElementColorRedirect _tickRedirect;
-        private PaletteElementColorRedirect _trackRedirect;
-        private PaletteElementColorRedirect _positionRedirect;
+        private readonly PaletteDoubleRedirect _backRedirect;
+        private readonly PaletteElementColorRedirect _tickRedirect;
+        private readonly PaletteElementColorRedirect _trackRedirect;
+        private readonly PaletteElementColorRedirect _positionRedirect;
         #endregion
 
 		#region Identity

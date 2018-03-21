@@ -19,15 +19,15 @@ namespace ComponentFactory.Krypton.Navigator
     public class PaletteNavigator : PaletteDoubleMetric
     {
         #region Instance Fields
-        private PalettePage _palettePage;
-        private PaletteNavigatorHeaderGroup _paletteHeaderGroup;
-        private PaletteTriple _paletteCheckButton;
-        private PaletteTriple _paletteOverflowButton;
-        private PaletteTriple _paletteMiniButton;
-        private PaletteTabTriple _paletteTab;
-        private PaletteBorderEdge _paletteBorderEdge;
-        private PaletteSeparatorPadding _paletteSeparator;
-        private PaletteRibbonTabContent _paletteRibbonTab;
+        private readonly PalettePage _palettePage;
+        private readonly PaletteNavigatorHeaderGroup _paletteHeaderGroup;
+        private readonly PaletteTriple _paletteCheckButton;
+        private readonly PaletteTriple _paletteOverflowButton;
+        private readonly PaletteTriple _paletteMiniButton;
+        private readonly PaletteTabTriple _paletteTab;
+        private readonly PaletteBorderEdge _paletteBorderEdge;
+        private readonly PaletteSeparatorPadding _paletteSeparator;
+        private readonly PaletteRibbonTabContent _paletteRibbonTab;
         #endregion
 
         #region Identity

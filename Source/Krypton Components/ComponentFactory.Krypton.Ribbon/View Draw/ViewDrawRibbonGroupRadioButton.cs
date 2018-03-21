@@ -30,22 +30,22 @@ namespace ComponentFactory.Krypton.Ribbon
         #endregion
 
         #region Instance Fields
-        private KryptonRibbon _ribbon;
+        private readonly KryptonRibbon _ribbon;
         private KryptonRibbonGroupRadioButton _ribbonRadioButton;
         private ViewLayoutRibbonRadioButton _viewLarge;
         private ViewDrawRibbonGroupRadioButtonImage _viewLargeImage;
         private ViewDrawRibbonGroupRadioButtonText _viewLargeText1;
         private ViewDrawRibbonGroupRadioButtonText _viewLargeText2;
         private GroupRadioButtonController _viewLargeController;
-        private EventHandler _finishDelegateLarge;
+        private readonly EventHandler _finishDelegateLarge;
         private ViewLayoutRibbonRadioButton _viewMediumSmall;
         private ViewLayoutRibbonRowCenter _viewMediumSmallCenter;
         private ViewDrawRibbonGroupRadioButtonImage _viewMediumSmallImage;
         private ViewDrawRibbonGroupRadioButtonText _viewMediumSmallText1;
         private ViewDrawRibbonGroupRadioButtonText _viewMediumSmallText2;
         private GroupRadioButtonController _viewMediumSmallController;
-        private EventHandler _finishDelegateMediumSmall;
-        private NeedPaintHandler _needPaint;
+        private readonly EventHandler _finishDelegateMediumSmall;
+        private readonly NeedPaintHandler _needPaint;
         private GroupItemSize _currentSize;
         #endregion
 

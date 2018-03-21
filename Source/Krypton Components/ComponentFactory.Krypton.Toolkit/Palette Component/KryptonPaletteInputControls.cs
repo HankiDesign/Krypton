@@ -19,10 +19,10 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPaletteInputControls : Storage
     {
         #region Instance Fields
-        private KryptonPaletteInputControl _inputControlCommon;
-        private KryptonPaletteInputControl _inputControlStandalone;
-        private KryptonPaletteInputControl _inputControlRibbon;
-        private KryptonPaletteInputControl _inputControlCustom1;
+        private readonly KryptonPaletteInputControl _inputControlCommon;
+        private readonly KryptonPaletteInputControl _inputControlStandalone;
+        private readonly KryptonPaletteInputControl _inputControlRibbon;
+        private readonly KryptonPaletteInputControl _inputControlCustom1;
         #endregion
 
         #region Identity

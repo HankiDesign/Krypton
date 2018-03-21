@@ -27,7 +27,7 @@ namespace ComponentFactory.Krypton.Ribbon
         #endregion
 
         #region Instance Fields
-        private IPaletteRibbonGeneral _palette;
+        private readonly IPaletteRibbonGeneral _palette;
         private bool _draw;
         #endregion
 

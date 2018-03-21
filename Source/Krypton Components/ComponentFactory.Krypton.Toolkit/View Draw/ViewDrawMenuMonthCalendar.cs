@@ -22,19 +22,19 @@ namespace ComponentFactory.Krypton.Toolkit
                                              IKryptonMonthCalendar
     {
         #region Instance Fields
-        private KryptonContextMenuMonthCalendar _monthCalendar;
-        private IContextMenuProvider _provider;
-        private ViewLayoutMonths _layoutMonths;
-        private DateTime _minDate;
-        private DateTime _maxDate;
-        private DateTime _todayDate;
-        private string _todayFormat;
-        private Day _firstDayOfWeek;
-        private Size _dimensions;
-        private bool _itemEnabled;
-        private int _maxSelectionCount;
-        private int _scrollChange;
-        private string _todayText;
+        private readonly KryptonContextMenuMonthCalendar _monthCalendar;
+        private readonly IContextMenuProvider _provider;
+        private readonly ViewLayoutMonths _layoutMonths;
+        private readonly DateTime _minDate;
+        private readonly DateTime _maxDate;
+        private readonly DateTime _todayDate;
+        private readonly string _todayFormat;
+        private readonly Day _firstDayOfWeek;
+        private readonly Size _dimensions;
+        private readonly bool _itemEnabled;
+        private readonly int _maxSelectionCount;
+        private readonly int _scrollChange;
+        private readonly string _todayText;
         #endregion
 
         #region Identity

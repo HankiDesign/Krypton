@@ -18,10 +18,10 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPaletteRibbonGroupBaseText : Storage
     {
         #region Instance Fields
-        private PaletteRibbonTextInheritRedirect _stateInherit;
-        private PaletteRibbonText _stateCommon;
-        private PaletteRibbonText _stateNormal;
-        private PaletteRibbonText _stateDisabled;
+        private readonly PaletteRibbonTextInheritRedirect _stateInherit;
+        private readonly PaletteRibbonText _stateCommon;
+        private readonly PaletteRibbonText _stateNormal;
+        private readonly PaletteRibbonText _stateDisabled;
         #endregion
 
         #region Identity

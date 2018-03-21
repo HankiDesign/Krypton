@@ -18,14 +18,14 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPaletteLabel : Storage
     {
         #region Instance Fields
-        private PaletteContentInheritRedirect _stateInherit;
-        private PaletteContent _stateCommon;
-        private PaletteContent _stateNormal;
-        private PaletteContent _stateDisabled;
-        private PaletteContent _stateFocus;
-        private PaletteContent _stateVisited;
-        private PaletteContent _stateNotVisited;
-        private PaletteContent _statePressed;
+        private readonly PaletteContentInheritRedirect _stateInherit;
+        private readonly PaletteContent _stateCommon;
+        private readonly PaletteContent _stateNormal;
+        private readonly PaletteContent _stateDisabled;
+        private readonly PaletteContent _stateFocus;
+        private readonly PaletteContent _stateVisited;
+        private readonly PaletteContent _stateNotVisited;
+        private readonly PaletteContent _statePressed;
         #endregion
 
         #region Identity

@@ -24,7 +24,7 @@ namespace ComponentFactory.Krypton.Ribbon
 	{
 		#region Instance Fields
         private NeedPaintHandler _needPaint;
-        private ViewBase _target;
+        private readonly ViewBase _target;
         private bool _mouseOver;
         private bool _rightButtonDown;
         #endregion

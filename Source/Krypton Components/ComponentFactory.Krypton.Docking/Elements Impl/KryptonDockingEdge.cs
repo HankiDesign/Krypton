@@ -23,8 +23,8 @@ namespace ComponentFactory.Krypton.Docking
     public class KryptonDockingEdge : DockingElementClosedCollection
     {
         #region Instance Fields
-        private Control _control;
-        private DockingEdge _edge;
+        private readonly Control _control;
+        private readonly DockingEdge _edge;
         #endregion
 
         #region Identity

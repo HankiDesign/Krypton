@@ -19,15 +19,15 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPaletteTMS : Storage
     {
         #region Instance Fields
-        private KryptonInternalKCT _internalKCT;
-        private KryptonPaletteTMSButton _paletteButton;
-        private KryptonPaletteTMSGrip _paletteGrip;
-        private KryptonPaletteTMSMenu _paletteMenu;
-        private KryptonPaletteTMSMenuStrip _paletteMenuStrip;
-        private KryptonPaletteTMSRafting _paletteRafting;
-        private KryptonPaletteTMSSeparator _paletteSeparator;
-        private KryptonPaletteTMSStatusStrip _paletteStatusStrip;
-        private KryptonPaletteTMSToolStrip _paletteToolStrip;
+        private readonly KryptonInternalKCT _internalKCT;
+        private readonly KryptonPaletteTMSButton _paletteButton;
+        private readonly KryptonPaletteTMSGrip _paletteGrip;
+        private readonly KryptonPaletteTMSMenu _paletteMenu;
+        private readonly KryptonPaletteTMSMenuStrip _paletteMenuStrip;
+        private readonly KryptonPaletteTMSRafting _paletteRafting;
+        private readonly KryptonPaletteTMSSeparator _paletteSeparator;
+        private readonly KryptonPaletteTMSStatusStrip _paletteStatusStrip;
+        private readonly KryptonPaletteTMSToolStrip _paletteToolStrip;
         #endregion
 
         #region Identity

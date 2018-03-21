@@ -33,9 +33,9 @@ namespace ComponentFactory.Krypton.Workspace
     {
         #region Instance Fields
         private string _uniqueName;
-        private StarSize _starSize;
+        private readonly StarSize _starSize;
         private IWorkspaceItem _parent;
-        private ButtonSpecNavigator _maxamizeRestoreButton;
+        private readonly ButtonSpecNavigator _maxamizeRestoreButton;
         private bool _disposeOnRemove;
         private bool _setVisible;
         private bool _allowResizing;

@@ -31,18 +31,39 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region Instance Fields
-        private PaletteMonthCalendarRedirect _stateCommon;
-        private PaletteMonthCalendarStateRedirect _stateFocus, _stateBolded, _stateToday;
-        private PaletteMonthCalendarDoubleState _stateDisabled, _stateNormal;
-        private PaletteMonthCalendarState _stateTracking, _statePressed;
-        private PaletteMonthCalendarState _stateCheckedNormal, _stateCheckedTracking, _stateCheckedPressed;
-        private PaletteTripleOverride _boldedDisabled, _boldedNormal, _boldedTracking, _boldedPressed;
-        private PaletteTripleOverride _boldedCheckedNormal, _boldedCheckedTracking, _boldedCheckedPressed;
-        private PaletteTripleOverride _todayDisabled, _todayNormal, _todayTracking, _todayPressed;
-        private PaletteTripleOverride _todayCheckedNormal, _todayCheckedTracking, _todayCheckedPressed;
-        private PaletteTripleOverride _overrideDisabled, _overrideNormal, _overrideTracking, _overridePressed;
-        private PaletteTripleOverride _overrideCheckedNormal, _overrideCheckedTracking, _overrideCheckedPressed;
-        private HeaderStyle _headerStyle;
+        private readonly PaletteMonthCalendarRedirect _stateCommon;
+        private readonly PaletteMonthCalendarStateRedirect _stateFocus;
+	    private readonly PaletteMonthCalendarStateRedirect _stateBolded;
+	    private readonly PaletteMonthCalendarStateRedirect _stateToday;
+	    private readonly PaletteMonthCalendarDoubleState _stateDisabled;
+	    private readonly PaletteMonthCalendarDoubleState _stateNormal;
+	    private readonly PaletteMonthCalendarState _stateTracking;
+	    private readonly PaletteMonthCalendarState _statePressed;
+	    private readonly PaletteMonthCalendarState _stateCheckedNormal;
+	    private readonly PaletteMonthCalendarState _stateCheckedTracking;
+	    private readonly PaletteMonthCalendarState _stateCheckedPressed;
+	    private readonly PaletteTripleOverride _boldedDisabled;
+	    private readonly PaletteTripleOverride _boldedNormal;
+	    private readonly PaletteTripleOverride _boldedTracking;
+	    private readonly PaletteTripleOverride _boldedPressed;
+	    private readonly PaletteTripleOverride _boldedCheckedNormal;
+	    private readonly PaletteTripleOverride _boldedCheckedTracking;
+	    private readonly PaletteTripleOverride _boldedCheckedPressed;
+	    private readonly PaletteTripleOverride _todayDisabled;
+	    private readonly PaletteTripleOverride _todayNormal;
+	    private readonly PaletteTripleOverride _todayTracking;
+	    private readonly PaletteTripleOverride _todayPressed;
+	    private readonly PaletteTripleOverride _todayCheckedNormal;
+	    private readonly PaletteTripleOverride _todayCheckedTracking;
+	    private readonly PaletteTripleOverride _todayCheckedPressed;
+	    private readonly PaletteTripleOverride _overrideDisabled;
+	    private readonly PaletteTripleOverride _overrideNormal;
+	    private readonly PaletteTripleOverride _overrideTracking;
+	    private readonly PaletteTripleOverride _overridePressed;
+	    private readonly PaletteTripleOverride _overrideCheckedNormal;
+	    private readonly PaletteTripleOverride _overrideCheckedTracking;
+	    private readonly PaletteTripleOverride _overrideCheckedPressed;
+	    private HeaderStyle _headerStyle;
         private ButtonStyle _dayStyle;
         private ButtonStyle _dayOfWeekStyle;
         private Day _firstDayOfWeek;
@@ -62,11 +83,11 @@ namespace ComponentFactory.Krypton.Toolkit
         private DateTime _todayDate;
         private DateTime? _focusDay;
         private int _maxSelectionCount;
-        private DateTimeList _annualDates;
-        private DateTimeList _monthlyDates;
-        private DateTimeList _dates;
+        private readonly DateTimeList _annualDates;
+        private readonly DateTimeList _monthlyDates;
+        private readonly DateTimeList _dates;
         private int _monthlyDays;
-        private int[] _annualDays;
+        private readonly int[] _annualDays;
         private string _today;
         private int _scrollChange;
         #endregion

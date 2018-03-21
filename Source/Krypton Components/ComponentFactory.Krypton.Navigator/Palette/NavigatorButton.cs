@@ -29,24 +29,24 @@ namespace ComponentFactory.Krypton.Navigator
         #endregion
 
         #region Instance Fields
-        private KryptonNavigator _navigator;
-        private NavFixedButtonSpecCollection _fixedSpecs;
-        private NavigatorButtonSpecCollection _buttonSpecs;
-        private ButtonSpecNavPrevious _fixedPrevious;
+        private readonly KryptonNavigator _navigator;
+        private readonly NavFixedButtonSpecCollection _fixedSpecs;
+        private readonly NavigatorButtonSpecCollection _buttonSpecs;
+        private readonly ButtonSpecNavPrevious _fixedPrevious;
         private DirectionButtonAction _actionPrevious;
         private Keys _shortcutPrevious;
         private ButtonDisplay _displayPrevious;
-        private ButtonSpecNavNext _fixedNext;
+        private readonly ButtonSpecNavNext _fixedNext;
         private DirectionButtonAction _actionNext;
         private Keys _shortcutNext;
         private ButtonDisplay _displayNext;
-        private ButtonSpecNavContext _fixedContext;
+        private readonly ButtonSpecNavContext _fixedContext;
         private ContextButtonAction _actionContext;
         private Keys _shortcutContext;
         private ButtonDisplay _displayContext;
         private MapKryptonPageText _mapTextContext;
         private MapKryptonPageImage _mapImageContext;
-        private ButtonSpecNavClose _fixedClose;
+        private readonly ButtonSpecNavClose _fixedClose;
         private CloseButtonAction _actionClosed;
         private Keys _shortcutClose;
         private ButtonDisplay _displayClosed;

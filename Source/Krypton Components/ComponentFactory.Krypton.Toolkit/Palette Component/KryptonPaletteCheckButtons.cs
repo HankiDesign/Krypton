@@ -19,26 +19,26 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPaletteCheckButtons : Storage
     {
         #region Instance Fields
-        private KryptonPaletteCheckButton _buttonCommon;
-        private KryptonPaletteCheckButton _buttonStandalone;
-        private KryptonPaletteCheckButton _buttonAlternate;
-        private KryptonPaletteCheckButton _buttonLowProfile;
-        private KryptonPaletteCheckButton _buttonButtonSpec;
-        private KryptonPaletteCheckButton _buttonBreadCrumb;
-        private KryptonPaletteCheckButton _buttonCalendarDay;
-        private KryptonPaletteCheckButton _buttonCluster;
-        private KryptonPaletteCheckButton _buttonGallery;
-        private KryptonPaletteCheckButton _buttonNavigatorStack;
-        private KryptonPaletteCheckButton _buttonNavigatorOverflow;
-        private KryptonPaletteCheckButton _buttonNavigatorMini;
-        private KryptonPaletteCheckButton _buttonInputControl;
-        private KryptonPaletteCheckButton _buttonListItem;
-        private KryptonPaletteCheckButton _buttonForm;
-        private KryptonPaletteCheckButton _buttonFormClose;
-        private KryptonPaletteCheckButton _buttonCommand;
-        private KryptonPaletteCheckButton _buttonCustom1;
-        private KryptonPaletteCheckButton _buttonCustom2;
-        private KryptonPaletteCheckButton _buttonCustom3;
+        private readonly KryptonPaletteCheckButton _buttonCommon;
+        private readonly KryptonPaletteCheckButton _buttonStandalone;
+        private readonly KryptonPaletteCheckButton _buttonAlternate;
+        private readonly KryptonPaletteCheckButton _buttonLowProfile;
+        private readonly KryptonPaletteCheckButton _buttonButtonSpec;
+        private readonly KryptonPaletteCheckButton _buttonBreadCrumb;
+        private readonly KryptonPaletteCheckButton _buttonCalendarDay;
+        private readonly KryptonPaletteCheckButton _buttonCluster;
+        private readonly KryptonPaletteCheckButton _buttonGallery;
+        private readonly KryptonPaletteCheckButton _buttonNavigatorStack;
+        private readonly KryptonPaletteCheckButton _buttonNavigatorOverflow;
+        private readonly KryptonPaletteCheckButton _buttonNavigatorMini;
+        private readonly KryptonPaletteCheckButton _buttonInputControl;
+        private readonly KryptonPaletteCheckButton _buttonListItem;
+        private readonly KryptonPaletteCheckButton _buttonForm;
+        private readonly KryptonPaletteCheckButton _buttonFormClose;
+        private readonly KryptonPaletteCheckButton _buttonCommand;
+        private readonly KryptonPaletteCheckButton _buttonCustom1;
+        private readonly KryptonPaletteCheckButton _buttonCustom2;
+        private readonly KryptonPaletteCheckButton _buttonCustom3;
         #endregion
 
         #region Identity

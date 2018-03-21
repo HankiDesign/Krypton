@@ -28,8 +28,8 @@ namespace ComponentFactory.Krypton.Navigator
                                IDisposable
     {
         #region Static Fields
-        private static Cursor _validCursor;
-        private static Cursor _invalidCursor;
+        private static readonly Cursor _validCursor;
+        private static readonly Cursor _invalidCursor;
         #endregion
 
         #region Instance Fields
@@ -37,12 +37,12 @@ namespace ComponentFactory.Krypton.Navigator
         private IPalette _localPalette;
         private IRenderer _dragRenderer;
         private PaletteMode _paletteMode;
-        private PaletteRedirect _redirector;
-        private PaletteDragDrop _stateCommon;
-        private DragTargetProviderCollection _targetProviders;
+        private readonly PaletteRedirect _redirector;
+        private readonly PaletteDragDrop _stateCommon;
+        private readonly DragTargetProviderCollection _targetProviders;
         private PageDragEndData _pageDragEndData;
         private DragFeedback _dragFeedback;
-        private DragTargetList _dragTargets;
+        private readonly DragTargetList _dragTargets;
         private DragTarget _currentTarget;
         private bool _documentCursor;
         private bool _dragging;

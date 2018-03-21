@@ -21,7 +21,7 @@ namespace ComponentFactory.Krypton.Navigator
     public abstract class ButtonSpecNavFixed : ButtonSpec
     {
         #region Instance Fields
-        private KryptonNavigator _navigator;
+        private readonly KryptonNavigator _navigator;
         private HeaderLocation _location;
         #endregion
 

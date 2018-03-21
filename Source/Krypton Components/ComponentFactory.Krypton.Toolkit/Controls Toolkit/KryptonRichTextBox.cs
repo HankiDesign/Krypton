@@ -42,7 +42,7 @@ namespace ComponentFactory.Krypton.Toolkit
             #endregion
 
             #region Instance Fields
-            private KryptonRichTextBox _kryptonRichTextBox;
+            private readonly KryptonRichTextBox _kryptonRichTextBox;
             private bool _mouseOver;
             #endregion
 
@@ -256,18 +256,18 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region Instance Fields
-        private ToolTipManager _toolTipManager;
+        private readonly ToolTipManager _toolTipManager;
         private VisualPopupToolTip _visualPopupToolTip;
-        private ButtonSpecManagerLayout _buttonManager;
-        private RichTextBoxButtonSpecCollection _buttonSpecs;
-        private PaletteInputControlTripleRedirect _stateCommon;
-        private PaletteInputControlTripleStates _stateDisabled;
-        private PaletteInputControlTripleStates _stateNormal;
-        private PaletteInputControlTripleStates _stateActive;
-        private ViewLayoutDocker _drawDockerInner;
-        private ViewDrawDocker _drawDockerOuter;
-        private ViewLayoutFill _layoutFill;
-        private InternalRichTextBox _richTextBox;
+        private readonly ButtonSpecManagerLayout _buttonManager;
+        private readonly RichTextBoxButtonSpecCollection _buttonSpecs;
+        private readonly PaletteInputControlTripleRedirect _stateCommon;
+        private readonly PaletteInputControlTripleStates _stateDisabled;
+        private readonly PaletteInputControlTripleStates _stateNormal;
+        private readonly PaletteInputControlTripleStates _stateActive;
+        private readonly ViewLayoutDocker _drawDockerInner;
+        private readonly ViewDrawDocker _drawDockerOuter;
+        private readonly ViewLayoutFill _layoutFill;
+        private readonly InternalRichTextBox _richTextBox;
         private InputControlStyle _inputControlStyle;
         private Nullable<bool> _fixedActive;
         private bool _inRibbonDesignMode;

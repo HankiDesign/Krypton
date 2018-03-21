@@ -20,42 +20,42 @@ namespace ComponentFactory.Krypton.Toolkit
     {
         #region Instance Fields
         private PaletteRedirect _redirect;
-        private PaletteRibbonBackInheritRedirect _ribbonAppMenuOuterInherit;
-        private PaletteRibbonBackInheritRedirect _ribbonAppMenuInnerInherit;
-        private PaletteRibbonBackInheritRedirect _ribbonAppMenuDocsInherit;
-        private PaletteRibbonTextInheritRedirect _ribbonAppMenuDocsTitleInherit;
-        private PaletteRibbonTextInheritRedirect _ribbonAppMenuDocsEntryInherit;
-        private PaletteRibbonGeneralInheritRedirect _ribbonGeneralRedirect;
-        private PaletteRibbonBackInheritRedirect _ribbonQATFullRedirect;
-        private PaletteRibbonBackInheritRedirect _ribbonQATOverRedirect;
-        private PaletteRibbonBackInheritRedirect _ribbonGalleryBackRedirect;
-        private PaletteRibbonBackInheritRedirect _ribbonGalleryBorderRedirect;
+        private readonly PaletteRibbonBackInheritRedirect _ribbonAppMenuOuterInherit;
+        private readonly PaletteRibbonBackInheritRedirect _ribbonAppMenuInnerInherit;
+        private readonly PaletteRibbonBackInheritRedirect _ribbonAppMenuDocsInherit;
+        private readonly PaletteRibbonTextInheritRedirect _ribbonAppMenuDocsTitleInherit;
+        private readonly PaletteRibbonTextInheritRedirect _ribbonAppMenuDocsEntryInherit;
+        private readonly PaletteRibbonGeneralInheritRedirect _ribbonGeneralRedirect;
+        private readonly PaletteRibbonBackInheritRedirect _ribbonQATFullRedirect;
+        private readonly PaletteRibbonBackInheritRedirect _ribbonQATOverRedirect;
+        private readonly PaletteRibbonBackInheritRedirect _ribbonGalleryBackRedirect;
+        private readonly PaletteRibbonBackInheritRedirect _ribbonGalleryBorderRedirect;
 
-        private PaletteRibbonGeneral _ribbonGeneral;
-        private KryptonPaletteRibbonAppButton _ribbonAppButton;
-        private KryptonPaletteRibbonGroupArea _ribbonGroupArea;
-        private KryptonPaletteRibbonGroupButtonText _ribbonGroupButtonText;
-        private KryptonPaletteRibbonGroupCheckBoxText _ribbonGroupCheckBoxText;
-        private KryptonPaletteRibbonGroupNormalBorder _ribbonGroupNormalBorder;
-        private KryptonPaletteRibbonGroupNormalTitle _ribbonGroupNormalTitle;
-        private KryptonPaletteRibbonGroupCollapsedBorder _ribbonGroupCollapsedBorder;
-        private KryptonPaletteRibbonGroupCollapsedBack _ribbonGroupCollapsedBack;
-        private KryptonPaletteRibbonGroupCollapsedFrameBorder _ribbonGroupCollapsedFrameBorder;
-        private KryptonPaletteRibbonGroupCollapsedFrameBack _ribbonGroupCollapsedFrameBack;
-        private KryptonPaletteRibbonGroupCollapsedText _ribbonGroupCollapsedText;
-        private KryptonPaletteRibbonGroupRadioButtonText _ribbonGroupRadioButtonText;
-        private KryptonPaletteRibbonGroupLabelText _ribbonGroupLabelText;
-        private PaletteRibbonBack _ribbonQATFullbar;
-        private KryptonPaletteRibbonQATMinibar _ribbonQATMinibar;
-        private PaletteRibbonBack _ribbonQATOverflow;
-        private KryptonPaletteRibbonTab _ribbonTab;
-        private PaletteRibbonBack _ribbonAppMenuInner;
-        private PaletteRibbonBack _ribbonAppMenuOuter;
-        private PaletteRibbonBack _ribbonAppMenuDocs;
-        private PaletteRibbonText _ribbonAppMenuDocsTitle;
-        private PaletteRibbonText _ribbonAppMenuDocsEntry;
-        private PaletteRibbonBack _ribbonGalleryBack;
-        private PaletteRibbonBack _ribbonGalleryBorder;
+        private readonly PaletteRibbonGeneral _ribbonGeneral;
+        private readonly KryptonPaletteRibbonAppButton _ribbonAppButton;
+        private readonly KryptonPaletteRibbonGroupArea _ribbonGroupArea;
+        private readonly KryptonPaletteRibbonGroupButtonText _ribbonGroupButtonText;
+        private readonly KryptonPaletteRibbonGroupCheckBoxText _ribbonGroupCheckBoxText;
+        private readonly KryptonPaletteRibbonGroupNormalBorder _ribbonGroupNormalBorder;
+        private readonly KryptonPaletteRibbonGroupNormalTitle _ribbonGroupNormalTitle;
+        private readonly KryptonPaletteRibbonGroupCollapsedBorder _ribbonGroupCollapsedBorder;
+        private readonly KryptonPaletteRibbonGroupCollapsedBack _ribbonGroupCollapsedBack;
+        private readonly KryptonPaletteRibbonGroupCollapsedFrameBorder _ribbonGroupCollapsedFrameBorder;
+        private readonly KryptonPaletteRibbonGroupCollapsedFrameBack _ribbonGroupCollapsedFrameBack;
+        private readonly KryptonPaletteRibbonGroupCollapsedText _ribbonGroupCollapsedText;
+        private readonly KryptonPaletteRibbonGroupRadioButtonText _ribbonGroupRadioButtonText;
+        private readonly KryptonPaletteRibbonGroupLabelText _ribbonGroupLabelText;
+        private readonly PaletteRibbonBack _ribbonQATFullbar;
+        private readonly KryptonPaletteRibbonQATMinibar _ribbonQATMinibar;
+        private readonly PaletteRibbonBack _ribbonQATOverflow;
+        private readonly KryptonPaletteRibbonTab _ribbonTab;
+        private readonly PaletteRibbonBack _ribbonAppMenuInner;
+        private readonly PaletteRibbonBack _ribbonAppMenuOuter;
+        private readonly PaletteRibbonBack _ribbonAppMenuDocs;
+        private readonly PaletteRibbonText _ribbonAppMenuDocsTitle;
+        private readonly PaletteRibbonText _ribbonAppMenuDocsEntry;
+        private readonly PaletteRibbonBack _ribbonGalleryBack;
+        private readonly PaletteRibbonBack _ribbonGalleryBorder;
         #endregion
 
         #region Identity

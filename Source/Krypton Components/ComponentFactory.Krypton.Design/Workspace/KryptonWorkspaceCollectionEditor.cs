@@ -9,14 +9,15 @@
 // *****************************************************************************
 
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Drawing;
 using System.Drawing.Design;
 using System.Windows.Forms;
-using System.ComponentModel;
-using System.ComponentModel.Design;
-using System.Collections.Generic;
-using ComponentFactory.Krypton.Toolkit;
+using ComponentFactory.Krypton.Design.Properties;
 using ComponentFactory.Krypton.Navigator;
+using ComponentFactory.Krypton.Toolkit;
 
 namespace ComponentFactory.Krypton.Workspace
 {
@@ -26,13 +27,13 @@ namespace ComponentFactory.Krypton.Workspace
         /// <summary>
         /// Form used for editing the KryptonWorkspaceCollection.
         /// </summary>
-        protected partial class KryptonWorkspaceCollectionForm : CollectionEditor.CollectionForm
+        protected class KryptonWorkspaceCollectionForm : CollectionForm
         {
             #region Types
             /// <summary>
             /// Simple class to reduce the length of declaractions!
             /// </summary>
-            protected class DictItemBase : Dictionary<Component, Component> { };
+            protected class DictItemBase : Dictionary<Component, Component> { }
 
             /// <summary>
             /// Act as proxy for krypton page item to control the exposed properties to the property grid.
@@ -40,7 +41,7 @@ namespace ComponentFactory.Krypton.Workspace
             protected class PageProxy
             {
                 #region Instance Fields
-                private KryptonPage _item;
+                private readonly KryptonPage _item;
                 #endregion
 
                 #region Identity
@@ -337,7 +338,7 @@ namespace ComponentFactory.Krypton.Workspace
             protected class CellProxy
             {
                 #region Instance Fields
-                private KryptonWorkspaceCell _item;
+                private readonly KryptonWorkspaceCell _item;
                 #endregion
 
                 #region Identity
@@ -676,7 +677,7 @@ namespace ComponentFactory.Krypton.Workspace
             protected class SequenceProxy
             {
                 #region Instance Fields
-                private KryptonWorkspaceSequence _item;
+                private readonly KryptonWorkspaceSequence _item;
                 #endregion
 
                 #region Identity
@@ -736,10 +737,10 @@ namespace ComponentFactory.Krypton.Workspace
                 #endregion
 
                 #region Instance Fields
-                private int _instanceId;
-                private KryptonPage _page;
-                private KryptonWorkspaceCell _cell;
-                private KryptonWorkspaceSequence _sequence;
+                private readonly int _instanceId;
+                private readonly KryptonPage _page;
+                private readonly KryptonWorkspaceCell _cell;
+                private readonly KryptonWorkspaceSequence _sequence;
                 #endregion
 
                 #region Identity
@@ -754,22 +755,22 @@ namespace ComponentFactory.Krypton.Workspace
                     _page = item as KryptonPage;
                     if (_page != null)
                     {
-                        _page.TextChanged += new EventHandler(OnPageTextChanged);
-                        Text = "Page (" + _page.Text.ToString() + ")";
+                        _page.TextChanged += OnPageTextChanged;
+                        Text = "Page (" + _page.Text + ")";
                     }
 
                     _cell = item as KryptonWorkspaceCell;
                     if (_cell != null)
                     {
-                        _cell.PropertyChanged += new PropertyChangedEventHandler(OnCellPropertyChanged);
-                        Text = "Cell (" + _cell.StarSize.ToString() + ")";
+                        _cell.PropertyChanged += OnCellPropertyChanged;
+                        Text = "Cell (" + _cell.StarSize + ")";
                     }
 
                     _sequence = item as KryptonWorkspaceSequence;
                     if (_sequence != null)
                     {
-                        _sequence.PropertyChanged += new PropertyChangedEventHandler(OnSequencePropertyChanged);
-                        Text = _sequence.Orientation + " (" + _sequence.StarSize.ToString() + ")";
+                        _sequence.PropertyChanged += OnSequencePropertyChanged;
+                        Text = _sequence.Orientation + " (" + _sequence.StarSize + ")";
                     }
                 }
                 #endregion
@@ -780,7 +781,7 @@ namespace ComponentFactory.Krypton.Workspace
                 /// </summary>
                 public Component Item
                 {
-                    get { return (PageItem != null ? (Component)PageItem : (CellItem != null ? (Component)CellItem : (Component)SequenceItem)); }
+                    get { return (PageItem != null ? PageItem : (CellItem != null ? CellItem : (Component)SequenceItem)); }
                 }
 
                 /// <summary>
@@ -819,17 +820,17 @@ namespace ComponentFactory.Krypton.Workspace
                 #region Implementation
                 private void OnPageTextChanged(object sender, EventArgs e)
                 {
-                    Text = "Page (" + _page.Text.ToString() + ")";
+                    Text = "Page (" + _page.Text + ")";
                 }
 
                 private void OnCellPropertyChanged(object sender, PropertyChangedEventArgs e)
                 {
-                    Text = "Cell (" + _cell.StarSize.ToString() + ")";
+                    Text = "Cell (" + _cell.StarSize + ")";
                 }
 
                 private void OnSequencePropertyChanged(object sender, PropertyChangedEventArgs e)
                 {
-                    Text = _sequence.Orientation + " (" + _sequence.StarSize.ToString() + ")";
+                    Text = _sequence.Orientation + " (" + _sequence.StarSize + ")";
                 }
                 #endregion
             }
@@ -840,8 +841,8 @@ namespace ComponentFactory.Krypton.Workspace
             protected class PropertyGridSite : ISite, IServiceProvider
             {
                 #region Instance Fields
-                private IComponent _component;
-                private IServiceProvider _serviceProvider;
+                private readonly IComponent _component;
+                private readonly IServiceProvider _serviceProvider;
                 private bool _inGetService;
                 #endregion
 
@@ -920,19 +921,19 @@ namespace ComponentFactory.Krypton.Workspace
             #endregion
 
             #region Instance Fields
-            private KryptonWorkspaceCollectionEditor _editor;
+            private readonly KryptonWorkspaceCollectionEditor _editor;
             private DictItemBase _beforeItems;
-            private TreeView treeView;
-            private PropertyGrid propertyGrid;
-            private Button buttonMoveUp;
-            private Button buttonMoveDown;
-            private Button buttonAddPage;
-            private Button buttonAddCell;
-            private Button buttonAddSequence;
-            private Button buttonOK;
-            private Button buttonDelete;
-            private Label labelItemProperties;
-            private Label labelWorkspaceCollection;
+            private readonly TreeView treeView;
+            private readonly PropertyGrid propertyGrid;
+            private readonly Button buttonMoveUp;
+            private readonly Button buttonMoveDown;
+            private readonly Button buttonAddPage;
+            private readonly Button buttonAddCell;
+            private readonly Button buttonAddSequence;
+            private readonly Button buttonOK;
+            private readonly Button buttonDelete;
+            private readonly Label labelItemProperties;
+            private readonly Label labelWorkspaceCollection;
             #endregion
 
             #region Identity
@@ -944,187 +945,187 @@ namespace ComponentFactory.Krypton.Workspace
             {
                 _editor = editor;
 
-                this.buttonOK = new System.Windows.Forms.Button();
-                this.treeView = new System.Windows.Forms.TreeView();
-                this.buttonMoveUp = new System.Windows.Forms.Button();
-                this.buttonMoveDown = new System.Windows.Forms.Button();
-                this.buttonAddPage = new System.Windows.Forms.Button();
-                this.buttonAddCell = new System.Windows.Forms.Button();
-                this.buttonAddSequence = new System.Windows.Forms.Button();
-                this.buttonDelete = new System.Windows.Forms.Button();
-                this.propertyGrid = new System.Windows.Forms.PropertyGrid();
-                this.labelItemProperties = new System.Windows.Forms.Label();
-                this.labelWorkspaceCollection = new System.Windows.Forms.Label();
-                this.SuspendLayout();
+                buttonOK = new Button();
+                treeView = new TreeView();
+                buttonMoveUp = new Button();
+                buttonMoveDown = new Button();
+                buttonAddPage = new Button();
+                buttonAddCell = new Button();
+                buttonAddSequence = new Button();
+                buttonDelete = new Button();
+                propertyGrid = new PropertyGrid();
+                labelItemProperties = new Label();
+                labelWorkspaceCollection = new Label();
+                SuspendLayout();
                 // 
                 // buttonOK
                 // 
-                this.buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-                this.buttonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-                this.buttonOK.Location = new System.Drawing.Point(547, 382);
-                this.buttonOK.Name = "buttonOK";
-                this.buttonOK.Size = new System.Drawing.Size(75, 23);
-                this.buttonOK.TabIndex = 8;
-                this.buttonOK.Text = "OK";
-                this.buttonOK.UseVisualStyleBackColor = true;
-                this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
+                buttonOK.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+                buttonOK.DialogResult = DialogResult.OK;
+                buttonOK.Location = new Point(547, 382);
+                buttonOK.Name = "buttonOK";
+                buttonOK.Size = new Size(75, 23);
+                buttonOK.TabIndex = 8;
+                buttonOK.Text = "OK";
+                buttonOK.UseVisualStyleBackColor = true;
+                buttonOK.Click += buttonOK_Click;
                 // 
                 // treeView
                 // 
-                this.treeView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                            | System.Windows.Forms.AnchorStyles.Left)
-                            | System.Windows.Forms.AnchorStyles.Right)));
-                this.treeView.Location = new System.Drawing.Point(12, 32);
-                this.treeView.Name = "treeView";
-                this.treeView.Size = new System.Drawing.Size(251, 339);
-                this.treeView.TabIndex = 1;
-                this.treeView.HideSelection = false;
-                this.treeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView_AfterSelect);
+                treeView.Anchor = ((AnchorStyles.Top | AnchorStyles.Bottom)
+                                   | AnchorStyles.Left)
+                                  | AnchorStyles.Right;
+                treeView.Location = new Point(12, 32);
+                treeView.Name = "treeView";
+                treeView.Size = new Size(251, 339);
+                treeView.TabIndex = 1;
+                treeView.HideSelection = false;
+                treeView.AfterSelect += treeView_AfterSelect;
                 // 
                 // buttonMoveUp
                 // 
-                this.buttonMoveUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.buttonMoveUp.Image = ComponentFactory.Krypton.Design.Properties.Resources.arrow_up_blue;
-                this.buttonMoveUp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                this.buttonMoveUp.Location = new System.Drawing.Point(272, 32);
-                this.buttonMoveUp.Name = "buttonMoveUp";
-                this.buttonMoveUp.Size = new System.Drawing.Size(95, 28);
-                this.buttonMoveUp.TabIndex = 2;
-                this.buttonMoveUp.Text = " Move Up";
-                this.buttonMoveUp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                this.buttonMoveUp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-                this.buttonMoveUp.UseVisualStyleBackColor = true;
-                this.buttonMoveUp.Click += new System.EventHandler(this.buttonMoveUp_Click);
+                buttonMoveUp.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                buttonMoveUp.Image = Resources.arrow_up_blue;
+                buttonMoveUp.ImageAlign = ContentAlignment.MiddleLeft;
+                buttonMoveUp.Location = new Point(272, 32);
+                buttonMoveUp.Name = "buttonMoveUp";
+                buttonMoveUp.Size = new Size(95, 28);
+                buttonMoveUp.TabIndex = 2;
+                buttonMoveUp.Text = " Move Up";
+                buttonMoveUp.TextAlign = ContentAlignment.MiddleLeft;
+                buttonMoveUp.TextImageRelation = TextImageRelation.ImageBeforeText;
+                buttonMoveUp.UseVisualStyleBackColor = true;
+                buttonMoveUp.Click += buttonMoveUp_Click;
                 // 
                 // buttonMoveDown
                 // 
-                this.buttonMoveDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.buttonMoveDown.Image = ComponentFactory.Krypton.Design.Properties.Resources.arrow_down_blue;
-                this.buttonMoveDown.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                this.buttonMoveDown.Location = new System.Drawing.Point(272, 66);
-                this.buttonMoveDown.Name = "buttonMoveDown";
-                this.buttonMoveDown.Size = new System.Drawing.Size(95, 28);
-                this.buttonMoveDown.TabIndex = 3;
-                this.buttonMoveDown.Text = " Move Down";
-                this.buttonMoveDown.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                this.buttonMoveDown.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-                this.buttonMoveDown.UseVisualStyleBackColor = true;
-                this.buttonMoveDown.Click += new System.EventHandler(this.buttonMoveDown_Click);
+                buttonMoveDown.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                buttonMoveDown.Image = Resources.arrow_down_blue;
+                buttonMoveDown.ImageAlign = ContentAlignment.MiddleLeft;
+                buttonMoveDown.Location = new Point(272, 66);
+                buttonMoveDown.Name = "buttonMoveDown";
+                buttonMoveDown.Size = new Size(95, 28);
+                buttonMoveDown.TabIndex = 3;
+                buttonMoveDown.Text = " Move Down";
+                buttonMoveDown.TextAlign = ContentAlignment.MiddleLeft;
+                buttonMoveDown.TextImageRelation = TextImageRelation.ImageBeforeText;
+                buttonMoveDown.UseVisualStyleBackColor = true;
+                buttonMoveDown.Click += buttonMoveDown_Click;
                 // 
                 // buttonDelete
                 // 
-                this.buttonDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.buttonDelete.Image = ComponentFactory.Krypton.Design.Properties.Resources.delete2;
-                this.buttonDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                this.buttonDelete.Location = new System.Drawing.Point(272, 234);
-                this.buttonDelete.Name = "buttonDelete";
-                this.buttonDelete.Size = new System.Drawing.Size(95, 28);
-                this.buttonDelete.TabIndex = 5;
-                this.buttonDelete.Text = " Delete Item";
-                this.buttonDelete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                this.buttonDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-                this.buttonDelete.UseVisualStyleBackColor = true;
-                this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+                buttonDelete.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                buttonDelete.Image = Resources.delete2;
+                buttonDelete.ImageAlign = ContentAlignment.MiddleLeft;
+                buttonDelete.Location = new Point(272, 234);
+                buttonDelete.Name = "buttonDelete";
+                buttonDelete.Size = new Size(95, 28);
+                buttonDelete.TabIndex = 5;
+                buttonDelete.Text = " Delete Item";
+                buttonDelete.TextAlign = ContentAlignment.MiddleLeft;
+                buttonDelete.TextImageRelation = TextImageRelation.ImageBeforeText;
+                buttonDelete.UseVisualStyleBackColor = true;
+                buttonDelete.Click += buttonDelete_Click;
                 // 
                 // propertyGrid
                 // 
-                this.propertyGrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                            | System.Windows.Forms.AnchorStyles.Right)));
-                this.propertyGrid.HelpVisible = false;
-                this.propertyGrid.Location = new System.Drawing.Point(376, 32);
-                this.propertyGrid.Name = "propertyGrid";
-                this.propertyGrid.Size = new System.Drawing.Size(246, 339);
-                this.propertyGrid.TabIndex = 7;
-                this.propertyGrid.ToolbarVisible = false;
+                propertyGrid.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom)
+                                      | AnchorStyles.Right;
+                propertyGrid.HelpVisible = false;
+                propertyGrid.Location = new Point(376, 32);
+                propertyGrid.Name = "propertyGrid";
+                propertyGrid.Size = new Size(246, 339);
+                propertyGrid.TabIndex = 7;
+                propertyGrid.ToolbarVisible = false;
                 // 
                 // labelItemProperties
                 // 
-                this.labelItemProperties.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.labelItemProperties.AutoSize = true;
-                this.labelItemProperties.Location = new System.Drawing.Point(370, 13);
-                this.labelItemProperties.Name = "labelItemProperties";
-                this.labelItemProperties.Size = new System.Drawing.Size(81, 13);
-                this.labelItemProperties.TabIndex = 6;
-                this.labelItemProperties.Text = "Item Properties";
+                labelItemProperties.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                labelItemProperties.AutoSize = true;
+                labelItemProperties.Location = new Point(370, 13);
+                labelItemProperties.Name = "labelItemProperties";
+                labelItemProperties.Size = new Size(81, 13);
+                labelItemProperties.TabIndex = 6;
+                labelItemProperties.Text = "Item Properties";
                 // 
                 // labelWorkspaceCollection
                 // 
-                this.labelWorkspaceCollection.AutoSize = true;
-                this.labelWorkspaceCollection.Location = new System.Drawing.Point(12, 13);
-                this.labelWorkspaceCollection.Name = "labelWorkspaceCollection";
-                this.labelWorkspaceCollection.Size = new System.Drawing.Size(142, 13);
-                this.labelWorkspaceCollection.TabIndex = 0;
-                this.labelWorkspaceCollection.Text = "Workspace Collection";
+                labelWorkspaceCollection.AutoSize = true;
+                labelWorkspaceCollection.Location = new Point(12, 13);
+                labelWorkspaceCollection.Name = "labelWorkspaceCollection";
+                labelWorkspaceCollection.Size = new Size(142, 13);
+                labelWorkspaceCollection.TabIndex = 0;
+                labelWorkspaceCollection.Text = "Workspace Collection";
                 // 
                 // buttonAddPage
                 // 
-                this.buttonAddPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.buttonAddPage.Image = ComponentFactory.Krypton.Design.Properties.Resources.add;
-                this.buttonAddPage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                this.buttonAddPage.Location = new System.Drawing.Point(272, 114);
-                this.buttonAddPage.Name = "buttonAddPage";
-                this.buttonAddPage.Size = new System.Drawing.Size(95, 28);
-                this.buttonAddPage.TabIndex = 4;
-                this.buttonAddPage.Text = " Page";
-                this.buttonAddPage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                this.buttonAddPage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-                this.buttonAddPage.UseVisualStyleBackColor = true;
-                this.buttonAddPage.Click += new System.EventHandler(this.buttonAddPage_Click);
+                buttonAddPage.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                buttonAddPage.Image = Resources.add;
+                buttonAddPage.ImageAlign = ContentAlignment.MiddleLeft;
+                buttonAddPage.Location = new Point(272, 114);
+                buttonAddPage.Name = "buttonAddPage";
+                buttonAddPage.Size = new Size(95, 28);
+                buttonAddPage.TabIndex = 4;
+                buttonAddPage.Text = " Page";
+                buttonAddPage.TextAlign = ContentAlignment.MiddleLeft;
+                buttonAddPage.TextImageRelation = TextImageRelation.ImageBeforeText;
+                buttonAddPage.UseVisualStyleBackColor = true;
+                buttonAddPage.Click += buttonAddPage_Click;
                 // 
                 // buttonAddCell
                 // 
-                this.buttonAddCell.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.buttonAddCell.Image = ComponentFactory.Krypton.Design.Properties.Resources.add;
-                this.buttonAddCell.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                this.buttonAddCell.Location = new System.Drawing.Point(272, 148);
-                this.buttonAddCell.Name = "buttonAddCell";
-                this.buttonAddCell.Size = new System.Drawing.Size(95, 28);
-                this.buttonAddCell.TabIndex = 9;
-                this.buttonAddCell.Text = " Cell";
-                this.buttonAddCell.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                this.buttonAddCell.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-                this.buttonAddCell.UseVisualStyleBackColor = true;
-                this.buttonAddCell.Click += new System.EventHandler(this.buttonAddCell_Click);
+                buttonAddCell.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                buttonAddCell.Image = Resources.add;
+                buttonAddCell.ImageAlign = ContentAlignment.MiddleLeft;
+                buttonAddCell.Location = new Point(272, 148);
+                buttonAddCell.Name = "buttonAddCell";
+                buttonAddCell.Size = new Size(95, 28);
+                buttonAddCell.TabIndex = 9;
+                buttonAddCell.Text = " Cell";
+                buttonAddCell.TextAlign = ContentAlignment.MiddleLeft;
+                buttonAddCell.TextImageRelation = TextImageRelation.ImageBeforeText;
+                buttonAddCell.UseVisualStyleBackColor = true;
+                buttonAddCell.Click += buttonAddCell_Click;
                 // 
                 // buttonAddSequence
                 // 
-                this.buttonAddSequence.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-                this.buttonAddSequence.Image = ComponentFactory.Krypton.Design.Properties.Resources.add;
-                this.buttonAddSequence.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                this.buttonAddSequence.Location = new System.Drawing.Point(272, 182);
-                this.buttonAddSequence.Name = "buttonAddSequence";
-                this.buttonAddSequence.Size = new System.Drawing.Size(95, 28);
-                this.buttonAddSequence.TabIndex = 9;
-                this.buttonAddSequence.Text = " Sequence";
-                this.buttonAddSequence.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                this.buttonAddSequence.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-                this.buttonAddSequence.UseVisualStyleBackColor = true;
-                this.buttonAddSequence.Click += new System.EventHandler(this.buttonAddSequence_Click);
+                buttonAddSequence.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                buttonAddSequence.Image = Resources.add;
+                buttonAddSequence.ImageAlign = ContentAlignment.MiddleLeft;
+                buttonAddSequence.Location = new Point(272, 182);
+                buttonAddSequence.Name = "buttonAddSequence";
+                buttonAddSequence.Size = new Size(95, 28);
+                buttonAddSequence.TabIndex = 9;
+                buttonAddSequence.Text = " Sequence";
+                buttonAddSequence.TextAlign = ContentAlignment.MiddleLeft;
+                buttonAddSequence.TextImageRelation = TextImageRelation.ImageBeforeText;
+                buttonAddSequence.UseVisualStyleBackColor = true;
+                buttonAddSequence.Click += buttonAddSequence_Click;
 
-                this.AcceptButton = this.buttonOK;
-                this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-                this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-                this.ClientSize = new System.Drawing.Size(634, 414);
-                this.ControlBox = false;
-                this.Controls.Add(this.treeView);
-                this.Controls.Add(this.buttonMoveUp);
-                this.Controls.Add(this.buttonMoveDown);
-                this.Controls.Add(this.buttonAddPage);
-                this.Controls.Add(this.buttonAddCell);
-                this.Controls.Add(this.buttonAddSequence);
-                this.Controls.Add(this.propertyGrid);
-                this.Controls.Add(this.buttonDelete);
-                this.Controls.Add(this.buttonOK);
-                this.Controls.Add(this.labelWorkspaceCollection);
-                this.Controls.Add(this.labelItemProperties);
-                this.VisibleChanged += new EventHandler(OnVisibleChanged);
-                this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                this.MinimumSize = new System.Drawing.Size(501, 344);
-                this.Name = "KryptonWorkspaceCollectionForm";
-                this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-                this.Text = "Workspace Collection Editor";
-                this.ResumeLayout(false);
-                this.PerformLayout();
+                AcceptButton = buttonOK;
+                AutoScaleDimensions = new SizeF(6F, 13F);
+                AutoScaleMode = AutoScaleMode.Font;
+                ClientSize = new Size(634, 414);
+                ControlBox = false;
+                Controls.Add(treeView);
+                Controls.Add(buttonMoveUp);
+                Controls.Add(buttonMoveDown);
+                Controls.Add(buttonAddPage);
+                Controls.Add(buttonAddCell);
+                Controls.Add(buttonAddSequence);
+                Controls.Add(propertyGrid);
+                Controls.Add(buttonDelete);
+                Controls.Add(buttonOK);
+                Controls.Add(labelWorkspaceCollection);
+                Controls.Add(labelItemProperties);
+                VisibleChanged += OnVisibleChanged;
+                Font = new Font("Tahoma", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+                MinimumSize = new Size(501, 344);
+                Name = "KryptonWorkspaceCollectionForm";
+                StartPosition = FormStartPosition.CenterScreen;
+                Text = "Workspace Collection Editor";
+                ResumeLayout(false);
+                PerformLayout();
             }
             #endregion
 
@@ -1240,7 +1241,7 @@ namespace ComponentFactory.Krypton.Workspace
                             else if (isPreviousCell)
                             {
                                 // Add page as last item of target cell
-                                parentNode = (MenuTreeNode)previousNode;
+                                parentNode = previousNode;
                                 parentNode.CellItem.Pages.Insert(parentNode.CellItem.Pages.Count, node.PageItem);
                                 parentNode.Nodes.Insert(parentNode.Nodes.Count, node);
                             }
@@ -1280,7 +1281,7 @@ namespace ComponentFactory.Krypton.Workspace
                             else if (isPreviousSequence)
                             {
                                 // Add cell as last item of target sequence
-                                parentNode = (MenuTreeNode)previousNode;
+                                parentNode = previousNode;
                                 parentNode.SequenceItem.Children.Insert(parentNode.SequenceItem.Children.Count, node.CellItem);
                                 parentNode.Nodes.Insert(parentNode.Nodes.Count, node);
                             }
@@ -1320,7 +1321,7 @@ namespace ComponentFactory.Krypton.Workspace
                             else if (isPreviousSequence)
                             {
                                 // Add sequence as last item of target sequence
-                                parentNode = (MenuTreeNode)previousNode;
+                                parentNode = previousNode;
                                 parentNode.SequenceItem.Children.Insert(parentNode.SequenceItem.Children.Count, node.SequenceItem);
                                 parentNode.Nodes.Insert(parentNode.Nodes.Count, node);
                             }
@@ -1373,7 +1374,7 @@ namespace ComponentFactory.Krypton.Workspace
                             else if (isNextCell)
                             {
                                 // Add page as first item of target cell
-                                parentNode = (MenuTreeNode)nextNode;
+                                parentNode = nextNode;
                                 parentNode.CellItem.Pages.Insert(0, node.PageItem);
                                 parentNode.Nodes.Insert(0, node);
                             }
@@ -1404,7 +1405,7 @@ namespace ComponentFactory.Krypton.Workspace
                             else if (isNextSequence)
                             {
                                 // Add cell as first item of target sequence
-                                parentNode = (MenuTreeNode)nextNode;
+                                parentNode = nextNode;
                                 parentNode.SequenceItem.Children.Insert(0, node.CellItem);
                                 parentNode.Nodes.Insert(0, node);
                             }
@@ -1435,7 +1436,7 @@ namespace ComponentFactory.Krypton.Workspace
                             else if (isNextSequence)
                             {
                                 // Add sequence as first item of target sequence
-                                parentNode = (MenuTreeNode)nextNode;
+                                parentNode = nextNode;
                                 parentNode.SequenceItem.Children.Insert(0, node.SequenceItem);
                                 parentNode.Nodes.Insert(0, node);
                             }
@@ -1624,14 +1625,11 @@ namespace ComponentFactory.Krypton.Workspace
             {
                 if (node.Nodes.Contains(find))
                     return true;
-                else
-                {
-                    foreach (TreeNode child in node.Nodes)
-                        if (ContainsNode(child, find))
-                            return true;
-                }
+	            foreach (TreeNode child in node.Nodes)
+		            if (ContainsNode(child, find))
+			            return true;
 
-                return false;
+	            return false;
             }
 
             private TreeNode NextNode(TreeNode currentNode)
@@ -1733,14 +1731,14 @@ namespace ComponentFactory.Krypton.Workspace
                         // If we found a node to return then return it now
                         if (findNode != null)
                             return findNode;
-                        else if (found && (target != node))
-                        {
-                            if ((findCell && (isCell || isSequence)) ||
-                                (findSequence && (isCell || isSequence)))
-                                return node;
-                        }
+	                    if (found && (target != node))
+	                    {
+		                    if ((findCell && (isCell || isSequence)) ||
+		                        (findSequence && (isCell || isSequence)))
+			                    return node;
+	                    }
 
-                        // Searching backwards we check the child collection after checking the node
+	                    // Searching backwards we check the child collection after checking the node
                         if (!forward)
                         {
                             if (!found)

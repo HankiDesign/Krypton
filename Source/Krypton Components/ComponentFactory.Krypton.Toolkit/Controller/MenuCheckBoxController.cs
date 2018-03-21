@@ -27,10 +27,10 @@ namespace ComponentFactory.Krypton.Toolkit
         private bool _mouseReallyOver;
         private bool _highlight;
         private bool _mouseDown;
-        private ViewBase _target;
-        private ViewDrawMenuCheckBox _menuCheckBox;
+        private readonly ViewBase _target;
+        private readonly ViewDrawMenuCheckBox _menuCheckBox;
         private NeedPaintHandler _needPaint;
-        private ViewContextMenuManager _viewManager;
+        private readonly ViewContextMenuManager _viewManager;
         #endregion
 
         #region Events

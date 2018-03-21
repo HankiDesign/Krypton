@@ -18,12 +18,12 @@ namespace ComponentFactory.Krypton.Toolkit
 	public class PaletteContextMenuItemState : Storage
 	{
 		#region Instance Fields
-        private PaletteDoubleMetric _paletteItemHighlight;
-        private PaletteTripleJustImage _paletteItemImage;
-        private PaletteContentJustShortText _paletteItemShortcutText;
-        private PaletteDouble _paletteItemSplit;
-        private PaletteContentJustText _paletteItemTextStandard;
-        private PaletteContentJustText _paletteItemTextAlternate;
+        private readonly PaletteDoubleMetric _paletteItemHighlight;
+        private readonly PaletteTripleJustImage _paletteItemImage;
+        private readonly PaletteContentJustShortText _paletteItemShortcutText;
+        private readonly PaletteDouble _paletteItemSplit;
+        private readonly PaletteContentJustText _paletteItemTextStandard;
+        private readonly PaletteContentJustText _paletteItemTextAlternate;
         #endregion
 
 		#region Identity

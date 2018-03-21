@@ -18,9 +18,9 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPaletteImagesGalleryButtons : Storage
     {
         #region Instance Fields
-        private KryptonPaletteImagesGalleryButton _up;
-        private KryptonPaletteImagesGalleryButton _down;
-        private KryptonPaletteImagesGalleryButton _dropDown;
+        private readonly KryptonPaletteImagesGalleryButton _up;
+        private readonly KryptonPaletteImagesGalleryButton _down;
+        private readonly KryptonPaletteImagesGalleryButton _dropDown;
         #endregion
 
         #region Identity

@@ -54,17 +54,17 @@ namespace ComponentFactory.Krypton.Toolkit
         #region Instance Fields
         private bool _allowButtonSpecToolTips;
         private HeaderStyle _style;
-		private HeaderValues _headerValues;
+		private readonly HeaderValues _headerValues;
         private VisualOrientation _orientation;
-        private ViewDrawDocker _drawDocker;
-		private ViewDrawContent _drawContent;
-        private PaletteHeaderRedirect _stateCommon;
-        private PaletteTripleMetric _stateDisabled;
-        private PaletteTripleMetric _stateNormal;
-        private HeaderButtonSpecCollection _buttonSpecs;
-        private ButtonSpecManagerDraw _buttonManager;
+        private readonly ViewDrawDocker _drawDocker;
+		private readonly ViewDrawContent _drawContent;
+        private readonly PaletteHeaderRedirect _stateCommon;
+        private readonly PaletteTripleMetric _stateDisabled;
+        private readonly PaletteTripleMetric _stateNormal;
+        private readonly HeaderButtonSpecCollection _buttonSpecs;
+        private readonly ButtonSpecManagerDraw _buttonManager;
         private VisualPopupToolTip _visualPopupToolTip;
-        private ToolTipManager _toolTipManager;
+        private readonly ToolTipManager _toolTipManager;
         #endregion
 
 		#region Identity

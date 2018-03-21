@@ -32,21 +32,21 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonLinkLabel : KryptonLabel
 	{
 		#region Instance Fields
-        private PaletteContent _stateVisited;
-        private PaletteContent _stateNotVisited;
-        private PaletteContent _statePressed;
-        private PaletteContent _stateFocus;
-        private PaletteContentInheritRedirect _stateVisitedRedirect;
-        private PaletteContentInheritRedirect _stateNotVisitedRedirect;
-        private PaletteContentInheritRedirect _statePressedRedirect;
-        private PaletteContentInheritRedirect _stateFocusRedirect;
-        private PaletteContentInheritOverride _overrideVisited;
-        private PaletteContentInheritOverride _overrideNotVisited;
-        private PaletteContentInheritOverride _overrideFocusNotVisited;
-        private PaletteContentInheritOverride _overridePressed;
-        private PaletteContentInheritOverride _overridePressedFocus;
-        private LinkLabelBehaviorInherit _inheritBehavior;
-        private LinkLabelController _controller;
+        private readonly PaletteContent _stateVisited;
+        private readonly PaletteContent _stateNotVisited;
+        private readonly PaletteContent _statePressed;
+        private readonly PaletteContent _stateFocus;
+        private readonly PaletteContentInheritRedirect _stateVisitedRedirect;
+        private readonly PaletteContentInheritRedirect _stateNotVisitedRedirect;
+        private readonly PaletteContentInheritRedirect _statePressedRedirect;
+        private readonly PaletteContentInheritRedirect _stateFocusRedirect;
+        private readonly PaletteContentInheritOverride _overrideVisited;
+        private readonly PaletteContentInheritOverride _overrideNotVisited;
+        private readonly PaletteContentInheritOverride _overrideFocusNotVisited;
+        private readonly PaletteContentInheritOverride _overridePressed;
+        private readonly PaletteContentInheritOverride _overridePressedFocus;
+        private readonly LinkLabelBehaviorInherit _inheritBehavior;
+        private readonly LinkLabelController _controller;
         #endregion
 
         #region Events

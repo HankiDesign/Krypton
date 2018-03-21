@@ -12,9 +12,9 @@ using System;
 using System.Collections;
 using System.ComponentModel;
 using System.ComponentModel.Design;
+using System.Diagnostics;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
-using System.Diagnostics;
 
 namespace ComponentFactory.Krypton.Ribbon
 {
@@ -58,7 +58,7 @@ namespace ComponentFactory.Krypton.Ribbon
 
             // We need to know when we are being removed
             _changeService = (IComponentChangeService)GetService(typeof(IComponentChangeService));
-            _changeService.ComponentRemoving += new ComponentEventHandler(OnComponentRemoving);
+            _changeService.ComponentRemoving += OnComponentRemoving;
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace ComponentFactory.Krypton.Ribbon
                 if (disposing)
                 {
                     // Unhook from events
-                    _changeService.ComponentRemoving -= new ComponentEventHandler(OnComponentRemoving);
+                    _changeService.ComponentRemoving -= OnComponentRemoving;
                 }
             }
             finally

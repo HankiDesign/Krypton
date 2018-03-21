@@ -21,12 +21,12 @@ namespace ComponentFactory.Krypton.Navigator
                                           INavCheckItem
     {
         #region Static Fields
-        private static Padding _preferredBorder = new Padding(5, 5, 5, 2);
-        private static Padding _layoutBorderTop = new Padding(4, 4, 4, 1);
-        private static Padding _layoutBorderLeft = new Padding(5, 4, 3, 1);
-        private static Padding _layoutBorderRight = new Padding(4, 5, 4, 0);
-        private static Padding _layoutBorderBottom = new Padding(4, 2, 4, 3);
-        private static Padding _drawBorder = new Padding(1, 0, 1, 0);
+        private static readonly Padding _preferredBorder = new Padding(5, 5, 5, 2);
+        private static readonly Padding _layoutBorderTop = new Padding(4, 4, 4, 1);
+        private static readonly Padding _layoutBorderLeft = new Padding(5, 4, 3, 1);
+        private static readonly Padding _layoutBorderRight = new Padding(4, 5, 4, 0);
+        private static readonly Padding _layoutBorderBottom = new Padding(4, 2, 4, 3);
+        private static readonly Padding _drawBorder = new Padding(1, 0, 1, 0);
         #endregion
 
         #region Events
@@ -42,23 +42,23 @@ namespace ComponentFactory.Krypton.Navigator
         #endregion
 
         #region Instance Fields
-        private KryptonPage _page;
-        private KryptonNavigator _navigator;
+        private readonly KryptonPage _page;
+        private readonly KryptonNavigator _navigator;
         private ButtonSpecNavManagerLayoutBar _buttonManager;
-        private PageButtonController _buttonController;
-        private IPaletteRibbonGeneral _paletteGeneral;
-        private PaletteRibbonTabContentInheritOverride _overrideStateNormal;
-        private PaletteRibbonTabContentInheritOverride _overrideStateTracking;
-        private PaletteRibbonTabContentInheritOverride _overrideStatePressed;
-        private PaletteRibbonTabContentInheritOverride _overrideStateSelected;
+        private readonly PageButtonController _buttonController;
+        private readonly IPaletteRibbonGeneral _paletteGeneral;
+        private readonly PaletteRibbonTabContentInheritOverride _overrideStateNormal;
+        private readonly PaletteRibbonTabContentInheritOverride _overrideStateTracking;
+        private readonly PaletteRibbonTabContentInheritOverride _overrideStatePressed;
+        private readonly PaletteRibbonTabContentInheritOverride _overrideStateSelected;
         private IPaletteRibbonText _currentText;
         private IPaletteRibbonBack _currentBack;
         private IPaletteContent _currentContent;
-        private RibbonTabToContent _contentProvider;
+        private readonly RibbonTabToContent _contentProvider;
         private VisualOrientation _borderBackOrient;
         private NeedPaintHandler _needPaint;
-        private ViewDrawContent _viewContent;
-        private ViewLayoutDocker _layoutDocker;
+        private readonly ViewDrawContent _viewContent;
+        private readonly ViewLayoutDocker _layoutDocker;
         private PaletteRibbonShape _lastRibbonShape;
         private IDisposable[] _mementos;
         private DateTime _lastClick;

@@ -49,8 +49,8 @@ namespace ComponentFactory.Krypton.Navigator
 
         #region Static Fields
         private static readonly int _separatorLength = 7;
-        private static Bitmap _moreButtons;
-        private static Bitmap _fewerButtons;
+        private static readonly Bitmap _moreButtons;
+        private static readonly Bitmap _fewerButtons;
         #endregion
 
         #region Instance Fields

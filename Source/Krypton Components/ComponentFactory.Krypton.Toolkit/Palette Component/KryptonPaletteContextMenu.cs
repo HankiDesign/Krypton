@@ -18,11 +18,11 @@ namespace ComponentFactory.Krypton.Toolkit
     public class KryptonPaletteContextMenu : Storage
     {
         #region Instance Fields
-        private PaletteContextMenuRedirect _stateCommon;
-        private PaletteContextMenuItemState _stateNormal;
-        private PaletteContextMenuItemState _stateDisabled;
-        private PaletteContextMenuItemStateHighlight _stateHighlight;
-        private PaletteContextMenuItemStateChecked _stateChecked;
+        private readonly PaletteContextMenuRedirect _stateCommon;
+        private readonly PaletteContextMenuItemState _stateNormal;
+        private readonly PaletteContextMenuItemState _stateDisabled;
+        private readonly PaletteContextMenuItemStateHighlight _stateHighlight;
+        private readonly PaletteContextMenuItemStateChecked _stateChecked;
         #endregion
 
         #region Identity

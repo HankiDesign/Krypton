@@ -21,13 +21,13 @@ namespace ComponentFactory.Krypton.Toolkit
     public class ViewLayoutScrollViewport : ViewLayoutDocker
     {
         #region Instance Fields
-        private ViewLayoutControl _viewControl;
-        private ViewLayoutViewport _viewport;
-        private ViewDrawScrollBar _scrollbarV;
-        private ViewDrawScrollBar _scrollbarH;
-        private ViewDrawBorderEdge _borderEdgeV;
-        private ViewDrawBorderEdge _borderEdgeH;
-        private NeedPaintHandler _needPaintDelegate;
+        private readonly ViewLayoutControl _viewControl;
+        private readonly ViewLayoutViewport _viewport;
+        private readonly ViewDrawScrollBar _scrollbarV;
+        private readonly ViewDrawScrollBar _scrollbarH;
+        private readonly ViewDrawBorderEdge _borderEdgeV;
+        private readonly ViewDrawBorderEdge _borderEdgeH;
+        private readonly NeedPaintHandler _needPaintDelegate;
         private bool _viewportVertical;
         #endregion
 

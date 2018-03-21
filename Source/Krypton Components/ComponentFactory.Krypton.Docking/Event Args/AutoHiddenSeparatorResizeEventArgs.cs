@@ -21,9 +21,9 @@ namespace ComponentFactory.Krypton.Docking
     public class AutoHiddenSeparatorResizeEventArgs : EventArgs
 	{
 		#region Instance Fields
-        private KryptonSeparator _separator;
-        private KryptonDockspace _dockspace;
-        private KryptonPage _page;
+        private readonly KryptonSeparator _separator;
+        private readonly KryptonDockspace _dockspace;
+        private readonly KryptonPage _page;
         private Rectangle _resizeRect;
 		#endregion
 

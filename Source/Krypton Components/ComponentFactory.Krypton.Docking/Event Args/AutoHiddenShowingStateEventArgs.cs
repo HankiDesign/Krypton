@@ -19,8 +19,8 @@ namespace ComponentFactory.Krypton.Docking
 	public class AutoHiddenShowingStateEventArgs : EventArgs
 	{
 		#region Instance Fields
-        private KryptonPage _page;
-        private DockingAutoHiddenShowState _state;
+        private readonly KryptonPage _page;
+        private readonly DockingAutoHiddenShowState _state;
 		#endregion
 
 		#region Identity

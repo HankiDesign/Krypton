@@ -19,8 +19,8 @@ namespace ComponentFactory.Krypton.Toolkit
 	public class ButtonSpecEventArgs : EventArgs
 	{
 		#region Instance Fields
-		private ButtonSpec _spec;
-		private int _index;
+		private readonly ButtonSpec _spec;
+		private readonly int _index;
 		#endregion
 
 		#region Identity
