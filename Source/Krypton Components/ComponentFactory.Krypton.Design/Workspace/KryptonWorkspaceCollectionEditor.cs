@@ -1825,20 +1825,21 @@ namespace ComponentFactory.Krypton.Workspace
                 dictItems.Add(baseItem, baseItem);
 
                 // Add pages from a cell
-                if (baseItem is KryptonWorkspaceCell)
+                switch (baseItem)
                 {
-                    KryptonWorkspaceCell cell = (KryptonWorkspaceCell)baseItem;
-                    foreach (Component item in cell.Pages)
-                        AddItemsToDictionary(dictItems, item);
+	                case KryptonWorkspaceCell _:
+		                var cell = (KryptonWorkspaceCell)baseItem;
+		                foreach (var item in cell.Pages)
+			                AddItemsToDictionary(dictItems, item);
+		                break;
+	                case KryptonWorkspaceSequence _:
+		                var sequence = (KryptonWorkspaceSequence)baseItem;
+		                foreach (var item in sequence.Children)
+			                AddItemsToDictionary(dictItems, item);
+		                break;
                 }
 
                 // Add children from a sequence
-                if (baseItem is KryptonWorkspaceSequence)
-                {
-                    KryptonWorkspaceSequence sequence = (KryptonWorkspaceSequence)baseItem;
-                    foreach (Component item in sequence.Children)
-                        AddItemsToDictionary(dictItems, item);
-                }
             }
 
             private void AddMenuTreeNode(Component item, MenuTreeNode parent)
@@ -1853,20 +1854,21 @@ namespace ComponentFactory.Krypton.Workspace
                     treeView.Nodes.Add(node);
 
                 // Add pages from a cell
-                if (item is KryptonWorkspaceCell)
+                switch (item)
                 {
-                    KryptonWorkspaceCell cell = (KryptonWorkspaceCell)item;
-                    foreach (Component page in cell.Pages)
-                        AddMenuTreeNode(page, node);
+	                case KryptonWorkspaceCell _:
+		                var cell = (KryptonWorkspaceCell)item;
+		                foreach (var page in cell.Pages)
+			                AddMenuTreeNode(page, node);
+		                break;
+	                case KryptonWorkspaceSequence _:
+		                var sequence = (KryptonWorkspaceSequence)item;
+		                foreach (var child in sequence.Children)
+			                AddMenuTreeNode(child, node);
+		                break;
                 }
 
                 // Add children from a sequence
-                if (item is KryptonWorkspaceSequence)
-                {
-                    KryptonWorkspaceSequence sequence = (KryptonWorkspaceSequence)item;
-                    foreach (Component child in sequence.Children)
-                        AddMenuTreeNode(child, node);
-                }
             }
 
             private void SynchronizeCollections(DictItemBase before,
@@ -1874,34 +1876,34 @@ namespace ComponentFactory.Krypton.Workspace
                                                 ITypeDescriptorContext context)
             {
                 // Add all new components (in the 'after' but not the 'before'
-                foreach (Component item in after.Values)
-                    if (!before.ContainsKey(item))
-                    {
-                        if (context.Container != null)
-                            context.Container.Add(item);
-                    }
+	            foreach (var item in after.Values)
+	            {
+		            if (!before.ContainsKey(item))
+			            context.Container?.Add(item);
+	            }
 
-                // Delete all old components (in the 'before' but not the 'after'
-                foreach (Component item in before.Values)
-                    if (!after.ContainsKey(item))
-                    {
-                        DestroyInstance(item);
-                        
-                        if (context.Container != null)
-                            context.Container.Remove(item);
-                    }
+	            // Delete all old components (in the 'before' but not the 'after'
+	            foreach (var item in before.Values)
+	            {
+		            if (!after.ContainsKey(item))
+		            {
+			            DestroyInstance(item);
 
-                IComponentChangeService changeService = (IComponentChangeService)GetService(typeof(IComponentChangeService));
-                if (changeService != null)
-                {
-                    // Mark components as changed when not added or removed
-                    foreach (Component item in after.Values)
-                        if (before.ContainsKey(item))
-                        {
-                            changeService.OnComponentChanging(item, null);
-                            changeService.OnComponentChanged(item, null, null, null);
-                        }
-                }
+			            context.Container?.Remove(item);
+		            }
+	            }
+
+	            var changeService = (IComponentChangeService)GetService(typeof(IComponentChangeService));
+	            if (changeService == null) return;
+	            {
+		            // Mark components as changed when not added or removed
+		            foreach (var item in after.Values)
+			            if (before.ContainsKey(item))
+			            {
+				            changeService.OnComponentChanging(item, null);
+				            changeService.OnComponentChanged(item, null, null, null);
+			            }
+	            }
             }
             #endregion
         }

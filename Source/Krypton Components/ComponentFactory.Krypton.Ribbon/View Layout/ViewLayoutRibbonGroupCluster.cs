@@ -625,10 +625,10 @@ namespace ComponentFactory.Krypton.Ribbon
             }
 
             // Dispose of all the items no longer needed
-            foreach (ViewBase view in _itemToView.Values)
+            foreach (var view in _itemToView.Values)
                 view.Dispose();
 
-            foreach (ViewBase view in _viewToEdge.Values)
+            foreach (var view in _viewToEdge.Values)
                 view.Dispose();
 
             // Always add the end separator as the last view element (excluding any desing time additions)

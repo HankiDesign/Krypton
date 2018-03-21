@@ -33,7 +33,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// </summary>
         /// <param name="navigator">Reference to owning navogator instance.</param>
         /// <param name="needPaint">Delegate for notifying paint requests.</param>
-        public HeaderGroupMappingBase(KryptonNavigator navigator,
+        protected HeaderGroupMappingBase(KryptonNavigator navigator,
                                       NeedPaintHandler needPaint)
             : base(needPaint)
         {

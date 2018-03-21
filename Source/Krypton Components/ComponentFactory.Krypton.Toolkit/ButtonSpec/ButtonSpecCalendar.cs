@@ -92,7 +92,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <returns>Button enabled state.</returns>
         public override ButtonEnabled GetEnabled(IPalette palette)
         {
-            return (Enabled ? ButtonEnabled.Container : ButtonEnabled.False);
+            return Enabled ? ButtonEnabled.Container : ButtonEnabled.False;
         }
 
         /// <summary>

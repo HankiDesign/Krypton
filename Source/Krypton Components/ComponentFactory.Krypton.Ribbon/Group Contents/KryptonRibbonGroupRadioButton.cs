@@ -605,22 +605,20 @@ namespace ComponentFactory.Krypton.Ribbon
         private void AutoUpdateOthers()
         {
             // Only uncheck others if we are checked and in auto check
-            if (AutoCheck && Checked)
-            {
-                // If we are inside a ribbon container and a ribbon group
-                if ((RibbonContainer != null) && (RibbonContainer.RibbonGroup != null))
-                {
-                    // Process each container inside the group
-                    foreach (IRibbonGroupContainer container in RibbonContainer.RibbonGroup.Items)
-                        AutoUpdateContainer(container);
-                }
-            }
+	        if (!AutoCheck || !Checked) return;
+
+	        // If we are inside a ribbon container and a ribbon group
+	        if (RibbonContainer?.RibbonGroup == null) return;
+
+	        // Process each container inside the group
+	        foreach (KryptonRibbonGroupContainer container in RibbonContainer.RibbonGroup.Items)
+		        AutoUpdateContainer(container);
         }
 
         private void AutoUpdateContainer(IRibbonGroupContainer Container)
         {
             // Process each component inside the container
-            foreach (Component component in Container.GetChildComponents())
+            foreach (var component in Container.GetChildComponents())
             {
                 // If the component is itself a container...
                 if (component is IRibbonGroupContainer)
@@ -628,18 +626,14 @@ namespace ComponentFactory.Krypton.Ribbon
                 else
                 {
                     // If this is another radio button...
-                    if (component is KryptonRibbonGroupRadioButton)
-                    {
-                        KryptonRibbonGroupRadioButton radioButton = (KryptonRibbonGroupRadioButton)component;
+	                if (!(component is KryptonRibbonGroupRadioButton radioButton)) continue;
 
-                        // Do not process ourself!
-                        if (radioButton != this)
-                        {
-                            // If the target is checked and allowed to be auto unchecked
-                            if (radioButton.AutoCheck && radioButton.Checked)
-                                radioButton.Checked = false;
-                        }
-                    }
+	                // Do not process ourself!
+	                if (radioButton == this) continue;
+
+	                // If the target is checked and allowed to be auto unchecked
+	                if (radioButton.AutoCheck && radioButton.Checked)
+		                radioButton.Checked = false;
                 }
             }
         }

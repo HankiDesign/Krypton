@@ -108,42 +108,35 @@ namespace ComponentFactory.Krypton.Toolkit
             /// <summary>
             /// Gets access to the contained view draw panel instance.
             /// </summary>
-            public ViewDrawPanel ViewDrawPanel
-            {
-                get { return _drawPanel; }
-            }
+            public ViewDrawPanel ViewDrawPanel => _drawPanel;
 
-            /// <summary>
+	        /// <summary>
             /// Gets the item index the mouse is over.
             /// </summary>
-            public int MouseIndex
-            {
-                get { return _mouseIndex; }
-            }
+            public int MouseIndex => _mouseIndex;
 
-            /// <summary>
+	        /// <summary>
             /// Gets and sets if the mouse is currently over the combo box.
             /// </summary>
             public bool MouseOver
             {
-                get { return _mouseOver; }
+                get => _mouseOver;
 
-                set
+		        private set
                 {
                     // Only interested in changes
-                    if (_mouseOver != value)
-                    {
-                        _mouseOver = value;
+	                if (_mouseOver == value) return;
 
-                        // Generate appropriate change event
-                        if (_mouseOver)
-                            OnTrackMouseEnter(EventArgs.Empty);
-                        else
-                        {
-                            OnTrackMouseLeave(EventArgs.Empty);
-                            _mouseIndex = -1;
-                        }
-                    }
+	                _mouseOver = value;
+
+	                // Generate appropriate change event
+	                if (_mouseOver)
+		                OnTrackMouseEnter(EventArgs.Empty);
+	                else
+	                {
+		                OnTrackMouseLeave(EventArgs.Empty);
+		                _mouseIndex = -1;
+	                }
                 }
             }
 
@@ -621,23 +614,17 @@ namespace ComponentFactory.Krypton.Toolkit
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         [EditorBrowsable(EditorBrowsableState.Always)]
         [Browsable(false)]
-        public ListBox ListBox
-        {
-            get { return _listBox; }
-        }
+        public ListBox ListBox => _listBox;
 
-        /// <summary>
+	    /// <summary>
         /// Gets access to the contained input control.
         /// </summary>
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         [EditorBrowsable(EditorBrowsableState.Always)]
         [Browsable(false)]
-        public Control ContainedControl
-        {
-            get { return ListBox; }
-        }
+        public Control ContainedControl => ListBox;
 
-        /// <summary>
+	    /// <summary>
         /// Gets or sets the text for the control.
         /// </summary>
         [Browsable(false)]
@@ -646,9 +633,9 @@ namespace ComponentFactory.Krypton.Toolkit
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public override string Text
         {
-            get { return base.Text; }
-            set { base.Text = value; }
-        }
+            get => base.Text;
+		    set => base.Text = value;
+	    }
 
         /// <summary>
         /// Gets or sets the background color for the control.
@@ -659,8 +646,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public override Color BackColor
         {
-            get { return base.BackColor; }
-            set { base.BackColor = value; }
+            get => base.BackColor;
+	        set => base.BackColor = value;
         }
 
         /// <summary>
@@ -672,8 +659,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public override Font Font
         {
-            get { return base.Font; }
-            set { base.Font = value; }
+            get => base.Font;
+	        set => base.Font = value;
         }
 
         /// <summary>
@@ -685,8 +672,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public override Color ForeColor
         {
-            get { return base.ForeColor; }
-            set { base.ForeColor = value; }
+            get => base.ForeColor;
+	        set => base.ForeColor = value;
         }
 
         /// <summary>
@@ -695,9 +682,9 @@ namespace ComponentFactory.Krypton.Toolkit
         [DefaultValue(typeof(Padding), "1,1,1,1")]
         public new Padding Padding
         {
-            get { return base.Padding; }
+            get => base.Padding;
 
-            set
+	        set
             {
                 base.Padding = value;
                 _layoutFill.DisplayPadding = value;
@@ -713,8 +700,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int SelectedIndex
         {
-            get { return _listBox.SelectedIndex; }
-            set { _listBox.SelectedIndex = value; }
+            get => _listBox.SelectedIndex;
+	        set => _listBox.SelectedIndex = value;
         }
 
         /// <summary>
@@ -727,8 +714,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [DefaultValue((string)null)]
         public object SelectedValue
         {
-            get { return _listBox.SelectedValue; }
-            set { _listBox.SelectedValue = value; }
+            get => _listBox.SelectedValue;
+	        set => _listBox.SelectedValue = value;
         }
 
         /// <summary>
@@ -736,12 +723,9 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public ListBox.SelectedIndexCollection SelectedIndices
-        {
-            get { return _listBox.SelectedIndices; }
-        }
+        public ListBox.SelectedIndexCollection SelectedIndices => _listBox.SelectedIndices;
 
-        /// <summary>
+	    /// <summary>
         /// Gets or sets the currently selected item in the KryptonListBox.
         /// </summary>
         [Bindable(true)]
@@ -749,30 +733,27 @@ namespace ComponentFactory.Krypton.Toolkit
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public object SelectedItem
         {
-            get { return _listBox.SelectedItem; }
-            set { _listBox.SelectedItem = value; }
-        }
+            get => _listBox.SelectedItem;
+		    set => _listBox.SelectedItem = value;
+	    }
 
         /// <summary>
         /// Gets a collection containing the currently selected items in the KryptonListBox.
         /// </summary>
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public ListBox.SelectedObjectCollection SelectedItems
-        {
-            get { return _listBox.SelectedItems; }
-        }
+        public ListBox.SelectedObjectCollection SelectedItems => _listBox.SelectedItems;
 
-        /// <summary>
+	    /// <summary>
         /// Gets or sets the index of the first visible item in the KryptonListBox.
         /// </summary>
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int TopIndex
         {
-            get { return _listBox.TopIndex; }
-            set { _listBox.TopIndex = value; }
-        }
+            get => _listBox.TopIndex;
+		    set => _listBox.TopIndex = value;
+	    }
 
         /// <summary>
         /// Gets and sets the item style.
@@ -781,9 +762,9 @@ namespace ComponentFactory.Krypton.Toolkit
         [Description("Item style.")]
         public ButtonStyle ItemStyle
         {
-            get { return _style; }
+            get => _style;
 
-            set
+	        set
             {
                 if (_style != value)
                 {
@@ -815,8 +796,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [DefaultValue(0)]
         public virtual int HorizontalExtent
         {
-            get { return _listBox.HorizontalExtent; }
-            set { _listBox.HorizontalExtent = value; }
+            get => _listBox.HorizontalExtent;
+	        set => _listBox.HorizontalExtent = value;
         }
 
         /// <summary>
@@ -828,8 +809,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [DefaultValue(false)]
         public virtual bool HorizontalScrollbar
         {
-            get { return _listBox.HorizontalScrollbar; }
-            set { _listBox.HorizontalScrollbar = value; }
+            get => _listBox.HorizontalScrollbar;
+	        set => _listBox.HorizontalScrollbar = value;
         }
 
         /// <summary>
@@ -841,8 +822,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [DefaultValue(false)]
         public virtual bool ScrollAlwaysVisible
         {
-            get { return _listBox.ScrollAlwaysVisible; }
-            set { _listBox.ScrollAlwaysVisible = value; }
+            get => _listBox.ScrollAlwaysVisible;
+	        set => _listBox.ScrollAlwaysVisible = value;
         }
 
         /// <summary>
@@ -853,8 +834,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [DefaultValue(typeof(SelectionMode), "One")]
         public virtual SelectionMode SelectionMode
         {
-            get { return _listBox.SelectionMode; }
-            set { _listBox.SelectionMode = value; }
+            get => _listBox.SelectionMode;
+	        set => _listBox.SelectionMode = value;
         }
 
         /// <summary>
@@ -865,8 +846,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [DefaultValue(false)]
         public virtual bool Sorted
         {
-            get { return _listBox.Sorted; }
-            set { _listBox.Sorted = value; }
+            get => _listBox.Sorted;
+	        set => _listBox.Sorted = value;
         }
 
         /// <summary>
@@ -878,8 +859,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [DefaultValue("")]
         public virtual string ValueMember
         {
-            get { return _listBox.ValueMember; }
-            set { _listBox.ValueMember = value; }
+            get => _listBox.ValueMember;
+	        set => _listBox.ValueMember = value;
         }
 
         /// <summary>
@@ -892,8 +873,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [DefaultValue((string)null)]
         public virtual object DataSource
         {
-            get { return _listBox.DataSource; }
-            set { _listBox.DataSource = value; }
+            get => _listBox.DataSource;
+	        set => _listBox.DataSource = value;
         }
 
         /// <summary>
@@ -906,8 +887,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [DefaultValue("")]
         public virtual string DisplayMember
         {
-            get { return _listBox.DisplayMember; }
-            set { _listBox.DisplayMember = value; }
+            get => _listBox.DisplayMember;
+	        set => _listBox.DisplayMember = value;
         }
 
         /// <summary>
@@ -919,12 +900,9 @@ namespace ComponentFactory.Krypton.Toolkit
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         [MergableProperty(false)]
         [Localizable(true)]
-        public virtual ListBox.ObjectCollection Items
-        {
-            get { return _listBox.Items; }
-        }
+        public virtual ListBox.ObjectCollection Items => _listBox.Items;
 
-        /// <summary>
+	    /// <summary>
         /// Gets or sets the format specifier characters that indicate how a value is to be displayed.
         /// </summary>
         [Description("The format specifier characters that indicate how a value is to be displayed.")]
@@ -933,9 +911,9 @@ namespace ComponentFactory.Krypton.Toolkit
         [DefaultValue("")]
         public string FormatString
         {
-            get { return _listBox.FormatString; }
-            set { _listBox.FormatString = value; }
-        }
+            get => _listBox.FormatString;
+		    set => _listBox.FormatString = value;
+	    }
 
         /// <summary>
         /// Gets or sets if this property is true, the value of FormatString is used to convert the value of DisplayMember into a value that can be displayed.
@@ -944,8 +922,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [DefaultValue(false)]
         public bool FormattingEnabled
         {
-            get { return _listBox.FormattingEnabled; }
-            set { _listBox.FormattingEnabled = value; }
+            get => _listBox.FormattingEnabled;
+	        set => _listBox.FormattingEnabled = value;
         }
 
         /// <summary>
@@ -955,9 +933,9 @@ namespace ComponentFactory.Krypton.Toolkit
         [Description("Style used to draw the background.")]
         public PaletteBackStyle BackStyle
         {
-            get { return _stateCommon.BackStyle; }
+            get => _stateCommon.BackStyle;
 
-            set
+	        set
             {
                 if (_stateCommon.BackStyle != value)
                 {
@@ -985,9 +963,9 @@ namespace ComponentFactory.Krypton.Toolkit
         [Description("Style used to draw the border.")]
         public PaletteBorderStyle BorderStyle
         {
-            get { return _stateCommon.BorderStyle; }
+            get => _stateCommon.BorderStyle;
 
-            set
+	        set
             {
                 if (_stateCommon.BorderStyle != value)
                 {
@@ -1014,12 +992,9 @@ namespace ComponentFactory.Krypton.Toolkit
         [Category("Visuals")]
         [Description("Overrides for defining item appearance when it has focus.")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
-        public PaletteListItemTripleRedirect OverrideFocus
-        {
-            get { return _stateFocus; }
-        }
+        public PaletteListItemTripleRedirect OverrideFocus => _stateFocus;
 
-        private bool ShouldSerializeOverrideFocus()
+	    private bool ShouldSerializeOverrideFocus()
         {
             return !_stateFocus.IsDefault;
         }
@@ -1030,12 +1005,9 @@ namespace ComponentFactory.Krypton.Toolkit
         [Category("Visuals")]
         [Description("Overrides for defining common appearance that other states can override.")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
-        public PaletteListStateRedirect StateCommon
-        {
-            get { return _stateCommon; }
-        }
+        public PaletteListStateRedirect StateCommon => _stateCommon;
 
-        private bool ShouldSerializeStateCommon()
+	    private bool ShouldSerializeStateCommon()
         {
             return !_stateCommon.IsDefault;
         }
@@ -1046,12 +1018,9 @@ namespace ComponentFactory.Krypton.Toolkit
         [Category("Visuals")]
         [Description("Overrides for defining disabled appearance.")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
-        public PaletteListState StateDisabled
-        {
-            get { return _stateDisabled; }
-        }
+        public PaletteListState StateDisabled => _stateDisabled;
 
-        private bool ShouldSerializeStateDisabled()
+	    private bool ShouldSerializeStateDisabled()
         {
             return !_stateDisabled.IsDefault;
         }
@@ -1062,12 +1031,9 @@ namespace ComponentFactory.Krypton.Toolkit
         [Category("Visuals")]
         [Description("Overrides for defining normal appearance.")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
-        public PaletteListState StateNormal
-        {
-            get { return _stateNormal; }
-        }
+        public PaletteListState StateNormal => _stateNormal;
 
-        private bool ShouldSerializeStateNormal()
+	    private bool ShouldSerializeStateNormal()
         {
             return !_stateNormal.IsDefault;
         }
@@ -1078,12 +1044,9 @@ namespace ComponentFactory.Krypton.Toolkit
         [Category("Visuals")]
         [Description("Overrides for defining active appearance.")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
-        public PaletteDouble StateActive
-        {
-            get { return _stateActive; }
-        }
+        public PaletteDouble StateActive => _stateActive;
 
-        private bool ShouldSerializeStateActive()
+	    private bool ShouldSerializeStateActive()
         {
             return !_stateActive.IsDefault;
         }
@@ -1094,12 +1057,9 @@ namespace ComponentFactory.Krypton.Toolkit
         [Category("Visuals")]
         [Description("Overrides for defining hot tracking item appearance.")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
-        public PaletteListItemTriple StateTracking
-        {
-            get { return _stateTracking; }
-        }
+        public PaletteListItemTriple StateTracking => _stateTracking;
 
-        private bool ShouldSerializeStateTracking()
+	    private bool ShouldSerializeStateTracking()
         {
             return !_stateTracking.IsDefault;
         }
@@ -1110,12 +1070,9 @@ namespace ComponentFactory.Krypton.Toolkit
         [Category("Visuals")]
         [Description("Overrides for defining pressed item appearance.")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
-        public PaletteListItemTriple StatePressed
-        {
-            get { return _statePressed; }
-        }
+        public PaletteListItemTriple StatePressed => _statePressed;
 
-        private bool ShouldSerializeStatePressed()
+	    private bool ShouldSerializeStatePressed()
         {
             return !_statePressed.IsDefault;
         }
@@ -1126,12 +1083,9 @@ namespace ComponentFactory.Krypton.Toolkit
         [Category("Visuals")]
         [Description("Overrides for defining normal checked item appearance.")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
-        public PaletteListItemTriple StateCheckedNormal
-        {
-            get { return _stateCheckedNormal; }
-        }
+        public PaletteListItemTriple StateCheckedNormal => _stateCheckedNormal;
 
-        private bool ShouldSerializeStateCheckedNormal()
+	    private bool ShouldSerializeStateCheckedNormal()
         {
             return !_stateCheckedNormal.IsDefault;
         }
@@ -1142,12 +1096,9 @@ namespace ComponentFactory.Krypton.Toolkit
         [Category("Visuals")]
         [Description("Overrides for defining hot tracking checked item appearance.")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
-        public PaletteListItemTriple StateCheckedTracking
-        {
-            get { return _stateCheckedTracking; }
-        }
+        public PaletteListItemTriple StateCheckedTracking => _stateCheckedTracking;
 
-        private bool ShouldSerializeStateCheckedTracking()
+	    private bool ShouldSerializeStateCheckedTracking()
         {
             return !_stateCheckedTracking.IsDefault;
         }
@@ -1158,12 +1109,9 @@ namespace ComponentFactory.Krypton.Toolkit
         [Category("Visuals")]
         [Description("Overrides for defining pressed checked item appearance.")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
-        public PaletteListItemTriple StateCheckedPressed
-        {
-            get { return _stateCheckedPressed; }
-        }
+        public PaletteListItemTriple StateCheckedPressed => _stateCheckedPressed;
 
-        private bool ShouldSerializeStateCheckedPressed()
+	    private bool ShouldSerializeStateCheckedPressed()
         {
             return !_stateCheckedPressed.IsDefault;
         }
@@ -1176,9 +1124,9 @@ namespace ComponentFactory.Krypton.Toolkit
         [DefaultValue(true)]
         public bool AlwaysActive
         {
-            get { return _alwaysActive; }
+            get => _alwaysActive;
 
-            set
+	        set
             {
                 if (_alwaysActive != value)
                 {
@@ -1716,11 +1664,9 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <summary>
         /// Gets the default size of the control.
         /// </summary>
-        protected override Size DefaultSize
-        {
-            get { return new Size(120, 96); }
-        }
-        #endregion
+        protected override Size DefaultSize => new Size(120, 96);
+
+	    #endregion
 
         #region Implementation
         private void UpdateStateAndPalettes()
@@ -1798,10 +1744,8 @@ namespace ComponentFactory.Krypton.Toolkit
                 }
 
                 // Do we need to show item as having the focus
-                bool hasFocus = false;
-                if (((e.State & DrawItemState.Focus) == DrawItemState.Focus) &&
-                    ((e.State & DrawItemState.NoFocusRect) != DrawItemState.NoFocusRect))
-                    hasFocus = true;
+                bool hasFocus = (e.State & DrawItemState.Focus) == DrawItemState.Focus &&
+                    (e.State & DrawItemState.NoFocusRect) != DrawItemState.NoFocusRect;
 
                 _overrideNormal.Apply = hasFocus;
                 _overrideTracking.Apply = hasFocus;

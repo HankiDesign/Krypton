@@ -232,7 +232,7 @@ namespace ComponentFactory.Krypton.Ribbon
                 palette = _ribbon.StateCommon.RibbonQATFullbar;
 
             // Decide if we need to draw onto a composition area
-            bool composition = (OwnerForm != null) ? OwnerForm.ApplyComposition && OwnerForm.ApplyCustomChrome : false;
+            bool composition = OwnerForm != null && (OwnerForm.ApplyComposition && OwnerForm.ApplyCustomChrome);
 
             // Perform actual drawing
             _memento = context.Renderer.RenderRibbon.DrawRibbonBack(_ribbon.RibbonShape, context, drawRect, state, palette, VisualOrientation.Top, composition, _memento);

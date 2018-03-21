@@ -75,9 +75,9 @@ namespace ComponentFactory.Krypton.Toolkit
             /// </summary>
             public bool MouseOver
             {
-                get { return _mouseOver; }
-                
-                set 
+                get => _mouseOver;
+
+	            private set 
                 {
                     // Only interested in changes
                     if (_mouseOver != value)
@@ -233,46 +233,38 @@ namespace ComponentFactory.Krypton.Toolkit
             /// </summary>
             public bool MouseOver
             {
-                get { return _mouseOver; }
+                get => _mouseOver;
 
-                set
+	            private set
                 {
                     // Only interested in changes
-                    if (_mouseOver != value)
-                    {
-                        _mouseOver = value;
+	                if (_mouseOver == value) return;
+	                _mouseOver = value;
 
-                        // Generate appropriate change event
-                        if (_mouseOver)
-                            OnTrackMouseEnter(EventArgs.Empty);
-                        else
-                            OnTrackMouseLeave(EventArgs.Empty);
-                    }
+	                // Generate appropriate change event
+	                if (_mouseOver)
+		                OnTrackMouseEnter(EventArgs.Empty);
+	                else
+		                OnTrackMouseLeave(EventArgs.Empty);
                 }
             }
 
             /// <summary>
             /// Gets the last mouse point if the mouse is over the control.
             /// </summary>
-            public Point MousePoint
-            {
-                get { return _mousePoint; }
-            }
+            protected Point MousePoint => _mousePoint;
 
-            /// <summary>
+	        /// <summary>
             /// Sets the visible state of the control.
             /// </summary>
             public bool Visible
             {
-                set
-                {
-                    PI.SetWindowPos(Handle,
-                                    IntPtr.Zero,
-                                    0, 0, 0, 0,
-                                    (uint)(PI.SWP_NOMOVE | PI.SWP_NOSIZE |
-                                    (value ? PI.SWP_SHOWWINDOW : PI.SWP_HIDEWINDOW)));
-                }
-            }
+                set => PI.SetWindowPos(Handle,
+	                IntPtr.Zero,
+	                0, 0, 0, 0,
+	                (uint)(PI.SWP_NOMOVE | PI.SWP_NOSIZE |
+	                       (value ? PI.SWP_SHOWWINDOW : PI.SWP_HIDEWINDOW)));
+	        }
             #endregion
 
             #region Protected

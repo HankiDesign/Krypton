@@ -66,7 +66,7 @@ namespace ComponentFactory.Krypton.Toolkit
             Clear();
 
             // Release each cached child control just once
-            foreach (ViewBase child in _crumbToButton.Values)
+            foreach (ViewDrawButton child in _crumbToButton.Values)
                 child.Dispose();
 
             // Prevent another call to dispose from trying to dispose them again

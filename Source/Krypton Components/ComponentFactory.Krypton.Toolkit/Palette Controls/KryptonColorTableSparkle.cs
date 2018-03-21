@@ -268,21 +268,17 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <summary>
         /// Get background of a pressed check mark area.
         /// </summary>
-        public override Color CheckPressedBackground
-        {
-            get { return _sparkleColors[20]; ; }
-        }
-        #endregion
+        public override Color CheckPressedBackground => _sparkleColors[20];
+
+	    #endregion
 
         #region CheckSelectedBackground
         /// <summary>
         /// Get background of a selected check mark area.
         /// </summary>
-        public override Color CheckSelectedBackground
-        {
-            get { return _sparkleColors[20]; ; }
-        }
-        #endregion
+        public override Color CheckSelectedBackground => _sparkleColors[20];
+
+	    #endregion
         #endregion
 
         #region Grip

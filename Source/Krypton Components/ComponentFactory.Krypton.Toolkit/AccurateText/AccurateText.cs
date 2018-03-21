@@ -61,17 +61,16 @@ namespace ComponentFactory.Krypton.Toolkit
 			Debug.Assert(text != null);
 			Debug.Assert(font != null);
 
-			if (g == null) throw new ArgumentNullException("g");
-			if (text == null) throw new ArgumentNullException("text");
-			if (font == null) throw new ArgumentNullException("font");
+			if (g == null) throw new ArgumentNullException(nameof(g));
+			if (text == null) throw new ArgumentNullException(nameof(text));
+			if (font == null) throw new ArgumentNullException(nameof(font));
 
 			// An empty string cannot be drawn, so uses the empty memento
 			if (text.Length == 0)
 				return AccurateTextMemento.Empty;
 
 			// Create the format object used when measuring and drawing
-			StringFormat format = new StringFormat();
-			format.FormatFlags = StringFormatFlags.NoClip;
+			var format = new StringFormat { FormatFlags = StringFormatFlags.NoClip };
 
 			// Ensure that text reflects reversed RTL setting
 			if (rtl == RightToLeft.Yes)
@@ -81,7 +80,7 @@ namespace ComponentFactory.Krypton.Toolkit
 			switch (align)
 			{
 				case PaletteRelativeAlign.Near:
-					format.Alignment = (rtl == RightToLeft.Yes) ? StringAlignment.Far : StringAlignment.Near;
+					format.Alignment = rtl == RightToLeft.Yes ? StringAlignment.Far : StringAlignment.Near;
 					break;
 
 				case PaletteRelativeAlign.Center:
@@ -89,7 +88,7 @@ namespace ComponentFactory.Krypton.Toolkit
 					break;
 
 				case PaletteRelativeAlign.Far:
-					format.Alignment = (rtl == RightToLeft.Yes) ? StringAlignment.Near : StringAlignment.Far;
+					format.Alignment = rtl == RightToLeft.Yes ? StringAlignment.Near : StringAlignment.Far;
 					break;
 
 				default:
@@ -156,7 +155,7 @@ namespace ComponentFactory.Krypton.Toolkit
 			text = text.Replace("\t", "    ");
 
 			// Perform actual measure of the text
-			using (GraphicsTextHint graphicsHint = new GraphicsTextHint(g, hint))
+			using (var graphicsHint = new GraphicsTextHint(g, hint))
 			{
 				SizeF textSize = Size.Empty;
 
@@ -200,89 +199,87 @@ namespace ComponentFactory.Krypton.Toolkit
 
 			// Cannot draw with a null graphics instance
 			if (g == null)
-				throw new ArgumentNullException("g");
+				throw new ArgumentNullException(nameof(g));
 
 			// Cannot draw with a null memento instance
 			if (memento == null)
-				throw new ArgumentNullException("memento");
+				throw new ArgumentNullException(nameof(memento));
 
-			bool ret = true;
+			var ret = true;
 
-			// Is there a valid place to be drawn into
-			if ((rect.Width > 0) && (rect.Height > 0))
+			// If there's no valid place to be drawn into, return
+			if (rect.Width <= 0 || rect.Height <= 0) return ret;
+
+			// If the memento doesn't contain anything to draw, return
+			if (memento.IsEmpty) return ret;
+
+			int translateX = 0;
+			int translateY = 0;
+			float rotation = 0f;
+
+			// Perform any transformations needed for orientation
+			switch (orientation)
 			{
-				// Does the memento contain something to draw?
-				if (!memento.IsEmpty)
-				{
-					int translateX = 0;
-					int translateY = 0;
-					float rotation = 0f;
+				case VisualOrientation.Bottom:
+					// Translate to opposite side of origin, so the rotate can
+					// then bring it back to original position but mirror image
+					translateX = rect.X * 2 + rect.Width;
+					translateY = rect.Y * 2 + rect.Height;
+					rotation = 180f;
+					break;
 
-					// Perform any transformations needed for orientation
-					switch (orientation)
-					{
-						case VisualOrientation.Bottom:
-							// Translate to opposite side of origin, so the rotate can
-							// then bring it back to original position but mirror image
-							translateX = rect.X * 2 + rect.Width;
-							translateY = rect.Y * 2 + rect.Height;
-							rotation = 180f;
-							break;
+				case VisualOrientation.Left:
+					// Invert the dimensions of the rectangle for drawing upwards
+					rect = new Rectangle(rect.X, rect.Y, rect.Height, rect.Width);
 
-						case VisualOrientation.Left:
-							// Invert the dimensions of the rectangle for drawing upwards
-							rect = new Rectangle(rect.X, rect.Y, rect.Height, rect.Width);
+					// Translate back from a quater left turn to the original place
+					translateX = rect.X - rect.Y - 1;
+					translateY = rect.X + rect.Y + rect.Width;
+					rotation = 270;
+					break;
 
-							// Translate back from a quater left turn to the original place
-							translateX = rect.X - rect.Y - 1;
-							translateY = rect.X + rect.Y + rect.Width;
-							rotation = 270;
-							break;
+				case VisualOrientation.Right:
+					// Invert the dimensions of the rectangle for drawing upwards
+					rect = new Rectangle(rect.X, rect.Y, rect.Height, rect.Width);
 
-						case VisualOrientation.Right:
-							// Invert the dimensions of the rectangle for drawing upwards
-							rect = new Rectangle(rect.X, rect.Y, rect.Height, rect.Width);
+					// Translate back from a quater right turn to the original place
+					translateX = rect.X + rect.Y + rect.Height + 1;
+					translateY = -(rect.X - rect.Y);
+					rotation = 90f;
+					break;
+			}
 
-							// Translate back from a quater right turn to the original place
-							translateX = rect.X + rect.Y + rect.Height + 1;
-							translateY = -(rect.X - rect.Y);
-							rotation = 90f;
-							break;
-					}
+			// Apply the transforms if we have any to apply
+			if (translateX != 0 || translateY != 0)
+				g.TranslateTransform(translateX, translateY);
 
-					// Apply the transforms if we have any to apply
-					if ((translateX != 0) || (translateY != 0))
-						g.TranslateTransform(translateX, translateY);
+			if (rotation != 0f)
+				g.RotateTransform(rotation);
 
-					if (rotation != 0f)
-						g.RotateTransform(rotation);
+			try
+			{
+				if (composition)
+					DrawCompositionGlowingText(g, memento.Text, memento.Font, rect, state,
+						SystemColors.ActiveCaptionText, true);
+				else
+					g.DrawString(memento.Text, memento.Font, brush, rect, memento.Format);
+			}
+			catch
+			{
+				// Ignore any error from the DrawString, usually because the display settings
+				// have changed causing Fonts to be invalid. Our controls will notice the change
+				// and refresh the fonts but sometimes the draw happens before the fonts are
+				// regenerated. Just ignore message and everything will sort itself out. Trust me!
+				ret = false;
+			}
+			finally
+			{
+				// Remove the applied transforms
+				if (rotation != 0f)
+					g.RotateTransform(-rotation);
 
-					try
-					{
-						if (composition)
-							DrawCompositionGlowingText(g, memento.Text, memento.Font, rect, state,
-													   SystemColors.ActiveCaptionText, true);
-						else
-							g.DrawString(memento.Text, memento.Font, brush, rect, memento.Format);
-					}
-					catch
-					{
-						// Ignore any error from the DrawString, usually because the display settings
-						// have changed causing Fonts to be invalid. Our controls will notice the change
-						// and refresh the fonts but sometimes the draw happens before the fonts are
-						// regenerated. Just ignore message and everything will sort itself out. Trust me!
-						ret = false;
-					}
-					finally
-					{
-						// Remove the applied transforms
-						if (rotation != 0f)
-							g.RotateTransform(-rotation);
-
-						if ((translateX != 0) || (translateY != 0))
-							g.TranslateTransform(-translateX, -translateY);
-					}
-				}
+				if (translateX != 0 || translateY != 0)
+					g.TranslateTransform(-translateX, -translateY);
 			}
 
 			return ret;
@@ -316,7 +313,7 @@ namespace ComponentFactory.Krypton.Toolkit
 				IntPtr gDC = g.GetHdc();
 				IntPtr mDC = PI.CreateCompatibleDC(gDC);
 
-				PI.BITMAPINFO bmi = new PI.BITMAPINFO();
+				var bmi = new PI.BITMAPINFO();
 				bmi.biSize = Marshal.SizeOf(bmi);
 				bmi.biWidth = bounds.Width;
 				bmi.biHeight = -(bounds.Height + GLOW_EXTRA_HEIGHT * 2);
@@ -340,20 +337,25 @@ namespace ComponentFactory.Krypton.Toolkit
 				PI.SelectObject(mDC, hFont);
 
 				// Get renderer for the correct state
-				VisualStyleRenderer renderer = new VisualStyleRenderer(state == PaletteState.Normal ? VisualStyleElement.Window.Caption.Active :
+				var renderer = new VisualStyleRenderer(state == PaletteState.Normal ? VisualStyleElement.Window.Caption.Active :
 																									  VisualStyleElement.Window.Caption.Inactive);
 
 				// Create structures needed for theme drawing call
-				PI.RECT textBounds = new PI.RECT();
-				textBounds.left = 0;
-				textBounds.top = 0;
-				textBounds.right = (bounds.Right - bounds.Left);
-				textBounds.bottom = (bounds.Bottom - bounds.Top) + (GLOW_EXTRA_HEIGHT * 2);
-				PI.DTTOPTS dttOpts = new PI.DTTOPTS();
-				dttOpts.dwSize = Marshal.SizeOf(typeof(PI.DTTOPTS));
-				dttOpts.dwFlags = PI.DTT_COMPOSITED | PI.DTT_GLOWSIZE | PI.DTT_TEXTCOLOR;
-				dttOpts.crText = ColorTranslator.ToWin32(color);
-				dttOpts.iGlowSize = 11;
+				var textBounds = new PI.RECT
+				{
+					left = 0,
+					top = 0,
+					right = bounds.Right - bounds.Left,
+					bottom = bounds.Bottom - bounds.Top + GLOW_EXTRA_HEIGHT * 2
+				};
+
+				var dttOpts = new PI.DTTOPTS
+				{
+					dwSize = Marshal.SizeOf(typeof(PI.DTTOPTS)),
+					dwFlags = PI.DTT_COMPOSITED | PI.DTT_GLOWSIZE | PI.DTT_TEXTCOLOR,
+					crText = ColorTranslator.ToWin32(color),
+					iGlowSize = 11
+				};
 
 				// Always draw text centered
 				TextFormatFlags textFormat = TextFormatFlags.SingleLine |
@@ -370,7 +372,7 @@ namespace ComponentFactory.Krypton.Toolkit
 				// Copy to foreground
 				PI.BitBlt(gDC,
 						  bounds.Left, bounds.Top - GLOW_EXTRA_HEIGHT,
-						  bounds.Width, bounds.Height + (GLOW_EXTRA_HEIGHT * 2),
+						  bounds.Width, bounds.Height + GLOW_EXTRA_HEIGHT * 2,
 						  mDC, 0, 0, 0x00CC0020);
 
 				// Dispose of allocated objects

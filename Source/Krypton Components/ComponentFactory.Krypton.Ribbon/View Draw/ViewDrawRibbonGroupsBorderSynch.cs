@@ -232,7 +232,7 @@ namespace ComponentFactory.Krypton.Ribbon
                 Add(_tabToView[tab]);
 
             // Dispose of all the no longer needed child tabs
-            foreach (ViewBase oldChild in redundant.Values)
+            foreach (ViewLayoutRibbonScrollPort oldChild in redundant.Values)
                 oldChild.Dispose();
         }
         #endregion

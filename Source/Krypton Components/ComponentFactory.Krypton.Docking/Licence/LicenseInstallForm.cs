@@ -20,27 +20,27 @@ namespace ComponentFactory.Krypton.Docking
 	/// visual inheritance
 	/// </summary>
 	/// <seealso cref="EncryptedLicenseProvider"/>
-    internal class LicenseInstallForm : System.Windows.Forms.Form
+    internal class LicenseInstallForm : Form
 	{
         #region Member Variables
         private KryptonLabel _keyLabel;
         private KryptonTextBox _keyText;
         private EncryptedLicense _license;
-        private readonly System.ComponentModel.Container components = null;
-        private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanelTop;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel labelTopHeader;
-        private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanelBottom;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButtonIgnore;
-        private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanelBottomBorder;
-        private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanelTopBorder;
-        private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButtonOK;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButtonHelp;
+        private readonly Container components = null;
+        private KryptonPanel kryptonPanelTop;
+        private KryptonLabel labelTopHeader;
+        private KryptonPanel kryptonPanelBottom;
+        private KryptonButton kryptonButtonIgnore;
+        private KryptonPanel kryptonPanelBottomBorder;
+        private KryptonPanel kryptonPanelTopBorder;
+        private KryptonPanel kryptonPanel1;
+        private KryptonButton kryptonButtonOK;
+        private KryptonButton kryptonButtonHelp;
         private PictureBox pictureBoxRight;
         private Label _msgLabel;
         private Label _msgError;
         private Label label1;
-        private System.Type _licenseType;
+        private Type _licenseType;
         #endregion
 
         #region Windows Form Designer generated code
@@ -335,7 +335,7 @@ namespace ComponentFactory.Krypton.Docking
         public EncryptedLicense ShowDialog(Type typeToLicence)
         {
             _licenseType = typeToLicence;
-            this.ShowDialog();
+            ShowDialog();
             return _license;
         }
         #endregion
@@ -397,10 +397,10 @@ namespace ComponentFactory.Krypton.Docking
             if (license != null)
             {
                 int thisVersion = 440;
-                switch (LicenseInstallForm.GetProductCode(license.ProductInfo))
+                switch (GetProductCode(license.ProductInfo))
                 {
                     case "S":
-                        int version = int.Parse(LicenseInstallForm.GetVersionCode(license.ProductInfo));
+                        int version = int.Parse(GetVersionCode(license.ProductInfo));
                         if (version == thisVersion)
                         {
                             valid = true;
@@ -433,7 +433,7 @@ namespace ComponentFactory.Krypton.Docking
         /// </summary>
         /// <param name="sender">Event source.</param>
         /// <param name="e">An EventArgs containing the event data.</param>
-        protected virtual void OnIgnoreButtonClick(object sender, System.EventArgs e)
+        protected virtual void OnIgnoreButtonClick(object sender, EventArgs e)
         {
             Close();
         }
@@ -702,7 +702,7 @@ namespace ComponentFactory.Krypton.Docking
 
         // the license for the Licensing System
         //
-        private static System.ComponentModel.License _systemLicense;
+        private static License _systemLicense;
         private static readonly string _licensePath = @"Software\Component Factory\Krypton\";
         private static readonly int _licenseVersion = 440;
         private static readonly string[] _licenseProducts = new string[] { "S" };
@@ -774,15 +774,15 @@ namespace ComponentFactory.Krypton.Docking
 
             // write the license parameters out to an XML string
             //
-            MemoryStream stream = new MemoryStream();
-            XmlTextWriter writer = new XmlTextWriter(stream, Encoding.ASCII);
+            var stream = new MemoryStream();
+            var writer = new XmlTextWriter(stream, Encoding.ASCII);
             writer.WriteStartElement("LicenseParameters");
             writer.WriteRaw(rsaParam);
             writer.WriteElementString("DesignSignature", Convert.ToBase64String(designSignature));
             writer.WriteElementString("RuntimeSignature", Convert.ToBase64String(runtimeSignature));
             writer.WriteEndElement();
             writer.Close();
-            string xml = ASCIIEncoding.ASCII.GetString(stream.ToArray());
+            string xml = Encoding.ASCII.GetString(stream.ToArray());
             stream.Close();
             return xml;
         }
@@ -807,7 +807,7 @@ namespace ComponentFactory.Krypton.Docking
             //            
             byte[] requiredToken = { 0x3E, 0x7E, 0x8E, 0x37, 0x44, 0xA5, 0xC1, 0x3F };
             byte[] designKey = GetEncryptionKey(password);
-            byte[] productData = ASCIIEncoding.UTF8.GetBytes(productInfo);
+            byte[] productData = Encoding.UTF8.GetBytes(productInfo);
             byte[] clientData = BitConverter.GetBytes(serialNo);
             byte[] payload = new byte[ArraySize(productData.Length + clientData.Length)];
             byte[] publicKeyToken = Assembly.GetExecutingAssembly().GetName().GetPublicKeyToken();
@@ -953,7 +953,7 @@ namespace ComponentFactory.Krypton.Docking
                 {
                     SetParameters(_systemParameters);
                     EncryptedLicenseProvider provider = new EncryptedLicenseProvider();
-                    _systemLicense = provider.GetLicense(System.ComponentModel.LicenseManager.CurrentContext, typeof(EncryptedLicenseProvider), null, false);
+                    _systemLicense = provider.GetLicense(LicenseManager.CurrentContext, typeof(EncryptedLicenseProvider), null, false);
                 }
                 return _systemLicense;
             }
@@ -1016,7 +1016,7 @@ namespace ComponentFactory.Krypton.Docking
                 Array.Copy(payload, 2, productData, 0, productData.Length);
 
                 UInt16 serialNo = BitConverter.ToUInt16(payload, 0);
-                string productInfo = System.Text.ASCIIEncoding.UTF8.GetString(productData);
+                string productInfo = Encoding.UTF8.GetString(productData);
 
                 return new EncryptedLicense(licenseKey, serialNo, productInfo);
             }
@@ -1139,7 +1139,7 @@ namespace ComponentFactory.Krypton.Docking
 
             if (password.Length < 8)
                 password = password.PadRight(8, '*');
-            byte[] data = ASCIIEncoding.ASCII.GetBytes(password);
+            byte[] data = Encoding.ASCII.GetBytes(password);
             byte[] encData = des.CreateEncryptor().TransformFinalBlock(data, 0, data.Length);
             byte[] result = new byte[ArraySize(8)];
             Array.Copy(encData, 0, result, 0, keyLength);
@@ -1210,7 +1210,7 @@ namespace ComponentFactory.Krypton.Docking
                 Array.Copy(payload, 2, productData, 0, productData.Length);
 
                 UInt16 serialNo = BitConverter.ToUInt16(payload, 0);
-                string product = System.Text.ASCIIEncoding.UTF8.GetString(productData);
+                string product = Encoding.UTF8.GetString(productData);
 
                 // if in design time then create a runtime license and save it
                 //
@@ -1728,7 +1728,7 @@ namespace ComponentFactory.Krypton.Docking
             DESCryptoServiceProvider des = new DESCryptoServiceProvider();
             des.Key = _desKey;
             des.IV = _desIV;
-            byte[] data = ASCIIEncoding.ASCII.GetBytes(text);
+            byte[] data = Encoding.ASCII.GetBytes(text);
             return des.CreateEncryptor().TransformFinalBlock(data, 0, data.Length);
         }
 
@@ -1743,7 +1743,7 @@ namespace ComponentFactory.Krypton.Docking
             des.Key = _desKey;
             des.IV = _desIV;
             byte[] decryptedData = des.CreateDecryptor().TransformFinalBlock(data, 0, data.Length);
-            return ASCIIEncoding.ASCII.GetString(decryptedData);
+            return Encoding.ASCII.GetString(decryptedData);
         }
 
         /// <summary>

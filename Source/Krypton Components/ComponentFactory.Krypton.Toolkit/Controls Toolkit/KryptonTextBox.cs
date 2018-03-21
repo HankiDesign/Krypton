@@ -76,21 +76,20 @@ namespace ComponentFactory.Krypton.Toolkit
             /// </summary>
             public bool MouseOver
             {
-                get { return _mouseOver; }
-                
-                set 
+                get => _mouseOver;
+
+	            private set 
                 {
                     // Only interested in changes
-                    if (_mouseOver != value)
-                    {
-                        _mouseOver = value;
+	                if (_mouseOver == value) return;
 
-                        // Generate appropriate change event
-                        if (_mouseOver)
-                            OnTrackMouseEnter(EventArgs.Empty);
-                        else
-                            OnTrackMouseLeave(EventArgs.Empty);
-                    }
+	                _mouseOver = value;
+
+	                // Generate appropriate change event
+	                if (_mouseOver)
+		                OnTrackMouseEnter(EventArgs.Empty);
+	                else
+		                OnTrackMouseLeave(EventArgs.Empty);
                 }
             }
             #endregion
@@ -528,8 +527,8 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         public new bool TabStop
         {
-            get { return _textBox.TabStop; }
-            set { _textBox.TabStop = value; }
+            get => _textBox.TabStop;
+	        set => _textBox.TabStop = value;
         }
 
         /// <summary>
@@ -540,8 +539,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [Browsable(false)]
         public bool InRibbonDesignMode
         {
-            get { return _inRibbonDesignMode; }
-            set { _inRibbonDesignMode = value; }
+            get => _inRibbonDesignMode;
+	        set => _inRibbonDesignMode = value;
         }
 
         /// <summary>
@@ -550,32 +549,26 @@ namespace ComponentFactory.Krypton.Toolkit
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         [EditorBrowsable(EditorBrowsableState.Always)]
         [Browsable(false)]
-        public TextBox TextBox
-        {
-            get { return _textBox; }
-        }
+        public TextBox TextBox => _textBox;
 
-        /// <summary>
+	    /// <summary>
         /// Gets access to the contained input control.
         /// </summary>
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         [EditorBrowsable(EditorBrowsableState.Always)]
         [Browsable(false)]
-        public Control ContainedControl
-        {
-            get { return TextBox; }
-        }
+        public Control ContainedControl => TextBox;
 
-        /// <summary>
+	    /// <summary>
         /// Gets and sets a value indicating if the control is automatically sized.
         /// </summary>
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         public override bool AutoSize
         {
-            get { return _autoSize; }
-            
-            set
+            get => _autoSize;
+
+		    set
             {
                 if (_autoSize != value)
                 {
@@ -597,21 +590,18 @@ namespace ComponentFactory.Krypton.Toolkit
         /// Gets a value indicating whether the control has input focus.
         /// </summary>
         [Browsable(false)]
-        public override bool Focused
-        {
-            get { return TextBox.Focused; }
-        }
+        public override bool Focused => TextBox.Focused;
 
-        /// <summary>
+	    /// <summary>
         /// Gets or sets the background color for the control.
         /// </summary>
         [Browsable(false)]
         [Bindable(false)]
         public override Color BackColor
         {
-            get { return base.BackColor; }
-            set { base.BackColor = value; }
-        }
+            get => base.BackColor;
+		    set => base.BackColor = value;
+	    }
 
         /// <summary>
         /// Gets or sets the font of the text displayed by the control.
@@ -620,8 +610,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [Bindable(false)]
         public override Font Font
         {
-            get { return base.Font; }
-            set { base.Font = value; }
+            get => base.Font;
+	        set => base.Font = value;
         }
 
         /// <summary>
@@ -631,8 +621,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [Bindable(false)]
         public override Color ForeColor
         {
-            get { return base.ForeColor; }
-            set { base.ForeColor = value; }
+            get => base.ForeColor;
+	        set => base.ForeColor = value;
         }
 
         /// <summary>
@@ -644,8 +634,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public new Padding Padding
         {
-            get { return base.Padding; }
-            set { base.Padding = value; }
+            get => base.Padding;
+	        set => base.Padding = value;
         }
 
         /// <summary>
@@ -654,8 +644,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [Editor("System.ComponentModel.Design.MultilineStringEditor, System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         public override string Text
         {
-            get { return _textBox.Text; }
-            set { _textBox.Text = value; }
+            get => _textBox.Text;
+	        set => _textBox.Text = value;
         }
 
         /// <summary>
@@ -663,12 +653,9 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         public override ContextMenuStrip ContextMenuStrip
         {
-            get
-            {
-                return base.ContextMenuStrip;
-            }
+            get => base.ContextMenuStrip;
 
-            set
+	        set
             {
                 base.ContextMenuStrip = value;
                 _textBox.ContextMenuStrip = value;
@@ -680,31 +667,25 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public bool CanUndo
-        {
-            get { return _textBox.CanUndo; }
-        }
+        public bool CanUndo => _textBox.CanUndo;
 
-        /// <summary>
+	    /// <summary>
         /// Gets a value indicating whether the contents have changed since last last.
         /// </summary>
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public bool Modified
-        {
-            get { return _textBox.Modified; }
-        }
+        public bool Modified => _textBox.Modified;
 
-        /// <summary>
+	    /// <summary>
         /// Gets and sets the selected text within the control.
         /// </summary>
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string SelectedText
         {
-            get { return _textBox.SelectedText; }
-            set { _textBox.SelectedText = value; }
-        }
+            get => _textBox.SelectedText;
+		    set => _textBox.SelectedText = value;
+	    }
 
         /// <summary>
         /// Gets and sets the selection length for the selected area.
@@ -713,8 +694,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int SelectionLength
         {
-            get { return _textBox.SelectionLength; }
-            set { _textBox.SelectionLength = value; }
+            get => _textBox.SelectionLength;
+	        set => _textBox.SelectionLength = value;
         }
 
         /// <summary>
@@ -724,8 +705,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int SelectionStart
         {
-            get { return _textBox.SelectionStart; }
-            set { _textBox.SelectionStart = value; }
+            get => _textBox.SelectionStart;
+	        set => _textBox.SelectionStart = value;
         }
 
         /// <summary>
@@ -733,12 +714,9 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public int TextLength
-        {
-            get { return _textBox.TextLength; }
-        }
+        public int TextLength => _textBox.TextLength;
 
-        /// <summary>
+	    /// <summary>
         /// Gets or sets a value indicating whether mnemonics will fire button spec buttons.
         /// </summary>
         [Category("Appearance")]
@@ -746,9 +724,9 @@ namespace ComponentFactory.Krypton.Toolkit
         [DefaultValue(true)]
         public bool UseMnemonic
         {
-            get { return _buttonManager.UseMnemonic; }
+            get => _buttonManager.UseMnemonic;
 
-            set
+		    set
             {
                 if (_buttonManager.UseMnemonic != value)
                 {
@@ -766,9 +744,9 @@ namespace ComponentFactory.Krypton.Toolkit
         [DefaultValue(true)]
         public bool AlwaysActive
         {
-            get { return _alwaysActive; }
+            get => _alwaysActive;
 
-            set
+	        set
             {
                 if (_alwaysActive != value)
                 {
@@ -789,8 +767,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [Localizable(true)]
         public string[] Lines
         {
-            get { return _textBox.Lines; }
-            set { _textBox.Lines = value; }
+            get => _textBox.Lines;
+	        set => _textBox.Lines = value;
         }
 
         /// <summary>
@@ -802,8 +780,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [Localizable(true)]
         public ScrollBars ScrollBars
         {
-            get { return _textBox.ScrollBars; }
-            set { _textBox.ScrollBars = value; }
+            get => _textBox.ScrollBars;
+	        set => _textBox.ScrollBars = value;
         }
 
         /// <summary>
@@ -815,8 +793,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [Localizable(true)]
         public HorizontalAlignment TextAlign
         {
-            get { return _textBox.TextAlign; }
-            set { _textBox.TextAlign = value; }
+            get => _textBox.TextAlign;
+	        set => _textBox.TextAlign = value;
         }
 
         /// <summary>
@@ -828,8 +806,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [Localizable(true)]
         public bool WordWrap
         {
-            get { return _textBox.WordWrap; }
-            set { _textBox.WordWrap = value; }
+            get => _textBox.WordWrap;
+	        set => _textBox.WordWrap = value;
         }
 
         /// <summary>
@@ -842,9 +820,9 @@ namespace ComponentFactory.Krypton.Toolkit
         [Localizable(true)]
         public bool Multiline
         {
-            get { return _textBox.Multiline; }
+            get => _textBox.Multiline;
 
-            set
+	        set
             {
                 if (_textBox.Multiline != value)
                 {
@@ -870,8 +848,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [DefaultValue(false)]
         public bool AcceptsReturn
         {
-            get { return _textBox.AcceptsReturn; }
-            set { _textBox.AcceptsReturn = value; }
+            get => _textBox.AcceptsReturn;
+	        set => _textBox.AcceptsReturn = value;
         }
 
         /// <summary>
@@ -882,8 +860,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [DefaultValue(false)]
         public bool AcceptsTab
         {
-            get { return _textBox.AcceptsTab; }
-            set { _textBox.AcceptsTab = value; }
+            get => _textBox.AcceptsTab;
+	        set => _textBox.AcceptsTab = value;
         }
 
         /// <summary>
@@ -894,8 +872,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [DefaultValue(typeof(CharacterCasing), "Normal")]
         public CharacterCasing CharacterCasing
         {
-            get { return _textBox.CharacterCasing; }
-            set { _textBox.CharacterCasing = value; }
+            get => _textBox.CharacterCasing;
+	        set => _textBox.CharacterCasing = value;
         }
 
         /// <summary>
@@ -906,8 +884,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [DefaultValue(true)]
         public bool HideSelection
         {
-            get { return _textBox.HideSelection; }
-            set { _textBox.HideSelection = value; }
+            get => _textBox.HideSelection;
+	        set => _textBox.HideSelection = value;
         }
 
         /// <summary>
@@ -919,8 +897,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [Localizable(true)]
         public int MaxLength
         {
-            get { return _textBox.MaxLength; }
-            set { _textBox.MaxLength = value; }
+            get => _textBox.MaxLength;
+	        set => _textBox.MaxLength = value;
         }
 
         /// <summary>
@@ -932,8 +910,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [DefaultValue(false)]
         public bool ReadOnly
         {
-            get { return _textBox.ReadOnly; }
-            set { _textBox.ReadOnly = value; }
+            get => _textBox.ReadOnly;
+	        set => _textBox.ReadOnly = value;
         }
 
         /// <summary>
@@ -944,8 +922,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [DefaultValue(true)]
         public bool ShortcutsEnabled
         {
-            get { return _textBox.ShortcutsEnabled; }
-            set { _textBox.ShortcutsEnabled = value; }
+            get => _textBox.ShortcutsEnabled;
+	        set => _textBox.ShortcutsEnabled = value;
         }
 
         /// <summary>
@@ -958,8 +936,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [Localizable(true)]
         public char PasswordChar
         {
-            get { return _textBox.PasswordChar; }
-            set { _textBox.PasswordChar = value; }
+            get => _textBox.PasswordChar;
+	        set => _textBox.PasswordChar = value;
         }
 
         /// <summary>
@@ -971,8 +949,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [DefaultValue(false)]
         public bool UseSystemPasswordChar
         {
-            get { return _textBox.UseSystemPasswordChar; }
-            set { _textBox.UseSystemPasswordChar = value; }
+            get => _textBox.UseSystemPasswordChar;
+	        set => _textBox.UseSystemPasswordChar = value;
         }
 
         /// <summary>
@@ -982,12 +960,9 @@ namespace ComponentFactory.Krypton.Toolkit
 		[Description("Input control style.")]
         public InputControlStyle InputControlStyle
 		{
-            get 
-            {
-                return _inputControlStyle; 
-            }
+            get => _inputControlStyle;
 
-			set
+	        set
 			{
                 if (_inputControlStyle != value)
 				{
@@ -1019,8 +994,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [Browsable(true)]
         public AutoCompleteStringCollection AutoCompleteCustomSource
         {
-            get { return _textBox.AutoCompleteCustomSource; }
-            set { _textBox.AutoCompleteCustomSource = value; }
+            get => _textBox.AutoCompleteCustomSource;
+	        set => _textBox.AutoCompleteCustomSource = value;
         }
 
         /// <summary>
@@ -1032,8 +1007,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [Browsable(true)]
         public AutoCompleteMode AutoCompleteMode
         {
-            get { return _textBox.AutoCompleteMode; }
-            set { _textBox.AutoCompleteMode = value; }
+            get => _textBox.AutoCompleteMode;
+	        set => _textBox.AutoCompleteMode = value;
         }
 
         /// <summary>
@@ -1045,8 +1020,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [Browsable(true)]
         public AutoCompleteSource AutoCompleteSource
         {
-            get { return _textBox.AutoCompleteSource; }
-            set { _textBox.AutoCompleteSource = value; }
+            get => _textBox.AutoCompleteSource;
+	        set => _textBox.AutoCompleteSource = value;
         }
 
         /// <summary>
@@ -1057,8 +1032,8 @@ namespace ComponentFactory.Krypton.Toolkit
         [DefaultValue(false)]
         public bool AllowButtonSpecToolTips
         {
-            get { return _allowButtonSpecToolTips; }
-            set { _allowButtonSpecToolTips = value; }
+            get => _allowButtonSpecToolTips;
+	        set => _allowButtonSpecToolTips = value;
         }
 
         /// <summary>
@@ -1067,23 +1042,17 @@ namespace ComponentFactory.Krypton.Toolkit
         [Category("Visuals")]
         [Description("Collection of button specifications.")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
-        public TextBoxButtonSpecCollection ButtonSpecs
-        {
-            get { return _buttonSpecs; }
-        }
+        public TextBoxButtonSpecCollection ButtonSpecs => _buttonSpecs;
 
-        /// <summary>
+	    /// <summary>
         /// Gets access to the common textbox appearance entries that other states can override.
         /// </summary>
         [Category("Visuals")]
         [Description("Overrides for defining common textbox appearance that other states can override.")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
-        public PaletteInputControlTripleRedirect StateCommon
-        {
-            get { return _stateCommon; }
-        }
+        public PaletteInputControlTripleRedirect StateCommon => _stateCommon;
 
-        private bool ShouldSerializeStateCommon()
+	    private bool ShouldSerializeStateCommon()
         {
             return !_stateCommon.IsDefault;
         }
@@ -1094,12 +1063,9 @@ namespace ComponentFactory.Krypton.Toolkit
 		[Category("Visuals")]
 		[Description("Overrides for defining disabled textbox appearance.")]
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
-        public PaletteInputControlTripleStates StateDisabled
-		{
-			get { return _stateDisabled; }
-		}
+        public PaletteInputControlTripleStates StateDisabled => _stateDisabled;
 
-		private bool ShouldSerializeStateDisabled()
+	    private bool ShouldSerializeStateDisabled()
 		{
 			return !_stateDisabled.IsDefault;
 		}
@@ -1110,12 +1076,9 @@ namespace ComponentFactory.Krypton.Toolkit
 		[Category("Visuals")]
 		[Description("Overrides for defining normal textbox appearance.")]
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
-        public PaletteInputControlTripleStates StateNormal
-		{
-			get { return _stateNormal; }
-		}
+        public PaletteInputControlTripleStates StateNormal => _stateNormal;
 
-		private bool ShouldSerializeStateNormal()
+	    private bool ShouldSerializeStateNormal()
 		{
 			return !_stateNormal.IsDefault;
 		}
@@ -1126,12 +1089,9 @@ namespace ComponentFactory.Krypton.Toolkit
         [Category("Visuals")]
         [Description("Overrides for defining active textbox appearance.")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
-        public PaletteInputControlTripleStates StateActive
-        {
-            get { return _stateActive; }
-        }
+        public PaletteInputControlTripleStates StateActive => _stateActive;
 
-        private bool ShouldSerializeStateActive()
+	    private bool ShouldSerializeStateActive()
         {
             return !_stateActive.IsDefault;
         }
@@ -1300,12 +1260,9 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public ToolTipManager ToolTipManager
-        {
-            get { return _toolTipManager; }
-        }
+        public ToolTipManager ToolTipManager => _toolTipManager;
 
-        /// <summary>
+	    /// <summary>
         /// Gets a value indicating if the input control is active.
         /// </summary>
         [Browsable(false)]
@@ -1736,12 +1693,9 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <summary>
         /// Gets the default size of the control.
         /// </summary>
-        protected override Size DefaultSize
-        {
-            get { return new Size(100, PreferredHeight); }
-        }
+        protected override Size DefaultSize => new Size(100, PreferredHeight);
 
-        /// <summary>
+	    /// <summary>
         /// Processes a notification from palette storage of a paint and optional layout required.
         /// </summary>
         /// <param name="sender">Source of notification.</param>
@@ -1825,11 +1779,9 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region Internal
-        internal bool InTransparentDesignMode
-        {
-            get { return InRibbonDesignMode; }
-        }
-        #endregion
+        internal bool InTransparentDesignMode => InRibbonDesignMode;
+
+	    #endregion
 
         #region Implementation
         private void UpdateStateAndPalettes()

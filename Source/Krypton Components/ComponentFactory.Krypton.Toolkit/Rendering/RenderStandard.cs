@@ -5267,7 +5267,7 @@ namespace ComponentFactory.Krypton.Toolkit
             string shortText = contentValues.GetShortText();
 
             // Is there any text to be drawn?
-            if ((shortText != null) && (shortText.Length > 0))
+            if (!string.IsNullOrEmpty(shortText))
             {
                 // If the text is not allowed to span multiple lines
                 if (paletteContent.GetContentShortTextMultiLine(state) == InheritBool.False)
@@ -5347,7 +5347,7 @@ namespace ComponentFactory.Krypton.Toolkit
             string longText = contentValues.GetLongText();
 
             // Is there any text to be drawn?
-            if ((longText != null) && (longText.Length > 0))
+            if (!string.IsNullOrEmpty(longText))
             {
                 // If the text is not allowed to span multiple lines
                 if (paletteContent.GetContentLongTextMultiLine(state) == InheritBool.False)

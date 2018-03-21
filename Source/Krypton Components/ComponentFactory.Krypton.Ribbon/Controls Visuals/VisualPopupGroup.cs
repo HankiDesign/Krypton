@@ -201,9 +201,7 @@ namespace ComponentFactory.Krypton.Ribbon
         public void ShowCalculatingSize(ViewDrawRibbonGroup parentGroup,
                                         Rectangle parentScreenRect)
         {
-            Size popupSize;
-
-            // Prevent ribbon from laying out the same group as we are
+	        // Prevent ribbon from laying out the same group as we are
             // about to get the preferred size from. This reentrancy can
             // happen if the group has a custom control that is then moved
             // to be reparented to the popup group and so therefore cause
@@ -214,7 +212,8 @@ namespace ComponentFactory.Krypton.Ribbon
             try
             {
                 // Find the size the group requests to be
-                using (ViewLayoutContext context = new ViewLayoutContext(this, Renderer))
+	            Size popupSize;
+	            using (ViewLayoutContext context = new ViewLayoutContext(this, Renderer))
                     popupSize = _viewGroup.GetPreferredSize(context);
 
                 // Override the height to enforce the correct group height

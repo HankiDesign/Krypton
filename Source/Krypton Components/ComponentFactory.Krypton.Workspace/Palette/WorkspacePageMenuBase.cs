@@ -32,7 +32,7 @@ namespace ComponentFactory.Krypton.Workspace
         /// Initialize a new instance of the WorkspacePageMenuBase class.
         /// </summary>
         /// <param name="workspace">Reference to owning workspace.</param>
-        public WorkspacePageMenuBase(KryptonWorkspace workspace)
+        protected WorkspacePageMenuBase(KryptonWorkspace workspace)
         {
             // Define the encryted licence information
             EncryptedLicenseProvider.SetParameters(_licenseParameters);
@@ -69,8 +69,7 @@ namespace ComponentFactory.Krypton.Workspace
                 }
 
                 // Remember to release resources no longer needed
-                if (license != null)
-                    license.Dispose();
+	            license?.Dispose();
             }
 
             // If we need to indicate the invalid licensing state...

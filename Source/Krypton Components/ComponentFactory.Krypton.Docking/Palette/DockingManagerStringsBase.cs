@@ -32,7 +32,7 @@ namespace ComponentFactory.Krypton.Docking
         /// Initialize a new instance of the DockingManagerStringsBase class.
         /// </summary>
         /// <param name="docking">Reference to owning docking manager.</param>
-        public DockingManagerStringsBase(KryptonDockingManager docking)
+        protected DockingManagerStringsBase(KryptonDockingManager docking)
         {
             // Define the encryted licence information
             EncryptedLicenseProvider.SetParameters(_licenseParameters);

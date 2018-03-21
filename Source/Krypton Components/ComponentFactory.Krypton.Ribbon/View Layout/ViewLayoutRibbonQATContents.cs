@@ -41,7 +41,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="ribbon">Owning ribbon control instance.</param>
         /// <param name="needPaint">Delegate for notifying paint requests.</param>
         /// <param name="showExtraButton">Should the extra button be shown.</param>
-        public ViewLayoutRibbonQATContents(KryptonRibbon ribbon,
+        protected ViewLayoutRibbonQATContents(KryptonRibbon ribbon,
                                            NeedPaintHandler needPaint,
                                            bool showExtraButton)
         {
@@ -391,15 +391,12 @@ namespace ComponentFactory.Krypton.Ribbon
         public ViewBase GetFirstQATView()
         {
             // Scan all the buttons looking for one that is enabled and visible
-            foreach (ViewBase qatView in _qatButtonToView.Values)
+            foreach (var qatView in _qatButtonToView.Values)
                 if (qatView.Visible && qatView.Enabled)
                     return qatView;
 
             // If showing the extra button, then use that
-            if (_extraButton != null)
-                return _extraButton;
-
-            return null;
+	        return _extraButton;
         }
         #endregion
 
@@ -444,7 +441,7 @@ namespace ComponentFactory.Krypton.Ribbon
             bool found = false;
 
             // Find the one after the target view
-            foreach (ViewBase qatView in _qatButtonToView.Values)
+            foreach (ViewDrawRibbonQATButton qatView in _qatButtonToView.Values)
             {
                 if (!found)
                     found = (qatView == qatButton);

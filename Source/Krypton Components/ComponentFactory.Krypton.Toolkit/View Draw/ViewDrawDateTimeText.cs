@@ -783,11 +783,8 @@ namespace ComponentFactory.Krypton.Toolkit
         private class FormatFragment
         {
             #region Instance Fields
-            private readonly string _fragment;
-            private readonly string _fragFormat;
-            private string _output;
-            private int _totalWidth;
-            #endregion
+
+	        #endregion
 
             #region Identity
             /// <summary>
@@ -798,12 +795,12 @@ namespace ComponentFactory.Krypton.Toolkit
             /// <param name="literal">String literal.</param>
             public FormatFragment(int length, string format, string literal)
             {
-                _fragFormat = literal;
+                FragFormat = literal;
 
                 if (length == 0)
-                    _fragment = string.Empty;
+                    Fragment = string.Empty;
                 else
-                    _fragment = format.Substring(0, length);
+                    Fragment = format.Substring(0, length);
             }
 
             /// <summary>
@@ -812,7 +809,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// <returns>String instance.</returns>
             public override string ToString()
             {
-                return _fragment;
+                return Fragment;
             }
             #endregion
 
@@ -820,37 +817,24 @@ namespace ComponentFactory.Krypton.Toolkit
             /// <summary>
             /// Gets access to the fragment string.
             /// </summary>
-            public string Fragment
-            {
-                get { return _fragment; }
-            }
+            public string Fragment { get; }
 
-            /// <summary>
+	        /// <summary>
             /// Gets access to the fragment format string.
             /// </summary>
-            public virtual string FragFormat
-            {
-                get { return _fragFormat; }
-            }
+            public virtual string FragFormat { get; }
 
-            /// <summary>
+	        /// <summary>
             /// Gets access to the generate output.
             /// </summary>
-            public string Output
-            {
-                get { return _output; }
-            }
+            public string Output { get; private set; }
 
-            /// <summary>
+	        /// <summary>
             /// Gets and sets the total pixel width of this fragments output.
             /// </summary>
-            public int TotalWidth
-            {
-                set { _totalWidth = value; }
-                get { return _totalWidth; }
-            }
+            public int TotalWidth { set; get; }
 
-            /// <summary>
+	        /// <summary>
             /// Generate the output string from the provided date and the format fragment.
             /// </summary>
             /// <param name="dt">DateTime used to generate output.</param>
@@ -858,27 +842,21 @@ namespace ComponentFactory.Krypton.Toolkit
             public string GenerateOutput(DateTime dt)
             {
                 // Use helper to ensure single character formats are handled correctly
-                _output = dt.ToString(CommonHelper.MakeCustomDateFormat(Fragment));
-                return _output;
+                Output = dt.ToString(CommonHelper.MakeCustomDateFormat(Fragment));
+                return Output;
             }
 
             /// <summary>
             /// Can this field be edited and active.
             /// </summary>
-            public virtual bool AllowActive
-            {
-                get { return false; }
-            }
+            public virtual bool AllowActive => false;
 
-            /// <summary>
+	        /// <summary>
             /// Gets the number of digits allowed to be entered for this fragment.
             /// </summary>
-            public virtual int InputDigits
-            {
-                get { return 0; }
-            }
+            public virtual int InputDigits => 0;
 
-            /// <summary>
+	        /// <summary>
             /// Process the input digits to modify the incoming date time.
             /// </summary>
             /// <param name="dt">Date time to modify.</param>

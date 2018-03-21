@@ -77,21 +77,20 @@ namespace ComponentFactory.Krypton.Toolkit
             /// </summary>
             public bool MouseOver
             {
-                get { return _mouseOver; }
-                
-                set 
+                get => _mouseOver;
+
+	            private set 
                 {
                     // Only interested in changes
-                    if (_mouseOver != value)
-                    {
-                        _mouseOver = value;
+	                if (_mouseOver == value) return;
 
-                        // Generate appropriate change event
-                        if (_mouseOver)
-                            OnTrackMouseEnter(EventArgs.Empty);
-                        else
-                            OnTrackMouseLeave(EventArgs.Empty);
-                    }
+	                _mouseOver = value;
+
+	                // Generate appropriate change event
+	                if (_mouseOver)
+		                OnTrackMouseEnter(EventArgs.Empty);
+	                else
+		                OnTrackMouseLeave(EventArgs.Empty);
                 }
             }
             #endregion

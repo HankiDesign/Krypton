@@ -46,7 +46,7 @@ namespace ComponentFactory.Krypton.Toolkit
 		/// <returns>New instance.</returns>
 		public override object Clone()
 		{
-			ButtonSpecAny clone = (ButtonSpecAny)base.Clone();
+			var clone = (ButtonSpecAny)base.Clone();
 			clone.Visible = Visible;
 			clone.Enabled = Enabled;
 			clone.Checked = Checked;
@@ -62,16 +62,10 @@ namespace ComponentFactory.Krypton.Toolkit
 		/// Gets a value indicating if all values are default.
 		/// </summary>
 		[Browsable(false)]
-		public override bool IsDefault
-		{
-			get
-			{
-				return (base.IsDefault &&
-						(Visible == true) &&
-						(Enabled == ButtonEnabled.Container) &&
-						(Checked == ButtonCheckState.NotCheckButton));
-			}
-		}
+		public override bool IsDefault => base.IsDefault &&
+		                                  Visible &&
+		                                  Enabled == ButtonEnabled.Container &&
+		                                  Checked == ButtonCheckState.NotCheckButton;
 
 		#endregion IsDefault
 
@@ -83,19 +77,18 @@ namespace ComponentFactory.Krypton.Toolkit
 		[Localizable(true)]
 		[Category("Behavior")]
 		[Description("Should the button be shown.")]
-		[RefreshPropertiesAttribute(RefreshProperties.All)]
+		[RefreshProperties(RefreshProperties.All)]
 		[DefaultValue(true)]
 		public bool Visible
 		{
-			get { return _visible; }
+			get => _visible;
 
 			set
 			{
-				if (_visible != value)
-				{
-					_visible = value;
-					OnButtonSpecPropertyChanged("Visible");
-				}
+				if (_visible == value) return;
+
+				_visible = value;
+				OnButtonSpecPropertyChanged(nameof(Visible));
 			}
 		}
 
@@ -117,19 +110,18 @@ namespace ComponentFactory.Krypton.Toolkit
 		[Localizable(true)]
 		[Category("Behavior")]
 		[Description("Defines the button enabled state.")]
-		[RefreshPropertiesAttribute(RefreshProperties.All)]
+		[RefreshProperties(RefreshProperties.All)]
 		[DefaultValue(typeof(ButtonEnabled), "Container")]
 		public ButtonEnabled Enabled
 		{
-			get { return _enabled; }
+			get => _enabled;
 
 			set
 			{
-				if (_enabled != value)
-				{
-					_enabled = value;
-					OnButtonSpecPropertyChanged("Enabled");
-				}
+				if (_enabled == value) return;
+
+				_enabled = value;
+				OnButtonSpecPropertyChanged(nameof(Enabled));
 			}
 		}
 
@@ -151,19 +143,18 @@ namespace ComponentFactory.Krypton.Toolkit
 		[Localizable(true)]
 		[Category("Behavior")]
 		[Description("Defines if the button is checked or capable of being checked.")]
-		[RefreshPropertiesAttribute(RefreshProperties.All)]
+		[RefreshProperties(RefreshProperties.All)]
 		[DefaultValue(typeof(ButtonCheckState), "NotCheckButton")]
 		public ButtonCheckState Checked
 		{
-			get { return _checked; }
+			get => _checked;
 
 			set
 			{
-				if (_checked != value)
-				{
-					_checked = value;
-					OnButtonSpecPropertyChanged("Checked");
-				}
+				if (_checked == value) return;
+
+				_checked = value;
+				OnButtonSpecPropertyChanged(nameof(Checked));
 			}
 		}
 
@@ -189,30 +180,28 @@ namespace ComponentFactory.Krypton.Toolkit
 		/// </summary>
 		[Category("Behavior")]
 		[Description("Command associated with the button.")]
-		[RefreshPropertiesAttribute(RefreshProperties.All)]
+		[RefreshProperties(RefreshProperties.All)]
 		[DefaultValue(null)]
 		public override KryptonCommand KryptonCommand
 		{
-			get { return base.KryptonCommand; }
+			get => base.KryptonCommand;
 
 			set
 			{
-				if (base.KryptonCommand != value)
+				if (base.KryptonCommand == value) return;
+
+				if (base.KryptonCommand == null)
 				{
-					if (base.KryptonCommand == null)
-					{
-						_wasEnabled = Enabled;
-						_wasChecked = Checked;
-					}
-
-					base.KryptonCommand = value;
-
-					if (base.KryptonCommand == null)
-					{
-						Enabled = _wasEnabled;
-						Checked = _wasChecked;
-					}
+					_wasEnabled = Enabled;
+					_wasChecked = Checked;
 				}
+
+				base.KryptonCommand = value;
+
+				if (base.KryptonCommand != null) return;
+
+				Enabled = _wasEnabled;
+				Checked = _wasChecked;
 			}
 		}
 
@@ -226,19 +215,17 @@ namespace ComponentFactory.Krypton.Toolkit
 		[Localizable(true)]
 		[Category("Behavior")]
 		[Description("Defines the type of button specification.")]
-		[RefreshPropertiesAttribute(RefreshProperties.All)]
+		[RefreshProperties(RefreshProperties.All)]
 		[DefaultValue(typeof(PaletteButtonSpecStyle), "Generic")]
 		public PaletteButtonSpecStyle Type
 		{
-			get { return ProtectedType; }
+			get => ProtectedType;
 
 			set
 			{
-				if (ProtectedType != value)
-				{
-					ProtectedType = value;
-					OnButtonSpecPropertyChanged("Type");
-				}
+				if (ProtectedType == value) return;
+				ProtectedType = value;
+				OnButtonSpecPropertyChanged(nameof(Type));
 			}
 		}
 
@@ -315,20 +302,21 @@ namespace ComponentFactory.Krypton.Toolkit
 		{
 			base.OnButtonSpecPropertyChanged(propertyName);
 
-			if (propertyName == "KryptonCommand")
+			switch (propertyName)
 			{
-				if (KryptonCommand != null)
-				{
-					if (Checked != ButtonCheckState.NotCheckButton)
-						Checked = (KryptonCommand.Checked ? ButtonCheckState.Checked : ButtonCheckState.Unchecked);
+				case "KryptonCommand":
+					if (KryptonCommand == null) return;
 
-					Enabled = (KryptonCommand.Enabled ? ButtonEnabled.True : ButtonEnabled.False);
-				}
-			}
-			else if (propertyName == "Checked")
-			{
-				if (KryptonCommand != null)
-					KryptonCommand.Checked = (Checked == ButtonCheckState.Checked);
+					if (Checked != ButtonCheckState.NotCheckButton)
+						Checked = KryptonCommand.Checked ? ButtonCheckState.Checked : ButtonCheckState.Unchecked;
+
+					Enabled = KryptonCommand.Enabled ? ButtonEnabled.True : ButtonEnabled.False;
+					break;
+
+				case "Checked":
+					if (KryptonCommand != null)
+						KryptonCommand.Checked = Checked == ButtonCheckState.Checked;
+					break;
 			}
 		}
 
@@ -344,11 +332,11 @@ namespace ComponentFactory.Krypton.Toolkit
 			switch (e.PropertyName)
 			{
 				case "Checked":
-					Checked = (KryptonCommand.Checked ? ButtonCheckState.Checked : ButtonCheckState.Unchecked);
+					Checked = KryptonCommand.Checked ? ButtonCheckState.Checked : ButtonCheckState.Unchecked;
 					break;
 
 				case "Enabled":
-					Enabled = (KryptonCommand.Enabled ? ButtonEnabled.True : ButtonEnabled.False);
+					Enabled = KryptonCommand.Enabled ? ButtonEnabled.True : ButtonEnabled.False;
 					break;
 			}
 		}

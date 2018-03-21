@@ -2878,7 +2878,7 @@ namespace ComponentFactory.Krypton.Navigator
                     foreach (KryptonPage page in Pages)
                     {
                         // Only update pages that do not match the incoming type
-                        if ((excludeType == null) || !(page.GetType() == excludeType))
+                        if ((excludeType == null) || page.GetType() != excludeType)
                         {
                             page.Visible = visible;
                             _viewBuilder.PageVisibleStateChanged(page);

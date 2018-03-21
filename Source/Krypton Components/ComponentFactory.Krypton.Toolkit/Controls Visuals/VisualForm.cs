@@ -101,7 +101,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <summary>
         /// Initialize a new instance of the VisualForm class. 
         /// </summary>
-        public VisualForm()
+        protected VisualForm()
         {
             // Automatically redraw whenever the size of the window changes
             SetStyle(ControlStyles.ResizeRedraw, true);
@@ -110,7 +110,7 @@ namespace ComponentFactory.Krypton.Toolkit
             _screenDC = PI.CreateCompatibleDC(IntPtr.Zero);
 
             // Setup the need paint delegate
-            _needPaintDelegate = new NeedPaintHandler(OnNeedPaint);
+            _needPaintDelegate = OnNeedPaint;
 
             // Set the palette and renderer to the defaults as specified by the manager
             _localPalette = null;
@@ -144,24 +144,23 @@ namespace ComponentFactory.Krypton.Toolkit
                 // Must unhook from the palette paint events
                 if (_palette != null)
                 {
-                    _palette.PalettePaint -= new EventHandler<PaletteLayoutEventArgs>(OnNeedPaint);
-                    _palette.ButtonSpecChanged -= new EventHandler(OnButtonSpecChanged);
-                    _palette.AllowFormChromeChanged -= new EventHandler(OnAllowFormChromeChanged);
-                    _palette.BasePaletteChanged -= new EventHandler(OnBaseChanged);
-                    _palette.BaseRendererChanged -= new EventHandler(OnBaseChanged);
+                    _palette.PalettePaint -= OnNeedPaint;
+                    _palette.ButtonSpecChanged -= OnButtonSpecChanged;
+                    _palette.AllowFormChromeChanged -= OnAllowFormChromeChanged;
+                    _palette.BasePaletteChanged -= OnBaseChanged;
+                    _palette.BaseRendererChanged -= OnBaseChanged;
                 }
 
                 // Unhook from global static events
-                KryptonManager.GlobalPaletteChanged -= new EventHandler(OnGlobalPaletteChanged);
-                SystemEvents.UserPreferenceChanged -= new UserPreferenceChangedEventHandler(OnUserPreferenceChanged);
+                KryptonManager.GlobalPaletteChanged -= OnGlobalPaletteChanged;
+                SystemEvents.UserPreferenceChanged -= OnUserPreferenceChanged;
             }
 
             base.Dispose(disposing);
 
-            if (ViewManager != null)
-                ViewManager.Dispose();
+	        ViewManager?.Dispose();
 
-            if (_screenDC != IntPtr.Zero)
+	        if (_screenDC != IntPtr.Zero)
                 PI.DeleteDC(_screenDC);
         }
         #endregion

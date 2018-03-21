@@ -1473,24 +1473,21 @@ namespace ComponentFactory.Krypton.Workspace
                     while (cells.Count > 0)
                     {
                         // Add a maximum of sequenceItems to the sequence
-                        KryptonWorkspaceSequence sequence = new KryptonWorkspaceSequence(sequenceDirection);
+                        var sequence = new KryptonWorkspaceSequence(sequenceDirection);
                         for (int j = 0; j < sequenceItems; j++)
                         {
-                            // If no cells then do we need to create a cell?
-                            if (createCellIfEmpty || cells.Count > 0)
-                            {
-                                KryptonWorkspaceCell cell;
+	                        // If no cells then do we need to create a cell?
+	                        if (!createCellIfEmpty && cells.Count <= 0) continue;
 
-                                // If there are no more cells then create one now
-                                if (cells.Count == 0)
-                                    sequence.Children.Add(new KryptonWorkspaceCell());
-                                else
-                                {
-                                    cell = cells[0];
-                                    cells.RemoveAt(0);
-                                    sequence.Children.Add(cell);
-                                }
-                            }
+	                        // If there are no more cells then create one now
+	                        if (cells.Count == 0)
+		                        sequence.Children.Add(new KryptonWorkspaceCell());
+	                        else
+	                        {
+		                        var cell = cells[0];
+		                        cells.RemoveAt(0);
+		                        sequence.Children.Add(cell);
+	                        }
                         }
 
                         Root.Children.Add(sequence);

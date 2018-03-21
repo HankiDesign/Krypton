@@ -333,12 +333,12 @@ namespace ComponentFactory.Krypton.Toolkit
             Debug.Assert(context != null);
 
             // Validate incoming reference
-            if (context == null) throw new ArgumentNullException("context");
+            if (context == null) throw new ArgumentNullException(nameof(context));
 
             // Do we need to draw the content?
 			if (_paletteContent.GetContentDraw(State) == InheritBool.True)
 			{
-                bool allowFocusRect = (_testForFocusCues ? ShowFocusCues(context.Control) : true);
+                bool allowFocusRect = !_testForFocusCues || ShowFocusCues(context.Control);
 
 				// Draw using memento returned from render layout
 				context.Renderer.RenderStandardContent.DrawContent(context, 

@@ -76,21 +76,20 @@ namespace ComponentFactory.Krypton.Toolkit
             /// </summary>
             public bool MouseOver
             {
-                get { return _mouseOver; }
-                
-                set 
+                get => _mouseOver;
+
+	            private set 
                 {
                     // Only interested in changes
-                    if (_mouseOver != value)
-                    {
-                        _mouseOver = value;
+	                if (_mouseOver == value) return;
 
-                        // Generate appropriate change event
-                        if (_mouseOver)
-                            OnTrackMouseEnter(EventArgs.Empty);
-                        else
-                            OnTrackMouseLeave(EventArgs.Empty);
-                    }
+	                _mouseOver = value;
+
+	                // Generate appropriate change event
+	                if (_mouseOver)
+		                OnTrackMouseEnter(EventArgs.Empty);
+	                else
+		                OnTrackMouseLeave(EventArgs.Empty);
                 }
             }
             #endregion
@@ -292,8 +291,8 @@ namespace ComponentFactory.Krypton.Toolkit
             private readonly KryptonDomainUpDown _kryptonDomainUpDown;
             private readonly InternalDomainUpDown _internalDomainUpDown;
             private bool _mouseOver;
-            private Point _mousePoint;
-            #endregion
+
+	        #endregion
 
             #region Events
             /// <summary>
@@ -325,7 +324,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 AssignHandle(editControl);
 
                 // By default, not over a valid part of the client
-                _mousePoint = new Point(-int.MaxValue, -int.MaxValue);
+                MousePoint = new Point(-int.MaxValue, -int.MaxValue);
             }
             #endregion
 
@@ -335,46 +334,39 @@ namespace ComponentFactory.Krypton.Toolkit
             /// </summary>
             public bool MouseOver
             {
-                get { return _mouseOver; }
+                get => _mouseOver;
 
-                set
+	            private set
                 {
                     // Only interested in changes
-                    if (_mouseOver != value)
-                    {
-                        _mouseOver = value;
+	                if (_mouseOver == value) return;
 
-                        // Generate appropriate change event
-                        if (_mouseOver)
-                            OnTrackMouseEnter(EventArgs.Empty);
-                        else
-                            OnTrackMouseLeave(EventArgs.Empty);
-                    }
+	                _mouseOver = value;
+
+	                // Generate appropriate change event
+	                if (_mouseOver)
+		                OnTrackMouseEnter(EventArgs.Empty);
+	                else
+		                OnTrackMouseLeave(EventArgs.Empty);
                 }
             }
 
             /// <summary>
             /// Gets the last mouse point if the mouse is over the control.
             /// </summary>
-            public Point MousePoint
-            {
-                get { return _mousePoint; }
-            }
+            protected Point MousePoint { get; private set; }
 
-            /// <summary>
+	        /// <summary>
             /// Sets the visible state of the control.
             /// </summary>
             public bool Visible
             {
-                set
-                {
-                    PI.SetWindowPos(Handle,
-                                    IntPtr.Zero,
-                                    0, 0, 0, 0,
-                                    (uint)(PI.SWP_NOMOVE | PI.SWP_NOSIZE |
-                                    (value ? PI.SWP_SHOWWINDOW : PI.SWP_HIDEWINDOW)));
-                }
-            }
+                set => PI.SetWindowPos(Handle,
+	                IntPtr.Zero,
+	                0, 0, 0, 0,
+	                (uint)(PI.SWP_NOMOVE | PI.SWP_NOSIZE |
+	                       (value ? PI.SWP_SHOWWINDOW : PI.SWP_HIDEWINDOW)));
+	        }
             #endregion
 
             #region Protected
@@ -403,13 +395,13 @@ namespace ComponentFactory.Krypton.Toolkit
                     case PI.WM_MOUSELEAVE:
                         // Mouse is not over the control
                         MouseOver = false;
-                        _mousePoint = new Point(-int.MaxValue, -int.MaxValue);
+                        MousePoint = new Point(-int.MaxValue, -int.MaxValue);
                         DomainUpDown.PerformNeedPaint(true);
                         base.WndProc(ref m);
                         break;
                     case PI.WM_MOUSEMOVE:
                         // Extra mouse position
-                        _mousePoint = new Point((int)m.LParam.ToInt64());
+                        MousePoint = new Point((int)m.LParam.ToInt64());
 
                         // Mouse is over the control
                         if (!MouseOver)

@@ -583,8 +583,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 }
 			}
 
-            int borderWidth = 0;
-            Rectangle borderRect = ClientRectangle;
+			Rectangle borderRect = ClientRectangle;
             Padding padding = Padding.Empty;
 
             if (!IgnoreAllBorderAndPadding)
@@ -592,7 +591,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 // Find the actual width of the border as we need to compare this to the calculating border
                 // padding to work out how far from corners we can ignore the calculated border padding and 
                 // instead use the actual width only.
-                borderWidth = _paletteBorder.GetBorderWidth(State);
+                var borderWidth = _paletteBorder.GetBorderWidth(State);
 
                 // Update padding to reflect the orientation we are using
                 padding = context.Renderer.RenderStandardBorder.GetBorderDisplayPadding(_paletteBorder, State, Orientation);

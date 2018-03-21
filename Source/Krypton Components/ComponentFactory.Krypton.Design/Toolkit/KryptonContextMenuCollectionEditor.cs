@@ -1016,28 +1016,28 @@ namespace ComponentFactory.Krypton.Toolkit
                                       Type addType)
             {
                 // Special case the you can use add button on an Items collection so it adds an item inside it
-                if ((item is KryptonContextMenuItems) && addType.Equals(typeof(KryptonContextMenuItem)))
+                if ((item is KryptonContextMenuItems) && addType == typeof(KryptonContextMenuItem))
                     return true;
 
                 if (ItemInsideCollection(item, parent))
                 {
                     KryptonContextMenuCollection temp = new KryptonContextMenuCollection();
                     foreach (Type t in temp.RestrictTypes)
-                        if (t.Equals(addType))
+                        if (t == addType)
                             return true;
                 }
                 else
                 {
                     KryptonContextMenuItemCollection temp1 = new KryptonContextMenuItemCollection();
                     foreach (Type t in temp1.RestrictTypes)
-                        if (t.Equals(addType))
+                        if (t == addType)
                             return true;
 
                     if ((item != null) && (item is KryptonContextMenuItem))
                     {
                         KryptonContextMenuCollection temp2 = new KryptonContextMenuCollection();
                         foreach (Type t in temp2.RestrictTypes)
-                            if (t.Equals(addType))
+                            if (t == addType)
                                 return true;
                     }
                 }
@@ -1050,7 +1050,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 Type addType = item.GetType();
                 KryptonContextMenuCollection temp = new KryptonContextMenuCollection();
                 foreach (Type t in temp.RestrictTypes)
-                    if (t.Equals(addType))
+                    if (t == addType)
                         return true;
 
                 return false;
@@ -1061,7 +1061,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 Type addType = item.GetType();
                 KryptonContextMenuItemCollection temp = new KryptonContextMenuItemCollection();
                 foreach (Type t in temp.RestrictTypes)
-                    if (t.Equals(addType))
+                    if (t == addType)
                         return true;
 
                 return false;
@@ -1093,18 +1093,16 @@ namespace ComponentFactory.Krypton.Toolkit
                 dictItems.Add(baseItem, baseItem);
 
                 // Add children of an items collection
-                if (baseItem is KryptonContextMenuItems)
+                if (baseItem is KryptonContextMenuItems items)
                 {
-                    KryptonContextMenuItems items = (KryptonContextMenuItems)baseItem;
-                    foreach (KryptonContextMenuItemBase childItem in items.Items)
+	                foreach (KryptonContextMenuItemBase childItem in items.Items)
                         AddItemsToDictionary(dictItems, childItem);
                 }
 
                 // Add children of an item
-                if (baseItem is KryptonContextMenuItem)
+                if (baseItem is KryptonContextMenuItem item)
                 {
-                    KryptonContextMenuItem item = (KryptonContextMenuItem)baseItem;
-                    foreach (KryptonContextMenuItemBase childItem in item.Items)
+	                foreach (KryptonContextMenuItemBase childItem in item.Items)
                         AddItemsToDictionary(dictItems, childItem);
                 }
             }
@@ -1116,10 +1114,9 @@ namespace ComponentFactory.Krypton.Toolkit
                 // Add all new components (in the 'after' but not the 'before'
                 foreach (KryptonContextMenuItemBase item in after.Values)
                     if (!before.ContainsKey(item))
-                    {
-                        if (context.Container != null)
-                            context.Container.Add(item);
-                    }
+	                    {
+		                    context.Container?.Add(item);
+	                    }
 
                 // Delete all old components (in the 'before' but not the 'after'
                 foreach (KryptonContextMenuItemBase item in before.Values)
@@ -1127,8 +1124,7 @@ namespace ComponentFactory.Krypton.Toolkit
                     {
                         DestroyInstance(item);
 
-                        if (context.Container != null)
-                            context.Container.Remove(item);
+	                    context.Container?.Remove(item);
                     }
 
                 IComponentChangeService changeService = (IComponentChangeService)GetService(typeof(IComponentChangeService));

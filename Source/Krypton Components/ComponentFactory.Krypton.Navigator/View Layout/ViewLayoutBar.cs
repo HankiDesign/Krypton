@@ -340,11 +340,7 @@ namespace ComponentFactory.Krypton.Navigator
                 // Line spacing gap can never be less than zero
                 int lineGap = (gap < 0 ? 0 : gap);
                 
-                bool reversed = false;
-
-                // Do we need to apply right to left by positioning children in reverse order?
-                if (IsOneLine && !BarVertical && (context.Control.RightToLeft == RightToLeft.Yes))
-                    reversed = true;
+                var reversed = IsOneLine && !BarVertical && context.Control.RightToLeft == RightToLeft.Yes;
 
                 // Allocate caching for size of each child element
                 _childSizes = new Size[Count];

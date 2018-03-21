@@ -34,8 +34,7 @@ namespace ComponentFactory.Krypton.Workspace
     {
         #region Instance Fields
         private IWorkspaceItem _parent;
-        private KryptonWorkspace _workspace;
-        private readonly KryptonWorkspaceCollection _children;
+	    private readonly KryptonWorkspaceCollection _children;
         private Orientation _orientation;
         private bool _setVisible;
         private readonly StarSize _starSize;
@@ -489,15 +488,13 @@ namespace ComponentFactory.Krypton.Workspace
             workspace.WriteSequenceElement(xmlWriter, this);
 
             // Persist each child sequence/cell in turn
-            foreach (object child in Children)
+            foreach (var child in Children)
             {
-                KryptonWorkspaceSequence sequence = child as KryptonWorkspaceSequence;
-                if (sequence != null)
-                    sequence.SaveToXml(workspace, xmlWriter);
+                var sequence = child as KryptonWorkspaceSequence;
+	            sequence?.SaveToXml(workspace, xmlWriter);
 
-                KryptonWorkspaceCell cell = child as KryptonWorkspaceCell;
-                if (cell != null)
-                    cell.SaveToXml(workspace, xmlWriter);
+	            var cell = child as KryptonWorkspaceCell;
+	            cell?.SaveToXml(workspace, xmlWriter);
             }
 
             // Terminate the workspace element        
@@ -518,36 +515,36 @@ namespace ComponentFactory.Krypton.Workspace
             workspace.ReadSequenceElement(xmlReader, this);
 
             // If the sequence contains nothing then exit immediately
-            if (!xmlReader.IsEmptyElement)
-            {
-                do
-                {
-                    // Read the next Element
-                    if (!xmlReader.Read())
-                        throw new ArgumentException("An element was expected but could not be read in.");
+	        if (xmlReader.IsEmptyElement) return;
 
-                    // Is this the end of the sequence
-                    if (xmlReader.NodeType == XmlNodeType.EndElement)
-                        break;
+	        do
+	        {
+		        // Read the next Element
+		        if (!xmlReader.Read())
+			        throw new ArgumentException("An element was expected but could not be read in.");
 
-                    // Is it another sequence?
-                    if (xmlReader.Name == "WS")
-                    {
-                        KryptonWorkspaceSequence sequence = new KryptonWorkspaceSequence();
-                        sequence.LoadFromXml(workspace, xmlReader, existingPages);
-                        Children.Add(sequence);
-                    }
-                    else if (xmlReader.Name == "WC")
-                    {
-                        KryptonWorkspaceCell cell = new KryptonWorkspaceCell();
-                        cell.LoadFromXml(workspace, xmlReader, existingPages);
-                        Children.Add(cell);
-                    }
-                    else
-                        throw new ArgumentException("Unknown element was encountered.");
-                }
-                while (true);
-            }
+		        // Is this the end of the sequence
+		        if (xmlReader.NodeType == XmlNodeType.EndElement)
+			        break;
+
+		        // Is it another sequence?
+		        switch (xmlReader.Name)
+		        {
+			        case "WS":
+				        var sequence = new KryptonWorkspaceSequence();
+				        sequence.LoadFromXml(workspace, xmlReader, existingPages);
+				        Children.Add(sequence);
+				        break;
+			        case "WC":
+				        var cell = new KryptonWorkspaceCell();
+				        cell.LoadFromXml(workspace, xmlReader, existingPages);
+				        Children.Add(cell);
+				        break;
+			        default:
+				        throw new ArgumentException("Unknown element was encountered.");
+		        }
+	        }
+	        while (true);
         }
 
         /// <summary>
@@ -555,13 +552,9 @@ namespace ComponentFactory.Krypton.Workspace
         /// </summary>
         [EditorBrowsable(EditorBrowsableState.Never)]
         [Browsable(false)]
-        public KryptonWorkspace WorkspaceControl
-        {
-            get { return _workspace; }
-            set { _workspace = value; }
-        }
+        public KryptonWorkspace WorkspaceControl { get; set; }
 
-        /// <summary>
+	    /// <summary>
         /// Output debug information about the workspace hierarchy.
         /// </summary>
         [Browsable(false)]
@@ -570,15 +563,13 @@ namespace ComponentFactory.Krypton.Workspace
         {
             Console.WriteLine("{0}Sequence Count:{1} Visible:{1}", new string(' ', indent * 2), Children.Count, Visible);
 
-            foreach (object child in Children)
+            foreach (var child in Children)
             {
-                KryptonWorkspaceSequence sequence = child as KryptonWorkspaceSequence;
-                if (sequence != null)
-                    sequence.DebugOutput(indent + 1);
+                var sequence = child as KryptonWorkspaceSequence;
+	            sequence?.DebugOutput(indent + 1);
 
-                KryptonWorkspaceCell cell = child as KryptonWorkspaceCell;
-                if (cell != null)
-                    cell.DebugOutput(indent + 1);
+	            var cell = child as KryptonWorkspaceCell;
+	            cell?.DebugOutput(indent + 1);
             }
         }        
         #endregion

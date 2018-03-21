@@ -23,11 +23,11 @@ namespace ComponentFactory.Krypton.Toolkit
         #region GradientItemColors
         private abstract class GradientItemColors
         {
-            #region Public Fields
+            #region Fields
             public Color Border1;
             public Color Border2;
-            public Color Back1;
-            public Color Back2;
+	        protected Color Back1;
+	        protected Color Back2;
             #endregion
 
             #region Identity

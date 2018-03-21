@@ -509,8 +509,7 @@ namespace ComponentFactory.Krypton.Toolkit
             private readonly IntPtr _screenDC;
             private bool _mouseOver;
             private bool _killNextSelect;
-            private int _mouseIndex;
-            private int _lastSelected;
+	        private int _lastSelected;
             #endregion
 
             #region Events
@@ -541,7 +540,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 SetStyle(ControlStyles.ResizeRedraw, true);
 
                 _kryptonCheckedListBox = kryptonCheckedListBox;
-                _mouseIndex = -1;
+                MouseIndex = -1;
                 _lastSelected = -1;
 
                 // Create manager and view for drawing the background
@@ -591,34 +590,30 @@ namespace ComponentFactory.Krypton.Toolkit
             /// <summary>
             /// Gets the item index the mouse is over.
             /// </summary>
-            public int MouseIndex
-            {
-                get { return _mouseIndex; }
-            }
+            public int MouseIndex { get; private set; }
 
-            /// <summary>
+	        /// <summary>
             /// Gets and sets if the mouse is currently over the combo box.
             /// </summary>
             public bool MouseOver
             {
-                get { return _mouseOver; }
+                get => _mouseOver;
 
-                set
+	            private set
                 {
                     // Only interested in changes
-                    if (_mouseOver != value)
-                    {
-                        _mouseOver = value;
+	                if (_mouseOver == value) return;
 
-                        // Generate appropriate change event
-                        if (_mouseOver)
-                            OnTrackMouseEnter(EventArgs.Empty);
-                        else
-                        {
-                            OnTrackMouseLeave(EventArgs.Empty);
-                            _mouseIndex = -1;
-                        }
-                    }
+	                _mouseOver = value;
+
+	                // Generate appropriate change event
+	                if (_mouseOver)
+		                OnTrackMouseEnter(EventArgs.Empty);
+	                else
+	                {
+		                OnTrackMouseLeave(EventArgs.Empty);
+		                MouseIndex = -1;
+	                }
                 }
             }
 
@@ -775,10 +770,10 @@ namespace ComponentFactory.Krypton.Toolkit
                             }
 
                             // If item under mouse has changed, then need to reflect for tracking
-                            if (_mouseIndex != mouseIndex)
+                            if (MouseIndex != mouseIndex)
                             {
                                 Invalidate();
-                                _mouseIndex = mouseIndex;
+                                MouseIndex = mouseIndex;
                             }
                         }
                         base.WndProc(ref m);
@@ -832,26 +827,26 @@ namespace ComponentFactory.Krypton.Toolkit
             #endregion
 
             #region Internal
-            internal object InnerArray
-            {
-                get
-                {
-                    // First time around we need to use reflection to grab inner array
-                    if (_innerArray == null)
-                    {
-                        PropertyInfo pi = typeof(ListBox.ObjectCollection).GetProperty("InnerArray",
-                                                                                        BindingFlags.Instance |
-                                                                                        BindingFlags.NonPublic |
-                                                                                        BindingFlags.GetField);
 
-                        _innerArray = pi.GetValue(Items, new object[] { });
-                    }
+	        private object InnerArray
+	        {
+		        get
+		        {
+			        // First time around we need to use reflection to grab inner array
+			        if (_innerArray != null) return _innerArray;
 
-                    return _innerArray;
-                }
-            }
+			        var pi = typeof(ObjectCollection).GetProperty("InnerArray",
+				        BindingFlags.Instance |
+				        BindingFlags.NonPublic |
+				        BindingFlags.GetField);
 
-            internal int InnerArrayGetCount(int stateMask)
+			        if (pi != null) _innerArray = pi.GetValue(Items, new object[] { });
+
+			        return _innerArray;
+		        }
+	        }
+
+	        internal int InnerArrayGetCount(int stateMask)
             {
                 if (_miGetCount == null)
                     _miGetCount = InnerArray.GetType().GetMethod("GetCount", new Type[] { typeof(int) }, null);
@@ -2570,10 +2565,8 @@ namespace ComponentFactory.Krypton.Toolkit
                 }
 
                 // Do we need to show item as having the focus
-                bool hasFocus = false;
-                if (((e.State & DrawItemState.Focus) == DrawItemState.Focus) &&
-                    ((e.State & DrawItemState.NoFocusRect) != DrawItemState.NoFocusRect))
-                    hasFocus = true;
+                var hasFocus = (e.State & DrawItemState.Focus) == DrawItemState.Focus &&
+                    (e.State & DrawItemState.NoFocusRect) != DrawItemState.NoFocusRect;
 
                 _overrideNormal.Apply = hasFocus;
                 _overrideTracking.Apply = hasFocus;

@@ -157,15 +157,15 @@ namespace ComponentFactory.Krypton.Ribbon
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public KryptonRibbon Ribbon
         {
-            get { return _ribbon; }
+            get => _ribbon;
 
-            internal set
+	        internal set
             {
                 _ribbon = value;
 
                 // Forward the reference to all children (just in case the children
                 // are added before the this object is added to the owner)
-                foreach (KryptonRibbonGroupItem item in _ribbonGroupItems)
+                foreach (KryptonRibbonGroupContainer item in _ribbonGroupItems)
                     item.Ribbon = value;
             }
         }
@@ -178,15 +178,15 @@ namespace ComponentFactory.Krypton.Ribbon
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public KryptonRibbonTab RibbonTab
         {
-            get { return _ribbonTab; }
+            get => _ribbonTab;
 
-            internal set
+	        internal set
             {
                 _ribbonTab = value;
 
                 // Forward the reference to all children (just in case the children
                 // are added before the this object is added to the owner)
-                foreach (KryptonRibbonGroupItem item in _ribbonGroupItems)
+                foreach (KryptonRibbonGroupContainer item in _ribbonGroupItems)
                     item.RibbonTab = value;
             }
         }

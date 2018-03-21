@@ -58,7 +58,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="viewMetricPaddings">Array of target metrics for button padding.</param>
         /// <param name="getRenderer">Delegate for returning a tool strip renderer.</param>
         /// <param name="needPaint">Delegate for notifying paint requests.</param>
-        public ButtonSpecManagerBase(Control control,
+        protected ButtonSpecManagerBase(Control control,
                                      PaletteRedirect redirector,
                                      ButtonSpecCollectionBase variableSpecs,
                                      ButtonSpecCollectionBase fixedSpecs,
@@ -783,64 +783,56 @@ namespace ComponentFactory.Krypton.Toolkit
             // Find the docker index that is the target for the button spec
             int viewDockerIndex = GetTargetDockerIndex(buttonSpec.GetLocation(_redirector));
 
-            IPaletteMetric viewPaletteMetric = null;
-            PaletteMetricPadding viewMetricPadding = PaletteMetricPadding.None;
+	        // Are we applying metrics
+	        if ((_viewMetrics == null) || (_viewMetrics.Length <= viewDockerIndex) ||
+	            (_viewMetricPaddings.Length <= viewDockerIndex)) return null;
 
-            // Are we applying metrics
-            if ((_viewMetrics != null) &&
-                (_viewMetrics.Length > viewDockerIndex) &&
-                (_viewMetricPaddings.Length > viewDockerIndex))
-            {
-                viewPaletteMetric = _viewMetrics[viewDockerIndex];
-                viewMetricPadding = _viewMetricPaddings[viewDockerIndex];
+	        var viewPaletteMetric = _viewMetrics[viewDockerIndex];
+	        var viewMetricPadding = _viewMetricPaddings[viewDockerIndex];
 
-                // Create an instance to manage the individual button spec
-                ButtonSpecView buttonView = CreateButtonSpecView(_redirector, viewPaletteMetric, viewMetricPadding, buttonSpec);
+	        // Create an instance to manage the individual button spec
+	        var buttonView = CreateButtonSpecView(_redirector, viewPaletteMetric, viewMetricPadding, buttonSpec);
 
-                // Add a lookup from the button spec to the button spec view
-                _specLookup.Add(buttonSpec, buttonView);
+	        // Add a lookup from the button spec to the button spec view
+	        _specLookup.Add(buttonSpec, buttonView);
 
-                // Update the button with the same orientation as the view header
-                buttonView.ViewButton.Orientation = CalculateOrientation(DockerOrientation(viewDockerIndex),
-                                                                         buttonSpec.GetOrientation(_redirector));
+	        // Update the button with the same orientation as the view header
+	        buttonView.ViewButton.Orientation = CalculateOrientation(DockerOrientation(viewDockerIndex),
+		        buttonSpec.GetOrientation(_redirector));
 
-                buttonView.ViewCenter.Orientation = DockerOrientation(viewDockerIndex);
+	        buttonView.ViewCenter.Orientation = DockerOrientation(viewDockerIndex);
 
-                // Insert the button view into the docker
-                AddViewToDocker(viewDockerIndex, GetDockStyle(buttonSpec), buttonView.ViewCenter, (_viewMetrics != null));
+	        // Insert the button view into the docker
+	        AddViewToDocker(viewDockerIndex, GetDockStyle(buttonSpec), buttonView.ViewCenter, (_viewMetrics != null));
 
-                // Perform any last construction steps for button spec
-                ButtonSpecCreated(buttonSpec, buttonView, viewDockerIndex);
+	        // Perform any last construction steps for button spec
+	        ButtonSpecCreated(buttonSpec, buttonView, viewDockerIndex);
 
-                // Hook in to the button spec change event
-                buttonSpec.ButtonSpecPropertyChanged += new PropertyChangedEventHandler(OnPropertyChanged);
+	        // Hook in to the button spec change event
+	        buttonSpec.ButtonSpecPropertyChanged += OnPropertyChanged;
 
-                return buttonView;
-            }
-
-            return null;
+	        return buttonView;
         }
 
         private void RemoveButtonSpec(ButtonSpec buttonSpec)
         {
             // Unhook from button spec events
-            buttonSpec.ButtonSpecPropertyChanged -= new PropertyChangedEventHandler(OnPropertyChanged);
+            buttonSpec.ButtonSpecPropertyChanged -= OnPropertyChanged;
 
             // Get the button view from the button spec
-            ButtonSpecView buttonView = _specLookup[buttonSpec];
+            var buttonView = _specLookup[buttonSpec];
 
-            if (buttonView != null)
-            {
-                // Remove the view that was created for the button from its header
-                if ((buttonView.ViewCenter.Parent != null) &&
-                     buttonView.ViewCenter.Parent.Contains(buttonView.ViewCenter))
-                {
-                    buttonView.ViewCenter.Parent.Remove(buttonView.ViewCenter);
-                }
+	        if (buttonView == null) return;
 
-                // Pull down the view for the button
-                buttonView.Destruct();
-            }
+	        // Remove the view that was created for the button from its header
+	        if ((buttonView.ViewCenter.Parent != null) &&
+	            buttonView.ViewCenter.Parent.Contains(buttonView.ViewCenter))
+	        {
+		        buttonView.ViewCenter.Parent.Remove(buttonView.ViewCenter);
+	        }
+
+	        // Pull down the view for the button
+	        buttonView.Destruct();
         }
 
         private void OnButtonSpecInserted(object sender, ButtonSpecEventArgs e)

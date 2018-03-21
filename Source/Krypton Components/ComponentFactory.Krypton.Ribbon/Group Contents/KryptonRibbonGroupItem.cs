@@ -35,7 +35,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <summary>
         /// Initialise a new instance of the KryptonRibbonGroupItem class.
         /// </summary>
-        public KryptonRibbonGroupItem()
+        protected KryptonRibbonGroupItem()
         {
         }
         #endregion

@@ -108,8 +108,8 @@ namespace ComponentFactory.Krypton.Toolkit
             private Nullable<bool> _appThemed;
             private bool _mouseTracking;
             private bool _mouseOver;
-            private bool _dropped;
-            #endregion
+
+	        #endregion
 
             #region Events
             /// <summary>
@@ -144,13 +144,9 @@ namespace ComponentFactory.Krypton.Toolkit
             /// <summary>
             /// Gets and sets if the combo box is currently dropped.
             /// </summary>
-            public bool Dropped
-            {
-                get { return _dropped; }
-                set { _dropped = value; }
-            }
+            public bool Dropped { get; set; }
 
-            /// <summary>
+	        /// <summary>
             /// Gets and sets if the mouse is currently over the combo box.
             /// </summary>
             public bool MouseOver
