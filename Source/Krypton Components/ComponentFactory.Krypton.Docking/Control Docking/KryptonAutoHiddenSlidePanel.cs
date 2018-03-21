@@ -9,18 +9,10 @@
 // *****************************************************************************
 
 using System;
-using System.IO;
-using System.Xml;
-using System.Text;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Design;
 using System.ComponentModel;
-using System.ComponentModel.Design;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using System.Diagnostics;
-using System.Security;
 using System.Security.Permissions;
 using ComponentFactory.Krypton.Toolkit;
 using ComponentFactory.Krypton.Navigator;

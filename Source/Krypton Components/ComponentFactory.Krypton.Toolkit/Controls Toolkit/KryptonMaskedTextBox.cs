@@ -9,17 +9,12 @@
 // *****************************************************************************
 
 using System;
-using System.Text;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Design;
 using System.ComponentModel;
-using System.Collections.Generic;
-using System.ComponentModel.Design;
 using System.Runtime.InteropServices;
 using System.Globalization;
 using System.Windows.Forms;
-using System.Windows.Forms.Design;
 
 namespace ComponentFactory.Krypton.Toolkit
 {

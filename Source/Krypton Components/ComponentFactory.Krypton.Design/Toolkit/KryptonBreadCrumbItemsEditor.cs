@@ -9,14 +9,10 @@
 // *****************************************************************************
 
 using System;
-using System.Text;
 using System.Drawing;
-using System.Drawing.Design;
 using System.Windows.Forms;
-using System.Windows.Forms.Design;
 using System.ComponentModel;
 using System.ComponentModel.Design;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace ComponentFactory.Krypton.Toolkit

@@ -9,15 +9,11 @@
 // *****************************************************************************
 
 using System;
-using System.Data;
-using System.Text;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
 using System.Diagnostics;
 using System.Windows.Forms;
 using System.ComponentModel;
-using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Windows.Forms.VisualStyles;
 using System.Reflection;

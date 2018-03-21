@@ -10,9 +10,7 @@
 
 using System;
 using System.Drawing;
-using System.Diagnostics;
 using System.Collections.Generic;
-using ComponentFactory.Krypton.Toolkit;
 
 namespace ComponentFactory.Krypton.Navigator
 {

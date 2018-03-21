@@ -9,10 +9,7 @@
 // *****************************************************************************
 
 using System;
-using System.Drawing;
-using System.ComponentModel;
 using System.Windows.Forms;
-using System.Diagnostics;
 using ComponentFactory.Krypton.Toolkit;
 
 namespace ComponentFactory.Krypton.Ribbon

@@ -12,8 +12,6 @@ using System;
 using System.Drawing;
 using System.Diagnostics;
 using System.Collections.Generic;
-using System.Windows.Forms;
-using System.ComponentModel;
 using ComponentFactory.Krypton.Toolkit;
 using ComponentFactory.Krypton.Navigator;
 

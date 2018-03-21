@@ -10,7 +10,6 @@
 
 using System;
 using System.Drawing;
-using System.Diagnostics;
 using System.Windows.Forms;
 using System.IO;
 using ComponentFactory.Krypton.Toolkit;

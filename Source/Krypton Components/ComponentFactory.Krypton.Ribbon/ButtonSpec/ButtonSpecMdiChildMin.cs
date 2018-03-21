@@ -9,13 +9,7 @@
 // *****************************************************************************
 
 using System;
-using System.Text;
-using System.Drawing;
-using System.Drawing.Design;
 using System.Windows.Forms;
-using System.ComponentModel;
-using System.ComponentModel.Design;
-using System.Collections.Generic;
 using System.Diagnostics;
 using ComponentFactory.Krypton.Toolkit;
 

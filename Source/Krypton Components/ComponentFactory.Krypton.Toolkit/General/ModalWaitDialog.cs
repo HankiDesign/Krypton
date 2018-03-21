@@ -10,10 +10,8 @@
 
 using System;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using System.ComponentModel;
-using System.Security;
 using System.Security.Permissions;
 using ComponentFactory.Krypton.Toolkit.Properties;
 

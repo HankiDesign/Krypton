@@ -8,16 +8,8 @@
 //  Version 4.4.0.0 	www.ComponentFactory.com
 // *****************************************************************************
 
-using System;
-using System.Collections;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.ComponentModel;
 using System.ComponentModel.Design;
-using System.Windows.Forms;
 using System.Windows.Forms.Design;
-using System.Windows.Forms.Design.Behavior;
-using ComponentFactory.Krypton.Toolkit;
 using ComponentFactory.Krypton.Navigator;
 
 namespace ComponentFactory.Krypton.Workspace

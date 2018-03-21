@@ -9,11 +9,8 @@
 // *****************************************************************************
 
 using System;
-using System.Drawing;
-using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Windows.Forms;
-using System.Windows.Forms.Design;
 using ComponentFactory.Krypton.Toolkit;
 
 namespace ComponentFactory.Krypton.Navigator

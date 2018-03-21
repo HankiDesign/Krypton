@@ -9,21 +9,18 @@
 // *****************************************************************************
 
 using System;
-using System.Text;
+using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Design;
 using System.Windows.Forms;
-using System.ComponentModel;
-using System.ComponentModel.Design;
-using System.Collections.Generic;
-using System.Diagnostics;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
-    /// <summary>
-    /// Specifition for a button.
-    /// </summary>
-    [ToolboxItem(false)]
+	/// <summary>
+	/// Specifition for a button.
+	/// </summary>
+	[ToolboxItem(false)]
     [DesignTimeVisible(false)]
     [ToolboxBitmap(typeof(ButtonSpec), "ToolboxBitmaps.KryptonButtonSpec.bmp")]
     [DefaultEvent("Click")]

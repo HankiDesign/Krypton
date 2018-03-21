@@ -9,18 +9,15 @@
 // *****************************************************************************
 
 using System;
-using System.Text;
 using System.Drawing;
 using System.Drawing.Text;
-using System.Collections.Generic;
-using System.Diagnostics;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
 	/// <summary>
 	/// Encapsulate the information needed to draw text using the AccurateText class.
 	/// </summary>
-    public class AccurateTextMemento : GlobalId,
+	public class AccurateTextMemento : GlobalId,
                                        IDisposable
 	{
 		#region Static Fields

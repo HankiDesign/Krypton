@@ -8,7 +8,6 @@
 //  Version 4.4.0.0 	www.ComponentFactory.com
 // *****************************************************************************
 
-using System;
 using System.ComponentModel;
 
 namespace ComponentFactory.Krypton.Navigator

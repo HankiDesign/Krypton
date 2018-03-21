@@ -67,15 +67,9 @@
     <Compile Include="Controls Workspace\KryptonWorkspaceSequenceConverter.cs" />
     <Compile Include="Controls Workspace\KryptonWorkspaceCollection.cs">
     </Compile>
-    <Compile Include="Controls Workspace\KryptonWorkspaceCell.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls Workspace\KryptonWorkspaceSequence.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls Workspace\KryptonWorkspace.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Controls Workspace\KryptonWorkspaceCell.cs" />
+    <Compile Include="Controls Workspace\KryptonWorkspaceSequence.cs" />
+    <Compile Include="Controls Workspace\KryptonWorkspace.cs" />
     <Compile Include="Dragging\DragTargetWorkspace.cs" />
     <Compile Include="Dragging\DragTargetWorkspaceCellTransfer.cs" />
     <Compile Include="Dragging\DragTargetWorkspaceCellEdge.cs" />
@@ -172,14 +166,4 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
-  <PropertyGroup>
-    <PostBuildEvent>"$(ProjectDir)..\GacUtil.exe" -i "$(TargetPath)" /f</PostBuildEvent>
-  </PropertyGroup>
 </Project>

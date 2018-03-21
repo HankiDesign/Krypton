@@ -9,7 +9,6 @@
 // *****************************************************************************
 
 using System;
-using System.Threading;
 
 namespace ComponentFactory.Krypton.Toolkit
 {

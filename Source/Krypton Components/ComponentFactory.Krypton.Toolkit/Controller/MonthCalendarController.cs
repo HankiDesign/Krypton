@@ -9,11 +9,8 @@
 // *****************************************************************************
 
 using System;
-using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Security;
-using System.Security.Permissions;
 using System.ComponentModel;
 using System.Diagnostics;
 

@@ -10,9 +10,7 @@
 
 using System;
 using System.ComponentModel;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Text;
 
 namespace ComponentFactory.Krypton.Toolkit
 {

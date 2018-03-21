@@ -8,22 +8,14 @@
 //  Version 4.4.0.0 	www.ComponentFactory.com
 // *****************************************************************************
 
-using System;
-using System.Text;
-using System.Drawing;
-using System.Drawing.Design;
-using System.Windows.Forms;
-using System.ComponentModel;
-using System.ComponentModel.Design;
-using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
-    /// <summary>
-    /// Implementation for internal calendar buttons.
-    /// </summary>
-    public class ButtonSpecCalendar : ButtonSpec
+	/// <summary>
+	/// Implementation for internal calendar buttons.
+	/// </summary>
+	public class ButtonSpecCalendar : ButtonSpec
     {
         #region Instance Fields
         private ViewDrawMonth _month;

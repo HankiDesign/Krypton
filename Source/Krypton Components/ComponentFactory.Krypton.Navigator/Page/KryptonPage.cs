@@ -9,17 +9,10 @@
 // *****************************************************************************
 
 using System;
-using System.IO;
-using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.ComponentModel;
-using System.ComponentModel.Design;
 using System.Drawing;
 using System.Drawing.Design;
-using System.Data;
-using System.Text;
 using System.Windows.Forms;
-using System.Reflection;
 using ComponentFactory.Krypton.Toolkit;
 
 namespace ComponentFactory.Krypton.Navigator
