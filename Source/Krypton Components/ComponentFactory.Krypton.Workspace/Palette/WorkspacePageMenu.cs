@@ -1,11 +1,11 @@
 ﻿// *****************************************************************************
 // 
-//  © Component Factory Pty Ltd 2012. All rights reserved.
+//  © Component Factory Pty Ltd 2017. All rights reserved.
 //	The software and associated documentation supplied hereunder are the 
-//  proprietary information of Component Factory Pty Ltd, 17/267 Nepean Hwy, 
-//  Seaford, Vic 3198, Australia and are supplied subject to licence terms.
+//  proprietary information of Component Factory Pty Ltd, 13 Swallows Close, 
+//  Mornington, Vic 3931, Australia and are supplied subject to licence terms.
 // 
-//  Version 4.4.0.0 	www.ComponentFactory.com
+//  Version 4.5.0.0 	www.ComponentFactory.com
 // *****************************************************************************
 
 using System;
@@ -23,7 +23,7 @@ namespace ComponentFactory.Krypton.Workspace
 	/// <summary>
 	/// Storage for workspace context menu for pages.
 	/// </summary>
-    public class WorkspaceMenus : WorkspacePageMenuBase
+    public class WorkspaceMenus : Storage
     {
         #region Static Fields
         private static readonly string _defaultTextClose = "&Close";
@@ -71,7 +71,7 @@ namespace ComponentFactory.Krypton.Workspace
         /// Initialize a new instance of the WorkspaceMenus class.
 		/// </summary>
         public WorkspaceMenus(KryptonWorkspace workspace)
-            : base(workspace)
+            : base()
 		{
             // Default values
             _textClose = _defaultTextClose;
